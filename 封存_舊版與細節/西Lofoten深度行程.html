@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西 Lofoten 世界盡頭・3 月雪地極光深度行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush-soft:#fbeef1;
+    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --aurora:#3f9d82;--night:#16213a;
+    --shadow:0 10px 40px -18px rgba(20,30,60,.45);--shadow-sm:0 6px 22px -14px rgba(20,30,60,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:62px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
+  .script{font-family:"Dancing Script",cursive;font-weight:700}
+  a{color:#2c6e5a}
+  #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--aurora),var(--gold));z-index:120;transition:width .1s}
+  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 16px}
+  .nav-brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--rose);white-space:nowrap;font-size:.98rem}
+  .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.84rem;white-space:nowrap;padding:6px 10px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
+  .nav-links a.active{background:var(--night);color:#cfe}
+
+  header.hero{position:relative;min-height:74vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 20px 56px;color:#fff;overflow:hidden}
+  header.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,38,.42),rgba(12,20,42,.8)),url('images/nor-reine-winter.jpg') center/cover;z-index:-1}
+  .hero .eyebrow{font-family:"Dancing Script",cursive;color:#8fe3c6;font-size:1.9rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .hero h1{font-size:clamp(1.7rem,5vw,3rem);font-weight:900;letter-spacing:1px;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+  .hero .sub{margin-top:12px;max-width:680px;font-size:clamp(.98rem,2.3vw,1.15rem);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .hero .meta{margin-top:20px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+  .hpill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);padding:7px 14px;border-radius:30px;font-size:.84rem}
+  .hpill b{color:#8fe3c6}
+  .hero .back{margin-top:16px;color:#fff;text-decoration:none;font-size:.85rem;border:1px solid rgba(255,255,255,.4);padding:7px 16px;border-radius:30px}
+
+  main{max-width:1040px;margin:0 auto;padding:28px 16px 70px}
+  section{padding:28px 0;scroll-margin-top:62px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .sec-ico{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--night),var(--aurora));color:#fff;font-size:1.15rem;box-shadow:var(--shadow-sm)}
+  .sec-head h2{font-size:clamp(1.35rem,4vw,1.8rem);color:var(--rose-deep)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+  .card h3{color:var(--rose);font-size:1.08rem;margin:2px 0 8px}
+  p,li{font-size:.93rem}
+  ul.clean{list-style:none}ul.clean li{position:relative;padding-left:20px;margin:5px 0}
+  ul.clean li::before{content:"❄";position:absolute;left:0;color:var(--aurora);font-size:.8rem;top:3px}
+
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:4px 0}
+  @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery figure{margin:0;border-radius:12px;overflow:hidden;background:#dfe6ee;box-shadow:var(--shadow-sm)}
+  .gallery img{width:100%;height:120px;object-fit:cover;display:block;transition:.35s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery figcaption{font-size:.72rem;color:var(--ink-soft);padding:5px 6px;text-align:center}
+
+  .routemap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+
+  table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);margin:8px 0}
+  thead th{background:linear-gradient(135deg,var(--night),#2c4a63);color:#fff;padding:9px;text-align:left;font-weight:500;font-size:.8rem}
+  td{padding:8px 9px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#f4f7fa}
+  td b{color:var(--rose)}
+  .scroll-x{overflow-x:auto}
+  .star{color:var(--gold)}
+
+  .tl{position:relative;padding-left:4px;margin-top:6px}
+  .tl::before{content:"";position:absolute;left:46px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--night),var(--aurora))}
+  .tl-item{position:relative;padding:0 0 16px 70px}
+  .tl-d{position:absolute;left:0;top:0;width:40px;text-align:right;font-weight:700;color:var(--rose);font-size:.82rem;font-family:"Noto Serif TC",serif}
+  .tl-dot{position:absolute;left:40px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--aurora);z-index:2}
+  .tl-item h4{color:var(--night);font-size:1rem}
+  .tl-item ul{list-style:none;font-size:.88rem;color:var(--ink-soft);margin-top:3px}
+  .tl-item ul li{padding-left:15px;position:relative;margin:3px 0}
+  .tl-item ul li::before{content:"·";position:absolute;left:3px;color:var(--aurora);font-weight:900;font-size:1.1rem;top:-4px}
+  .nightrow{color:var(--aurora);font-weight:600}
+
+  .note{background:#eef6f3;border:1px solid #cfe7df;border-left:5px solid var(--aurora);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
+  .note .tag{font-weight:700;color:var(--aurora);display:block;margin-bottom:3px}
+  .warn{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
+  .warn .tag{font-weight:700;color:var(--rose);display:block;margin-bottom:3px}
+  .gold{background:#fbf6ec;border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
+  .gold .tag{font-weight:700;color:#a9842f;display:block;margin-bottom:3px}
+  .ok{color:#3f9d82;font-weight:700}.no{color:#c0607a;font-weight:700}.warnflag{color:#c79a3a;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+  .chip{background:#eef6f3;color:#2c6e5a;border:1px solid #cfe7df;padding:4px 11px;border-radius:20px;font-size:.8rem}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px 0;color:var(--aurora)}
+  .divider::before,.divider::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,#bfe0d6)}
+  .divider::after{background:linear-gradient(90deg,#bfe0d6,transparent)}
+  .phone{background:var(--night);color:#cfe;padding:3px 9px;border-radius:6px;font-weight:700;white-space:nowrap}
+  footer{text-align:center;padding:44px 20px 70px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
+  footer .script{font-size:1.9rem;color:var(--aurora);display:block}
+  .backtop{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .backtop.show{opacity:1;pointer-events:auto}
+  @media print{nav,#progress,.backtop{display:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-inner">
+  <span class="nav-brand">🎣 西 Lofoten 深度</span>
+  <div class="nav-links" id="navlinks">
+    <a href="#map">路順地圖</a>
+    <a href="#base">基地</a>
+    <a href="#days">逐日</a>
+    <a href="#cabins">小屋</a>
+    <a href="#boat">交通船</a>
+    <a href="#sights">景點</a>
+    <a href="#safe">極光/安全</a>
+    <a href="#budget">預算</a>
+    <a href="#links">連結速查</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">The End of the Road</div>
+  <h1>西 Lofoten 世界盡頭<br>3 月雪地極光深度自駕</h1>
+  <p class="sub">飛 Leknes 進出 → 釘胎自駕 E10 → 後段定點連住 Reine / Hamnøy / Sakrisøy 紅黃漁村小屋 → 純搭 Reinefjorden 交通船賞峽灣 → 夜裡在面海小屋外守極光。不走危險雪坡、不賭 Værøy 渡輪。</p>
+  <div class="meta">
+    <span class="hpill">🗓 <b>2027 年 3 月</b></span>
+    <span class="hpill">🚗 自駕 + 住小屋</span>
+    <span class="hpill">⏱ <b>5 晚 6 天</b>(西段)</span>
+    <span class="hpill">💰 每人 <b>3.5–4.6 萬</b>(不含機票)</span>
+  </div>
+  <a class="back" href="挪威3月極光蜜月計劃.html">← 回到挪威總計劃</a>
+</header>
+
+<main>
+
+  <!-- 路順地圖 -->
+  <section id="map">
+    <div class="sec-head"><div class="sec-ico">🗺</div><div><h2>路順地圖(由東到西沿 E10)</h2><p style="color:var(--ink-soft);font-size:.9rem">Sakrisøy–Hamnøy–Reine 只差 2–4 km,等於同一「核心生活圈」</p></div></div>
+    <div class="routemap">
+      <svg viewBox="0 0 1180 150" width="1160" height="150" role="img" aria-label="西 Lofoten 路順">
+        <line x1="55" y1="74" x2="1110" y2="74" stroke="#cfe0e8" stroke-width="5"/>
+        <!-- core zone highlight -->
+        <rect x="700" y="58" width="335" height="32" rx="16" fill="#e7f3ee" stroke="#a7d8c8"/>
+        <g fill="#16213a"><circle cx="60" cy="74" r="8"/><circle cx="190" cy="74" r="8"/><circle cx="320" cy="74" r="8"/><circle cx="450" cy="74" r="8"/><circle cx="580" cy="74" r="8"/></g>
+        <g fill="#b23a5b"><circle cx="715" cy="74" r="9"/><circle cx="845" cy="74" r="9"/><circle cx="970" cy="74" r="9"/></g>
+        <circle cx="1100" cy="74" r="10" fill="#3f9d82"/>
+        <g font-family="Noto Sans TC" font-size="14" fill="#16213a" text-anchor="middle" font-weight="700">
+          <text x="60" y="104">Svolvær</text><text x="190" y="104">Henningsvær</text><text x="320" y="104">Leknes</text>
+          <text x="450" y="104">Nusfjord</text><text x="580" y="104">Ramberg</text>
+          <text x="715" y="104" fill="#b23a5b">Sakrisøy</text><text x="845" y="104" fill="#b23a5b">Hamnøy</text><text x="970" y="104" fill="#b23a5b">Reine</text>
+          <text x="1100" y="104" fill="#2c6e5a">Å 盡頭</text></g>
+        <g font-family="Noto Sans TC" font-size="11" fill="#6a5358" text-anchor="middle">
+          <text x="125" y="58">23km·40分</text><text x="255" y="58">50km·60分</text><text x="385" y="58">+5km支線</text>
+          <text x="515" y="58">28km·40分</text><text x="648" y="58">25km</text><text x="780" y="58">2km</text><text x="908" y="58">4km</text><text x="1035" y="58">10km</text></g>
+        <g font-family="Noto Sans TC" font-size="11" fill="#16213a" text-anchor="middle">
+          <text x="60" y="126">機場SVJ</text><text x="320" y="126" font-weight="700">機場LKN/補給</text>
+          <text x="845" y="126" fill="#b23a5b" font-weight="700">核心生活圈(壓軸住這)</text></g>
+      </svg>
+    </div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>段落(東→西)</th><th>距離</th><th>夏季</th><th>冬季(3月)</th></tr></thead>
+        <tbody>
+          <tr><td>Svolvær → Henningsvær</td><td>23 km</td><td>25–30 分</td><td><b>35–45 分</b></td></tr>
+          <tr><td>Henningsvær → Leknes</td><td>50 km</td><td>45 分</td><td><b>60 分</b></td></tr>
+          <tr><td>Leknes → Nusfjord(支線 5 km)</td><td>30 km</td><td>30–35 分</td><td><b>45 分</b></td></tr>
+          <tr><td>Leknes → Ramberg/Flakstad</td><td>28 km</td><td>30 分</td><td><b>40 分</b></td></tr>
+          <tr><td>Flakstad → Sakrisøy</td><td>25 km</td><td>25 分</td><td><b>35 分</b></td></tr>
+          <tr><td>Sakrisøy → Hamnøy → Reine</td><td>6 km</td><td>8 分</td><td><b>13 分</b></td></tr>
+          <tr><td>Reine → Å(公路最末端)</td><td>10 km</td><td>12–15 分</td><td><b>20 分</b></td></tr>
+          <tr style="background:#e7f3ee"><td><b>Svolvær → Å 全程</b></td><td><b>約 130 km</b></td><td>約 2.5h</td><td><b>約 3.5–4h</b></td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="tag">🛬 機場結論</span>核心區<b>務必飛 Leknes(LKN)</b>(到 Reine 約 58 km / 冬季 1–1.5h、機場有租車櫃台);<b>別飛 Svolvær(SVJ)</b>(到 Reine 冬季 3.5–4h、機場無租車櫃台)。<br>🧭 Google Maps 主線:<a href="https://www.google.com/maps/dir/Svolvær/Henningsvær/Leknes/Nusfjord/Ramberg/Sakrisøy/Hamnøy/Reine/Å+i+Lofoten" target="_blank" rel="noopener">一鍵串起所有點</a></div>
+    </div>
+    <div class="gallery">
+      <figure><img src="images/west-nusfjord.jpg" alt="Nusfjord" loading="lazy"><figcaption>Nusfjord 古漁村</figcaption></figure>
+      <figure><img src="images/west-skagsanden.jpg" alt="Skagsanden" loading="lazy"><figcaption>Skagsanden 極光名灘</figcaption></figure>
+      <figure><img src="images/west-sakrisoy.jpg" alt="Sakrisøy" loading="lazy"><figcaption>Sakrisøy 黃屋</figcaption></figure>
+      <figure><img src="images/west-hamnoy.jpg" alt="Hamnøy" loading="lazy"><figcaption>Hamnøy 紅屋橋</figcaption></figure>
+      <figure><img src="images/west-aa.jpg" alt="Å" loading="lazy"><figcaption>Å 公路盡頭</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 基地 -->
+  <section id="base">
+    <div class="sec-head"><div class="sec-ico">🏡</div><div><h2>建議基地與天數</h2><p style="color:var(--ink-soft);font-size:.9rem">核心策略:只搬一次家</p></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>晚</th><th>住哪</th><th>涵蓋</th><th>理由</th></tr></thead>
+        <tbody>
+          <tr><td>第 1 晚</td><td><b>Henningsvær</b></td><td>Svolvær 進、Henningsvær</td><td>落地不硬拉車,先睡一晚調時差</td></tr>
+          <tr><td>第 2 晚</td><td>Henningsvær / Leknes</td><td>往西沿途</td><td>緩衝日,白天慢慢往西</td></tr>
+          <tr style="background:#e7f3ee"><td><b>第 3–5 晚<br>(壓軸)</b></td><td><b>Reine / Hamnøy / Sakrisøy 擇一</b></td><td>Sakrisøy、Hamnøy、Reine、Å、交通船</td><td>定點放射、看極光最佳機位、完全不回頭</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.85rem;color:var(--ink-soft);margin-top:6px"><b>4 晚 5 天</b>:砍第 2 晚,壓軸仍住 3 晚(不能砍)。<b>6 晚 7 天</b>:壓軸加到 4 晚,多 1 個極光/壞天備援。</p>
+      <div class="note"><span class="tag">選後段基地</span><b>Hamnøy(Eliassen 紅屋)</b>=景觀第一、最常拍到極光｜<b>Sakrisøy(黃屋)</b>=安靜有停車場、近 Reine 超市｜<b>Reine(Reine Rorbuer)</b>=交通船碼頭旁、設施最完整。</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 逐日 -->
+  <section id="days">
+    <div class="sec-head"><div class="sec-ico">📅</div><div><h2>逐日行程(5 晚 6 天)</h2></div></div>
+    <div class="card">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-d">D1</div><div class="tl-dot"></div><h4>抵達 Svolvær → Henningsvær(調時差)</h4>
+          <ul><li>自駕 Svolvær→Henningsvær(23km/冬季約40分),漁村平緩散步</li><li>室內雨備:Svolvær Magic Ice 冰酒吧;想看海鵰 Trollfjord 大船最順排這天</li><li>補給:Svolvær 大超市(Coop/Rema 1000)</li><li class="nightrow">夜:Henningsvær 周邊無光害角度;天差就早睡,命中壓後段</li></ul></div>
+        <div class="tl-item"><div class="tl-d">D2</div><div class="tl-dot"></div><h4>Henningsvær 深度 + 往西過渡</h4>
+          <ul><li>Henningsvær 慢遊(足球場從橋上/高點看,不下雪坡)</li><li>補給(全程最強):Leknes(Coop Extra/Rema 1000)+ 加油</li><li class="nightrow">夜:近 Leknes 可去 Uttakleiv/Haukland 海灘(朝北地平線乾淨)</li></ul></div>
+        <div class="tl-item"><div class="tl-d">D3</div><div class="tl-dot"></div><h4>西進核心區(進駐壓軸基地,一路向西不回頭)</h4>
+          <ul><li>Leknes →(支線5km)Nusfjord → Ramberg/Skagsanden/Flakstad 教堂 → Sakrisøy(黃屋)→ Hamnøy 橋經典機位 → 入住 Reine 區</li><li><b>離開 Leknes 前一定加滿油+採買</b>(Å 沒加油站);Reine 有 COOP Prix、Circle K</li><li class="nightrow">夜:Skagsanden 沙灘倒影(最推)或 Hamnøy 橋</li></ul></div>
+        <div class="tl-item"><div class="tl-d">D4</div><div class="tl-dot"></div><h4>Reinefjorden 交通船 day trip ⚠️前一天電話訂</h4>
+          <ul><li>Reine Hurtigbåtkai 搭船到 Vindstad/Kjerkfjorden(單程約20–40分),穿越雪峰夾峙峽灣</li><li><b>純搭船賞景</b>:只買來回票、不下船登山、直接坐回程</li><li>3 月冬季制:<span class="phone">電話 +47 994 91 805</span> 前一天訂、不收現場上船、週六常停駛</li><li class="nightrow">夜:Reine 靜水倒影 + 漁村燈光</li></ul></div>
+        <div class="tl-item"><div class="tl-d">D5</div><div class="tl-dot"></div><h4>Reine ↔ Å 末端漁村 loop(短程壓軸)</h4>
+          <ul><li>基地→Å(10km/約20分,公路最末端)→原路回;Å 紅屋群、鱈魚乾架;回程補拍 Hamnøy 橋、Sakrisøy</li><li>室內雨備:Å 漁村博物館(平日約11–15、週末休)、百年麵包房 Bakeriet i Å</li><li class="nightrow">夜:Å(光害極低)或 Sakrisøy(黃屋前景)</li></ul></div>
+        <div class="tl-item"><div class="tl-d">D6</div><div class="tl-dot"></div><h4>回程</h4>
+          <ul><li>Reine → Leknes 機場(LKN,約70km/冬季1.5–2h)還車</li></ul></div>
+      </div>
+      <div class="note"><span class="tag">🌌 每晚極光通則</span>Reine/Hamnøy/Sakrisøy 本身就是絕佳極光前景,不必開夜車。住面海/朝北小屋 → 設 <a href="https://www.yr.no" target="_blank" rel="noopener">yr.no</a> 雲量警報 + Hello Aurora 社群回報 → 每 1–2 小時看天 → 放晴+有活動就出門到屋外或走到 Hamnøy 橋。</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 小屋 -->
+  <section id="cabins">
+    <div class="sec-head"><div class="sec-ico">🛖</div><div><h2>小屋住宿(rorbuer)</h2><p style="color:var(--ink-soft);font-size:.9rem">務必選面海房;冬季常有「最少住 2 晚」</p></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>住宿(漁村)</th><th>特色</th><th>3月</th><th>參考價/晚(2人)</th><th>官方訂房</th></tr></thead>
+        <tbody>
+          <tr><td><b>Eliassen Rorbuer</b>(Hamnøy)<span class="star">★紅屋</span></td><td>明信片紅屋立海上、最常拍到極光</td><td class="ok">全年</td><td>面海約 3,290 NOK(約 1.09 萬)</td><td><a href="https://booking.rorbuer.no/en/accommodation" target="_blank" rel="noopener">booking.rorbuer.no</a><br><span class="phone">+47 4581 4845</span></td></tr>
+          <tr><td><b>Sakrisøy Rorbuer</b>(Sakrisøy)<span class="star">★黃屋</span></td><td>全島唯一赭黃小屋、正對 Olstind</td><td class="ok">開</td><td>約 1,800–2,800 NOK</td><td><a href="https://sakrisoyrorbuer.no" target="_blank" rel="noopener">sakrisoyrorbuer.no</a></td></tr>
+          <tr><td>Reinefjorden Sjøhus(Hamnøy)</td><td>玻璃屋、天窗躺床看極光、桑拿</td><td class="warnflag">冬季開(先確認)</td><td>雙人約 €176 起(約 6,300)</td><td><a href="https://booking.reinefjord.no/en/accommodation" target="_blank" rel="noopener">booking.reinefjord.no</a><br><span class="phone">+47 907 25 683</span></td></tr>
+          <tr><td>Reine Rorbuer(Reine)</td><td>鄰交通船碼頭、設施最齊、有餐廳</td><td class="ok">2–10 月開</td><td>1,500 起;面海 2,500–3,500+</td><td><a href="https://booking.reinerorbuer.no" target="_blank" rel="noopener">booking.reinerorbuer.no</a><br><span class="phone">+47 76 09 22 22</span></td></tr>
+          <tr><td>Å Rorbuer(Å)</td><td>公路最末端、需指定 sea view、有餐廳</td><td class="ok">2–10 月開</td><td>約 €170 起(約 6,000)</td><td><a href="https://booking.arorbuer.no" target="_blank" rel="noopener">booking.arorbuer.no</a></td></tr>
+          <tr><td>Tind seaside cabins(Tind)</td><td>最寧靜末端、面海+山景、情侶評 9.0</td><td class="warnflag">先 email 確認</td><td>約 1,450–2,050 NOK</td><td><a href="https://www.booking.com/hotel/no/tind-rorbuer.html" target="_blank" rel="noopener">Booking.com</a></td></tr>
+        </tbody>
+      </table>
+      <div class="gold"><span class="tag">⏰ 最該最早訂(2026 年 6–9 月一開放就訂面海房)</span>① <b>Eliassen 面海紅屋</b>(建議 9–12 個月前)② <b>Sakrisøy 黃色面海</b>(6–12 個月前)③ Reine Rorbuer Deluxe Waterfront。</div>
+      <div class="note"><span class="tag">🛏 3 種住宿組合(壓軸 3 晚雙人)</span><b>A 經濟</b>(3 晚約 1.6–2 萬):Tind / Å 標準 / Sakrisøy 小房,自炊省餐費。<br><b>B 浪漫 ⭐最推</b>(3 晚約 2.7–3.3 萬):Eliassen 面海紅屋 / Sakrisøy 面海黃屋,踏出門就是紅黃面海木屋+雪峰倒影。<br><b>C 升級</b>(3 晚約 1.9–3.4 萬):Reinefjorden Sjøhus 天窗追極光 / Reine Deluxe Waterfront。</div>
+    </div>
+  </section>
+
+  <!-- 交通船 -->
+  <section id="boat">
+    <div class="sec-head"><div class="sec-ico">⛴</div><div><h2>Reinefjorden 交通船</h2><p style="color:var(--ink-soft);font-size:.9rem">純搭船賞峽灣,不走 Bunes 雪坡</p></div></div>
+    <div class="card">
+      <ul class="clean">
+        <li><b>航線</b>:Reine ↔ Kjerkfjorden / Rostad / Vindstad,自 <b>Reine Hurtigbåtkai</b>(Ytre Havn 大停車場旁)出發,單程約 20–31 分,穿越被陡峭雪峰夾峙的 Reinefjorden。</li>
+        <li><b>純搭船賞景可行</b>:只買來回票、不下船登山、直接坐回程(符合不走雪坡);訂位時確認去回銜接,避免在對岸久候。</li>
+        <li><b>票價(2025 官方)</b>:來回成人約 <b>94 NOK(約 310 TWD)</b>;兒童/學生約 48 NOK。</li>
+      </ul>
+      <div class="warn"><span class="tag">⚠ 3 月務必看</span>冬季(約第 1–11 週,1/1–3/16)<b>採預訂制:必須前一天電話預訂、不接受現場上船、週六常停駛</b>,每日僅 2–3 班。3 月底接近換季可能調整,務必致電確認當年度時刻。<br>📞 冬季預訂 <span class="phone">+47 994 91 805</span> · 時刻查詢 <a href="https://www.reisnordland.com/ferry" target="_blank" rel="noopener">reisnordland.com/ferry</a> · 客服 +47 910 09 600</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 景點 -->
+  <section id="sights">
+    <div class="sec-head"><div class="sec-ico">📸</div><div><h2>景點清單(標注冬季可行性)</h2></div></div>
+    <div class="card">
+      <h3>🎣 漁村</h3>
+      <p style="font-size:.9rem"><b>Nusfjord</b>(UNESCO 古漁村,入村費約 100 NOK,平路)·<b>Sakrisøy</b>(黃屋經典機位)·<b>Hamnøy</b>(紅屋橋邊就拍到,免健行)·<b>Reine</b>(靜水倒影,店約 11:00 開)·<b>Å</b>(公路盡頭,室內雨備佳)·<b>Tind</b>(人少安靜)。</p>
+    </div>
+    <div class="card scroll-x">
+      <h3>🏖 海灘 / 觀景(冬季步道難度)</h3>
+      <table>
+        <thead><tr><th>地點</th><th>3 月</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td><b>Skagsanden</b>(Flakstad)</td><td class="ok">✅ 極推</td><td>極光名灘,停車場旁即沙灘,平路</td></tr>
+          <tr><td>Ramberg / Fredvang 雙橋</td><td class="ok">✅</td><td>平緩沙灘 / 開車即拍,免健行</td></tr>
+          <tr><td>Uttakleiv / Haukland</td><td class="ok">✅</td><td>停車場旁即達;聯外路冬季結冰需雪胎</td></tr>
+          <tr><td>Kvalvika(Fredvang)</td><td class="warnflag">⚠️ 放棄/遠觀</td><td>3 月需雪鞋/冰爪,不符零風險</td></tr>
+          <tr><td>Reinebringen</td><td class="no">❌ 排除</td><td>陡階+雪簷+雪崩,11月底–3月底致命危險,官方勸阻</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="tag">🌌 極光點(西段朝北、3 月可達免危險健行)</span>Skagsanden(最推)、Reine 靜水、Hamnøy 橋、Å、Sakrisøy、Uttakleiv/Haukland。</div>
+      <div class="gold"><span class="tag">🍽 冬季營業餐廳(常縮時/季節休)</span>Anitas Seafood(Sakrisøy,冬季約 12–16)、Gammelbua(Reine,建議訂位)、Krambua(Reine 咖啡)、Brygga(Å)。⚠️ Gadus(Hamnøy)2026/3 查為暫時關閉。<b>建議訂附廚房 rorbuer 自炊 + Leknes 超市採買最保險。</b></div>
+      <p style="font-size:.88rem;color:var(--ink-soft)">🦅 <b>海鵰遊船(Svolvær 出發,3 月運行)</b>:Trollfjord 大船+海鵰(約 950–1,090 NOK、含魚湯、平穩保暖推薦)或 RIB 快艇(約 1,095 NOK、離鷹近但冷濕)。<b>最順排在進出 Svolvær 那天(Day 1)</b>,別從 Reine 專程回頭。</p>
+    </div>
+  </section>
+
+  <!-- 極光/安全 -->
+  <section id="safe">
+    <div class="sec-head"><div class="sec-ico">🚗</div><div><h2>極光攻略 · 冬季自駕安全 · 打包</h2></div></div>
+    <div class="card">
+      <h3>🌌 極光(3 月)</h3>
+      <ul class="clean">
+        <li>3 月是 Lofoten 極光優良月份;真正變數是「會不會放晴」(看雲不看 KP)。建議排上半月至中旬。</li>
+        <li>3 月日照:月初約 07:24–17:13、月中約 06:25–18:06、月底 13h+;約 19:30 後夠暗。</li>
+        <li>App:<a href="https://www.yr.no" target="_blank" rel="noopener">yr.no</a>(最重要)+ Hello Aurora + My Aurora Forecast。</li>
+      </ul>
+      <h3 style="margin-top:12px">❄ 冬季自駕安全</h3>
+      <ul class="clean">
+        <li>租 <b>4WD/AWD + 全險 + 釘胎</b>(訂車白紙黑字確認 winter/studded tyres included)。</li>
+        <li><b>黑冰是 3 月最大殺手</b>(由冷轉暖下雨最危險,挪威不灑鹽);Reine–Hamnøy 單線橋紅綠燈、橋面結冰起步小心。</li>
+        <li><b>盡量白天行車、夜間定點守極光。</b> 每天出門必查 <a href="https://www.yr.no" target="_blank" rel="noopener">yr.no</a>(天氣)+ <a href="https://www.175.no" target="_blank" rel="noopener">175.no</a>(路況/攝影機)+ <a href="https://www.varsom.no/en/avalanches/avalanche-warnings/" target="_blank" rel="noopener">varsom.no</a>(雪崩)。</li>
+        <li>停車:村內多付費(卡/Vipps),住宿 rorbuer 多附免費停車。</li>
+      </ul>
+      <h3 style="margin-top:12px">🎒 打包重點</h3>
+      <div class="chips"><span class="chip">防風防水外層+雪褲</span><span class="chip">保暖中層</span><span class="chip">發熱內層</span><span class="chip">厚手套/毛帽/圍脖</span><span class="chip">防滑雪靴+冰爪</span><span class="chip">暖暖包</span><span class="chip">相機腳架</span><span class="chip">備用電池(貼身)</span><span class="chip">紅光頭燈</span><span class="chip">車上刮冰器/毛毯/行動電源</span></div>
+    </div>
+  </section>
+
+  <!-- 預算 -->
+  <section id="budget">
+    <div class="sec-head"><div class="sec-ico">💰</div><div><h2>該段每人預算(2 人 6 天,僅西 Lofoten 段)</h2></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>項目</th><th>每人(TWD)</th></tr></thead>
+        <tbody>
+          <tr><td>住宿(過渡 2 晚 + 壓軸 3 晚,浪漫組合)</td><td>18,800–23,100</td></tr>
+          <tr><td>租車含釘胎 6 天</td><td>8,300–11,600</td></tr>
+          <tr><td>油費</td><td>1,700–2,500</td></tr>
+          <tr><td>Reinefjorden 交通船來回</td><td>約 320</td></tr>
+          <tr><td>自炊 + 偶爾外食</td><td>5,800–8,300</td></tr>
+          <tr style="background:#e7f3ee"><td><b>合計(不含機票)</b></td><td><b>每人約 3.5–4.6 萬</b></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.85rem;color:var(--ink-soft)">機票 Bodø↔Leknes(Widerøe)另計,單程常見約 2,000–5,000 TWD/人,提早訂較便宜。</p>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 連結速查 -->
+  <section id="links">
+    <div class="sec-head"><div class="sec-ico">🔗</div><div><h2>官方連結與電話速查</h2></div></div>
+    <div class="card">
+      <ul class="clean">
+        <li>✈️ Widerøe(Leknes 航線):<a href="https://www.wideroe.no/en/destinations/leknes" target="_blank" rel="noopener">wideroe.no</a></li>
+        <li>⛴ Reinefjorden 交通船:<a href="https://www.reisnordland.com/ferry" target="_blank" rel="noopener">reisnordland.com/ferry</a>｜冬季預訂 <span class="phone">+47 994 91 805</span>｜客服 +47 910 09 600</li>
+        <li>🌦 氣象+極光:<a href="https://www.yr.no" target="_blank" rel="noopener">yr.no</a>｜路況/攝影機:<a href="https://www.175.no" target="_blank" rel="noopener">175.no</a>｜雪崩:<a href="https://www.varsom.no/en/avalanches/avalanche-warnings/" target="_blank" rel="noopener">varsom.no</a></li>
+        <li>🛖 小屋:<a href="https://rorbuer.no" target="_blank" rel="noopener">Eliassen</a>｜<a href="https://sakrisoyrorbuer.no" target="_blank" rel="noopener">Sakrisøy</a>｜<a href="https://reinefjord.no" target="_blank" rel="noopener">Reinefjorden Sjøhus</a>｜<a href="https://reinerorbuer.no/en" target="_blank" rel="noopener">Reine Rorbuer</a>｜<a href="https://arorbuer.no/en" target="_blank" rel="noopener">Å Rorbuer</a></li>
+        <li>📸 景點:<a href="https://nusfjord.com" target="_blank" rel="noopener">Nusfjord</a>｜<a href="https://magicice.no" target="_blank" rel="noopener">Magic Ice</a>｜<a href="https://trollfjordcruise.com" target="_blank" rel="noopener">Trollfjord 海鵰</a></li>
+      </ul>
+      <div class="warn"><span class="tag">⚠ 最重要的誠實提醒</span>交通船 3 月採電話預訂制且時刻每年微調、巴士冬季大減班、博物館/餐廳冬季常縮時或休、價格為 2025 推估 ── <b>全部請在 2026 年底至出發前 1 個月,用上述官方連結與電話逐項重新確認 2027 當年度資訊。</b></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="script">To the end of the road</span>
+  <p style="max-width:600px;margin:6px auto">開著車到挪威公路的最末端,住進海邊的紅色小木屋,等一場頭頂的極光 ── 祝你們的世界盡頭之旅,雪白、極光爆棚、白頭偕老 🌌</p>
+  <p style="font-size:.78rem;color:#a9b7c0;margin-top:12px">深度資料經 workflow 上網查證並盡量附官方連結;時刻/價格為 2025–2026 推估,務必行前重新確認。照片來源:Flickr(CC 授權),僅供個人規劃參考。更新於 2026.05.31</p>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
+<script>
+  const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
+  addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';backtop.classList.toggle('show',h.scrollTop>600)});
+  backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  const links=[...document.querySelectorAll('#navlinks a')],map={};
+  links.forEach(a=>{const id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)map[id]=a});
+  Object.keys(map).forEach(id=>{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map[id].classList.add('active');map[id].scrollIntoView({block:'nearest',inline:'center'})}}),{rootMargin:'-40% 0px -55% 0px'}).observe(document.getElementById(id))});
+</script>
+</body>
+</html>

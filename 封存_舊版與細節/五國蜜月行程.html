@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五國蜜月行程比較 · 義/希/土/瑞/挪 · 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush:#f6dfe6;--blush-soft:#fbeef1;
+    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --shadow:0 10px 40px -18px rgba(138,42,68,.35);--shadow-sm:0 6px 22px -14px rgba(138,42,68,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
+  .script{font-family:"Dancing Script",cursive;font-weight:700}
+  #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));z-index:120;transition:width .1s}
+  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 18px}
+  .nav-brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--rose);white-space:nowrap;font-size:1rem}
+  .nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.9rem;white-space:nowrap;padding:6px 12px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
+  .nav-links a.active{background:var(--rose);color:#fff}
+  header.hero{text-align:center;padding:78px 20px 36px;background:radial-gradient(1000px 460px at 50% -10%,var(--blush-soft),transparent 60%),var(--cream)}
+  .hero .eyebrow{font-family:"Dancing Script",cursive;color:var(--gold);font-size:1.9rem}
+  .hero h1{font-size:clamp(1.9rem,5.5vw,3rem);color:var(--rose-deep);font-weight:900;letter-spacing:1px;margin-top:4px}
+  .hero .sub{margin-top:12px;color:var(--ink-soft);max-width:660px;margin-inline:auto;font-size:1.02rem}
+  .hero .flags{font-size:1.8rem;letter-spacing:8px;margin-top:14px}
+  .hero .back{display:inline-block;margin-top:16px;color:var(--rose);text-decoration:none;font-size:.88rem;border:1px solid var(--line);padding:7px 16px;border-radius:30px;background:#fff}
+  main{max-width:1040px;margin:0 auto;padding:24px 18px 80px}
+  section{padding:34px 0;scroll-margin-top:70px}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .sec-head h2{font-size:clamp(1.4rem,4vw,2rem);color:var(--rose-deep)}
+  .flag-badge{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.9rem;background:#fff;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm);margin-bottom:16px}
+  .tagline{color:var(--ink-soft);font-style:italic;margin-top:2px;font-size:.95rem}
+  .banner{position:relative;border-radius:14px;overflow:hidden;margin:0 0 12px;box-shadow:var(--shadow-sm)}
+  .banner img{width:100%;height:clamp(190px,33vw,320px);object-fit:cover;display:block}
+  .banner .bcap{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 11px;color:#fff;font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.05rem;background:linear-gradient(transparent,rgba(60,20,30,.8))}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px}
+  @media(max-width:680px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery figure{margin:0;border-radius:10px;overflow:hidden;background:#f1e2e6;box-shadow:var(--shadow-sm)}
+  .gallery img{width:100%;height:128px;object-fit:cover;display:block;transition:.35s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery figcaption{font-size:.74rem;color:var(--ink-soft);padding:5px 6px;text-align:center;line-height:1.3}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  .badge{font-size:.82rem;padding:6px 13px;border-radius:20px;font-weight:500;border:1px solid var(--line);display:inline-flex;gap:5px;align-items:center}
+  .badge.month{background:#eaf3e8;color:#4d7049}
+  .badge.day{background:var(--blush-soft);color:var(--rose)}
+  .badge.cost{background:#fbf3e2;color:#a9842f}
+  /* route svg */
+  .route{overflow-x:auto;margin:6px 0 4px}
+  /* fit */
+  .fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0}
+  @media(max-width:680px){.fit-grid{grid-template-columns:1fr}}
+  .fit-item{background:#fdf7f3;border:1px solid var(--line);border-radius:12px;padding:10px 13px}
+  .fit-item .lbl{font-weight:700;color:var(--rose-deep);font-size:.9rem;display:flex;justify-content:space-between;align-items:center}
+  .stars{color:var(--gold);letter-spacing:1px}
+  .stars .off{color:#e3d3cf}
+  .fit-item p{font-size:.85rem;color:var(--ink-soft);margin-top:3px}
+  /* timeline */
+  .tl{position:relative;padding-left:6px;margin-top:8px}
+  .tl::before{content:"";position:absolute;left:54px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--rose),var(--gold))}
+  .tl-item{position:relative;padding:0 0 18px 78px}
+  .tl-range{position:absolute;left:0;top:0;width:44px;text-align:right;font-weight:700;color:var(--rose);font-size:.8rem;font-family:"Noto Serif TC",serif}
+  .tl-dot{position:absolute;left:48px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--rose);z-index:2}
+  .tl-item h4{color:var(--rose-deep);font-size:1rem}
+  .tl-base{font-size:.8rem;color:var(--sage);font-weight:700;margin-bottom:3px}
+  .tl-item ul{list-style:none;font-size:.88rem;color:var(--ink-soft);margin-top:3px}
+  .tl-item ul li{padding-left:15px;position:relative;margin:3px 0}
+  .tl-item ul li::before{content:"·";position:absolute;left:3px;color:var(--rose);font-weight:900;font-size:1.1rem;top:-4px}
+  .tl-tip{font-size:.8rem;color:#9a7d52;background:#fbf6ec;border-radius:8px;padding:6px 10px;margin-top:5px;border-left:3px solid var(--gold-soft)}
+  /* highlights */
+  .hl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+  @media(max-width:680px){.hl-grid{grid-template-columns:1fr}}
+  .hl{background:linear-gradient(180deg,#fff,#fff8f4);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .hl b{color:var(--rose);display:block;margin-bottom:3px;font-size:.95rem}
+  .hl span{font-size:.85rem;color:var(--ink-soft)}
+  /* pros cons */
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  @media(max-width:680px){.pc{grid-template-columns:1fr}}
+  .pc ul{list-style:none}
+  .pc li{position:relative;padding-left:22px;margin:7px 0;font-size:.9rem}
+  .pros li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
+  .cons li::before{content:"!";position:absolute;left:2px;color:var(--rose);font-weight:700}
+  .pc h4{font-size:.95rem;margin-bottom:4px}
+  .pros h4{color:var(--sage)}.cons h4{color:var(--rose)}
+  .mine{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:12px;padding:13px 16px;margin:14px 0;font-size:.9rem}
+  .mine .tag{font-weight:700;color:var(--rose);margin-bottom:4px;display:block}
+  .verdict{background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;border-radius:14px;padding:15px 18px;margin-top:14px;font-size:.95rem;box-shadow:var(--shadow-sm)}
+  .verdict b{color:#ffe1ea}
+  details.logi{margin-top:12px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  details.logi summary{cursor:pointer;padding:11px 16px;font-weight:700;color:var(--rose-deep);background:var(--blush-soft);list-style:none;font-size:.92rem}
+  details.logi summary::-webkit-details-marker{display:none}
+  details.logi summary::after{content:" ▾";color:var(--rose)}
+  details.logi[open] summary::after{content:" ▴"}
+  details.logi .body{padding:13px 16px;font-size:.85rem;color:var(--ink-soft);line-height:1.85}
+  table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  thead th{background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;padding:10px 9px;text-align:left;font-weight:500;font-size:.8rem}
+  td{padding:9px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:var(--blush-soft)}
+  td b{color:var(--rose)}
+  .scroll-x{overflow-x:auto}
+  .scenario{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:12px 16px;margin:10px 0;font-size:.92rem}
+  .scenario b{color:var(--rose-deep)}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0;color:var(--gold)}
+  .divider::before,.divider::after{content:"";height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--gold-soft))}
+  .divider::after{background:linear-gradient(90deg,var(--gold-soft),transparent)}
+  footer{text-align:center;padding:48px 20px 70px;color:var(--ink-soft)}
+  footer .script{font-size:2rem;color:var(--rose);display:block}
+  .backtop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;background:var(--rose);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .backtop.show{opacity:1;pointer-events:auto}
+  @media print{nav,#progress,.backtop{display:none}details.logi{open:true}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-inner">
+  <span class="nav-brand">五國蜜月行程</span>
+  <div class="nav-links" id="navlinks">
+    <a href="#compare">總比較</a>
+    <a href="#italy">🇮🇹 義大利</a>
+    <a href="#greece">🇬🇷 希臘</a>
+    <a href="#turkey">🇹🇷 土耳其</a>
+    <a href="#swiss">🇨🇭 瑞士</a>
+    <a href="#norway">🇳🇴 挪威</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">Five Honeymoon Routes</div>
+  <h1>五國蜜月行程比較</h1>
+  <p class="sub">義大利 · 希臘 · 土耳其 · 瑞士 · 挪威 ── 每一份都是為你們量身的 12–16 天深度行程(2027 出發、怕熱選涼爽季、自然+人文並重、適度散步)。看著選,不用靠想像。</p>
+  <div class="flags">🇮🇹 🇬🇷 🇹🇷 🇨🇭 🇳🇴</div>
+  <a class="back" href="結婚規劃報告.html">← 回到結婚規劃報告</a>
+</header>
+
+<main>
+
+  <!-- 總比較 -->
+  <section id="compare">
+    <div class="sec-head"><div class="flag-badge">🧭</div><div><h2>五國總比較</h2><p style="color:var(--ink-soft);font-size:.9rem">先看全局,再往下逐國細看</p></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>目的地</th><th>最佳月份</th><th>天數</th><th>每人預算</th><th>自然</th><th>人文</th><th>天氣穩定</th><th>一句定位</th></tr></thead>
+        <tbody>
+          <tr><td><b>🇮🇹 義大利</b><br><small>羅馬-佛-多洛米提-威尼斯</small></td><td>2027/9 下旬</td><td>14 天</td><td>11–16 萬</td><td>★★★★</td><td>★★★★★</td><td>★★★☆</td><td>文藝復興頂規 + 阿爾卑斯涼爽,人文與山林通吃</td></tr>
+          <tr><td><b>🇬🇷 希臘</b><br><small>雅典-梅特歐拉-納克索斯-聖托里尼</small></td><td>9 月上旬</td><td>13–14 天</td><td>11.5–16 萬</td><td>★★★</td><td>★★★★★</td><td>★★★★★</td><td>古典文明 + 懸空奇景 + 愛琴海日落,最穩晴</td></tr>
+          <tr><td><b>🇹🇷 土耳其</b><br><small>伊斯坦堡-卡帕多奇亞-棉堡</small></td><td>2027/5 中下旬</td><td>13–15 天</td><td><b>7.5–11.5 萬</b></td><td>★★★★</td><td>★★★★★</td><td>★★★★</td><td>奇岩熱氣球 + 千年人文,涼爽不曬高 CP</td></tr>
+          <tr><td><b>🇨🇭 瑞士</b><br><small>少女峰-策馬特-科莫湖/米蘭</small></td><td>9 月上中旬</td><td>14 天</td><td>13–17 萬</td><td>★★★★★</td><td>★★★</td><td>★★☆</td><td>兩座傳奇雪峰一面義式湖光,涼爽山湖極致</td></tr>
+          <tr><td><b>🇳🇴 挪威</b><br><small>奧斯陸-峽灣-卑爾根-蓋朗厄爾</small></td><td>2027/6 上中旬</td><td>14 天</td><td>13–18 萬</td><td>★★★★★</td><td>★★★★</td><td>★★☆</td><td>峽灣 + 午夜太陽 + 北歐藝術,涼爽免硬走</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px">評級為相對比較;五者皆屬「適度散步、纜車/遊船/景觀火車為主」的低徒步強度。預算為每人自由行經濟–中等粗估。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="color:var(--rose);margin-bottom:8px">🎯 依你們偏好的推薦順序</h3>
+      <p style="font-size:.92rem"><b style="color:var(--rose-deep)">第 1 名 🇮🇹 義大利</b> ── 五國中<b>唯一同時把「頂級人文」與「真正高山湖泊(多洛米提)」一次吃滿</b>的,最貼合「自然+人文並重」。唯一扣分是 9 月下旬非保證全晴(威尼斯偏濕、山區冷鋒),靠基地連住與彈性日可控。</p>
+      <p style="font-size:.92rem;margin-top:8px"><b style="color:var(--rose-deep)">第 2 名 🇬🇷 希臘</b> ── <b>天氣最穩(9 月上旬近乎零雨)</b>,人文滿分、梅特歐拉+納克索斯補足山林。退居第 2 因自然偏乾岩無翠綠湖泊、正午仍曬。若你們把「晴朗」看得比「翠綠」重,可與義大利並列第一。</p>
+      <p style="font-size:.92rem;margin-top:8px"><b style="color:var(--rose-deep)">第 3 名 🇹🇷 土耳其</b> ── 自然+人文均衡、涼爽不曬、<b>預算最低又有直飛</b>。扣分:熱氣球非保證出飛、轉場較多。</p>
+      <p style="font-size:.92rem;margin-top:8px"><b style="color:var(--rose-deep)">第 4 名 🇨🇭 瑞士</b> ── 自然天花板,但高山午後常鎖雲(賭天氣)、人文較單薄、物價最高。</p>
+      <p style="font-size:.92rem;margin-top:8px"><b style="color:var(--rose-deep)">第 5 名 🇳🇴 挪威</b> ── 峽灣與藝術俱佳,但西岸全年多雨(與「要晴朗」衝突最大)、預算最高。</p>
+    </div>
+
+    <div class="card">
+      <h3 style="color:var(--rose);margin-bottom:8px">⚡ 情境式快速收斂</h3>
+      <div class="scenario">最在意「<b>自然與人文真正並重、一趟全包</b>」→ <b>選義大利</b>(代價:接受 9 月底非全程藍天、提前搶票)</div>
+      <div class="scenario">最在意「<b>天氣穩定、幾乎不賭雨</b>」→ <b>選希臘(9 月上旬)</b>(代價:自然偏乾岩、晨昏避正午曬)</div>
+      <div class="scenario">最在意「<b>預算/CP 值、涼爽不曬</b>」→ <b>選土耳其(5 月中下旬)</b>(代價:熱氣球可能取消、轉場多)</div>
+      <div class="scenario">最在意「<b>極致山湖自然、不惜高預算</b>」→ <b>選瑞士</b>(代價:賭高山晴窗、高物價、人文較弱)</div>
+    </div>
+  </section>
+
+  <div class="divider">✦ 以下逐國細看 ✦</div>
+
+  <!-- 義大利 -->
+  <section id="italy">
+    <div class="sec-head"><div class="flag-badge">🇮🇹</div><div><h2>義大利</h2><p class="tagline">頂級文藝復興人文,接上阿爾卑斯高山湖泊 ── 把藝術與山林都吃滿的涼爽蜜月</p></div></div>
+    <div class="card">
+      <div class="banner"><img src="images/it-banner.jpg" alt="多洛米提 Seceda" loading="lazy"><span class="bcap">📍 多洛米提 Seceda 鋸齒峰</span></div>
+      <div class="gallery">
+        <figure><img src="images/it-1.jpg" alt="羅馬競技場" loading="lazy"><figcaption>羅馬競技場</figcaption></figure>
+        <figure><img src="images/it-2.jpg" alt="佛羅倫斯聖母百花" loading="lazy"><figcaption>佛羅倫斯聖母百花</figcaption></figure>
+        <figure><img src="images/it-3.jpg" alt="Lago di Braies" loading="lazy"><figcaption>Lago di Braies 翡翠湖</figcaption></figure>
+        <figure><img src="images/it-4.jpg" alt="威尼斯大運河" loading="lazy"><figcaption>威尼斯大運河</figcaption></figure>
+      </div>
+      <div class="badges"><span class="badge month">🗓 2027/9 下旬(9/18–10/2)</span><span class="badge day">⏱ 14 天 / 13 晚</span><span class="badge cost">💰 每人 11–16 萬</span></div>
+      <div class="route">
+        <svg viewBox="0 0 840 92" width="840" height="92" role="img" aria-label="義大利路線">
+          <line x1="70" y1="34" x2="770" y2="34" stroke="#e7d3a3" stroke-width="4"/>
+          <g fill="#b23a5b"><circle cx="70" cy="34" r="9"/><circle cx="303" cy="34" r="9"/><circle cx="536" cy="34" r="9"/><circle cx="770" cy="34" r="9"/></g>
+          <g font-family="Noto Sans TC" font-size="14" fill="#3c2a2e" text-anchor="middle" font-weight="700">
+            <text x="70" y="64">羅馬</text><text x="303" y="64">佛羅倫斯</text><text x="536" y="64">多洛米提</text><text x="770" y="64">威尼斯</text></g>
+          <g font-family="Noto Sans TC" font-size="11" fill="#6a5358" text-anchor="middle">
+            <text x="70" y="80">3晚·古羅馬梵蒂岡</text><text x="303" y="80">3晚·文藝復興</text><text x="536" y="80">4晚·雪山湖泊</text><text x="770" y="80">2晚·水都</text></g>
+        </svg>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item"><div class="lbl">自然 山林湖泊 <span class="stars">★★★★<span class="off">★</span></span></div><p>多洛米提補滿:Seceda 稜線、Alpe di Siusi 草原、Lago di Braies 翡翠湖,纜車+遊船+緩坡可達。</p></div>
+        <div class="fit-item"><div class="lbl">人文 藝術 <span class="stars">★★★★★</span></div><p>羅馬(梵蒂岡、競技場)+佛羅倫斯(烏菲茲、大衛像)+威尼斯,人文密度全歐頂級。</p></div>
+        <div class="fit-item"><div class="lbl">天氣穩定 <span class="stars">★★★<span class="off">★★</span></span></div><p>9 月下旬乾爽但非保證晴;威尼斯全年最濕、山區月底偶冷鋒。</p></div>
+        <div class="fit-item"><div class="lbl">徒步 適度散步 <span class="stars">★★★★<span class="off">★</span></span></div><p>城市平路、山段纜車+環湖草原緩行,硬走(三峰環線)列為進階可選。</p></div>
+      </div>
+      <div class="mine"><span class="tag">⛅ 天氣誠實提醒</span>9 月下旬整體乾爽但<b>非保證晴朗</b>:威尼斯 9 月最濕(約 9 個雨天)、月底起 acqua alta 高水位機率上升(MOSE 防潮閘已大降淹水);多洛米提月底可能冷鋒帶雨、雪線降至約 1700m。帶薄防水外套,山段預留 1 個彈性天。</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-range">D1–3</div><div class="tl-dot"></div><div class="tl-base">羅馬</div><h4>永恆之城:古羅馬與梵蒂岡</h4>
+          <ul><li>入住歷史中心,傍晚特雷維噴泉、納沃納廣場</li><li>梵蒂岡博物館+西斯汀禮拜堂+聖彼得大教堂(早場票)</li><li>競技場+議事廣場+帕拉提諾丘;波各賽美術館或 Trastevere 老城</li></ul>
+          <div class="tl-tip">💡 梵蒂岡與競技場採時段制、夏秋秒殺,提前 1–2 個月訂;選早場避正午高溫。</div></div>
+        <div class="tl-item"><div class="tl-range">D4–6</div><div class="tl-dot"></div><div class="tl-base">佛羅倫斯</div><h4>文藝復興心臟 + 托斯卡尼鄉間</h4>
+          <ul><li>學院美術館大衛像、米開朗基羅廣場看日落</li><li>烏菲茲美術館、聖母百花大教堂、舊橋</li><li>托斯卡尼一日:Chianti 酒莊或 Siena+San Gimignano</li></ul>
+          <div class="tl-tip">💡 烏菲茲提前約 1 個月、學院美術館約 2 個月預約時段票。</div></div>
+        <div class="tl-item"><div class="tl-range">D7–10</div><div class="tl-dot"></div><div class="tl-base">多洛米提 Val Gardena</div><h4>高山湖泊與草原:自然高潮(涼爽不曬)</h4>
+          <ul><li>入住 Ortisei(住宿附免費 Guest Pass,區內巴士/纜車免費)</li><li>Seceda 纜車直上 2,519m 稜線短環線賞鋸齒峰</li><li>Alpe di Siusi 歐洲最大高山草原緩行</li><li>Lago di Braies 翡翠湖環湖步道+木舟</li></ul>
+          <div class="tl-tip">💡 纜車營運到 11 月初;清晨僅 5–9°C 帶薄羽絨;D10 留彈性備案天。</div></div>
+        <div class="tl-item"><div class="tl-range">D11–12</div><div class="tl-dot"></div><div class="tl-base">威尼斯</div><h4>水都收尾:運河、聖馬可與離島</h4>
+          <ul><li>聖馬可廣場、嘆息橋、運河貢多拉</li><li>Burano 彩色島+Murano 玻璃島;聖馬可大教堂+總督宮</li></ul>
+          <div class="tl-tip">💡 留意 acqua alta 高水位預報,選地勢高的旅館、備防水鞋。</div></div>
+        <div class="tl-item"><div class="tl-range">D13–14</div><div class="tl-dot"></div><div class="tl-base">威尼斯 → 台北</div><h4>返程</h4><ul><li>威尼斯機場搭機(多一轉),抵台</li></ul></div>
+      </div>
+      <h3 style="color:var(--rose);margin:16px 0 4px">✨ 亮點</h3>
+      <div class="hl-grid">
+        <div class="hl"><b>Seceda 稜線(纜車直達 2,519m)</b><span>多洛米提標誌鋸齒峰群,纜車上山短環線即享震撼全景,最少體力最高報酬。</span></div>
+        <div class="hl"><b>Lago di Braies 翡翠湖</b><span>明信片級湖泊,環湖平緩步道+木舟,涼爽零曝曬。</span></div>
+        <div class="hl"><b>梵蒂岡西斯汀禮拜堂</b><span>米開朗基羅穹頂壁畫,文藝復興最高人文殿堂。</span></div>
+        <div class="hl"><b>烏菲茲 + 大衛像</b><span>《維納斯的誕生》與大衛真跡,文藝復興雙高峰。</span></div>
+        <div class="hl"><b>Alpe di Siusi 高山草原</b><span>歐洲最大高山草原,緩坡野餐式散步,涼爽宜人。</span></div>
+        <div class="hl"><b>威尼斯運河與彩色島</b><span>黃昏貢多拉浪漫收尾,人文與色彩的句點。</span></div>
+      </div>
+      <div class="pc">
+        <div class="pros"><h4>優點</h4><ul><li>人文藝術+高山湖泊一趟吃滿,完全命中核心偏好</li><li>9 月下旬涼爽乾爽,多洛米提是天然冷氣</li><li>全程纜車/遊船+平緩步道,不會走成行軍</li><li>城際高鐵串連,多洛米提無車也能玩</li><li>每地 3–4 晚深度節奏,不趕點</li></ul></div>
+        <div class="cons"><h4>要注意</h4><ul><li>非保證晴朗:威尼斯最濕、山區冷鋒,須備彈性天與防水</li><li>梵蒂岡/烏菲茲/山區住宿須提前 1–2 個月訂</li><li>城市段旺季人潮密集,需早場避峰</li><li>多點移動、進出不同機場,行李須輕量化</li></ul></div>
+      </div>
+      <details class="logi"><summary>📋 簽證 · 交通 · 預訂重點</summary><div class="body">台灣護照赴申根 90 天免簽,2027 出發須先線上申請 <b>ETIAS</b>(約 €7),護照建議留 6 個月效期。建議買<b>羅馬進、威尼斯出</b>的 open-jaw 機票。城際高鐵(Frecciarossa/Italo)提前 90–120 天有早鳥票(羅馬→佛羅倫斯可低至 €15–20)。梵蒂岡、競技場、烏菲茲、學院美術館皆時段制旺季秒殺,提前 1–2 個月訂。多洛米提選 Val Gardena/Ortisei 為基地,住宿含 Guest Pass 可免費搭區內交通。</div></details>
+      <div class="verdict">🏆 <b>結論:</b>若你們願意接受 9 月底涼爽但非保證全晴、且需早早預約熱門票券,這條義大利+多洛米提路線就是把人文藝術與高山湖泊一次吃滿、又對怕熱者最友善的深度蜜月最佳解。</div>
+    </div>
+  </section>
+
+  <!-- 希臘 -->
+  <section id="greece">
+    <div class="sec-head"><div class="flag-badge">🇬🇷</div><div><h2>希臘</h2><p class="tagline">古典文明搖籃 + 懸空修道院 + 火山地景 ── 人文藝術、山林岩柱與愛琴海日落一次擁有</p></div></div>
+    <div class="card">
+      <div class="banner"><img src="images/gr-banner.jpg" alt="聖托里尼 Oia" loading="lazy"><span class="bcap">📍 聖托里尼 Oia 藍頂日落</span></div>
+      <div class="gallery">
+        <figure><img src="images/gr-1.jpg" alt="雅典衛城" loading="lazy"><figcaption>雅典衛城帕德嫩</figcaption></figure>
+        <figure><img src="images/gr-2.jpg" alt="梅特歐拉修道院" loading="lazy"><figcaption>梅特歐拉懸空修道院</figcaption></figure>
+        <figure><img src="images/gr-3.jpg" alt="納克索斯 Portara" loading="lazy"><figcaption>納克索斯 Portara</figcaption></figure>
+        <figure><img src="images/gr-4.jpg" alt="聖托里尼破火山口" loading="lazy"><figcaption>聖托里尼破火山口</figcaption></figure>
+      </div>
+      <div class="badges"><span class="badge month">🗓 9 月上旬(9/5–9/20)</span><span class="badge day">⏱ 13–14 天</span><span class="badge cost">💰 每人 11.5–16 萬</span></div>
+      <div class="route">
+        <svg viewBox="0 0 840 92" width="840" height="92" role="img" aria-label="希臘路線">
+          <line x1="70" y1="34" x2="770" y2="34" stroke="#e7d3a3" stroke-width="4"/>
+          <g fill="#b23a5b"><circle cx="70" cy="34" r="9"/><circle cx="303" cy="34" r="9"/><circle cx="536" cy="34" r="9"/><circle cx="770" cy="34" r="9"/></g>
+          <g font-family="Noto Sans TC" font-size="14" fill="#3c2a2e" text-anchor="middle" font-weight="700">
+            <text x="70" y="64">雅典</text><text x="303" y="64">梅特歐拉</text><text x="536" y="64">納克索斯</text><text x="770" y="64">聖托里尼</text></g>
+          <g font-family="Noto Sans TC" font-size="11" fill="#6a5358" text-anchor="middle">
+            <text x="70" y="80">衛城博物館</text><text x="303" y="80">懸空修道院</text><text x="536" y="80">綠意山村</text><text x="770" y="80">火山日落</text></g>
+        </svg>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item"><div class="lbl">自然 <span class="stars">★★★<span class="off">★★</span></span></div><p>梅特歐拉砂岩柱+納克索斯山村橄欖梯田補足山林感;聖托里尼破火山口為地質奇景,但乾燥少綠、無湖泊。</p></div>
+        <div class="fit-item"><div class="lbl">人文 藝術 <span class="stars">★★★★★</span></div><p>衛城、考古博物館、拜占庭懸空修道院、納克索斯威尼斯城堡,濃度極高。</p></div>
+        <div class="fit-item"><div class="lbl">天氣穩定 <span class="stars">★★★★★</span></div><p>9 月上旬降雨近乎零、晴天穩定度最高(此項冠軍);唯正午仍曬。</p></div>
+        <div class="fit-item"><div class="lbl">徒步 適度散步 <span class="stars">★★★★<span class="off">★</span></span></div><p>纜車/遊船/短步道為主;梅特歐拉石階與聖托里尼海崖步道為進階可選。</p></div>
+      </div>
+      <div class="mine"><span class="tag">⛅ 天氣誠實提醒</span>9 月上旬<b>降雨機率近乎零、晴天穩定度完勝其他四國</b> ── 但希臘弱項不是雨而是「<b>乾燥少綠+正午仍曬</b>」:愛琴海島嶼夏末草木枯黃、幾無翠綠湖泊;雅典/聖托里尼正午 28–31°C,需把戶外排晨昏、正午躲室內。</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-range">D1–2</div><div class="tl-dot"></div><div class="tl-base">雅典</div><h4>古典雅典:衛城與博物館</h4>
+          <ul><li>清晨上衛城(帕德嫩神廟)避正午高溫</li><li>衛城博物館、國家考古博物館(正午躲冷氣)</li><li>Plaka 老城、Lycabettus 看日落</li></ul>
+          <div class="tl-tip">💡 衛城線上預約時段票;中午安排室內博物館最舒適。</div></div>
+        <div class="tl-item"><div class="tl-range">D3–4</div><div class="tl-dot"></div><div class="tl-base">梅特歐拉(卡蘭巴卡)</div><h4>懸空修道院:山林與信仰的人文奇景</h4>
+          <ul><li>火車北上卡蘭巴卡(約 4.5–5 小時),小鎮看岩柱夕陽</li><li>導覽參觀大梅特歐拉、瓦爾拉姆等懸空修道院</li><li>Psaropetra 觀景台拍岩柱全景</li></ul>
+          <div class="tl-tip">💡 修道院服裝規定嚴格(過膝、遮肩),門票收現金,各院每週固定休一天。</div></div>
+        <div class="tl-item"><div class="tl-range">D5</div><div class="tl-dot"></div><div class="tl-base">返雅典 → 跳島</div><h4>轉進愛琴海</h4><ul><li>火車返雅典,搭渡輪/隔日早班前往納克索斯</li></ul></div>
+        <div class="tl-item"><div class="tl-range">D6–8</div><div class="tl-dot"></div><div class="tl-base">納克索斯島</div><h4>綠意島嶼:山村、大理石與短步道</h4>
+          <ul><li>老城威尼斯城堡 Kastro、地標「阿波羅之門」看日落</li><li>內陸山村 Halki、Apiranthos 大理石村、橄欖梯田</li><li>Plaka/Agios Prokopios 海灘戲水納涼</li></ul>
+          <div class="tl-tip">💡 納克索斯是基克拉澤斯少見的「綠、有山、農業豐饒」島,物價親民、人潮少。</div></div>
+        <div class="tl-item"><div class="tl-range">D9–11</div><div class="tl-dot"></div><div class="tl-base">聖托里尼</div><h4>破火山口、日落與蜜月儀式</h4>
+          <ul><li>Oia 藍頂教堂與全球聞名日落</li><li>遊船遊破火山口、溫泉海域</li><li>Akrotiri 史前遺址(愛琴海的龐貝)補人文</li></ul>
+          <div class="tl-tip">💡 賣的是火山地景與氛圍而非山林;戶外排晨昏、正午回房。</div></div>
+        <div class="tl-item"><div class="tl-range">D12–14</div><div class="tl-dot"></div><div class="tl-base">聖托里尼 → 雅典 → 台北</div><h4>返程</h4><ul><li>國內線返雅典(約 45 分),補購伴手禮後返台</li></ul></div>
+      </div>
+      <h3 style="color:var(--rose);margin:16px 0 4px">✨ 亮點</h3>
+      <div class="hl-grid">
+        <div class="hl"><b>梅特歐拉懸空修道院</b><span>砂岩柱頂的拜占庭修道院,同時滿足山林壯景與深厚人文,最補足「自然+藝術並重」。</span></div>
+        <div class="hl"><b>雅典衛城與三大博物館</b><span>帕德嫩神廟,人文濃度頂級,正午可躲冷氣避暑。</span></div>
+        <div class="hl"><b>納克索斯內陸山村</b><span>綠意山村與橄欖梯田,基克拉澤斯少見的綠與山,人潮少。</span></div>
+        <div class="hl"><b>聖托里尼破火山口與 Oia 日落</b><span>世界級火山地景與蜜月經典日落,儀式感滿分。</span></div>
+        <div class="hl"><b>破火山口遊船 + Akrotiri</b><span>船遊火山口溫泉海域,加「愛琴海龐貝」古文明。</span></div>
+        <div class="hl"><b>9 月初穩定晴天</b><span>幾乎零降雨、Meltemi 減弱、價格回落、暑假人潮已散。</span></div>
+      </div>
+      <div class="pc">
+        <div class="pros"><h4>優點</h4><ul><li>天氣穩定度極高,不必像中歐/英倫那樣賭天氣</li><li>人文藝術含量頂級,深度探索者很充實</li><li>梅特歐拉+納克索斯補足山林短板</li><li>避暑安排到位:博物館排正午、戶外排晨昏</li><li>9 月淡季價格回落 30–50%</li></ul></div>
+        <div class="cons"><h4>要注意</h4><ul><li>自然弱項「乾燥少綠」,幾無翠綠湖泊</li><li>9 月初仍偏熱,正午 28–31°C 戶外時段受限</li><li>Meltemi 起風時高速船顛簸偶停航,跳島留緩衝</li><li>聖托里尼相對擁擠、物價高,Oia 日落需卡位</li><li>多段交通,移動日較多</li></ul></div>
+      </div>
+      <details class="logi"><summary>📋 簽證 · 交通 · 預訂重點</summary><div class="body">2027 起入境申根需先線上申請 <b>ETIAS</b>(約 €7,效期 3 年),護照留 6 個月效期。雅典↔梅特歐拉走 Hellenic Train 城際火車(官網提前訂)。跳島渡輪旺季熱門,提前 1–2 個月於 Ferryhopper 訂(Blue Star 較平穩、SeaJets 較快但顛簸);雅典↔聖托里尼回程建議搭國內線(約 45 分)。需提前訂:衛城時段票、聖托里尼 caldera view 房與日落餐廳、破火山口遊船、梅特歐拉導覽。修道院門票收現金。</div></details>
+      <div class="verdict">🏆 <b>結論:</b>如果你們願意接受「希臘自然=岩石火山與山村、而非翠綠湖泊」這個取捨,這條路線能在 9 月初用幾乎零雨的穩定晴天,把頂級人文與壯闊地景一次收齊,是怕熱又要充實深度者最務實的希臘蜜月。</div>
+    </div>
+  </section>
+
+  <!-- 土耳其 -->
+  <section id="turkey">
+    <div class="sec-head"><div class="flag-badge">🇹🇷</div><div><h2>土耳其</h2><p class="tagline">奇岩熱氣球的晨光、兩洲交會的千年人文 ── 自然與藝術並重的涼爽蜜月(高 CP)</p></div></div>
+    <div class="card">
+      <div class="banner"><img src="images/tr-banner.jpg" alt="卡帕多奇亞熱氣球" loading="lazy"><span class="bcap">📍 卡帕多奇亞日出熱氣球</span></div>
+      <div class="gallery">
+        <figure><img src="images/tr-1.jpg" alt="聖索菲亞" loading="lazy"><figcaption>伊斯坦堡聖索菲亞</figcaption></figure>
+        <figure><img src="images/tr-2.jpg" alt="棉堡梯田" loading="lazy"><figcaption>棉堡石灰華梯田</figcaption></figure>
+        <figure><img src="images/tr-3.jpg" alt="以弗所圖書館" loading="lazy"><figcaption>以弗所賽爾瑟斯圖書館</figcaption></figure>
+        <figure><img src="images/tr-4.jpg" alt="博斯普魯斯海峽" loading="lazy"><figcaption>博斯普魯斯海峽</figcaption></figure>
+      </div>
+      <div class="badges"><span class="badge month">🗓 2027/5 中下旬(5/12–5/28)</span><span class="badge day">⏱ 13–15 天</span><span class="badge cost">💰 每人 7.5–11.5 萬(最省)</span></div>
+      <div class="route">
+        <svg viewBox="0 0 840 92" width="840" height="92" role="img" aria-label="土耳其路線">
+          <line x1="70" y1="34" x2="770" y2="34" stroke="#e7d3a3" stroke-width="4"/>
+          <g fill="#b23a5b"><circle cx="70" cy="34" r="9"/><circle cx="303" cy="34" r="9"/><circle cx="536" cy="34" r="9"/><circle cx="770" cy="34" r="9"/></g>
+          <g font-family="Noto Sans TC" font-size="14" fill="#3c2a2e" text-anchor="middle" font-weight="700">
+            <text x="70" y="64">伊斯坦堡</text><text x="303" y="64">卡帕多奇亞</text><text x="536" y="64">以弗所</text><text x="770" y="64">棉堡</text></g>
+          <g font-family="Noto Sans TC" font-size="11" fill="#6a5358" text-anchor="middle">
+            <text x="70" y="80">千年人文</text><text x="303" y="80">熱氣球奇岩</text><text x="536" y="80">羅馬古城</text><text x="770" y="80">石灰華梯田</text></g>
+        </svg>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item"><div class="lbl">自然 地景 <span class="stars">★★★★<span class="off">★</span></span></div><p>卡帕多奇亞奇岩谷地、熱氣球俯瞰、棉堡白色梯田,地景奇景密度高(無湖泊綠林)。</p></div>
+        <div class="fit-item"><div class="lbl">人文 藝術 <span class="stars">★★★★★</span></div><p>伊斯坦堡(聖索菲亞、藍色清真寺、皇宮)與以弗所古城,兩洲千年厚度十足。</p></div>
+        <div class="fit-item"><div class="lbl">天氣穩定 <span class="stars">★★★★<span class="off">★</span></span></div><p>5 月中下旬最乾爽;但熱氣球 85–95% 出飛、春季偶午後陣雨、棉堡陰天打折。</p></div>
+        <div class="fit-item"><div class="lbl">徒步 適度散步 <span class="stars">★★★★<span class="off">★</span></span></div><p>舊城步行集中、紅線觀景台短步道、梯田赤腳緩走;峽谷與地下城窄梯為進階可選。</p></div>
+      </div>
+      <div class="mine"><span class="tag">⛅ 天氣誠實提醒</span>5 月中下旬是最穩定晴朗的時段(伊斯坦堡全年最乾爽);但<b>熱氣球並非 100% 保證出飛(約 85–95%)</b>,仍可能因風取消,務必排「備飛日」;土耳其春季仍有零星午後陣雨與多風日,棉堡梯田遇陰天白度與倒影會打折。</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-range">D2–4</div><div class="tl-dot"></div><div class="tl-base">伊斯坦堡</div><h4>千年人文・兩洲交會</h4>
+          <ul><li>聖索菲亞、藍色清真寺、地下水宮殿</li><li>托普卡匹皇宮與後宮、考古博物館</li><li>大巴扎與香料市集;博斯普魯斯黃昏遊船(海風涼爽)</li></ul>
+          <div class="tl-tip">💡 清真寺需脫鞋、女性備頭巾;旺季建議線上購票或 Museum Pass。</div></div>
+        <div class="tl-item"><div class="tl-range">D5–7</div><div class="tl-dot"></div><div class="tl-base">卡帕多奇亞</div><h4>破曉熱氣球・紅線奇岩</h4>
+          <ul><li>清晨熱氣球俯瞰仙人煙囪谷地日出(約 1 小時)</li><li>紅線:格雷梅露天博物館岩洞教堂、帕夏貝仙人煙囪</li><li>綠線:地下城、烏奇沙城堡、玫瑰谷日落</li></ul>
+          <div class="tl-tip">💡 熱氣球提前 6–12 週訂並排卡帕首日,後一天當備飛日;住洞穴旅館。</div></div>
+        <div class="tl-item"><div class="tl-range">D9</div><div class="tl-dot"></div><div class="tl-base">塞爾丘克 / 以弗所</div><h4>古典文明・以弗所古城</h4>
+          <ul><li>以弗所古城(賽爾瑟斯圖書館、大劇場、大理石街道)</li><li>聖母瑪利亞之家、錫林傑山村酒鄉</li></ul>
+          <div class="tl-tip">💡 以弗所遮蔭少,8–10 點早入場避正午曝曬。</div></div>
+        <div class="tl-item"><div class="tl-range">D10–11</div><div class="tl-dot"></div><div class="tl-base">棉堡(帕慕卡萊)</div><h4>白色梯田・溫泉古城</h4>
+          <ul><li>石灰華白色梯田赤腳緩走(傍晚人少光柔)</li><li>希拉波利斯古城、克麗奧佩脫拉古溫泉池</li></ul>
+          <div class="tl-tip">💡 梯田僅能赤腳進入,選清晨或近黃昏;陰天白度會打折。</div></div>
+        <div class="tl-item"><div class="tl-range">D13–14</div><div class="tl-dot"></div><div class="tl-base">伊茲密爾/伊斯坦堡 → 台北</div><h4>歸途</h4><ul><li>土航多經伊斯坦堡轉機直飛桃園(約 12 小時)</li></ul></div>
+      </div>
+      <h3 style="color:var(--rose);margin:16px 0 4px">✨ 亮點</h3>
+      <div class="hl-grid">
+        <div class="hl"><b>卡帕多奇亞日出熱氣球</b><span>破曉時數百顆熱氣球漂浮於奇岩谷地,最具蜜月儀式感、毫不費體力。</span></div>
+        <div class="hl"><b>聖索菲亞與藍色清真寺</b><span>拜占庭與鄂圖曼藝術巔峰,步行即可串連。</span></div>
+        <div class="hl"><b>博斯普魯斯黃昏遊船</b><span>涼爽海風中橫跨歐亞兩洲,看清真寺剪影與夕陽。</span></div>
+        <div class="hl"><b>棉堡白色石灰華梯田</b><span>如雪如雲的天然溫泉梯田,赤腳緩走加古溫泉池。</span></div>
+        <div class="hl"><b>以弗所古城</b><span>地中海保存最完整的羅馬古城之一,人文控大呼過癮。</span></div>
+        <div class="hl"><b>卡帕洞穴旅館</b><span>住進岩石雕鑿的洞穴套房,露台正對熱氣球升空。</span></div>
+      </div>
+      <div class="pc">
+        <div class="pros"><h4>優點</h4><ul><li>自然奇景與千年人文兼具,充實深度</li><li>5 月中下旬涼爽乾爽,熱氣球/遊船在晨昏</li><li>纜車觀景台、遊船、短步道為主,硬走可選</li><li><b>高 CP 值,花費明顯低於西歐</b></li><li>台北有直飛伊斯坦堡(土航),轉場少</li></ul></div>
+        <div class="cons"><h4>要注意</h4><ul><li>熱氣球非保證出飛(85–95%),需備飛日</li><li>春季偶午後陣雨、棉堡陰天打折</li><li>幅員大,2 段國內線+數段拉車,轉場較多</li><li>以弗所/棉堡遮蔭少,須嚴守清晨入場</li><li>旺季熱門景點排隊長,須線上購票</li></ul></div>
+      </div>
+      <details class="logi"><summary>📋 簽證 · 交通 · 預訂重點</summary><div class="body">台灣護照需辦<b>土耳其電子簽 e-Visa</b>(官網 evisa.gov.tr,數分鐘填寫、2–3 工作天核發,多次入境每次停留 30 天);<b>非申根、不需 ETIAS</b>。護照入境後須留 6 個月效期。境內跨區以國內線最省時(土航/Pegasus,Pegasus 廉航需加購行李);以弗所–棉堡段建議包車。熱氣球務必提前 6–12 週訂(旺季每人約 €200–300)並排卡帕首日。里拉貶值快,建議帶歐元/美元當地兌換、刷卡為主。</div></details>
+      <div class="verdict">🏆 <b>結論:</b>若你們願意接受「多一點轉場與不保證出飛的熱氣球」,換來自然奇景與千年人文並重、涼爽不曬又高 CP 值的深度蜜月,5 月中下旬的土耳其是極佳之選;想要極致定點慵懶或天氣百分百保證者則不適合。</div>
+    </div>
+  </section>
+
+  <!-- 瑞士 -->
+  <section id="swiss">
+    <div class="sec-head"><div class="flag-badge">🇨🇭</div><div><h2>瑞士 + 義北</h2><p class="tagline">兩座傳奇雪峰、一面義式湖光 ── 以纜車齒軌與遊船串起涼爽、充實的山湖蜜月</p></div></div>
+    <div class="card">
+      <div class="banner"><img src="images/ch-banner.jpg" alt="馬特洪峰" loading="lazy"><span class="bcap">📍 策馬特馬特洪峰晴空</span></div>
+      <div class="gallery">
+        <figure><img src="images/ch-1.jpg" alt="少女峰" loading="lazy"><figcaption>少女峰冰雪觀景台</figcaption></figure>
+        <figure><img src="images/ch-2.jpg" alt="Bachalpsee 鏡湖" loading="lazy"><figcaption>Bachalpsee 鏡湖</figcaption></figure>
+        <figure><img src="images/ch-3.jpg" alt="科莫湖貝拉吉歐" loading="lazy"><figcaption>科莫湖貝拉吉歐</figcaption></figure>
+        <figure><img src="images/ch-4.jpg" alt="琉森卡貝爾廊橋" loading="lazy"><figcaption>琉森卡貝爾廊橋</figcaption></figure>
+      </div>
+      <div class="badges"><span class="badge month">🗓 9 月上中旬(9/3–9/18)</span><span class="badge day">⏱ 14 天 / 13 晚</span><span class="badge cost">💰 每人 13–17 萬</span></div>
+      <div class="route">
+        <svg viewBox="0 0 870 92" width="870" height="92" role="img" aria-label="瑞士路線">
+          <line x1="65" y1="34" x2="805" y2="34" stroke="#e7d3a3" stroke-width="4"/>
+          <g fill="#b23a5b"><circle cx="65" cy="34" r="8"/><circle cx="250" cy="34" r="8"/><circle cx="435" cy="34" r="8"/><circle cx="620" cy="34" r="8"/><circle cx="805" cy="34" r="8"/></g>
+          <g font-family="Noto Sans TC" font-size="13" fill="#3c2a2e" text-anchor="middle" font-weight="700">
+            <text x="65" y="62">琉森</text><text x="250" y="62">少女峰區</text><text x="435" y="62">策馬特</text><text x="620" y="62">科莫湖</text><text x="805" y="62">米蘭</text></g>
+          <g font-family="Noto Sans TC" font-size="10.5" fill="#6a5358" text-anchor="middle">
+            <text x="65" y="78">湖城暖身</text><text x="250" y="78">少女峰</text><text x="435" y="78">馬特洪峰</text><text x="620" y="78">義式湖光</text><text x="805" y="78">最後的晚餐</text></g>
+        </svg>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item"><div class="lbl">自然 山林湖泊 <span class="stars">★★★★★</span></div><p>少女峰、馬特洪峰兩大雪峰加科莫湖,山林湖泊一次滿足,自然體驗五國天花板。</p></div>
+        <div class="fit-item"><div class="lbl">人文 藝術 <span class="stars">★★★<span class="off">★★</span></span></div><p>琉森老城、米蘭主教座堂與《最後的晚餐》補足,湖區小鎮兼義式風情(人文較單薄)。</p></div>
+        <div class="fit-item"><div class="lbl">天氣穩定 <span class="stars">★★<span class="off">★★★</span></span></div><p>9 月初較清澈,但高海拔觀景台午後常起雲鎖霧,「看不看得到峰頂」要碰運氣。</p></div>
+        <div class="fit-item"><div class="lbl">徒步 適度散步 <span class="stars">★★★★<span class="off">★</span></span></div><p>纜車、齒軌、遊船與短步道為主;鏡湖健行為進階可選。</p></div>
+      </div>
+      <div class="mine"><span class="tag">⛅ 天氣誠實提醒(這是瑞士最大變數)</span>9 月初是全年較清澈時段,但<b>阿爾卑斯高海拔觀景台午後常起雲鎖霧,可能上山看不到峰頂</b>(屬無法控制的風險)。策馬特 9 月濕度常 90%+、低地降雨日約三到四成。對策:<b>連住 3–4 晚「賭多次晴窗」、每地預留彈性日、觀景台早上先衝</b>(晴窗多在上午)。</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-range">D1–2</div><div class="tl-dot"></div><div class="tl-base">蘇黎世 / 琉森</div><h4>抵達落地、湖城暖身</h4>
+          <ul><li>取 Swiss Travel Pass,轉往琉森:卡貝爾廊橋、獅子紀念碑</li><li>遊船遊琉森湖;可選皮拉圖斯山齒軌+纜車</li></ul>
+          <div class="tl-tip">💡 落地當天別排登山,先適應 7 小時時差。</div></div>
+        <div class="tl-item"><div class="tl-range">D3–6</div><div class="tl-dot"></div><div class="tl-base">格林德瓦(少女峰區)</div><h4>雪峰與花草高原</h4>
+          <ul><li>Eiger Express 纜車轉登少女峰「歐洲屋脊」Jungfraujoch</li><li>First 纜車賞艾格北壁,走平緩 Bachalpsee 湖步道</li><li>勞特布魯能瀑布山谷、雪朗峰 360 度展望</li></ul>
+          <div class="tl-tip">💡 把上少女峰排在 D3–6 中天氣最好的一天,保留 1 天彈性。</div></div>
+        <div class="tl-item"><div class="tl-range">D7</div><div class="tl-dot"></div><div class="tl-base">移動日</div><h4>冰川快車穿越阿爾卑斯</h4>
+          <ul><li>冰川快車全景車窗前往策馬特,沿途萊茵峽谷、高山隘口</li></ul>
+          <div class="tl-tip">💡 冰川快車「全員強制訂位」,最早提前 93 天訂;可只搭精華段省時。</div></div>
+        <div class="tl-item"><div class="tl-range">D8–10</div><div class="tl-dot"></div><div class="tl-base">策馬特(馬特洪峰)</div><h4>馬特洪峰多角度展望</h4>
+          <ul><li>戈爾內格拉特齒軌列車賞馬特洪峰正面與冰河全景</li><li>馬特洪冰川天堂(歐洲最高纜車站 3,883m)</li><li>Stellisee 鏡湖映馬特洪(適度散步)</li></ul>
+          <div class="tl-tip">💡 馬特洪峰愛戴雲帽,清晨最清楚;連住三晚「賭多次晴窗」。</div></div>
+        <div class="tl-item"><div class="tl-range">D11–12</div><div class="tl-dot"></div><div class="tl-base">科莫湖</div><h4>跨入義北、湖畔義式慢遊</h4>
+          <ul><li>渡輪串遊瓦倫納—貝拉吉歐—梅納焦「湖區三角」</li><li>貝拉吉歐山城巷弄、別墅花園</li></ul>
+          <div class="tl-tip">💡 科莫湖屬義大利(同申根),與瑞士段同趟無另簽。</div></div>
+        <div class="tl-item"><div class="tl-range">D13–14</div><div class="tl-dot"></div><div class="tl-base">米蘭 → 返台</div><h4>人文藝術收尾</h4>
+          <ul><li>達文西《最後的晚餐》、米蘭主教座堂登頂、艾曼紐迴廊</li></ul>
+          <div class="tl-tip">💡《最後的晚餐》每季分批放票、常 48 小時內售罄,提前 2–3 個月搶。</div></div>
+      </div>
+      <h3 style="color:var(--rose);margin:16px 0 4px">✨ 亮點</h3>
+      <div class="hl-grid">
+        <div class="hl"><b>少女峰「歐洲屋脊」</b><span>齒軌列車直上 3,454m 冰雪世界,無需健行即可站上阿爾卑斯心臟。</span></div>
+        <div class="hl"><b>馬特洪峰戈爾內格拉特展望</b><span>齒軌輕鬆抵達,正面欣賞最具辨識度的金字塔雪峰。</span></div>
+        <div class="hl"><b>冰川快車 Glacier Express</b><span>全景車廂 8 小時穿越阿爾卑斯,移動本身就是浪漫。</span></div>
+        <div class="hl"><b>Bachalpsee / Stellisee 鏡湖</b><span>平緩短步道即達,雪峰倒映湖面,自然系必拍。</span></div>
+        <div class="hl"><b>科莫湖渡輪慢遊</b><span>瓦倫納—貝拉吉歐義式湖畔小鎮,從雪峰切換到溫柔湖光。</span></div>
+        <div class="hl"><b>米蘭《最後的晚餐》</b><span>近距離面對達文西真跡,為山湖之旅補上人文重量。</span></div>
+      </div>
+      <div class="pc">
+        <div class="pros"><h4>優點</h4><ul><li>涼爽不曝曬,9 月初白天約 12–16°C 體感舒適</li><li>雙雪峰+科莫湖,自然體驗五國天花板</li><li>幾乎全程纜車/齒軌/遊船,徒步壓力低</li><li>瑞義同屬申根,一趟一次入境;STP 一票打通</li><li>基地式連住,賭多次晴窗降低遺憾</li></ul></div>
+        <div class="cons"><h4>要注意</h4><ul><li><b>高海拔觀景台午後常鎖雲,看不到峰頂的風險高</b></li><li>策馬特濕度高、低地降雨日約三到四成,需彈性日</li><li><b>物價最高</b>:住宿/登山鐵道補票/餐飲都貴</li><li>名額緊張:最後的晚餐、冰川快車須早訂</li><li>無直飛,來回含轉機 30 小時以上</li></ul></div>
+      </div>
+      <details class="logi"><summary>📋 簽證 · 交通 · 預訂重點</summary><div class="body">瑞士+義大利全程申根,90 天免簽,2027 須先申請 <b>ETIAS</b>,護照留 6 個月效期。建議購 <b>Swiss Travel Pass 15 天二等</b>(涵蓋火車/巴士/遊船/市內交通,少女峰約 25% 折、多座觀景台 5 折)。需提前訂:冰川快車(強制訂位,提前 93 天)、米蘭《最後的晚餐》(提前 2–3 個月、週一休)、策馬特與格林德瓦旺季住宿(3–4 個月前)。無直飛,經杜拜/伊斯坦堡/法蘭克福轉機。備防水外套與保暖中層(觀景台 3000m+ 可能 0°C)。</div></details>
+      <div class="verdict">🏆 <b>結論:</b>想要涼爽、充實、自然與人文兼得的山湖蜜月,這條雙雪峰+科莫湖路線幾乎完美;唯一無法掌控的是高山天氣,願意用「連住多晚、預留彈性日」去賭晴窗、並接受瑞士高物價的新人,會玩得最盡興。</div>
+    </div>
+  </section>
+
+  <!-- 挪威 -->
+  <section id="norway">
+    <div class="sec-head"><div class="flag-badge">🇳🇴</div><div><h2>挪威</h2><p class="tagline">峽灣、午夜太陽與北歐藝術 ── 為怕熱靈魂打造的涼爽深度蜜月</p></div></div>
+    <div class="card">
+      <div class="banner"><img src="images/no-banner.jpg" alt="蓋朗厄爾峽灣" loading="lazy"><span class="bcap">📍 蓋朗厄爾峽灣壯闊全景</span></div>
+      <div class="gallery">
+        <figure><img src="images/no-1.jpg" alt="弗洛姆鐵路" loading="lazy"><figcaption>弗洛姆高山鐵路</figcaption></figure>
+        <figure><img src="images/no-2.jpg" alt="卑爾根布呂根" loading="lazy"><figcaption>卑爾根布呂根木屋</figcaption></figure>
+        <figure><img src="images/no-3.jpg" alt="奧斯陸歌劇院" loading="lazy"><figcaption>奧斯陸歌劇院</figcaption></figure>
+        <figure><img src="images/no-4.jpg" alt="羅浮敦 Reine" loading="lazy"><figcaption>羅浮敦 Reine 漁村</figcaption></figure>
+      </div>
+      <div class="badges"><span class="badge month">🗓 2027/6 上中旬(6/5–6/20)</span><span class="badge day">⏱ 14 天</span><span class="badge cost">💰 每人 13–18 萬</span></div>
+      <div class="route">
+        <svg viewBox="0 0 870 92" width="870" height="92" role="img" aria-label="挪威路線">
+          <line x1="65" y1="34" x2="805" y2="34" stroke="#e7d3a3" stroke-width="4"/>
+          <g fill="#b23a5b"><circle cx="65" cy="34" r="8"/><circle cx="250" cy="34" r="8"/><circle cx="435" cy="34" r="8"/><circle cx="620" cy="34" r="8"/><circle cx="805" cy="34" r="8"/></g>
+          <g font-family="Noto Sans TC" font-size="13" fill="#3c2a2e" text-anchor="middle" font-weight="700">
+            <text x="65" y="62">奧斯陸</text><text x="250" y="62">弗洛姆峽灣</text><text x="435" y="62">卑爾根</text><text x="620" y="62">蓋朗厄爾</text><text x="805" y="62">羅浮敦*</text></g>
+          <g font-family="Noto Sans TC" font-size="10.5" fill="#6a5358" text-anchor="middle">
+            <text x="65" y="78">北歐藝術</text><text x="250" y="78">齒軌+遊船</text><text x="435" y="78">世遺木屋</text><text x="620" y="78">皇冠峽灣</text><text x="805" y="78">進階可選</text></g>
+        </svg>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item"><div class="lbl">自然 峽灣 <span class="stars">★★★★★</span></div><p>松恩/納柔依/蓋朗厄爾三大峽灣、瀑布、雪峰,搭遊船與齒軌火車就能飽覽。</p></div>
+        <div class="fit-item"><div class="lbl">人文 藝術 <span class="stars">★★★★<span class="off">★</span></span></div><p>孟克《吶喊》、維格蘭雕塑公園、卑爾根布呂根世遺、葛利格故居,藝術與自然並重。</p></div>
+        <div class="fit-item"><div class="lbl">天氣穩定 <span class="stars">★★<span class="off">★★★</span></span></div><p>西岸全年多雨(卑爾根年降 2,500mm),6 月相對較乾但仍可能遇雨、崖頂鎖霧。</p></div>
+        <div class="fit-item"><div class="lbl">徒步 適度散步 <span class="stars">★★★★<span class="off">★</span></span></div><p>景觀火車、齒軌、遊船、纜車與短步道為主;Lofoten 陡升步道為進階可選。</p></div>
+      </div>
+      <div class="mine"><span class="tag">⛅ 天氣誠實提醒(挪威最大變數)</span>西岸<b>全年多雨,卑爾根年降雨約 2,500mm,是歐洲最多雨城市之一</b>;6 月雖相對較乾,仍可能一天晴一天雨、峽灣崖頂清晨易鎖霧。內陸峽灣(Flåm、Geiranger)較沿海乾爽。請務必接受「可能遇雨」的心理準備,別期待地中海式連晴。優點是 6 月白晝長、正午不酷曬,對怕熱者極友善。</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-range">D1–3</div><div class="tl-dot"></div><div class="tl-base">奧斯陸</div><h4>北歐藝術與峽灣首都</h4>
+          <ul><li>孟克美術館看《吶喊》、國家博物館</li><li>維格蘭雕塑公園(免費,逾 200 件雕塑)</li><li>歌劇院屋頂步道、Aker Brygge 海濱</li></ul>
+          <div class="tl-tip">💡 買 Oslo Pass 含交通與多數博物館;先把峽灣火車+遊船與 Lofoten 國內線訂妥。</div></div>
+        <div class="tl-item"><div class="tl-range">D4</div><div class="tl-dot"></div><div class="tl-base">火車移動日</div><h4>挪威縮影:景觀火車+齒軌火車</h4>
+          <ul><li>卑爾根線景觀火車穿越哈丹格高原至米達爾</li><li>轉乘弗洛姆高山齒軌火車(Flåmsbana)下行,沿途瀑布峽谷</li></ul>
+          <div class="tl-tip">💡 齒軌火車旺季常售罄,提前 4–8 週訂位;靠右側景觀較佳。</div></div>
+        <div class="tl-item"><div class="tl-range">D5</div><div class="tl-dot"></div><div class="tl-base">弗洛姆</div><h4>納柔依峽灣世遺遊船</h4>
+          <ul><li>電動遊船穿越最窄最戲劇的世遺峽灣段</li><li>可選 Stegastein 觀景台眺望松恩峽灣</li></ul>
+          <div class="tl-tip">💡 遊船甲板風大且涼,務必帶防風防水外套。</div></div>
+        <div class="tl-item"><div class="tl-range">D6–8</div><div class="tl-dot"></div><div class="tl-base">卑爾根</div><h4>七山之城:世遺木屋與作曲家故鄉</h4>
+          <ul><li>布呂根漢薩同盟世遺彩色木屋區與魚市場</li><li>Fløibanen 纜車登 Fløyen 山,山頂短步道與市景</li><li>葛利格故居午間音樂會、KODE 藝術博物館群</li></ul>
+          <div class="tl-tip">💡 把室內博物館排在預報下雨日,晴天衝纜車與峽灣。</div></div>
+        <div class="tl-item"><div class="tl-range">D9–11</div><div class="tl-dot"></div><div class="tl-base">蓋朗厄爾峽灣(經 Ålesund)</div><h4>皇冠級峽灣與新藝術之城</h4>
+          <ul><li>新藝術風格海港城 Ålesund,登 Aksla 山觀景</li><li>世遺景觀渡輪飽覽七姊妹瀑布</li><li>Dalsnibba 觀景台(1,500m)俯瞰峽灣全景</li></ul>
+          <div class="tl-tip">💡 Dalsnibba 與山頂清晨易鎖霧,挑當日預報較佳時段上山。</div></div>
+        <div class="tl-item"><div class="tl-range">D12–14</div><div class="tl-dot"></div><div class="tl-base">羅浮敦群島(進階可選)/ 返程</div><h4>午夜太陽下的北極峽灣群島</h4>
+          <ul><li>Reine、Hamnøy 紅色漁村與尖峰倒影(經典明信片)</li><li>6 月午夜太陽:午夜仍可在海灘看不落的太陽</li><li>(可改在卑爾根/奧斯陸多留並加峽灣緩衝日)</li></ul>
+          <div class="tl-tip">💡 Lofoten 從卑爾根無直飛,需經 Oslo 或 Bodø 轉機;體力/預算有限可割捨。</div></div>
+      </div>
+      <h3 style="color:var(--rose);margin:16px 0 4px">✨ 亮點</h3>
+      <div class="hl-grid">
+        <div class="hl"><b>弗洛姆齒軌火車 Flåmsbana</b><span>世界級景觀鐵道,免硬走就穿越瀑布峽谷。</span></div>
+        <div class="hl"><b>納柔依峽灣世遺遊船</b><span>最窄最壯麗的松恩峽灣支臂,電動船安靜環保。</span></div>
+        <div class="hl"><b>孟克美術館《吶喊》</b><span>挪威藝術靈魂,人文線最重磅,雨天也能盡興。</span></div>
+        <div class="hl"><b>卑爾根纜車與布呂根世遺</b><span>纜車輕鬆登頂俯瞰七山之城,世遺彩色木屋。</span></div>
+        <div class="hl"><b>蓋朗厄爾峽灣與七姊妹瀑布</b><span>挪威皇冠級峽灣,景觀渡輪+Dalsnibba 一覽無遺。</span></div>
+        <div class="hl"><b>6 月午夜太陽</b><span>白晝超長、正午不酷曬,對怕熱新人是天賜節奏。</span></div>
+      </div>
+      <div class="pc">
+        <div class="pros"><h4>優點</h4><ul><li>涼爽夏季+午夜太陽,完全避開酷暑與正午曝曬</li><li>三大峽灣+北歐藝術真正並重</li><li>全程景觀火車/齒軌/遊船/纜車,適度散步即可</li><li>白晝長,單日可塞更多體驗,深度充實</li><li>簽證簡單:免申根簽,僅需 ETIAS</li></ul></div>
+        <div class="cons"><h4>要注意</h4><ul><li><b>西岸全年多雨,與「要晴朗」訴求衝突最大</b></li><li><b>物價極高(全球前段班)</b>,餐食住宿燒錢</li><li>Lofoten 無直飛,需轉機,時間長</li><li>旺季景觀火車與遊船易售罄,須提前 4–8 週訂</li></ul></div>
+      </div>
+      <details class="logi"><summary>📋 簽證 · 交通 · 預訂重點</summary><div class="body">台灣護照赴挪威(申根)90 天免簽,2027 須先線上申請 <b>ETIAS</b>(約 €7),護照留 6 個月效期,切勿透過第三方代辦。挪威縮影(景觀火車+Flåm 齒軌+納柔依峽灣遊船)於 norwaysbest.com/fjordtours.com 購,旺季提前 4–8 週訂。Lofoten 由 SAS/Widerøe 經 Oslo 或 Bodø 轉機。Oslo Pass 含交通與多數博物館。挪威克朗 NOK,刷卡普及幾乎免帶現金。務必備防風防水外套、雨傘與防水鞋。</div></details>
+      <div class="verdict">🏆 <b>結論:</b>如果你們願意用較高預算換取涼爽、白晝超長且自然與藝術兼得的深度蜜月,並能坦然接受西岸「可能遇雨、峽灣偶鎖霧」的天氣賭注,這份以火車+遊船+纜車為骨幹、幾乎免硬走的挪威 14 天行程,正是為怕熱、愛充實的你們量身打造。</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="script">Pick your adventure</span>
+  <p>看完五份行程,告訴我你們心動哪一個(或想調整天數、組合、預算),我就幫你們鎖定出發月份、回推 2027 登記日,並做更細的每日行程與訂房清單 💕</p>
+  <p style="font-size:.8rem;color:#c0b3b6;margin-top:10px">行程經 workflow 上網查證(天氣、簽證 ETIAS/e-Visa、票券、預算);天氣評估誠實標示風險。預算為每人行情區間,以實際報價為準。更新於 2026.05.30</p>
+  <p style="font-size:.72rem;color:#c8bbbe;margin-top:6px">照片來源:Wikimedia Commons 與 Flickr(CC 授權),僅供個人規劃參考。</p>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
+<script>
+  const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
+  addEventListener('scroll',()=>{const h=document.documentElement;const s=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(s*100)+'%';backtop.classList.toggle('show',h.scrollTop>500)});
+  backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  const links=[...document.querySelectorAll('#navlinks a')],map={};
+  links.forEach(a=>{const id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)map[id]=a});
+  Object.keys(map).forEach(id=>{const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map[id].classList.add('active');map[id].scrollIntoView({block:'nearest',inline:'center'})}}),{rootMargin:'-40% 0px -55% 0px'});o.observe(document.getElementById(id))});
+</script>
+</body>
+</html>

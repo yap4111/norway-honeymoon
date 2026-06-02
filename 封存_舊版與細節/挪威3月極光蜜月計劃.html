@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>挪威 3 月雪地極光蜜月計劃 · 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush:#f6dfe6;--blush-soft:#fbeef1;
+    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --aurora:#3f9d82;--night:#16213a;
+    --shadow:0 10px 40px -18px rgba(20,30,60,.45);--shadow-sm:0 6px 22px -14px rgba(20,30,60,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
+  .script{font-family:"Dancing Script",cursive;font-weight:700}
+  #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--aurora),var(--gold));z-index:120;transition:width .1s}
+  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 18px}
+  .nav-brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--rose);white-space:nowrap;font-size:1rem}
+  .nav-links{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.86rem;white-space:nowrap;padding:6px 10px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
+  .nav-links a.active{background:var(--night);color:#cfe}
+
+  header.hero{position:relative;min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 60px;color:#fff;overflow:hidden}
+  header.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,38,.45),rgba(12,20,42,.78)),url('images/nor-aurora.jpg') center/cover;z-index:-2}
+  .hero .eyebrow{font-family:"Dancing Script",cursive;color:#8fe3c6;font-size:2rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .hero h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;letter-spacing:2px;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+  .hero .sub{margin-top:14px;max-width:660px;font-size:clamp(1rem,2.4vw,1.2rem);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .hero .meta{margin-top:22px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+  .hpill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);padding:7px 15px;border-radius:30px;font-size:.85rem}
+  .hpill b{color:#8fe3c6}
+  .hero .back{margin-top:18px;color:#fff;text-decoration:none;font-size:.85rem;border:1px solid rgba(255,255,255,.4);padding:7px 16px;border-radius:30px}
+
+  main{max-width:1040px;margin:0 auto;padding:30px 18px 70px}
+  section{padding:30px 0;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+  .sec-ico{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--night),var(--aurora));color:#fff;font-size:1.2rem;box-shadow:var(--shadow-sm)}
+  .sec-head h2{font-size:clamp(1.4rem,4vw,1.9rem);color:var(--rose-deep)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm);margin-bottom:16px}
+  .card h3{color:var(--rose);font-size:1.12rem;margin:2px 0 8px}
+  p,li{font-size:.95rem}
+  ul.clean{list-style:none}ul.clean li{position:relative;padding-left:22px;margin:6px 0}
+  ul.clean li::before{content:"❄";position:absolute;left:0;color:var(--aurora);font-size:.85rem;top:3px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:4px 0 8px}
+  @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery figure{margin:0;border-radius:12px;overflow:hidden;background:#dfe6ee;box-shadow:var(--shadow-sm)}
+  .gallery img{width:100%;height:130px;object-fit:cover;display:block;transition:.35s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery figcaption{font-size:.72rem;color:var(--ink-soft);padding:5px 6px;text-align:center}
+
+  table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);margin:8px 0}
+  thead th{background:linear-gradient(135deg,var(--night),#2c4a63);color:#fff;padding:9px 9px;text-align:left;font-weight:500;font-size:.8rem}
+  td{padding:8px 9px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#f4f7fa}
+  td b,td strong{color:var(--rose)}
+  .scroll-x{overflow-x:auto}
+  .day td:first-child{white-space:nowrap;font-weight:700;color:var(--night)}
+  .aurora-cell{color:var(--aurora);font-weight:600}
+
+  .note{background:#eef6f3;border:1px solid #cfe7df;border-left:5px solid var(--aurora);border-radius:12px;padding:13px 16px;margin:12px 0;font-size:.9rem}
+  .note .tag{font-weight:700;color:var(--aurora);display:block;margin-bottom:3px}
+  .warn{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:12px;padding:13px 16px;margin:12px 0;font-size:.9rem}
+  .warn .tag{font-weight:700;color:var(--rose);display:block;margin-bottom:3px}
+  .gold{background:#fbf6ec;border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:12px;padding:13px 16px;margin:12px 0;font-size:.9rem}
+  .gold .tag{font-weight:700;color:#a9842f;display:block;margin-bottom:3px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+  .chip{background:#eef6f3;color:var(--aurora);border:1px solid #cfe7df;padding:5px 12px;border-radius:20px;font-size:.82rem}
+  .pick{display:inline-block;background:var(--aurora);color:#fff;font-size:.72rem;padding:2px 9px;border-radius:20px;margin-left:6px;vertical-align:middle}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0;color:var(--aurora)}
+  .divider::before,.divider::after{content:"";height:1px;width:80px;background:linear-gradient(90deg,transparent,#bfe0d6)}
+  .divider::after{background:linear-gradient(90deg,#bfe0d6,transparent)}
+  footer{text-align:center;padding:46px 20px 70px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
+  footer .script{font-size:2rem;color:var(--aurora);display:block}
+  .backtop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .backtop.show{opacity:1;pointer-events:auto}
+  @media print{nav,#progress,.backtop{display:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-inner">
+  <span class="nav-brand">🌌 挪威極光蜜月</span>
+  <div class="nav-links" id="navlinks">
+    <a href="#overview">總覽</a>
+    <a href="#days">逐日</a>
+    <a href="#aurora">極光攻略</a>
+    <a href="#drive">自駕/船</a>
+    <a href="#stay">漁村住宿</a>
+    <a href="#wedding">登記婚假</a>
+    <a href="#booking">訂票時程</a>
+    <a href="#budget">預算</a>
+    <a href="#pack">打包/檢查</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">Chasing the Northern Lights</div>
+  <h1>挪威 3 月雪地極光蜜月</h1>
+  <p class="sub">2027 年 3 月 · 奧斯陸 → 特羅姆瑟追極光 → 羅弗敦自駕住漁村紅木屋 ── 一趟雪峰、極光與紅色 rorbuer 的北極圈蜜月。</p>
+  <div class="meta">
+    <span class="hpill">🗓 <b>2027 年 3 月</b></span>
+    <span class="hpill">❄ 雪 + 極光(無午夜太陽)</span>
+    <span class="hpill">⏱ <b>14–16 天</b></span>
+    <span class="hpill">💰 每人 <b>12–20 萬</b></span>
+  </div>
+  <a class="back" href="五國蜜月行程.html">← 回到五國比較</a>
+</header>
+
+<main>
+
+  <!-- 總覽 -->
+  <section id="overview">
+    <div class="sec-head"><div class="sec-ico">🧭</div><div><h2>行程總覽</h2><p style="color:var(--ink-soft);font-size:.9rem">先登記 → 用婚假蜜月 → 返台再宴客</p></div></div>
+    <div class="gallery">
+      <figure><img src="images/nor-tromso-aurora.jpg" alt="Tromsø 極光" loading="lazy"><figcaption>Tromsø 追極光</figcaption></figure>
+      <figure><img src="images/nor-reine-winter.jpg" alt="Reine 雪景" loading="lazy"><figcaption>Reine 雪峰漁村</figcaption></figure>
+      <figure><img src="images/nor-rorbuer.jpg" alt="rorbuer 紅木屋" loading="lazy"><figcaption>rorbuer 紅木屋</figcaption></figure>
+      <figure><img src="images/nor-husky.jpg" alt="哈士奇雪橇" loading="lazy"><figcaption>哈士奇雪橇</figcaption></figure>
+      <figure><img src="images/nor-cathedral.jpg" alt="Tromsø 北極大教堂" loading="lazy"><figcaption>Tromsø 北極大教堂</figcaption></figure>
+    </div>
+    <div class="card">
+      <p>🟢 <b>核心 14 天</b>:奧斯陸人文 2 晚 → <b>Tromsø 衝極光 3 晚</b>(雪橇+極光團+極光遊船)→ <b>Lofoten 自駕住 rorbuer 6 晚</b>(漁村+海鵰遊船+追極光)→ 回奧斯陸出境。</p>
+      <p style="margin-top:6px">🟢 <b>從容 16 天(推薦蜜月)</b>:同骨架,奧斯陸 +1、Tromsø +1、Lofoten +1,步調最舒服。</p>
+      <div class="note"><span class="tag">💡 我的建議:Lofoten 與 Tromsø 兩地都去</span>Lofoten 是你們指定的主場(自駕、交通船、住 rorbuer、漁村雪景),但島鏈狹長多雲、極光靠運氣;<b>Tromsø 腹地大、嚮導團「追雲」成功率高,是極光勝率的保險場</b>。配置:Lofoten 5–6 晚(景觀為主、極光當 bonus)+ Tromsø 3 晚(主攻極光跟團),兩地天氣互為保險。</div>
+      <div class="grid2">
+        <div class="gold"><span class="tag">3 月會得到什麼(誠實說)</span>看得到<b>雪</b>、看得到<b>極光</b>;<b>看不到午夜太陽</b>(那是 5–7 月夏季限定)。3 月仍是雪季、春分前後地磁活躍,極光「機率體質」比深冬更好;白晝約 9.5–14 小時,白天自駕看雪景、晚上仍有暗夜等極光。</div>
+        <div class="warn"><span class="tag">⚠ 「不要太冷」必須老實修正</span>3 月不是「不冷」。Tromsø 均高約 −2°C、低約 −7°C;Lofoten 靠海較溫和(高約 3°C、低約 1°C)但風大、融凍路滑。「沿海溫和」只是相對深冬,<b>請當真冬天打包</b>。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 逐日 -->
+  <section id="days">
+    <div class="sec-head"><div class="sec-ico">📅</div><div><h2>逐日行程(核心 14 天)</h2><p style="color:var(--ink-soft);font-size:.9rem">Lofoten 用飛機進出比渡輪可靠;冬季渡輪當「想體驗才搭的單程觀光」</p></div></div>
+    <div class="card scroll-x">
+      <table class="day">
+        <thead><tr><th>天</th><th>基地</th><th>日間</th><th>夜間極光</th><th>壞天備案</th></tr></thead>
+        <tbody>
+          <tr><td>D1</td><td>機上→奧斯陸</td><td>台北轉機飛 OSL(約 13–16h),入住市中心</td><td class="aurora-cell">調時差(緯度低機率低)</td><td>—</td></tr>
+          <tr><td>D2</td><td>奧斯陸</td><td>孟克美術館《吶喊》+ 維格蘭雕塑公園(雪中更美)</td><td class="aurora-cell">—</td><td>國家博物館、歌劇院屋頂</td></tr>
+          <tr><td>D3</td><td>奧斯陸→Tromsø</td><td>午後飛 OSL→TOS(約 2h),入住市區</td><td class="aurora-cell">抵達晚若晴,市區暗處自看</td><td>Polaria 極地館、北極大教堂</td></tr>
+          <tr><td>D4</td><td>Tromsø</td><td>哈士奇雪橇駕駛(半日)</td><td class="aurora-cell">極光追逐巴士團(嚮導追晴空)</td><td>極光團本身即備案</td></tr>
+          <tr><td>D5</td><td>Tromsø</td><td>Fjellheisen 纜車看雪景(⚠️施工,出發前查;否則改馴鹿+薩米團)</td><td class="aurora-cell">電動極光遊船(海上避光害、暖艙)</td><td>遊船改隔晚;極地博物館</td></tr>
+          <tr><td>D6</td><td>Tromsø→Lofoten</td><td>飛 TOS→BOO 轉 Widerøe→SVJ/LKN,取車(釘胎),入住 Svolvær rorbuer</td><td class="aurora-cell">漁村光害少,木屋外等</td><td>Lofoten 戰爭紀念館</td></tr>
+          <tr><td>D7</td><td>Lofoten 東</td><td>E10 自駕 Svolvær→Henningsvær(藝廊咖啡),雪峰+海短散步</td><td class="aurora-cell">無光害灣邊守候</td><td>Henningsvær 藝廊、冰酒吧</td></tr>
+          <tr><td>D8</td><td>Lofoten 中</td><td>Leknes→Ramberg/Flakstad 雪白沙灘、Nusfjord 古漁村</td><td class="aurora-cell">Reine 一帶守候</td><td>Nusfjord 室內導覽</td></tr>
+          <tr><td>D9</td><td>Reine/Hamnøy</td><td>入住 Eliassen Rorbuer(經典紅木屋),自駕 Reine、Å 終點村</td><td class="aurora-cell">Reinefjorden 邊極光+靜水倒影</td><td>Å 漁村博物館</td></tr>
+          <tr><td>D10</td><td>Lofoten</td><td><b>冬季 Trollfjord 海鵰 safari</b>(冬季限定亮點)</td><td class="aurora-cell">木屋外守候</td><td>船停→Lofotr 維京博物館</td></tr>
+          <tr><td>D11</td><td>Lofoten(緩衝)</td><td>補拍雪景、漁村咖啡、泡澡放空</td><td class="aurora-cell">最後一搏極光</td><td>全日彈性</td></tr>
+          <tr><td>D12</td><td>Lofoten→奧斯陸</td><td>還車,飛 SVJ/LKN→BOO→OSL</td><td class="aurora-cell">—</td><td>移動日</td></tr>
+          <tr><td>D13</td><td>奧斯陸</td><td>補逛人文、Aker Brygge、採買</td><td class="aurora-cell">—</td><td>全室內博物館</td></tr>
+          <tr><td>D14</td><td>奧斯陸→台北</td><td>飛回程(轉機)</td><td class="aurora-cell">—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="tag">🟢 從容 16 天(推薦)</span>在上面基礎加 3 晚:奧斯陸 +1(比格半島維京船/Fram 極地船博物館)、Tromsø +1(再賭一次極光+SPA)、Lofoten +1(從容日)。Lofoten 自駕住 rorbuer 段變 D8–D13。</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 極光攻略 -->
+  <section id="aurora">
+    <div class="sec-head"><div class="sec-ico">🌌</div><div><h2>極光攻略</h2><p style="color:var(--ink-soft);font-size:.9rem">看到是賺到,看不到也享受雪地漁村蜜月</p></div></div>
+    <div class="card">
+      <ul class="clean">
+        <li><b>KP 指數</b>:Tromsø 與 Lofoten 都在極光帶正下方,<b>KP ≥ 2 頭頂就可能出現</b>,不必等大爆發。</li>
+        <li><b>最佳時段</b>:約 21:00–02:00(22:00–凌晨 2 點巔峰);挑新月前後最黑。</li>
+        <li><b>雲是最大敵人</b>:「KP 1 的晴空完勝 KP 8 的滿天雲」── 選地點、選夜晚、是否跟團,核心都是「去找沒雲的天空」。</li>
+        <li><b>為何多留幾晚</b>:任一夜「晴空×有極光」約 40–50%;3 晚看到一次約 75%、4 晚約 83%。本計劃兩地合計 <b>8–9 晚暗夜</b>就是為此。</li>
+      </ul>
+      <div class="grid2">
+        <div class="note"><span class="tag">追極光:自己等 vs 跟團</span><b>Tromsø 強烈建議跟嚮導團</b>(幫你追到沒雲處,避免冬季半夜自駕追光的暗冰/封橋風險);<b>Lofoten 以木屋外/海灘自己等為主</b>(漁村光害低),視天氣加報團。</div>
+        <div class="gold"><span class="tag">極光名點</span><b>Lofoten</b>:Uttakleiv、Haukland、Skagsanden、Reine(靜水倒影)。<br><b>Tromsø</b>:Kvaløya 鯨魚島、Ersfjordbotn、Sommarøy。</div>
+      </div>
+      <div class="warn"><span class="tag">⚠ 誠實聲明</span>極光看不看得到,<b>沒有任何人能保證</b>。跟團也只是大幅提高機率、不是包看到。請以「看到是賺到」的心態出發。</div>
+    </div>
+  </section>
+
+  <!-- 自駕/船 -->
+  <section id="drive">
+    <div class="sec-head"><div class="sec-ico">🚗</div><div><h2>冬季自駕 + 交通船</h2></div></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>❄ 雪地自駕安全</h3>
+        <ul class="clean">
+          <li>Nordland 釘胎合法期 10/16–4/30。租車冬季<b>標配冬胎/釘胎、通常不另收費</b>;沿海融凍路滑<b>建議釘胎</b>;不需 4×4。訂車後 email 確認「studded tires included」。</li>
+          <li>E10 路況一天內乾→黑冰→積雪快變;有常態鏟雪,暴雪天當局會公告勿出門。<b>行程排鬆不趕。</b></li>
+          <li>夜駕極累 ── <b>自駕只留白天與好天的夜晚</b>,長途/暴雪夜交給嚮導團。停正式停車格、勿擋鏟雪車。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>⛴ 交通船(願望:搭船)</h3>
+        <ul class="clean">
+          <li><b>Trollfjord 巨魔峽灣 + 海鵰 safari 冬季有開</b>(冬季正是看白尾海鵰最佳期):Trollfjord Cruise & Eagle Safari 全年每日約 1,250 NOK;<b>Brim Explorer 靜音電動暖艙約 1,490 NOK(怕冷首選)</b>。</li>
+          <li><b>Bodø↔Moskenes 載車渡輪</b>冬季照開但<b>停航風險高</b>(風 >18m/s 易取消)。蜜月建議「飛進+當地租車」,渡輪當備案或捨棄。</li>
+          <li>Tromsø 段 Brim Explorer 峽灣/極光遊船(約 1,190–1,490 NOK)。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn"><span class="tag">⚠ 3 月停駛/夏季限定</span>蓋朗厄爾峽灣觀光船、午夜太陽、夏季峽灣健行登山全為夏季限定。Reine↔Vindstad 交通船冬季照開但班次少、週六停、須前一天電話預訂(+47 994 91 805);其接的 Bunes 海灘步道 3 月有雪崩/結冰風險屬硬核<b>不建議走</b>(純搭船看雪景峽灣就值得)。</div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 住宿 -->
+  <section id="stay">
+    <div class="sec-head"><div class="sec-ico">🏠</div><div><h2>漁村 rorbuer 住宿</h2><p style="color:var(--ink-soft);font-size:.9rem">紅色漁夫小木屋(暖氣足、多附廚房)── 務必選面海房</p></div></div>
+    <div class="card">
+      <div class="chips"><span class="chip">經濟 NOK 1,500–2,500</span><span class="chip">中階 2,500–4,000</span><span class="chip">高階面海 4,000+</span></div>
+      <div class="scroll-x">
+      <table>
+        <thead><tr><th>漁村</th><th>民宿</th><th>價位</th><th>特色</th></tr></thead>
+        <tbody>
+          <tr><td>Hamnøy</td><td><b>Eliassen Rorbuer</b><span class="pick">面海最推</span></td><td>中</td><td>最經典明信片紅木屋,選 Waterfront Superior/Deluxe</td></tr>
+          <tr><td>Reine</td><td><b>Reine Rorbuer</b><span class="pick">北向極光佳</span></td><td>中–高</td><td>黃木屋 + 1700 年代餐廳</td></tr>
+          <tr><td>Reine</td><td>Reinefjorden Sjøhus</td><td>中–高</td><td>大落地窗框峽灣、新桑拿</td></tr>
+          <tr><td>Sakrisøy</td><td>Sakrisøy Rorbuer</td><td>低–中</td><td>1874 家族黃色歷史木屋</td></tr>
+          <tr><td>Nusfjord</td><td>Nusfjord Arctic Resort</td><td>高</td><td>UNESCO 古漁村精品度假村、spa 望海</td></tr>
+          <tr><td>Svolvær</td><td>Svinøya Rorbuer</td><td>中</td><td>傳統木屋 + 1828 倉庫餐廳,交通方便</td></tr>
+          <tr><td>Ballstad</td><td>Hattvika Lodge<span class="pick">躺床看極光</span></td><td>中–高</td><td>Hillside 全景窗</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note"><span class="tag">🛏 住宿組合(Lofoten 5–6 晚為主)</span><b>浪漫均衡(推薦)</b>:Lofoten 前段 Svinøya 1–2 晚 + 後段 Eliassen/Reine 4 晚 + Tromsø 市區 2 晚 + Camp Tamok 極光小屋 1 晚(郊外晴夜多、極光機率高)。</div>
+      <div class="gold"><span class="tag">⏰ 提前訂期(最該早訂的一項)</span>rorbuer 冬季是第二旺季、Reine/Hamnøy 常早滿。2027/3 出發 → <b>2026 年 10–11 月、最遲年底前訂面海房</b>(官網 booking.rorbuer.no)。</div>
+    </div>
+  </section>
+
+  <!-- 登記婚假 -->
+  <section id="wedding">
+    <div class="sec-head"><div class="sec-ico">💍</div><div><h2>2027 登記日回推 + 婚假</h2></div></div>
+    <div class="card">
+      <p><b>法規</b>:勞工婚假 8 日、工資照給,以<b>結婚登記日</b>起算;<b>只算工作日</b>(週末/國定假日不扣);自登記日前 10 日起、登記後 3 個月內請畢(雇主同意得延至 1 年內)。</p>
+      <h3 style="margin-top:12px">建議登記吉日(2027 丁未羊年雙春年,民俗視嫁娶大吉)</h3>
+      <div class="scroll-x">
+      <table>
+        <thead><tr><th>國曆</th><th>星期</th><th>沖煞</th><th>評語</th></tr></thead>
+        <tbody>
+          <tr><td>2/20</td><td>六</td><td>沖鼠</td><td>週末,長輩易到場</td></tr>
+          <tr><td>2/26</td><td>五</td><td>沖馬</td><td>接週末、距出發約 8 天,從容</td></tr>
+          <tr><td><b>3/5</b></td><td><b>五</b></td><td>沖雞</td><td><b>接週末、距出發僅 1 天,儀式感最濃,推薦</b></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note"><span class="tag">🗓 假單範例(16 天連假,只動婚假8+特休2)</span>3/6(六)出發 → 3/8–3/12 婚假1–5 → 週末免扣 → 3/15–3/17 婚假6–8 → 3/18–3/19 特休 → 週末返抵台。<br><b>14–16 天連假 = 婚假 8 + 特休 2~4 天</b>(純婚假最長約 12 天)。卡點多在公司排班,請先與 HR <b>書面確認</b>「婚假鋪兩週+特休同週核給」。</div>
+      <p style="font-size:.85rem;color:var(--ink-soft)">註:結婚日不可沖到新郎/新娘生肖(其次避雙方父母);屬羊者 2027 本命年傳統建議謹慎。逐日吉日請以正式農民曆/擇日師確認。純登記無擇日限制,可挑 3/5 或紀念日。</p>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 訂票時程 -->
+  <section id="booking">
+    <div class="sec-head"><div class="sec-ico">📋</div><div><h2>訂票/訂房時程表</h2><p style="color:var(--ink-soft);font-size:.9rem">以出發 2027/3/6 回推</p></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>項目</th><th>建議提前</th><th>平台</th></tr></thead>
+        <tbody>
+          <tr><td>檢查/換發護照</td><td>即刻</td><td>外交部領務局(離境後效期 ≥3 個月、10 年內核發)</td></tr>
+          <tr><td>國際機票 台北⇄Oslo</td><td>4–8 個月</td><td>Skyscanner / Google Flights / 官網</td></tr>
+          <tr><td><b>Lofoten rorbuer(最該早訂)</b></td><td><b>4–6 個月</b>(經典海景更早)</td><td>booking.rorbuer.no</td></tr>
+          <tr><td>國內線 OSL↔TOS、TOS→BOO→SVJ/LKN</td><td>3–6 個月</td><td>flysas.com、wideroe.no(Bodø 留轉機緩衝)</td></tr>
+          <tr><td>Lofoten 租車(指定釘胎)</td><td>2–4 個月</td><td>在地租車行 / Discover Cars</td></tr>
+          <tr><td>極光團/雪橇/Trollfjord 海鵰/極光遊船</td><td>1–3 個月</td><td>GetYourGuide、trollfjordcruise.com、brimexplorer.com</td></tr>
+          <tr><td>ETIAS / 旅平險 / 國際駕照</td><td>1–2 個月</td><td>官方 ETIAS、保險、監理站</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 預算 -->
+  <section id="budget">
+    <div class="sec-head"><div class="sec-ico">💰</div><div><h2>每人預算明細</h2><p style="color:var(--ink-soft);font-size:.9rem">台幣,14 天;2 人共住一房一車對半</p></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>項目</th><th>每人(TWD)</th></tr></thead>
+        <tbody>
+          <tr><td>國際機票(經濟艙轉機)</td><td>35,000–55,000</td></tr>
+          <tr><td>國內線(約 4–5 段含 Widerøe)</td><td>9,000–16,000</td></tr>
+          <tr><td>住宿(約 11 晚/2 人分攤,含面海 rorbuer)</td><td>30,000–48,000</td></tr>
+          <tr><td>租車(Lofoten 約 6 天含釘胎/2 人分攤)</td><td>5,500–10,000</td></tr>
+          <tr><td>活動團(極光巴士+極光遊船+雪橇+海鵰)</td><td>9,000–14,000</td></tr>
+          <tr><td>門票(孟克、纜車、Fram/維京;維格蘭免費)</td><td>1,500–2,500</td></tr>
+          <tr><td>餐食(物價高,自炊省錢)</td><td>18,000–28,000</td></tr>
+          <tr><td>雜支(接駁、油費、SIM、裝備、紀念品、ETIAS)</td><td>6,000–10,000</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="tag">💵 總額</span>每人 14 天:精打細算約 <b>12.4 萬</b> / 舒適蜜月約 <b>18.3 萬</b> / 旺季高點 <b>20 萬+</b>。<b>2 人合計約 25–40 萬</b>;16 天版每人再 +1.8–2.8 萬。3 月機票/租車比夏季便宜,但極光季 rorbuer 與冬季活動把錢吃回去,<b>整體與夏季相近或略高</b>。</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 打包/檢查 -->
+  <section id="pack">
+    <div class="sec-head"><div class="sec-ico">🎒</div><div><h2>打包 · ETIAS · 行前檢查</h2></div></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>🧥 北極圈 3 月打包(洋蔥式分層)</h3>
+        <div class="chips">
+          <span class="chip">美麗諾底層×2</span><span class="chip">刷毛/羽絨中層</span><span class="chip">防風防水外層+雪褲</span><span class="chip">厚帽/脖圍/面罩</span><span class="chip">防風手套+薄內手套</span><span class="chip">厚羊毛襪×2-3</span><span class="chip">防滑雪靴+冰爪</span><span class="chip">相機腳架</span><span class="chip">備用電池(貼身)</span><span class="chip">紅光頭燈</span><span class="chip">暖暖包</span><span class="chip">保溫瓶</span><span class="chip">Type C/F 轉接頭</span>
+        </div>
+        <p style="font-size:.85rem;color:var(--ink-soft)">不需要極地級裝備或 4×4(一般車+釘胎即可)。rorbuer 多有廚房,可帶少量泡麵/調理包省餐費。</p>
+      </div>
+      <div class="card">
+        <h3>🛂 ETIAS / 護照</h3>
+        <ul class="clean">
+          <li><b>ETIAS</b>:預計 2026 Q4 啟用,有過渡期,約 2027 年底才全面強制。2027/3 你<b>理論可免,但強烈建議照辦</b>(€20、線上、效期 3 年)。</li>
+          <li><b>護照</b>:申根免簽(180 天內 90 天);離開申根當日須效期 ≥3 個月且 10 年內核發。<b>現在就檢查兩本護照</b>。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h3>✅ 行前最終檢查</h3>
+      <ul class="clean">
+        <li>兩本護照效期 OK → ETIAS 核准 + 旅平險(冬季航班/渡輪延誤風險高)+ 國際駕照</li>
+        <li>結婚登記完成(2/26 或 3/5)+ HR 書面核假(婚假鋪兩週+特休)</li>
+        <li>國際+國內線開票(Bodø 留轉機緩衝)、rorbuer 面海房 + 租車「含釘胎」書面確認</li>
+        <li>極光團/雪橇/Trollfjord 海鵰/極光遊船訂單與集合資訊</li>
+        <li><b>出發前再查兩個時效項</b>:① Fjellheisen 纜車 2027/3 是否載客 ② Lofoten 冬季渡輪/Reinefjorden 交通船時刻</li>
+        <li>離線地圖 + 極光 App(KP/雲量)+ Torghatten 渡輪資訊;海外刷卡開通、保暖裝備打包完成</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="script">Under the Northern Lights</span>
+  <p style="max-width:600px;margin:6px auto">極光無法保證 ── 本計劃用「兩地分散 + 多留暗夜 + Tromsø 跟團追雲」把機率最大化,以「看到是賺到」的心態出發。冬季渡輪可能停航、E10 可能封路、纜車營運待確認,行程已留緩衝,請保持彈性。祝新婚快樂、極光爆棚!🌌</p>
+  <p style="font-size:.78rem;color:#a9b7c0;margin-top:12px">計劃經 workflow 上網查證(航班/渡輪/極光季/ETIAS/婚假法規);金額為行情區間、以實際報價為準。照片來源:Flickr(CC 授權),僅供個人規劃參考。更新於 2026.05.31</p>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
+<script>
+  const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
+  addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';backtop.classList.toggle('show',h.scrollTop>600)});
+  backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  const links=[...document.querySelectorAll('#navlinks a')],map={};
+  links.forEach(a=>{const id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)map[id]=a});
+  Object.keys(map).forEach(id=>{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map[id].classList.add('active');map[id].scrollIntoView({block:'nearest',inline:'center'})}}),{rootMargin:'-40% 0px -55% 0px'}).observe(document.getElementById(id))});
+</script>
+</body>
+</html>

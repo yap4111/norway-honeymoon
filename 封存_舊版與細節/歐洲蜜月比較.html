@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歐洲蜜月選擇比較 · 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6f1;--cream-2:#fff9f5;--rose:#b23a5b;--rose-deep:#892a44;
+    --blush:#f6dfe6;--blush-soft:#fbeef1;--gold:#c9a24b;--gold-soft:#e7d3a3;
+    --sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --best:#6fa86b;--ok:#e6c454;--avoid:#e7bcc6;
+    --shadow:0 10px 40px -18px rgba(138,42,68,.35);--shadow-sm:0 6px 22px -14px rgba(138,42,68,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:20px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
+  .script{font-family:"Dancing Script",cursive;font-weight:700}
+  header.hero{text-align:center;padding:70px 20px 40px;background:radial-gradient(1000px 460px at 50% -10%,var(--blush-soft),transparent 60%),var(--cream);position:relative}
+  .hero .eyebrow{font-family:"Dancing Script",cursive;color:var(--gold);font-size:1.9rem}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.2rem);color:var(--rose-deep);font-weight:900;letter-spacing:1px;margin-top:4px}
+  .hero .sub{margin-top:12px;color:var(--ink-soft);max-width:640px;margin-left:auto;margin-right:auto;font-size:1.05rem}
+  .hero .back{display:inline-block;margin-top:18px;color:var(--rose);text-decoration:none;font-size:.9rem;border:1px solid var(--line);padding:7px 16px;border-radius:30px;background:#fff}
+  .hero .back:hover{background:var(--blush-soft)}
+  main{max-width:1080px;margin:0 auto;padding:20px 18px 80px}
+  section{padding:38px 0}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .sec-ico{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;font-size:1.3rem;box-shadow:var(--shadow-sm)}
+  .sec-head h2{font-size:clamp(1.4rem,4vw,1.9rem);color:var(--rose-deep)}
+  .sec-head p{color:var(--ink-soft);font-size:.9rem}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm);margin-bottom:16px}
+  .note{background:#f6f7f2;border:1px solid #dde6d8;border-left:5px solid var(--sage);border-radius:14px;padding:14px 18px;margin:14px 0;font-size:.92rem}
+  .note .tag{font-weight:700;color:var(--sage);margin-bottom:4px;display:block}
+  .mine{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:14px;padding:14px 18px;margin:14px 0;font-size:.92rem}
+  .mine .tag{font-weight:700;color:var(--rose);margin-bottom:4px;display:block}
+  .fix{background:#fbf6ec;border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:14px;padding:14px 18px;margin:14px 0;font-size:.92rem}
+  .fix .tag{font-weight:700;color:#a9842f;margin-bottom:4px;display:block}
+
+  /* heatmap */
+  .heat-wrap{overflow-x:auto}
+  table.heat{border-collapse:separate;border-spacing:3px;width:100%;min-width:760px;font-size:.82rem}
+  table.heat th{font-weight:500;color:var(--ink-soft);padding:4px;font-size:.8rem}
+  table.heat th.dest{text-align:left;white-space:nowrap;color:var(--ink);font-weight:700;font-family:"Noto Serif TC",serif}
+  table.heat td{text-align:center;border-radius:6px;height:30px;color:#fff;font-weight:700;font-size:.72rem;cursor:default}
+  td.b{background:var(--best)}
+  td.o{background:var(--ok);color:#6b5618}
+  td.x{background:var(--avoid);color:#9c5a6c}
+  td.star{box-shadow:inset 0 0 0 2px var(--rose-deep)}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:.85rem;align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:18px;height:18px;border-radius:5px;display:inline-block}
+
+  /* destination cards */
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+  @media(max-width:780px){.grid{grid-template-columns:1fr}.heat th.dest{font-size:.72rem}}
+  .dest-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-sm);border-top:4px solid var(--gold)}
+  .dest-card.pick{border-top-color:var(--rose);background:linear-gradient(180deg,#fff,#fff8f4)}
+  .dest-card h3{color:var(--rose);font-size:1.18rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .rank{font-family:"Dancing Script",cursive;color:var(--gold);font-size:1.1rem;font-weight:700}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+  .badge{font-size:.76rem;padding:4px 10px;border-radius:20px;font-weight:500;border:1px solid var(--line)}
+  .badge.month{background:#eaf3e8;color:#4d7049;border-color:#cfe3cb}
+  .badge.day{background:var(--blush-soft);color:var(--rose)}
+  .badge.cost{background:#fbf3e2;color:#a9842f}
+  .badge.cp{background:#eef2ea;color:var(--sage)}
+  .dest-card .row{font-size:.9rem;margin:6px 0}
+  .dest-card .row b{color:var(--rose-deep)}
+  .stars{color:var(--gold);letter-spacing:1px;font-size:.85rem}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px 0;color:var(--gold)}
+  .divider::before,.divider::after{content:"";height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--gold-soft))}
+  .divider::after{background:linear-gradient(90deg,var(--gold-soft),transparent)}
+  table.cmp{width:100%;border-collapse:collapse;font-size:.86rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  table.cmp thead th{background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;padding:10px;text-align:left;font-weight:500;font-size:.82rem}
+  table.cmp td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+  table.cmp tbody tr:nth-child(even){background:var(--blush-soft)}
+  .scroll-x{overflow-x:auto}
+  footer{text-align:center;padding:50px 20px 70px;color:var(--ink-soft)}
+  footer .script{font-size:2rem;color:var(--rose);display:block}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Honeymoon in Europe</div>
+  <h1>歐洲蜜月選擇比較</h1>
+  <p class="sub">11 個歐洲長程深度蜜月選項一次攤開比較,搭配「最佳月份月曆」,讓你和女朋友挑出最對味的目的地與出發月份 ── 對應 2027 先登記、再用婚假蜜月的規劃。</p>
+  <a class="back" href="結婚規劃報告.html">← 回到結婚規劃報告</a>
+</header>
+
+<main>
+
+  <!-- 通則 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">🗺</div><div><h2>先看通則:歐洲蜜月「黃金月份」</h2><p>挑對月份,比挑哪個國家更影響體驗與荷包</p></div></div>
+    <div class="card">
+      <ul style="list-style:none">
+        <li style="margin:8px 0">🌸 <b>南歐/中歐(義、法、西、葡、希、克、奧捷匈)的黃金期是「5–6 月」與「9–10 月」兩段肩季</b> ── 天氣好、人潮與團費都低於暑假。</li>
+        <li style="margin:8px 0">🔥 <b>務必避開 7–8 月</b>:酷暑 + 最貴 + 人最多,蜜月品質與預算雙輸。</li>
+        <li style="margin:8px 0">🏔 <b>高緯度/山區邏輯相反</b>:瑞士阿爾卑斯、北歐峽灣、冰島的最佳期反而落在「夏季 6–9 月」(白晝長、設施全開);冰島想兼顧極光則 9 月最妙。</li>
+      </ul>
+      <div class="note"><span class="tag">💡 這跟你們的 2027 規劃怎麼扣?</span>
+        你們是「先登記 → 用婚假蜜月」。<b>蜜月排在哪個月,就回推登記日</b>:想 6 月去 → 4–5 月登記;想 9 月去 → 5–6 月登記(婚假經雇主同意可延到登記日起 1 年內用,時間很有彈性)。下方月曆挑好月份,再對照報告裡的 2027 登記吉日即可。
+      </div>
+    </div>
+  </section>
+
+  <!-- 月曆熱圖 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">📅</div><div><h2>最佳月份月曆熱圖</h2><p>橫向看「同一目的地哪幾月最好」,縱向看「想幾月去有哪些選擇」</p></div></div>
+    <div class="card">
+      <div class="heat-wrap">
+        <table class="heat">
+          <thead>
+            <tr><th class="dest">目的地 \ 月份</th>
+              <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr>
+          </thead>
+          <tbody>
+            <tr><th class="dest">義大利</th><td class="x">避</td><td class="x">避</td><td class="o">可</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="x">熱</td><td class="x">熱</td><td class="b star">佳</td><td class="b">佳</td><td class="o">可</td><td class="x">冷</td></tr>
+            <tr><th class="dest">希臘跳島</th><td class="x">關</td><td class="x">關</td><td class="x">關</td><td class="o">可</td><td class="b">佳</td><td class="b star">佳</td><td class="o">旺</td><td class="o">旺</td><td class="b star">佳</td><td class="o">可</td><td class="x">關</td><td class="x">關</td></tr>
+            <tr><th class="dest">法國</th><td class="x">冷</td><td class="x">冷</td><td class="o">可</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="o">可</td><td class="x">避</td><td class="b star">佳</td><td class="o">可</td><td class="x">冷</td><td class="o">節</td></tr>
+            <tr><th class="dest">西班牙</th><td class="x">冷</td><td class="x">冷</td><td class="o">可</td><td class="b">佳</td><td class="b star">佳</td><td class="o">可</td><td class="x">熱</td><td class="x">熱</td><td class="b">佳</td><td class="b star">佳</td><td class="o">可</td><td class="x">冷</td></tr>
+            <tr><th class="dest">葡萄牙</th><td class="x">冷</td><td class="x">冷</td><td class="o">可</td><td class="b">佳</td><td class="b star">佳</td><td class="o">可</td><td class="o">旺</td><td class="o">旺</td><td class="b star">佳</td><td class="b">佳</td><td class="o">可</td><td class="x">雨</td></tr>
+            <tr><th class="dest">克羅埃西亞</th><td class="x">關</td><td class="x">關</td><td class="x">冷</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="o">旺</td><td class="o">旺</td><td class="b star">佳</td><td class="o">可</td><td class="x">關</td><td class="x">關</td></tr>
+            <tr><th class="dest">奧捷匈(中歐)</th><td class="x">冷</td><td class="x">冷</td><td class="o">可</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="o">旺</td><td class="o">旺</td><td class="b star">佳</td><td class="b">佳</td><td class="o">可</td><td class="o">市集</td></tr>
+            <tr><th class="dest">瑞士阿爾卑斯</th><td class="o">雪</td><td class="o">雪</td><td class="o">雪</td><td class="x">泥</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="b">佳</td><td class="b">佳</td><td class="o">可</td><td class="x">休</td><td class="o">雪</td></tr>
+            <tr><th class="dest">冰島(極光+環島)</th><td class="x">難</td><td class="x">難</td><td class="o">光</td><td class="o">可</td><td class="o">可</td><td class="b">佳</td><td class="b">佳</td><td class="b">佳</td><td class="b star">佳</td><td class="o">可</td><td class="x">難</td><td class="x">難</td></tr>
+            <tr><th class="dest">北歐峽灣</th><td class="o">光</td><td class="o">光</td><td class="o">光</td><td class="x">未</td><td class="o">可</td><td class="b star">佳</td><td class="b">佳</td><td class="b">佳</td><td class="o">可</td><td class="x">冷</td><td class="x">冷</td><td class="o">光</td></tr>
+            <tr><th class="dest">英國/愛爾蘭</th><td class="x">冷</td><td class="x">冷</td><td class="o">可</td><td class="o">可</td><td class="b">佳</td><td class="b star">佳</td><td class="b">佳</td><td class="b">佳</td><td class="o">可</td><td class="o">可</td><td class="x">冷</td><td class="x">冷</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--best)"></i> 佳 = 最推薦(★框=最佳月)</span>
+        <span><i class="sw" style="background:var(--ok)"></i> 可/旺/雪/光 = 可去但有取捨</span>
+        <span><i class="sw" style="background:var(--avoid)"></i> 避/冷/熱/關 = 不推薦</span>
+      </div>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-top:8px">註:「關」=島嶼設施多半歇業;「光」=可追極光的暗季;「雪」=滑雪季(另一種風情);「市集」=耶誕市集;「旺」=旺季人多價高但可去。</p>
+    </div>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- 三大首選 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">💕</div><div><h2>查證後的 3 大首選(長程深度最對味)</h2><p>若想省去比較,直接從這三個挑</p></div></div>
+    <div class="grid">
+      <div class="dest-card pick">
+        <h3>🇮🇹 義大利大環線 <span class="rank">#1 首選</span></h3>
+        <div class="badges"><span class="badge month">最佳 9月下旬(次選5–6月)</span><span class="badge day">12–14 天</span><span class="badge cost">約 9–14 萬/人</span></div>
+        <div class="row"><b>路線:</b>羅馬 → 佛羅倫斯/托斯卡尼 → 威尼斯 → 阿瑪菲海岸或五漁村</div>
+        <div class="row"><b>為何最推:</b>一國深度、浪漫亮點密集;9 月底托斯卡尼葡萄採收季最美、海水仍暖、避開 8 月人潮酷暑。</div>
+        <div class="row stars">浪漫度 ★★★★★ · 好上手 ★★★★☆</div>
+      </div>
+      <div class="dest-card pick">
+        <h3>🇬🇷 希臘:雅典 + 愛琴海跳島 <span class="rank">#2 次選</span></h3>
+        <div class="badges"><span class="badge month">最佳 6月上旬 或 9月</span><span class="badge day">11–13 天</span><span class="badge cost">約 9–13 萬/人</span></div>
+        <div class="row"><b>路線:</b>雅典 → 聖托里尼 → 米克諾斯/納克索斯</div>
+        <div class="row"><b>為何推:</b>經典蜜月聖地,藍白小屋+夕陽。6 月與 9 月避開暑假家庭人潮。</div>
+        <div class="mine" style="margin:8px 0"><span class="tag">⚠ 跳島要注意</span>Meltemi 季風 <b>6–9 月都活躍、7–8 月最強</b>,可能吹停高速船。含跳島與返雅典段,全程預留 1–2 天彈性,別假設 9 月一定平靜。</div>
+        <div class="row stars">浪漫度 ★★★★★ · 好上手 ★★★☆☆</div>
+      </div>
+      <div class="dest-card pick">
+        <h3>🇨🇭 瑞士阿爾卑斯 + 義北 <span class="rank">#3-A</span></h3>
+        <div class="badges"><span class="badge month">最佳 6月下旬–9月</span><span class="badge day">12–14 天</span><span class="badge cost">約 12–18 萬/人</span></div>
+        <div class="row"><b>路線:</b>蘇黎世/琉森 → 少女峰/策馬特 → 米蘭/科莫湖</div>
+        <div class="row"><b>為何推:</b>適合愛山林健行的新人,夏季纜車/步道全開、雪山湖泊絕景。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · 預算偏高 💰💰💰</div>
+      </div>
+      <div class="dest-card pick">
+        <h3>🇮🇸 冰島環島(極光+峽灣)<span class="rank">#3-B</span></h3>
+        <div class="badges"><span class="badge month">最佳 9月(可兼極光)</span><span class="badge day">12–16 天</span><span class="badge cost">約 11–17 萬/人</span></div>
+        <div class="row"><b>路線:</b>雷克雅維克 → 環島一號公路 → 黃金圈/瀑布/冰河湖</div>
+        <div class="row"><b>為何推:</b>夏季 6–8 月午夜太陽但看不到極光;<b>9 月是「可環島+可看極光+人少」的最佳折衷</b>,蜜月最浪漫。</div>
+        <div class="row stars">浪漫度 ★★★★★ · 預算偏高 💰💰💰</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- 其他選項 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">🌍</div><div><h2>其他歐洲選項(一起比較)</h2><p>有的更省、有的更獨特</p></div></div>
+    <div class="grid">
+      <div class="dest-card">
+        <h3>🇫🇷 法國</h3>
+        <div class="badges"><span class="badge month">最佳 5–6月 / 9月</span><span class="badge day">10–14 天</span><span class="badge cost">約 9–14 萬/人</span></div>
+        <div class="row">巴黎 + 普羅旺斯/羅亞爾河城堡/南法蔚藍海岸。薰衣草約 6 月中–7 月中;<b>避開 8 月</b>(巴黎人放空、悶熱)。</div>
+        <div class="row stars">浪漫度 ★★★★★</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇪🇸 西班牙</h3>
+        <div class="badges"><span class="badge month">最佳 4–5月 / 9–10月</span><span class="badge day">10–13 天</span><span class="badge cost">約 7–11 萬/人</span></div>
+        <div class="row">巴塞隆納 + 馬德里 + 安達魯西亞(賽維亞/格拉納達)。內陸 7–8 月酷熱要避;美食與建築一流。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · CP 值高 👍</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇵🇹 葡萄牙</h3>
+        <div class="badges"><span class="badge month">最佳 4–5月 / 9–10月</span><span class="badge day">9–12 天</span><span class="badge cost">約 7–11 萬/人</span></div>
+        <div class="row">里斯本 + 波多 + 辛特拉。氣候溫和、物價在西歐相對親民,海岸與小鎮悠閒。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · CP 值高 👍</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇭🇷 克羅埃西亞</h3>
+        <div class="badges"><span class="badge month">最佳 5月下旬–6月 / 9月</span><span class="badge day">9–12 天</span><span class="badge cost">約 7–11 萬/人</span></div>
+        <div class="row">杜布羅夫尼克 + 普利特維采湖(十六湖)+ 札達爾。亞得里亞海岸古城,7–8 月旺到爆、避之。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · CP 值高 👍</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇦🇹🇨🇿🇭🇺 奧捷匈(中歐三國)</h3>
+        <div class="badges"><span class="badge month">最佳 5–6月 / 9–10月</span><span class="badge day">10–13 天</span><span class="badge cost">約 6–10 萬/人</span></div>
+        <div class="row">維也納 + 布拉格 + 布達佩斯。童話老城+城堡+溫泉,12 月耶誕市集也迷人(但冷)。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · CP 值最高 🏆</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇳🇴 北歐峽灣</h3>
+        <div class="badges"><span class="badge month">最佳 6–8月</span><span class="badge day">10–14 天</span><span class="badge cost">約 12–18 萬/人</span></div>
+        <div class="row">挪威松恩/蓋朗厄爾峽灣 + 卑爾根。夏季白晝極長、峽灣壯麗;想看極光則改冬季(玩法不同)。</div>
+        <div class="row stars">浪漫度 ★★★★☆ · 預算偏高 💰💰💰</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇬🇧🇮🇪 英國 / 愛爾蘭</h3>
+        <div class="badges"><span class="badge month">最佳 5–8月</span><span class="badge day">10–14 天</span><span class="badge cost">約 9–14 萬/人</span></div>
+        <div class="row">倫敦 + 蘇格蘭高地 + 愛爾蘭莫赫斷崖。語言友善、自駕風景路線多;全年多雨,夏季白晝長最宜。</div>
+        <div class="row stars">浪漫度 ★★★★☆</div>
+      </div>
+      <div class="dest-card">
+        <h3>🇬🇷+🇮🇹 跨國組合(進階)</h3>
+        <div class="badges"><span class="badge month">最佳 5–6月 / 9月</span><span class="badge day">14–16 天</span><span class="badge cost">約 12–16 萬/人</span></div>
+        <div class="row">想一次玩兩國可考慮義大利+希臘或義大利+瑞士,但需更多天數與體力,蜜月建議「一國深度」更放鬆。</div>
+        <div class="row stars">深度 ★★★★★ · 較奔波</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- 一覽表 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">📊</div><div><h2>快速一覽表</h2><p>預算為自由行經濟–中等、每人粗估(含機票+食宿+當地交通),不含購物</p></div></div>
+    <div class="scroll-x">
+    <table class="cmp">
+      <thead><tr><th>目的地</th><th>最佳月份</th><th>建議天數</th><th>每人預算</th><th>定位</th></tr></thead>
+      <tbody>
+        <tr><td><b>義大利</b></td><td>9月下旬 / 5–6月</td><td>12–14 天</td><td>9–14 萬</td><td>👑 首選·浪漫深度</td></tr>
+        <tr><td><b>希臘跳島</b></td><td>6月上 / 9月</td><td>11–13 天</td><td>9–13 萬</td><td>經典蜜月·跳島留彈性</td></tr>
+        <tr><td><b>法國</b></td><td>5–6月 / 9月</td><td>10–14 天</td><td>9–14 萬</td><td>浪漫經典</td></tr>
+        <tr><td><b>奧捷匈</b></td><td>5–6月 / 9–10月</td><td>10–13 天</td><td>6–10 萬</td><td>🏆 CP 值最高</td></tr>
+        <tr><td><b>西班牙</b></td><td>4–5月 / 9–10月</td><td>10–13 天</td><td>7–11 萬</td><td>美食建築·CP高</td></tr>
+        <tr><td><b>葡萄牙</b></td><td>4–5月 / 9–10月</td><td>9–12 天</td><td>7–11 萬</td><td>溫和悠閒·CP高</td></tr>
+        <tr><td><b>克羅埃西亞</b></td><td>5月下–6月 / 9月</td><td>9–12 天</td><td>7–11 萬</td><td>海岸古城·CP高</td></tr>
+        <tr><td><b>瑞士阿爾卑斯</b></td><td>6月下–9月</td><td>12–14 天</td><td>12–18 萬</td><td>💰 山林絕景</td></tr>
+        <tr><td><b>冰島</b></td><td>9月(兼極光)</td><td>12–16 天</td><td>11–17 萬</td><td>💰 極光+環島</td></tr>
+        <tr><td><b>北歐峽灣</b></td><td>6–8月</td><td>10–14 天</td><td>12–18 萬</td><td>💰 峽灣壯麗</td></tr>
+        <tr><td><b>英國/愛爾蘭</b></td><td>5–8月</td><td>10–14 天</td><td>9–14 萬</td><td>語言友善·自駕</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="mine"><span class="tag">⚠ 預算提醒</span>蜜月費用<b>獨立於</b>婚禮「精簡(17–21 萬)」預算之外。歐洲長程兩人合計常 15–35 萬+,是一筆大開銷。若想顧荷包,<b>奧捷匈、葡萄牙、西班牙、克羅埃西亞</b>的 CP 值明顯較高;瑞士、冰島、北歐最燒錢。</div>
+  </section>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- 2027 入境 -->
+  <section>
+    <div class="sec-head"><div class="sec-ico">🛂</div><div><h2>2027 赴歐務必先處理</h2><p>這是最容易漏、又會影響成行的部分</p></div></div>
+    <div class="card">
+      <ul style="list-style:none">
+        <li style="margin:8px 0">🆔 <b>ETIAS 電子旅行許可</b>:預計 2026 Q4 啟用、<b>2027 進入強制階段</b>,費用 €20(18 歲以下/70 歲以上免費),效期 3 年或至護照到期。<b>出發前務必上歐盟官網 travel-europe.europa.eu/etias 確認 2027 確切強制生效日</b>(歷年多次延期)。</li>
+        <li style="margin:8px 0">📘 <b>護照效期</b>:台灣護照免簽申根,180 天內最多停留 90 天;離開申根區當日須仍有 3 個月以上效期(<b>實務建議備 6 個月</b>)。</li>
+        <li style="margin:8px 0">🖐 <b>EES 入出境系統</b>:已於 2026/4/10 全面生效,改採臉部+指紋,2027 屬常態,入境配合採集即可。</li>
+        <li style="margin:8px 0">✈️ <b>機票</b>:台灣直飛歐洲主要為長榮、華航、星宇、KLM;旺季與蜜月好月份位子搶手,<b>建議提早 4–6 個月開票</b>。</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="script">Where shall we go?</span>
+  <p>挑好目的地與月份後,回到報告對照 2027 登記吉日,我再幫你們把完整時間軸定下來 💕</p>
+  <p style="font-size:.8rem;color:#c0b3b6;margin-top:10px">資料經 workflow 查證;季節、Meltemi、ETIAS、盲年等關鍵主張已對抗式驗證並更正。預算為行情區間、僅供估算,以實際報價為準。更新於 2026.05.30</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>挪威極光蜜月・完整計劃書(整合版) · 2027/2/26–3/14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush-soft:#fbeef1;
+    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --aurora:#3f9d82;--night:#16213a;--sky:#2c6e9a;
+    --shadow:0 10px 40px -18px rgba(20,30,60,.45);--shadow-sm:0 6px 22px -14px rgba(20,30,60,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:60px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
+  .script{font-family:"Dancing Script",cursive;font-weight:700}
+  a{color:#2c6e5a}
+  #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--aurora),var(--gold));z-index:120;transition:width .1s}
+  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 16px}
+  .nav-brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--rose);white-space:nowrap;font-size:.95rem}
+  .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;white-space:nowrap;padding:6px 10px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
+  .nav-links a.active{background:var(--night);color:#cfe}
+  header.hero{position:relative;min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:84px 20px 50px;color:#fff;overflow:hidden}
+  header.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,38,.42),rgba(12,20,42,.82)),url('images/nor-aurora.jpg') center/cover;z-index:-1}
+  .hero .eyebrow{font-family:"Dancing Script",cursive;color:#8fe3c6;font-size:1.8rem;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .hero h1{font-size:clamp(1.7rem,5vw,2.9rem);font-weight:900;letter-spacing:1px;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+  .hero .sub{margin-top:12px;max-width:700px;font-size:clamp(.95rem,2.2vw,1.12rem);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .hero .meta{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+  .hpill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);padding:7px 14px;border-radius:30px;font-size:.84rem}
+  .hpill b{color:#8fe3c6}
+  main{max-width:1040px;margin:0 auto;padding:26px 16px 70px}
+  section{padding:24px 0;scroll-margin-top:60px}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+  .sec-ico{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--night),var(--aurora));color:#fff;font-size:1.15rem;box-shadow:var(--shadow-sm)}
+  .sec-head h2{font-size:clamp(1.3rem,4vw,1.8rem);color:var(--rose-deep)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow-sm);margin-bottom:14px}
+  .card h3{color:var(--rose);font-size:1.05rem;margin:2px 0 8px}
+  .card h4{color:var(--sky);font-size:.98rem;margin:12px 0 5px}
+  p,li{font-size:.93rem}
+  ul.clean{list-style:none}ul.clean li{position:relative;padding-left:20px;margin:5px 0}
+  ul.clean li::before{content:"❄";position:absolute;left:0;color:var(--aurora);font-size:.8rem;top:3px}
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:4px 0}
+  @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .gallery figure{margin:0;border-radius:12px;overflow:hidden;background:#dfe6ee;box-shadow:var(--shadow-sm)}
+  .gallery img{width:100%;height:118px;object-fit:cover;display:block;transition:.35s}
+  .gallery figure:hover img{transform:scale(1.07)}
+  .gallery figcaption{font-size:.72rem;color:var(--ink-soft);padding:5px 6px;text-align:center}
+  table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);margin:8px 0}
+  thead th{background:linear-gradient(135deg,var(--night),#2c4a63);color:#fff;padding:9px;text-align:left;font-weight:500;font-size:.8rem}
+  td{padding:8px 9px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#f4f7fa}
+  td b{color:var(--rose)}
+  .scroll-x{overflow-x:auto}
+  .seg{display:flex;align-items:center;gap:10px;margin:18px 0 10px;font-family:"Noto Serif TC",serif;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--sky),var(--aurora));padding:8px 16px;border-radius:30px;font-size:1rem;box-shadow:var(--shadow-sm)}
+  .seg .segimg{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+  .day{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;box-shadow:var(--shadow-sm);margin-bottom:9px}
+  .dhead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+  .ddate{background:var(--night);color:#cfe;font-weight:700;font-size:.78rem;padding:3px 10px;border-radius:8px;font-family:"Noto Serif TC",serif}
+  .dtitle{font-weight:700;color:var(--rose-deep);font-size:.95rem}
+  .flag{font-size:.72rem;padding:2px 8px;border-radius:12px;font-weight:600}
+  .flag.fly{background:#e7eef7;color:var(--sky)}
+  .flag.aur{background:#e7f3ee;color:var(--aurora)}
+  .flag.tw{background:#fdeef0;color:var(--rose)}
+  .flag.opt{background:#fbf1dc;color:#a9842f}
+  .opt{font-size:.9rem;margin:4px 0;padding-left:8px;border-left:3px solid var(--gold-soft)}
+  .opt b{color:var(--rose)}
+  .dmeta{font-size:.83rem;color:var(--ink-soft);margin-top:5px}
+  .nightline{color:var(--aurora);font-weight:600}
+  .pin{text-decoration:none;font-size:.8rem;white-space:nowrap}
+  .warn{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:12px;padding:13px 16px;margin:11px 0;font-size:.9rem}
+  .warn .tag{font-weight:700;color:var(--rose);display:block;margin-bottom:3px}
+  .note{background:#eef6f3;border:1px solid #cfe7df;border-left:5px solid var(--aurora);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
+  .note .tag{font-weight:700;color:var(--aurora);display:block;margin-bottom:3px}
+  .gold{background:#fbf6ec;border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
+  .gold .tag{font-weight:700;color:#a9842f;display:block;margin-bottom:3px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+  .chip{background:#eef6f3;color:#2c6e5a;border:1px solid #cfe7df;padding:4px 11px;border-radius:20px;font-size:.8rem}
+  .chip.ok{background:#e7f3ee;color:#2c7a5a;border-color:#bfe0d6}
+  .chip.x{background:#fdeef0;color:var(--rose);border-color:#f0c9d2}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:10px 0;color:var(--aurora)}
+  .divider::before,.divider::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,#bfe0d6)}
+  .divider::after{background:linear-gradient(90deg,#bfe0d6,transparent)}
+  .phone{background:var(--night);color:#cfe;padding:2px 8px;border-radius:6px;font-weight:700;white-space:nowrap}
+  .tocard{background:linear-gradient(135deg,#16213a,#1f3a4d);color:#dfeaf2;border-radius:16px;padding:16px 18px;margin:6px 0 14px}
+  .tocard b{color:#8fe3c6}
+  .tocard a{color:#8fe3c6}
+  footer{text-align:center;padding:42px 20px 66px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
+  footer .script{font-size:1.9rem;color:var(--aurora);display:block}
+  .backtop{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .backtop.show{opacity:1;pointer-events:auto}
+  @media print{nav,#progress,.backtop{display:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav><div class="nav-inner">
+  <span class="nav-brand">🌌 完整計劃書</span>
+  <div class="nav-links" id="navlinks">
+    <a href="#flights">✈ 機票/轉機</a>
+    <a href="#tw">🚄 台灣交通</a>
+    <a href="#days">📅 逐日</a>
+    <a href="#maps">🗺 地圖</a>
+    <a href="#aurora">🌌 極光</a>
+    <a href="#drive">🚗 自駕/Lofoten</a>
+    <a href="#stay">🛏 住宿</a>
+    <a href="#budget">💰 預算</a>
+    <a href="#pack">🎒 打包</a>
+    <a href="#timeline">🗓 倒數</a>
+    <a href="#check">✅ 檢查</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">The Complete Plan</div>
+  <h1>挪威極光蜜月・完整計劃書</h1>
+  <p class="sub">把所有規劃整合成這一份。機票已訂(海南航空・北京轉機)、日期已定、行李直掛奧斯陸。行程仍保留多種方案 ── 等你們一起決定,我不替你們拍板。出發 2027/2/26、返抵 3/14;挪威端 14 晚。</p>
+  <div class="meta">
+    <span class="hpill">🛫 <b>2/26 出發</b> · 🛬 3/14 返</span>
+    <span class="hpill">❄ 挪威 14 晚</span>
+    <span class="hpill">🌌 Oslo·Tromsø·Lofoten</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="tocard">📖 <b>這份是「整合主檔」</b>:機票/轉機 → 台灣交通 → 逐日(每天 A/B/C 方案)→ 地圖 → 極光攻略 → 冬季自駕+Lofoten 深度 → 每晚住宿(每晚多選項)→ 預算 → 打包 → 倒數待辦 → 檢查清單,一頁到底。<b>凡是還沒定的,都以「方案」呈現、保留選擇權。</b></div>
+
+  <div class="warn"><span class="tag">⚠ 最重要:台胞證必辦!</span>你們是經<b>中國大陸(北京)轉機到第三國,依規定須持有效台胞證</b> ── 否則<b>在桃園報到就可能被拒絕登機</b>(有實際案例),回程一樣查驗。<b>請儘早辦 5 年效期台胞證。</b></div>
+
+  <!-- 機票 -->
+  <section id="flights">
+    <div class="sec-head"><div class="sec-ico">✈️</div><div><h2>你的機票(已訂)+ 北京轉機</h2></div></div>
+    <div class="gallery">
+      <figure><img src="images/master-oslo.jpg" alt="奧斯陸" loading="lazy"><figcaption>奧斯陸</figcaption></figure>
+      <figure><img src="images/nor-tromso-aurora.jpg" alt="Tromsø 極光" loading="lazy"><figcaption>Tromsø 極光</figcaption></figure>
+      <figure><img src="images/nor-husky.jpg" alt="哈士奇" loading="lazy"><figcaption>哈士奇雪橇</figcaption></figure>
+      <figure><img src="images/nor-reine-winter.jpg" alt="Reine" loading="lazy"><figcaption>Lofoten 漁村</figcaption></figure>
+      <figure><img src="images/nor-rorbuer.jpg" alt="rorbuer" loading="lazy"><figcaption>住紅木屋</figcaption></figure>
+    </div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>航段</th><th>航班</th><th>日期</th><th>時刻(以海航官網最終確認)</th></tr></thead>
+        <tbody>
+          <tr><td>台北 TPE → 北京 PEK</td><td>HU7988</td><td>2/26 五</td><td><b>13:10 → 16:35</b>(約 3h25m)</td></tr>
+          <tr><td>北京 PEK → 奧斯陸 OSL</td><td>HU769</td><td>2/27 六</td><td><b>02:55 → 06:00 抵 OSL</b>(北京 T2,約 9h)<br><span style="color:#892a44">↑ 北京過夜候機約 10 小時</span></td></tr>
+          <tr><td>奧斯陸 OSL → 北京 PEK</td><td>HU770</td><td>3/13 六→14 日</td><td><b>12:30 → 翌日 04:30 抵北京</b>(紅眼,約 9.5h)</td></tr>
+          <tr><td>北京 PEK → 台北 TPE</td><td>HU7987</td><td>3/14 日</td><td><b>08:00 → 11:10 抵台北</b>(約 3h10m;北京轉機約 3.5h)</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><span class="tag">🛂 北京轉機重點</span>① <b>台胞證必備</b>(去回程都查驗)② <b>行李已直掛奧斯陸</b> ── 北京走國際轉機通道、原則上<b>免入境提領</b>,輕鬆過境(只顧隨身登機箱+證件)③ <b>去程在北京過夜轉機約 10 小時</b>(2/26 16:35 抵 → 2/27 02:55 飛 HU769):在 T2 國際轉機區候機過夜,<b>務必向海航/機場確認是否需重新安檢、有無過夜休息區/旅館</b>,備好充電、保暖、眼罩耳塞補眠。回程北京轉機約 3.5h(3/14 04:30 抵 → 08:00 飛)較輕鬆。</div>
+      <div class="gold"><span class="tag">🌅 兩個好消息</span>① HU769 <b>06:00 就抵奧斯陸</b>,2/27 第一天(扣補眠)幾乎可整天利用!② 回程 HU7987 <b>3/14 上午 11:10 就抵台北</b>,白天接高鐵回台南、不必趕末班車。</div>
+    </div>
+  </section>
+
+  <!-- 台灣交通 -->
+  <section id="tw">
+    <div class="sec-head"><div class="sec-ico">🚄</div><div><h2>台南 → 桃園機場(當天早上北上)</h2></div></div>
+    <div class="card">
+      <ul class="clean">
+        <li><b>HU7988 為 13:10 起飛(下午)→ 2/26 當天早上北上完全來得及。</b> 台南站(歸仁)→ 桃園站約 1.5 小時 → 6 號出口到 A18 → <b>機場捷運</b>到 T1(約 16–19 分)/ T2(約 12–16 分)。</li>
+        <li><b>建議搭約 07:00–07:30 的高鐵北上</b> → 約 <b>10:00 前</b>抵桃機(13:10 起飛、國際線提前 3 小時報到),預留高鐵誤點緩衝;比「剛好趕上」再早一班車最穩。</li>
+        <li><b>行李直掛奧斯陸</b> ── 北上途中只需顧好登機箱+護照+台胞證,落地 OSL 才提領大行李,輕鬆許多。</li>
+        <li><b>回程很從容</b>:3/14 上午 <b>11:10 抵桃園</b> → 機捷 → 高鐵回台南,白天就到家,不必擔心末班車。</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 逐日 -->
+  <section id="days">
+    <div class="sec-head"><div class="sec-ico">📅</div><div><h2>全程逐日(每天附 A/B/C 方案)</h2><p style="color:var(--ink-soft);font-size:.9rem">奧斯陸 2 + Tromsø 4(極光保底)+ Bodø 1 + Lofoten 6 + 奧斯陸 1。<b>方案僅供選擇,不替你們拍板。</b></p></div></div>
+    <div class="note"><span class="tag">🧭 為什麼「先 Tromsø、後 Lofoten」</span>① <b>在小屋慢遊收尾最像蜜月</b> ── 最後 6 晚在 Lofoten 漁村自己煮、看海,只有這個順序給得了。② <b>怕冷</b>:先在有城市配套的 Tromsø 暖身,再進相對原始的小屋。③ <b>體力</b>:追光熬夜、雪橇放精神最好的前段,煮飯看海放後段。④ <b>極光</b>:先在最強的場(Tromsø+嚮導團)看掉,後段 Lofoten(3 月也是看極光的好月份)全是紅利。回程安全則靠 <b>3/12 奧斯陸緩衝夜</b>守門,不受順序影響。<br><b>只有當你們把「回程零風險」擺第一、或更想以「在 Tromsø 追到極光」當高潮收尾、不在乎在小屋收尾時,才考慮翻成先 Lofoten。</b></div>
+
+    <div class="seg">🇹🇼 台灣端 + 去程(2/26)</div>
+    <div class="day"><div class="dhead"><span class="ddate">2/26 五</span><span class="dtitle">台南 → 桃園 → 北京(HU7988)</span><span class="flag tw">🚄 早上北上</span><span class="flag fly">✈ 13:10 起飛</span></div>
+      <div class="opt">約 07:00–07:30 高鐵北上 → 10:00 前抵桃機從容報到 → <b>HU7988 13:10 飛、16:35 抵北京</b> → 北京過夜轉機約 10 小時(隔日 02:55 飛 HU769)。<b>行李直掛 OSL、備妥台胞證。</b></div></div>
+
+    <div class="seg"><img class="segimg" src="images/master-oslo-vigeland.jpg" alt="">🏛 奧斯陸抵達(2/27–2/28,2 晚)</div>
+    <div class="day"><div class="dhead"><span class="ddate">2/27 六</span><span class="dtitle">北京 → 奧斯陸(06:00 抵)</span><span class="flag fly">✈ HU769</span><span class="flag aur">🌌 緯度低機率低</span></div>
+      <div class="opt">HU769 02:55 起飛、<b>06:00 抵 OSL</b>,Flytoget 機場快線進市區(約 20 分),寄行李/早入住、上午補眠。</div>
+      <div class="opt">下午輕鬆 Oslo:<b>A</b> MUNCH 孟克《吶喊》<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=MUNCH+museum+Oslo">📍</a> / <b>B</b> 維格蘭雕塑公園(雪中)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Vigelandsparken">📍</a> / <b>C</b> 歌劇院屋頂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Oslo+Opera+House">📍</a>+Aker Brygge<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Aker+Brygge">📍</a>。早睡調時差。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">2/28 日</span><span class="dtitle">奧斯陸全日</span></div>
+      <div class="opt"><b>A 文藝</b>:MUNCH + 國家博物館<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nasjonalmuseet">📍</a> + 歌劇院屋頂</div>
+      <div class="opt"><b>B 半島(雪 OK)</b>:Bygdøy → Fram 極地船<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fram+Museum">📍</a> + Kon-Tiki(維京船博物館 2027 仍關閉)</div>
+      <div class="opt"><b>C 雪中+滑雪</b>:維格蘭公園 → Holmenkollen 跳台+滑雪博物館<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Holmenkollen">📍</a></div></div>
+    <div class="note"><span class="tag">💤 第一天為什麼先在奧斯陸睡飽</span>你們剛搭完紅眼、又在北京熬了一夜,2/27 早上落地一定很累,所以頭兩晚都待奧斯陸、把時差睡回來再往北飛,別一下飛機就趕去追極光(那樣 Tromsø 的第一晚會睏到沒心情看)。回程 3/12 的奧斯陸這晚也一定要留著 ── 萬一北邊班機誤點,有這一晚墊著,才不會趕不上 3/13 中午回家的班機;順便在這裡買伴手禮,選擇比小漁村多得多。</div>
+
+    <div class="seg"><img class="segimg" src="images/nor-tromso-aurora.jpg" alt="">🌌 Tromsø 追極光(3/1–3/4,4 晚)</div>
+    <div class="day"><div class="dhead"><span class="ddate">3/1 一</span><span class="dtitle">OSL→Tromsø</span><span class="flag fly">✈ SK4412 已訂</span><span class="flag aur">🌌 第一晚</span></div>
+      <div class="opt"><b>SAS SK4412 OSL 10:00→12:00 抵 Tromsø(已訂)</b>,入住安頓。傍晚破冰:過大橋看北極大教堂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">📍</a> / Polaria 極地館<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polaria+Troms%C3%B8">📍</a>。</div>
+      <div class="opt"><b>第一晚極光(保底先做掉)</b>:A 大巴團(約 3,600–3,900)/ <b>B 小巴團含熱餐(約 4,965–6,300,蜜月推薦)</b></div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/2 二</span><span class="dtitle">Tromsø 日間</span><span class="flag aur">🌌 第二晚</span></div>
+      <div class="opt"><b>A 哈士奇雪橇</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+Villmarkssenter">📍</a> / <b>B 馴鹿雪橇+薩米文化</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tromso+Arctic+Reindeer">📍</a> / <b>C Sommarøy 半島攝影一日</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y">📍</a></div>
+      <div class="dmeta nightline">🌌 已看到→電動極光遊船(浪漫,約 3,570);沒看到→換業者再追。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/3 三</span><span class="dtitle">Tromsø 主項二</span><span class="flag aur">🌌 第三晚</span></div>
+      <div class="opt"><b>A Fjellheisen 纜車</b>(395 NOK,確認 2027 復工)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">📍</a> / <b>B Mack 啤酒廠+Ølhallen</b> / <b>C 第二個雪橇 / Camp Tamok 冰穹</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Camp+Tamok">📍</a></div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/4 四</span><span class="dtitle">Tromsø 彈性日</span><span class="flag aur">🌌 第四晚</span></div>
+      <div class="opt">機動:補做沒做的活動 / 市區慢遊 / 再賭一次極光。<b>4 晚=看到機率很高(累積約 8 成以上)。</b></div></div>
+
+    <div class="seg">🛟 Bodø 過夜防火牆(3/5,1 晚)</div>
+    <div class="day"><div class="dhead"><span class="ddate">3/5 五</span><span class="dtitle">Tromsø→Bodø</span><span class="flag fly">✈ SK4561 已訂</span></div>
+      <div class="opt"><b>SAS SK4561 TOS 11:40→12:40 抵 Bodø(已訂)</b>,Bodø 過一晚(擋隔天 Widerøe 取消連鎖);下午可選 Saltstraumen 大漩渦<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Saltstraumen">📍</a>。</div>
+      <div class="dmeta">🚦 Tromsø→Lofoten 的「交通方式」仍是<b>開放選項</b>(飛機/自駕/交通船),比較見下方〈自駕/Lofoten〉。本逐日以最低風險的「飛 Bodø 過夜→Widerøe→Leknes」鋪排。</div></div>
+
+    <div class="seg"><img class="segimg" src="images/west-hamnoy.jpg" alt="">🎣 西 Lofoten 換著住海邊小屋(3/6–3/11,6 晚)</div>
+    <div class="day"><div class="dhead"><span class="ddate">3/6 六</span><span class="dtitle">飛進 Lofoten、先去大採買</span><span class="flag fly">✈ WF804 已訂</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt"><b>Widerøe WF804 博德 BOO 10:55 → 萊克內斯 LKN 11:20(已訂)</b>。在機場取車<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>。先在 Leknes 的大超市把這幾天要煮的菜一次買齊 ── 小漁村的店冬天常常關,外面吃一餐又很貴。再沿著海邊的 E10 往西開大約一小時,住進第一間紅色小屋<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">📍</a>。</div>
+      <div class="dmeta nightline">🌌 晚上把湯煮上,窩在木屋裡看窗外的海和雪山,外面安安靜靜只剩海浪聲;放晴就走到 Hamnøy 橋上等極光。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/7 日</span><span class="dtitle">第一間:Hamnøy 紅屋(住 2 晚)</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt">不趕路的一天。橋邊就是明信片那張紅屋配雪山,慢慢拍;往回開幾分鐘到 Sakrisøy<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sakris%C3%B8y">📍</a>、Reine<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+Lofoten">📍</a> 散步,順路看 Skagsanden 的大沙灘<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a> 和 Nusfjord 老漁村<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/8 一</span><span class="dtitle">換到路的盡頭:Tind 或 Å(住 2 晚)</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt">開十幾分鐘,搬到公路再也過不去的地方<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a>。這裡人最少、最安靜,晚上幾乎只剩風聲和海聲,那種「世界邊緣」的孤獨感最濃,正好兩個人安安靜靜過。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/9 二</span><span class="dtitle">盡頭的慢日子 + 交通船</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt">走進 Å 的老漁村,看曬成一整排的鱈魚乾、買百年麵包店的肉桂捲。天氣好的話前一天先打電話 <span class="phone">+47 994 91 805</span> 訂 Reinefjorden 的交通船,純粹坐船穿過兩邊都是雪山的峽灣(只看風景、不下船爬山;週六沒船)。</div>
+      <div class="dmeta nightline">🌌 到 Skagsanden 沙灘,或就在小屋門口等極光。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/10 三</span><span class="dtitle">換到黃屋 Sakrisøy(住 2 晚)</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt">再搬一次,這回住整片亮黃色的小屋,正對著一座尖得像金字塔的山,和紅屋是完全不一樣的味道、更安靜一點。今天就放空、好好煮幾頓、在小屋門口看海等極光。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/11 四</span><span class="dtitle">最後一天,留給天氣和極光</span><span class="flag aur">🌌 夜</span></div>
+      <div class="opt">最後一個整天,看老天臉色和心情:想把東邊的經典補起來,就趁好天氣排「往東玩一天」── 上午到 Henningsvær 看漁村<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r">📍</a>、下午到 Svolvær 搭 Trollfjord 海鵰遊船,傍晚開回來(詳見〈自駕/Lofoten〉那張說明)。想繼續慢,就把還沒拍夠的西南漁村再走一遍、煮頓好的、看海等極光 ── 你不會因此錯過真正的招牌。</div></div>
+
+    <div class="seg">🛬 返程(3/12–3/14)</div>
+    <div class="day"><div class="dhead"><span class="ddate">3/12 五</span><span class="dtitle">Lofoten→奧斯陸緩衝夜</span><span class="flag fly">✈ WF892+SK4107 已訂</span></div>
+      <div class="opt">回 LKN 還車 → <b>WF892 09:30→10:00 BOO</b> 轉 <b>SK4107 10:35→12:10 OSL</b>(已訂),回奧斯陸過一晚(吸收延誤、採買伴手禮)。</div>
+      <div class="dmeta">✅ 已確認:<b>同一張聯程票(PNR BOXYI6)、行李直掛 OSL</b> ── 受保護。博德轉機 35 分雖短,但同票有保障:萬一 WF892 誤點沒接到,SAS/Widerøe 免費改下一班 BOO→OSL;加上 3/12 奧斯陸緩衝夜,3/13 國際線無虞。落地博德直接走去登機口(機場小、免再安檢);行李 Leknes 掛、奧斯陸領。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/13 六</span><span class="dtitle">奧斯陸 → 北京(HU770)</span><span class="flag fly">✈ 12:30 起飛</span></div>
+      <div class="opt">退房 → <b>約 09:30 到 OSL 機場</b>(12:30 起飛、提前 3h)→ HU770 飛北京(紅眼,翌日 04:30 抵)。<b>伴手禮在前一晚 3/12 於奧斯陸先買齊</b>(3/13 上午沒有觀光時間)。</div></div>
+    <div class="day"><div class="dhead"><span class="ddate">3/14 日</span><span class="dtitle">北京 → 台北 → 台南</span><span class="flag fly">✈ 08:00→11:10</span></div>
+      <div class="opt">04:30 抵北京、轉機約 3.5h(查台胞證)→ <b>HU7987 08:00 飛、11:10 抵台北</b> → 機捷+高鐵 → 台南,白天到家、行程圓滿 🎉</div></div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 地圖 -->
+  <section id="maps">
+    <div class="sec-head"><div class="sec-ico">🗺</div><div><h2>路線與 Google Maps 速查</h2><p style="color:var(--ink-soft);font-size:.9rem">點地名直接開 Google Maps;路線連結可一鍵載入多點導航</p></div></div>
+    <div class="card">
+      <h3>🧭 全程主線</h3>
+      <p>Oslo → Tromsø → Bodø → Leknes → Reine → Å(回程原路返 OSL)</p>
+      <p>👉 <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Oslo&amp;destination=%C3%85+Lofoten&amp;waypoints=Troms%C3%B8%7CBod%C3%B8%7CLeknes%7CReine"><b>開啟主線多點導航</b></a></p>
+      <h4>奧斯陸</h4>
+      <div class="chips">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=MUNCH+museum+Oslo">MUNCH 孟克</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nasjonalmuseet">國家博物館</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Oslo+Opera+House">歌劇院屋頂</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Aker+Brygge">Aker Brygge</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Vigelandsparken">維格蘭公園</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Holmenkollen">Holmenkollen</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fram+Museum">Fram 極地船</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Kon-Tiki+Museum+Oslo">Kon-Tiki</a>
+      </div>
+      <h4>Tromsø</h4>
+      <div class="chips">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">北極大教堂</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polaria+Troms%C3%B8">Polaria</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">Fjellheisen 纜車</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+Villmarkssenter">哈士奇雪橇</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tromso+Arctic+Reindeer">馴鹿+薩米</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Camp+Tamok">Camp Tamok</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y">Sommarøy</a>
+      </div>
+      <h4>Lofoten(E10 由東到西)</h4>
+      <p>👉 <a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;origin=Leknes&amp;destination=%C3%85+Lofoten&amp;waypoints=Nusfjord%7CRamberg%7CSkagsanden+Beach%7CSakris%C3%B8y%7CHamn%C3%B8y%7CReine"><b>開啟 Lofoten E10 路線</b></a></p>
+      <div class="chips">
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">Leknes 補給</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">Nusfjord 古漁村</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ramberg+Lofoten">Ramberg</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">Skagsanden 極光灘</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sakris%C3%B8y">Sakrisøy 黃屋</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">Hamnøy 橋</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+Lofoten">Reine</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">Å 公路盡頭</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Eliassen+Rorbuer+Hamn%C3%B8y">Eliassen 紅屋</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Saltstraumen">Saltstraumen(Bodø)</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 極光攻略 -->
+  <section id="aurora">
+    <div class="sec-head"><div class="sec-ico">🌌</div><div><h2>極光攻略</h2></div></div>
+    <div class="gallery">
+      <figure><img src="images/nor-aurora.jpg" alt="極光" loading="lazy"><figcaption>極光</figcaption></figure>
+      <figure><img src="images/nor-tromso-aurora.jpg" alt="Tromsø 極光" loading="lazy"><figcaption>Tromsø</figcaption></figure>
+      <figure><img src="images/nor-reine-winter.jpg" alt="Reine" loading="lazy"><figcaption>Lofoten 漁村</figcaption></figure>
+      <figure><img src="images/west-skagsanden.jpg" alt="Skagsanden" loading="lazy"><figcaption>Skagsanden 名灘</figcaption></figure>
+      <figure><img src="images/nor-cathedral.jpg" alt="北極大教堂" loading="lazy"><figcaption>北極大教堂</figcaption></figure>
+    </div>
+    <div class="card">
+      <h3>看極光的關鍵</h3>
+      <ul class="clean">
+        <li><b>雲是最大敵人</b>:核心是「去找沒雲的天空」──「KP 1 的晴空,完勝 KP 8 的滿天雲」。</li>
+        <li><b>暗夜越黑越好</b>:挑新月前後;本行程兩地合計 8–9 晚暗夜就是為了拉高機率。</li>
+        <li><b>春分增強</b>:3 月春分前後地磁特別活躍(Russell–McPherron 效應),「機率體質」比深冬更好。</li>
+        <li><b>KP 指數</b>:Tromsø 與 Lofoten 都在極光帶正下方,<b>KP ≥ 2 頭頂就可能出現</b>,不必等大爆發。</li>
+        <li><b>最佳時段</b>:約 <b>21:00–02:00</b>(22:00–凌晨 2 點為巔峰)。</li>
+      </ul>
+      <div class="gold"><span class="tag">📈 累積機率(為何多留幾晚)</span>任一夜「晴空×有極光活動」約 40–50%;看到一次的累積機率:<b>3 晚約 75%、4 晚約 83%</b>。Tromsø 給到 4 晚 + Lofoten 6 晚,機會很足。</div>
+      <h3>Tromsø:跟團 vs 自駕</h3>
+      <ul class="clean">
+        <li><b>Tromsø 強烈建議跟嚮導團</b>:嚮導會帶你「追到沒雲處」,成功率自報達 9 成;避免冬季半夜自駕追光的風險。</li>
+        <li><b>Lofoten</b> 以木屋外/海灘自己等為主(漁村光害少),視天氣再加報團。</li>
+        <li>通則:<b>自駕只留白天與好天的夜晚</b>;長途/暴雪夜交給嚮導團。</li>
+        <li>Tromsø 腹地大、路網密,是極光勝率的「保險場」;Lofoten 狹長多雲,兩地天氣互為保險。</li>
+      </ul>
+      <h3>名點 & 海上選項</h3>
+      <p><b>Lofoten</b>:Skagsanden、Reine 靜水、Hamnøy 橋、Uttakleiv、Haukland。<b>Tromsø 周邊</b>:Kvaløya 鯨魚島、Ersfjordbotn、Sommarøy。</p>
+      <p><b>海上避光害</b>:Tromsø 電動/靜音暖艙極光遊船(Brim Explorer,約 1,190–1,490 NOK),暖艙看海上極光。</p>
+      <h3>App / 網站</h3>
+      <div class="chips"><span class="chip">yr.no(雲量,最重要)</span><span class="chip">Hello Aurora</span><span class="chip">My Aurora Forecast</span><span class="chip">KP 指數預報</span></div>
+      <div class="warn"><span class="tag">💔 誠實聲明</span>極光<b>沒人能保證</b>。請以「看到是賺到、看不到也享受雪地漁村蜜月」的心態出發 ── 別把單一晚押在極光上。</div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 自駕 / Lofoten -->
+  <section id="drive">
+    <div class="sec-head"><div class="sec-ico">🚗</div><div><h2>冬季自駕 + 西 Lofoten 深度</h2></div></div>
+
+    <div class="card">
+      <h3>🚦 Tromsø → Lofoten 交通方式(開放選項,尚未拍板)</h3>
+      <div class="scroll-x"><table>
+        <thead><tr><th>方案</th><th>優點</th><th>風險/成本</th><th>適合度</th></tr></thead>
+        <tbody>
+          <tr><td><b>A 飛機</b><br>TOS→Bodø 過夜→Widerøe→Leknes</td><td>最低風險、直達西邊核心;Bodø 過夜當緩衝</td><td>Widerøe 運能小、要早訂;轉機要留時間</td><td><b>本逐日採用(最穩)</b></td></tr>
+          <tr><td>次選 TOS→LKN 直飛</td><td>省 1 晚</td><td>班次稀少、易賣完</td><td>搶到再說</td></tr>
+          <tr><td>B 自駕長征<br>(TOS 開到 Lofoten ~420km)</td><td>沿途風景、自由</td><td>3 月雪地 8–16h、單程棄置費約 1.2 萬、抵東邊還要再開到西邊</td><td>3 月不建議</td></tr>
+          <tr><td>C 交通船 / 載車渡輪<br>(Hurtigruten / Bodø–Moskenes)</td><td>海上看雪景峽灣、浪漫</td><td>凌晨上船、17–19h、暈船;載車渡輪風 &gt;18m/s 易停航(12–4 月不罕見)</td><td>當體驗、不當主力</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><span class="tag">建議但不替你拍板</span>以「最低風險直達西邊」為由,本計劃逐日採 <b>A 飛機</b>;若你們很想坐船看海上雪景,可把「另排一小段白天遊船」當體驗(見極光遊船/Trollfjord 海鵰),交通主力仍建議飛。</div>
+    </div>
+
+    <div class="card">
+      <h3>🚗 在哪裡租車:建議在 Leknes(LKN)取、原地還</h3>
+      <p>你查到的價差是真的:<b>EVE(Evenes)的車一天便宜約 1,200 元</b>,因為它是大機場、車多。但 EVE 在本島,光開進 Lofoten 就要三到四個半小時的雪地路,回去再開一趟;省下的錢幾乎都拿去付油錢,還可能被收一筆很貴的「甲地租、乙地還」費用(這筆在挪威常常比租金本身還貴),而且白白少掉快一天待在漁村的時間。</p>
+      <p><b>所以照你們現在「先 Tromsø → 飛進 Lofoten」的走法,在 Leknes 機場取車、最後也還回 Leknes 最划算也最輕鬆</b> ── 一下飛機差不多就在漁村群裡了,開到 Reine 只要一小時。EVE 的便宜,只有在你們整個改成「從奧斯陸直接飛 EVE、自己一路開進來」時才吃得到。真的很想省那筆錢,可以寫信問在地的 <b>Lofoten Car Hire</b>(LKN、EVE 都能交還車,電話 +47 4000 1650),他們的跨點費通常比國際大公司低很多。</p>
+      <div class="note"><span class="tag">⚡ 你問的電動車:VW ID.3、LKN 租還、一天 2,500 元</span>價格其實不錯,而且就在 Leknes 取還、又比一般汽油車便宜,跑你們這種「每天只開一小段、住小屋」的行程很合適 ── 但有兩件事先想清楚:<br>① <b>ID.3 是後輪驅動、不是四輪傳動。</b>Lofoten 三月路上會結冰,後驅在冰上比較容易打滑,新手要開得慢、保持距離,而且一定要確認配的是<b>釘胎</b>。<br>② <b>電動車在零下會掉電(可能少三、四成)。</b>還好你們每天距離短,問題不大,但要養成習慣:在 Leknes 充飽、晚上盡量把車插在小屋的插座上慢慢充(先跟房東確認有沒有插座可用)。<br>把這兩點顧好,這台車很 OK、又省錢;如果你們想雪地開得完全不用擔心,那就多花一點租<b>四輪傳動</b>的汽油/柴油車最安心。</div>
+      <p style="font-size:.85rem;color:var(--ink-soft)">不管哪台:冬天的雪胎/釘胎是法律規定一定有、不另收錢;加油選「取滿還滿」最省;加保把自付額壓低;3 月島內車不多,早幾個月訂。</p>
+    </div>
+
+    <div class="card">
+      <h3>❄ 冬季自駕注意</h3>
+      <ul class="clean">
+        <li><b>釘胎合法期 10/16–4/30(Nordland)</b>;租車冬季標配冬胎/釘胎、通常不另收 ── 訂車後務必 email 書面確認「<b>studded tyres included</b>」。沿海融凍路滑建議用釘胎,<b>不需 4×4</b>(有更安心)。</li>
+        <li><b>E10 窄、限速低</b>;路況一天內可從乾→黑冰→積雪→雪泥快速變化。黑冰是 3 月最大殺手。</li>
+        <li><b>行程排鬆不趕、盡量白天行車、夜間定點守極光</b>;暴雪天當局公告勿出門就別出門。</li>
+        <li>每天查 <b>yr.no</b>(天氣)+ <b>175.no</b>(路況/攝影機)+ <b>varsom.no</b>(雪崩,每日 16:00 前)。停正式停車格、勿擋鏟雪車。</li>
+        <li>Reine–Hamnøy 單線橋有紅綠燈、橋面結冰起步小心。</li>
+      </ul>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>📏 路順與距離(由東到西,3 月冬季車程)</h3>
+      <table>
+        <thead><tr><th>段落(東→西)</th><th>距離</th><th>夏季</th><th>冬季(3 月)</th></tr></thead>
+        <tbody>
+          <tr><td>Svolvær → Henningsvær</td><td>23 km</td><td>25–30 分</td><td><b>35–45 分</b></td></tr>
+          <tr><td>Henningsvær → Leknes</td><td>50 km</td><td>45 分</td><td><b>60 分</b></td></tr>
+          <tr><td>Leknes → Nusfjord(支線 5km)</td><td>30 km</td><td>30–35 分</td><td><b>45 分</b></td></tr>
+          <tr><td>Leknes → Ramberg/Flakstad</td><td>28 km</td><td>30 分</td><td><b>40 分</b></td></tr>
+          <tr><td>Flakstad → Sakrisøy</td><td>25 km</td><td>25 分</td><td><b>35 分</b></td></tr>
+          <tr><td>Sakrisøy → Hamnøy → Reine</td><td>6 km</td><td>8–9 分</td><td><b>13 分</b></td></tr>
+          <tr><td>Reine → Å(公路最末端)</td><td>10 km</td><td>12–15 分</td><td><b>20 分</b></td></tr>
+          <tr><td><b>Leknes → Reine 小計</b></td><td><b>約 58 km</b></td><td>約 54 分</td><td><b>約 1–1.5 小時</b></td></tr>
+          <tr><td><b>Svolvær → Å 全程</b></td><td><b>約 130 km</b></td><td>約 2.5 小時</td><td><b>約 3.5–4 小時</b></td></tr>
+        </tbody>
+      </table>
+      <div class="gold"><span class="tag">🏠 換著住、每間住兩晚</span>你們想住不同的小屋、好好感受每一間海邊木屋的安靜,完全做得到 ── 而且 Hamnøy、Sakrisøy、Tind、Å 這幾個漁村彼此只差幾公里(開車 5–15 分鐘),所以建議「<b>兩晚換一間</b>」:既睡得飽、晚上能安心等極光,搬家又只是開一小段路,不會累人。三間挑不一樣顏色、不一樣氣氛的(紅屋、黃屋、路盡頭的小村),六天就能各待夠。離開 Leknes 前一定把油加滿、把菜買齊(Å 連加油站都沒有)。</div>
+    </div>
+
+    <div class="card">
+      <h3>🏘 村落 & 景點(冬季可行性)</h3>
+      <div class="chips">
+        <span class="chip ok">✅ Skagsanden 極光名灘(平路最推)</span>
+        <span class="chip ok">✅ Hamnøy 橋(紅屋免健行)</span>
+        <span class="chip ok">✅ Sakrisøy 黃屋(平路)</span>
+        <span class="chip ok">✅ Reine 靜水倒影</span>
+        <span class="chip ok">✅ Å 公路盡頭(室內雨備佳)</span>
+        <span class="chip ok">✅ Nusfjord 古漁村(入村約 100 NOK)</span>
+        <span class="chip ok">✅ Uttakleiv/Haukland(停車場旁,朝北極光)</span>
+        <span class="chip x">⚠ Kvalvika 需雪鞋(建議放棄/遠觀)</span>
+        <span class="chip x">❌ Reinebringen 排除(雪崩致命)</span>
+      </div>
+      <h4>🍽 冬季餐食(常縮時/季節休,先查/訂位)</h4>
+      <p>Anitas Seafood(Sakrisøy)、Gammelbua / Krambua(Reine)、Brygga(Å);Gadus(Hamnøy)2026/3 查為暫停。<b>最保險=附廚房的 rorbuer 自炊 + 在 Leknes 超市(Coop Extra/Rema 1000/Bunnpris)採買。</b></p>
+      <h4>🦅 海鵰遊船(Svolvær 出發,3 月運行)</h4>
+      <p>Trollfjord 大船+海鵰約 950–1,250 NOK(約 3h、含魚湯,平穩保暖);RIB 快艇約 1,095 NOK(約 2h,離鷹近但冷濕)。最順排在進出 Svolvær 那天。官網 trollfjordcruise.com / rib-lofoten.com。</p>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>🐟 慢遊清單:每個地方待多久</h3>
+      <table>
+        <thead><tr><th>地方</th><th>是什麼樣的地方</th><th>待多久</th></tr></thead>
+        <tbody>
+          <tr><td><b>Hamnøy</b></td><td>紅色小屋架在海上、背後一排尖雪山,全 Lofoten 最常被拍的一張</td><td>住 2 晚 / 隨時來拍</td></tr>
+          <tr><td><b>Sakrisøy</b></td><td>整片亮黃色小屋、正對著尖得像金字塔的山,比紅屋更安靜</td><td>住 2 晚 / 1–2 小時</td></tr>
+          <tr><td><b>Reine</b></td><td>群山環抱的招牌漁村,平地慢慢散步、看峽灣倒影(高處步道冬天封)</td><td>半天慢慢晃</td></tr>
+          <tr><td><b>Tind / Å</b></td><td>公路盡頭最安靜的小村,鱈魚乾、百年麵包店、世界邊緣的孤獨感</td><td>住 2 晚 / 半天</td></tr>
+          <tr><td>Nusfjord</td><td>藏在峽灣裡的赭黃老漁村,保存得最完整</td><td>1.5–3 小時</td></tr>
+          <tr><td>Skagsanden / Ramberg</td><td>平坦大沙灘、面北,等極光的一級好地方</td><td>白天 1–2 小時 + 夜晚</td></tr>
+          <tr><td>Haukland / Uttakleiv</td><td>車子開得到的白沙灘,也是極光名灘</td><td>白天 1–2 小時 + 夜晚</td></tr>
+          <tr><td>Henningsvær</td><td>跨在小島上的咖啡藝廊漁村、海上足球場,氣氛最好(比較熱鬧)</td><td>半天到一天</td></tr>
+          <tr><td>Svolvær / Kabelvåg</td><td>最大城、補給齊、海鵰遊船、老城木教堂(下雨天好去處)</td><td>順路半天</td></tr>
+          <tr><td>Lofotr 維京博物館</td><td>下雨天最好的去處,看維京長屋</td><td>1.5–2 小時</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.82rem;color:var(--ink-soft)">⏭ <b>這趟先跳過</b>:Vesterålen(賞鯨 3 月已過季、看極光又跟 Tromsø 重複)。❌ <b>冬天別硬上</b>:Reinebringen(雪崩季)、Kvalvika(要雪鞋)。⚠ Leknes 南邊的 Nappstraumen 隧道 2026–2027 整修、每晚 23:00–06:00 封閉,半夜開車追極光要避開。</p>
+    </div>
+
+    <div class="card">
+      <h3>🤔 飛 LKN 會不會錯過東邊的經典?</h3>
+      <p>幾乎不會。你們最想拍的那幾張 ── 紅屋 Hamnøy、Reine、Sakrisøy、Å、Skagsanden、Haukland、Uttakleiv、Nusfjord ── 全在西南/中段,離 Leknes 最近,一下飛機就在明信片裡了。</p>
+      <p>真正在東邊、不特地過去就會略過的,是 <b>Henningsvær</b>(那個爆紅的海上足球場,其實要空拍才拍得到那張,站在地面只是一塊小球場)、<b>Svolvær</b>(大城、補給)、和 <b>Trollfjord 精靈峽灣</b>。但 Trollfjord 沒有路可開、<b>不管你從哪邊進來,都只能從 Svolvær 搭船進去</b>,跟你住哪、飛哪一點關係都沒有。</p>
+      <div class="gold"><span class="tag">結論:不用為了東邊改從 EVE 開進來</span>EVE 進場要先吞 4.5–5 小時的雪地長途、還可能遇到強風封橋,而且西南那段路你照樣得開 ── 對雪地新手不划算。<b>飛 LKN,再挑一個天氣穩的白天「往東玩一天」就兩全</b>:上午到 Henningsvær 看漁村和曬鱈魚、下午到 Svolvær 搭 Trollfjord 海鵰遊船(約 2–3 小時,RIB 一人約 NOK 1,000–1,400、有保暖衣),傍晚開回小屋。這樣經典一個不漏,又不用把第一天拿去開全島最長、會封橋的那條路。出門前先用 175.no 查路況。</div>
+      <p style="font-size:.85rem;color:var(--ink-soft)">當然,Henningsvær、Svolvær 比較熱鬧,跟你們「住小屋、自己煮、安安靜靜」的調性不完全一樣;不想特地跑這一天也完全沒關係 ── 留在西南慢慢過,你並不會錯過真正的招牌。</p>
+    </div>
+
+    <div class="card">
+      <h3>⛴ Reinefjorden 交通船(純搭船賞峽灣)</h3>
+      <ul class="clean">
+        <li><b>航線</b>:Reine ↔ Kjerkfjorden / Rostad / Vindstad,自 Reine Hurtigbåtkai(Ytre Havn 大停車場旁)出發,單程約 20–31 分。</li>
+        <li><b>3 月規則(誠實標注)</b>:冬季預訂制 ── <b>必須前一天電話預訂、不接受現場上船、週六常停駛</b>,每日僅 2–3 班。</li>
+        <li><b>玩法</b>:只買來回票、不下船登山(不走 Bunes 雪坡),坐著穿越雪峰夾峙的峽灣本身就是絕景。票價 Reine↔Vindstad 來回成人約 94 NOK(約 310 TWD)。</li>
+        <li><b>訂位</b>:冬季強制電話 <span class="phone">+47 994 91 805</span>(前一天);線上 reisnordland.no;時刻 reisnordland.com/ferry;客服 +47 910 09 600。發船前 20 分到候船。</li>
+        <li><b>無船/天氣差備案</b>:改 Reine→Å 半日,或 Å 室內博物館+百年麵包房 Bakeriet i Å。</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 住宿 -->
+  <section id="stay">
+    <div class="sec-head"><div class="sec-ico">🛏</div><div><h2>每晚住宿(每晚多選項,中低價但優質)</h2><p style="color:var(--ink-soft);font-size:.9rem">先用可免費取消房型保底;Tromsø 與 Lofoten 面海房最搶手、要最早訂。匯率 1 NOK ≈ 3.0–3.3 TWD</p></div></div>
+
+    <div class="card scroll-x">
+      <h3>① 奧斯陸 Sentrum(2/27、2/28、3/12)</h3>
+      <table>
+        <thead><tr><th>方案</th><th>類型/區域</th><th>3 月雙人(TWD)</th><th>廚房</th><th>亮點</th></tr></thead>
+        <tbody>
+          <tr><td><b>Citybox Oslo</b></td><td>平價設計旅館/Sentrum 距 Oslo S 250m</td><td>2,550–3,720</td><td>無</td><td>市中心 CP 高、自助入住、近機場快線</td></tr>
+          <tr><td><b>Smarthotel Oslo</b></td><td>平價旅館/Sentrum</td><td>2,250–3,410</td><td>無</td><td>全案最省、位置好</td></tr>
+          <tr><td><b>Anker Apartment</b></td><td>公寓式/Grünerløkka(樓下 Kiwi)</td><td>2,400–3,880</td><td>有</td><td>自炊省餐費、Airbnb 風格替代</td></tr>
+          <tr><td>Saga Poshtel 私人雙人房</td><td>Sentrum</td><td>2,250–3,570</td><td>公共</td><td>特色高,選私人房</td></tr>
+          <tr><td>Airbnb 整套 studio</td><td>Grünerløkka/Sentrum</td><td>2,850–4,650</td><td>有</td><td>最像家、可洗衣、近超市</td></tr>
+          <tr><td>Scandic Vulkan(升級)</td><td>四星含早/Mathallen</td><td>2,550–4,340</td><td>無</td><td>早餐極佳、樓下美食市集</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>② Tromsø Sentrum(3/1–3/4,極光旺季・務必早訂)</h3>
+      <table>
+        <thead><tr><th>方案</th><th>類型/區域</th><th>3 月雙人(TWD)</th><th>廚房</th><th>亮點</th></tr></thead>
+        <tbody>
+          <tr><td><b>Smarthotel Tromsø</b></td><td>平價/Sentrum 距主街 200m</td><td>3,300–5,900</td><td>公共</td><td>本案最省、位置超好</td></tr>
+          <tr><td><b>Enter Tromsø City Apartment</b></td><td>公寓式/步行 5 分</td><td>3,900–6,800</td><td>完整</td><td>老牌可靠、海/山景、自炊</td></tr>
+          <tr><td><b>TotalApartments Storgata</b></td><td>整套公寓/核心</td><td>4,500–7,400</td><td>完整+洗衣</td><td>走路到所有地方、超市隔壁</td></tr>
+          <tr><td>Airbnb 整套公寓</td><td>Sentrum/Vervet</td><td>4,200–8,700</td><td>多完整</td><td>4.8–5.0 星、私密+自炊</td></tr>
+          <tr><td>Skaret by VANDER(升級)</td><td>2023 全新/Storgata 25</td><td>4,800–8,000</td><td>完整</td><td>設計感、海港景</td></tr>
+          <tr><td>Clarion Collection With(升級)</td><td>含三餐/近碼頭</td><td>5,700–8,700</td><td>無</td><td><b>房價含晚餐</b>、sauna</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>③ Bodø(3/5,過夜防火牆)</h3>
+      <table>
+        <thead><tr><th>方案</th><th>類型/區域</th><th>3 月雙人(TWD)</th><th>廚房</th><th>亮點</th></tr></thead>
+        <tbody>
+          <tr><td><b>Smarthotel Bodø</b></td><td>數位平價/緊鄰車站</td><td>2,300–3,100</td><td>無</td><td>最便宜、24h 自助、最適合趕早班機</td></tr>
+          <tr><td><b>Thon Hotel Nordlys</b></td><td>含早餐/碼頭旁</td><td>3,400–4,300</td><td>無</td><td>Booking 8.7、海景、省一餐</td></tr>
+          <tr><td><b>Scandic Bodø</b></td><td>連鎖含早/市中心</td><td>2,800–4,000</td><td>無</td><td>品牌可靠、地點佳</td></tr>
+          <tr><td>整套公寓 Airbnb</td><td>市中心</td><td>2,800–4,600</td><td>完整</td><td>自炊(先確認取鑰匙)</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.82rem;color:var(--ink-soft)">避雷:Zefyr(醫院旅館,氣氛不適蜜月)。機場離市中心約 2km,住市中心=近機場。</p>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>④ Lofoten 過渡 Svolvær/Henningsvær/Leknes(3/6、3/7)</h3>
+      <table>
+        <thead><tr><th>方案</th><th>村鎮</th><th>3 月雙人(TWD)</th><th>面海/廚房</th><th>亮點</th></tr></thead>
+        <tbody>
+          <tr><td><b>Fast/Nordis Hotel Lofoten</b></td><td>Svolvær 近港</td><td>2,290–3,200</td><td>一般</td><td>最省、乾淨、keyless</td></tr>
+          <tr><td><b>Marina Hotel Lofoten</b></td><td>Svolvær 市中心</td><td>3,355–4,575</td><td>部分面港/小廚</td><td>近超市與巴士站</td></tr>
+          <tr><td><b>Scandic Leknes</b></td><td>Leknes 中心</td><td>2,745–3,965</td><td>無</td><td>品牌穩、鎮上最大採買點</td></tr>
+          <tr><td>Lofoten Suiteapartments(升級)</td><td>Svolvær 海濱</td><td>3,965–5,185</td><td>面海/全套</td><td>Booking 9.3(情侶 9.7)</td></tr>
+          <tr><td>Henningsvær Rorbuer(升級)</td><td>Henningsvær</td><td>4,270–5,795</td><td>海景+壁爐</td><td>屋架海上、山海景</td></tr>
+          <tr><td>漁村整套小屋 Airbnb</td><td>Henningsvær/Svolvær</td><td>3,660–6,100</td><td>多面海/小廚</td><td>漁村 Airbnb 評分高</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.82rem;color:var(--ink-soft)">配房:2 晚都 Svolvær 最省事,或 1 晚 Svolvær + 1 晚 Henningsvær(先在 Svolvær 補貨)。</p>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>⑤ Lofoten 換著住的海邊小屋(3/6–3/11,挑 3 間、每間 2 晚)</h3>
+      <p style="font-size:.86rem;color:var(--ink-soft)">想感受每間小屋的安靜、又以自己煮為主,就挑下面三間不一樣顏色/氣氛的、各住兩晚,全都靠海、都有廚房。進村前在 Leknes 超市把幾天份的菜買齊。</p>
+      <table>
+        <thead><tr><th>方案</th><th>村落</th><th>3 月雙人(TWD)</th><th>面海/廚房</th><th>亮點</th></tr></thead>
+        <tbody>
+          <tr><td><b>Eliassen Rorbuer ⭐紅屋</b></td><td>Hamnøy</td><td>2,370–3,720 / 面海升 ~1.09 萬</td><td>多面海/小廚</td><td>明信片紅屋立海上、最常拍到極光、全年開</td></tr>
+          <tr><td><b>Sakrisøy Rorbuer ⭐黃屋</b></td><td>Sakrisøy</td><td>無海景 3,900–5,500 / 面海 7,200–10,500</td><td>部分面海/全有廚</td><td>Booking 9.3–9.4、正對 Olstind 尖峰、含划艇</td></tr>
+          <tr><td><b>Tind seaside cabins</b></td><td>Tind</td><td>4,200–5,500</td><td>海景+露台/全配廚</td><td>清潔評價極高、僻靜、自助入住</td></tr>
+          <tr><td><b>Lofoten B&amp;B Reine</b></td><td>Reine 村內</td><td>3,000–5,500</td><td>部分海景/部分廚</td><td>Booking 8.2、早餐豐盛、核心村</td></tr>
+          <tr><td>Ramberg/Flakstad 小屋 Airbnb</td><td>Ramberg/Flakstad</td><td>2,700–5,000</td><td>多海景/小廚</td><td>較便宜;離核心 40–50 分</td></tr>
+          <tr><td>Reinefjorden Sjøhus(升級)</td><td>Hamnøy/Skagen</td><td>約 6,200–6,600 起</td><td>天窗看極光+桑拿</td><td>玻璃屋躺床看極光、海中冷泉</td></tr>
+          <tr><td>Å Rorbuer(升級)</td><td>Å 終點村</td><td>4,500–6,200</td><td>部分面海/廚</td><td>天涯海角、人少;餐廳冬季關須自炊</td></tr>
+        </tbody>
+      </table>
+      <div class="gold"><span class="tag">⭐ 一個好走的「三間組合」(都靠海、都有廚房)</span><b>紅屋 Eliassen(Hamnøy)2 晚 → 路盡頭 Tind 或 Å 2 晚 → 黃屋 Sakrisøy 2 晚</b>。三間彼此只差幾公里,搬家很輕鬆,卻能各有各的味道。<b>面海/朝北的房間最好 ── 設好 yr.no 的雲量提醒,放晴就走出門到 Hamnøy 橋等極光,不必開夜車。</b>面海房 2026 年 6–9 月一開放就會被搶,要早訂;Reine Rorbuer 3 月是否開季先打電話確認。</div>
+    </div>
+
+    <div class="card scroll-x">
+      <h3>🗓 每晚 → 基地 → 建議方案(對照表)</h3>
+      <table>
+        <thead><tr><th>日期</th><th>基地</th><th>中低價首選</th><th>想升級</th></tr></thead>
+        <tbody>
+          <tr><td>2/27、2/28</td><td>奧斯陸 Sentrum</td><td>Citybox / Smarthotel / Anker</td><td>Scandic Vulkan / Airbnb 公寓</td></tr>
+          <tr><td>3/1–3/4</td><td>Tromsø Sentrum</td><td>Smarthotel / Enter / TotalApartments</td><td>Skaret VANDER / Clarion With / Airbnb 海景</td></tr>
+          <tr><td>3/5</td><td>Bodø 市中心</td><td>Smarthotel / Thon Nordlys</td><td>Scandic / 整套公寓</td></tr>
+          <tr><td>3/6、3/7</td><td>第一間:Hamnøy 紅屋</td><td>Eliassen Rorbuer</td><td>Eliassen 面海房 / Reinefjorden Sjøhus</td></tr>
+          <tr><td>3/8、3/9</td><td>第二間:路盡頭 Tind / Å</td><td>Tind seaside cabins / Å Rorbuer</td><td>面海房</td></tr>
+          <tr><td>3/10、3/11</td><td>第三間:Sakrisøy 黃屋</td><td>Sakrisøy 無海景</td><td>Sakrisøy 面海黃屋</td></tr>
+          <tr><td>3/12</td><td>奧斯陸 Sentrum</td><td>Citybox / Smarthotel</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.82rem;color:var(--ink-soft)">省餐主軸:挪威外食極貴,優先「有廚房」房型,在超市(Kiwi/Rema 1000/Coop)採買自煮。Airbnb 即時房源/價格需臨訂再確認。</p>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 預算 -->
+  <section id="budget">
+    <div class="sec-head"><div class="sec-ico">💰</div><div><h2>費用(2 人合計・機票已全訂)</h2><p style="color:var(--ink-soft);font-size:.9rem">已訂用實際金額、待訂用預估區間;完整帳見 <a href="費用紀錄.md" target="_blank" rel="noopener">費用紀錄.md</a></p></div></div>
+    <div class="card scroll-x">
+      <h3>✅ 已訂(實際,2 人)</h3>
+      <table>
+        <thead><tr><th>項目</th><th>金額(2人)</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>國際機票 海航 TPE⇄OSL(經北京)</td><td><b>67,198</b></td><td>HU7988/769/770/7987,已出票</td></tr>
+          <tr><td>國內機票 5 段</td><td><b>37,442</b></td><td>3/1 OSL→TOS 10,594 · 3/5 TOS→BOO 5,884 · 3/6 BOO→LKN 4,930 · 3/12 LKN→BOO→OSL 16,034(聯程)</td></tr>
+          <tr><td><b>已訂小計</b></td><td><b>104,640</b></td><td>機票全到位</td></tr>
+        </tbody>
+      </table>
+      <h3>⬜ 待訂(預估,2 人)</h3>
+      <table>
+        <thead><tr><th>項目</th><th>預估(2人)</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>住宿(14 晚)</td><td>45,000–70,000</td><td>換著住小屋+自炊;面海房最早訂</td></tr>
+          <tr><td>租車(LKN 取還 6 天)</td><td>15,000–22,000</td><td>電動 ID.3 約 2,500/日 或 4WD</td></tr>
+          <tr><td>活動(極光團×2–3+雪橇/薩米+遊船/纜車)</td><td>30,000–52,000</td><td>Tromsø 極光為主力</td></tr>
+          <tr><td>餐食(14 天・自炊為主)</td><td>25,000–40,000</td><td>自炊可壓低</td></tr>
+          <tr><td>旅遊險(取消+延誤+行李+醫療)</td><td>~7,000</td><td>取代 TripFlex</td></tr>
+          <tr><td>台胞證 ×2 / ETIAS ×2</td><td>~4,400</td><td>必辦</td></tr>
+          <tr><td>台灣端高鐵+機捷(來回)</td><td>~6,000</td><td>2/26 早上北上、3/14 返</td></tr>
+          <tr><td>雜支(SIM/伴手/停車/交通船等)</td><td>8,000–15,000</td><td></td></tr>
+          <tr><td><b>待訂小計</b></td><td><b>約 140,000–205,000</b></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="gold"><span class="tag">💰 全程兩人預估總額:約 24.5–31 萬台幣</span>已訂(實際)<b>104,640</b> + 待訂(預估)約 <b>14–20.5 萬</b>。不含買房與婚禮宴客。</div>
+      <div class="note"><span class="tag">🎟 活動單項參考價</span>第一晚極光:大巴團 3,600–3,900 / 小巴含熱餐 4,965–6,300(蜜月推薦)。哈士奇雪橇約 3,600 起。馴鹿雪橇+薩米 6,000–6,735。電動極光遊船約 3,570。Fjellheisen 纜車 395 NOK(確認 2027 復工)。匯率 1 NOK ≈ 3.0–3.3 TWD。</div>
+    </div>
+  </section>
+
+  <!-- 打包 -->
+  <section id="pack">
+    <div class="sec-head"><div class="sec-ico">🎒</div><div><h2>北極圈 3 月打包(洋蔥式分層)</h2></div></div>
+    <div class="card">
+      <h4>🧥 保暖分層</h4>
+      <p>美麗諾底層 ×2 → 刷毛/羽絨中層 → 防風防水外層 + 雪褲。<b>「沿海溫和」只是相對深冬,請當真冬天打包</b>(Tromsø 3 月均高約 −2°C、低約 −7°C,全年下雪最多;Lofoten 約 0°C 上下但風大路滑)。</p>
+      <h4>🧤 配件</h4>
+      <p>厚帽、脖圍、面罩、防風手套+薄內手套、厚羊毛襪 ×2–3、<b>防滑雪靴+冰爪</b>、暖暖包、保溫瓶、護唇膏。</p>
+      <h4>📷 電器/攝影</h4>
+      <p>相機+腳架+<b>備用電池(貼身保暖)</b>、<b>紅光頭燈</b>(看極光)、行動電源、<b>歐規 Type C/F 轉接頭</b>。</p>
+      <h4>🛂 證件/行政</h4>
+      <p><b>台胞證(5 年)</b>、護照(離開申根當日效期 ≥3 個月且 10 年內核發,現在就檢查兩本)、<b>ETIAS</b>(€20、線上、效期 3 年;2027/3 落在過渡期理論可免,仍<b>強烈建議照辦</b>)、國際駕照+台灣駕照、旅平險、住宿/租車/機票訂單。</p>
+      <div class="note"><span class="tag">💳 貨幣/通訊</span>挪威幾乎全程刷卡(出國前開通海外刷卡)+ 少量 NOK;北歐 eSIM/漫遊。渡輪/活動團多可線上預訂付費。<b>不需要極地級裝備或 4×4。</b></div>
+    </div>
+  </section>
+
+  <div class="divider">❄ ❄ ❄</div>
+
+  <!-- 倒數 -->
+  <section id="timeline">
+    <div class="sec-head"><div class="sec-ico">🗓</div><div><h2>從現在到出發 倒數待辦</h2></div></div>
+    <div class="card scroll-x">
+      <table>
+        <thead><tr><th>時間</th><th>待辦</th></tr></thead>
+        <tbody>
+          <tr><td><b>現在 2026/5–6</b></td><td>① HR 書面確認婚假(<b>建議登記日 2/20 六</b>,在 2/26 出發前)② <b>辦台胞證(5 年)</b> ③ 向海航確認北京<b>過夜轉機(去程約 10h)</b>是否需重新安檢、有無休息區/過夜旅館</td></tr>
+          <tr><td>2026/6–9</td><td>④ <b>Lofoten 小屋一開放就搶</b>(Eliassen/Sakrisøy 面海)⑤ <b>訂國內機票</b>:<b>BOO↔LKN 那班 39 座小飛機最優先</b>(瓶頸,班表約 7–8 月一出就訂、別拖過 2026 年底);轉機那兩段(去 3/6、回 3/12)買成「同一張連程票、含 Bodø 轉機」(行李直掛+延誤有保護),票種 Smart 以上含 23kg、進出 Lofoten 段可選 Flex ⑥ 訂 LKN 租車(釘胎/4WD)、各段住宿(先鎖可免費取消)</td></tr>
+          <tr><td>2026/9–11</td><td>⑦ <b>訂 OSL↔Tromsø、OSL↔Bodø</b>(極光季最熱門、便宜位早被搶,出發前 4–6 個月鎖定;與上面國內段同一波訂完最省事)</td></tr>
+          <tr><td>2026/12–2027/1</td><td>⑧ 訂 Tromsø 極光團 + 雪橇/薩米</td></tr>
+          <tr><td>2027/1–2</td><td>⑨ 查 Fjellheisen 載客、辦 ETIAS、訂奧斯陸門票 ⑩ 再確認台胞證效期、護照</td></tr>
+          <tr><td>出發前 1–2 週</td><td>⑪ 抵 Lofoten 前一天打 <span class="phone">+47 994 91 805</span> 訂交通船 ⑫ 旅遊險、線上報到、yr.no ⑬ <b>訂好 2/26 約 07:00–07:30 北上的高鐵車票</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 檢查 -->
+  <section id="check">
+    <div class="sec-head"><div class="sec-ico">✅</div><div><h2>行前最終檢查</h2></div></div>
+    <div class="card">
+      <div class="chips">
+        <span class="chip x">⭐台胞證 5 年(去回程都查)</span>
+        <span class="chip">護照效期 ≥3 個月(離申根日)</span>
+        <span class="chip">ETIAS(申根,建議辦)</span>
+        <span class="chip ok">✓ 北京行李直掛 OSL(免提領)</span>
+        <span class="chip">結婚登記(建議 2/20)+HR 核假</span>
+        <span class="chip">國內連程票(含 BOO↔LKN)</span>
+        <span class="chip">Lofoten 小屋(面海早訂)</span>
+        <span class="chip">LKN 租車含釘胎(書面)</span>
+        <span class="chip">Tromsø 極光團</span>
+        <span class="chip">2/26 早上北上高鐵車票</span>
+        <span class="chip">旅遊險(延誤/取消/醫療)</span>
+        <span class="chip">防滑雪靴+冰爪</span>
+        <span class="chip">相機腳架+紅光頭燈</span>
+      </div>
+      <div class="warn"><span class="tag">⚠ 誠實提醒</span>極光<b>不保證</b>(Tromsø 4 晚追雲保底、Lofoten 6 晚拍美照);賞鯨 3 月過季;維京船博物館 2027 關閉;<b>台胞證沒辦會被拒登機</b>;Bodø 過夜+奧斯陸緩衝夜不可省;Reinebringen/Kvalvika 雪坡冬季排除;Reinefjorden 純搭船賞景、週六停。</div>
+      <p style="font-size:.85rem;color:var(--ink-soft)">📚 原始細節檔(已整合進本頁,留作對照,移到「封存_舊版與細節」資料夾):<a href="封存_舊版與細節/西Lofoten深度行程.html" target="_blank" rel="noopener">西 Lofoten 深度</a>｜<a href="封存_舊版與細節/每晚住宿選擇.md" target="_blank" rel="noopener">每晚住宿選擇</a>｜<a href="封存_舊版與細節/挪威3月極光蜜月計劃.html" target="_blank" rel="noopener">挪威 3 月總覽</a>｜<a href="規劃總覽.md" target="_blank" rel="noopener">規劃總覽</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="script">From Tainan to the Aurora</span>
+  <p style="max-width:620px;margin:6px auto">一份就夠:從台南家門口,到挪威世界盡頭的極光下。機票已訂、行李直掛、日期已定;其餘的,我們一起慢慢選。記得先辦台胞證!祝雪白、極光爆棚、白頭偕老 🌌</p>
+  <p style="font-size:.78rem;color:#a9b7c0;margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.05.31</p>
+</footer>
+
+<button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
+<script>
+  const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
+  addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';backtop.classList.toggle('show',h.scrollTop>500)});
+  backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  const links=[...document.querySelectorAll('#navlinks a')],map={};
+  links.forEach(a=>{const id=a.getAttribute('href').slice(1),el=document.getElementById(id);if(el)map[id]=a});
+  Object.keys(map).forEach(id=>{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));map[id].classList.add('active');map[id].scrollIntoView({block:'nearest',inline:'center'})}}),{rootMargin:'-40% 0px -55% 0px'}).observe(document.getElementById(id))});
+</script>
+</body>
+</html>
