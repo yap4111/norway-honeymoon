@@ -55,7 +55,7 @@
 
 ## HTML 結構與樣式慣例
 
-- **section id 與 nav 連結要同步**：`flights / tw / days / tromso / lofoten / winter / aurora / budget / pack / timeline / check`（已刪除 `drive`、`stay`、`maps`:自駕比較/租車比較/慢遊表/距離表已併或刪、住宿推薦章移除、地圖速查整章刪除——逐日已逐列加 📍 且各段有〈在地地圖速查〉;`winter`=獨立的「冬季雪地自駕注意」章)。
+- **section id 與 nav 連結要同步**：`flights / tw / days / tromso / lofoten / winter / aurora / budget / pack / apps / timeline / check`（已刪除 `drive`、`stay`、`maps`:自駕比較/租車比較/慢遊表/距離表已併或刪、住宿推薦章移除、地圖速查整章刪除——逐日已逐列加 📍 且各段有〈在地地圖速查〉;`winter`=獨立的「冬季雪地自駕注意」章)。
 - **CSS class 語意，別混用**：
   - `note` = 硬限制 / 不可變更前提；`warn` = 安全 / 待確認；`gold` = 關鍵結論 / 重點提醒；`seg` = 分區標頭。
   - 逐日卡：`.day > .dhead(.ddate .dtitle .flag) > scroll-x>table > .dmeta`。
