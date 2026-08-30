@@ -9,6 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
   :root{
     --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush-soft:#fbeef1;
@@ -144,12 +146,16 @@
   [id].seg,[id].day,[id].card,[id].warn{scroll-margin-top:108px}
   summary{cursor:pointer;color:var(--rose);font-weight:700;font-size:.92rem;padding:4px 0}
   details{margin:8px 0}
+  .map{height:340px;border-radius:12px;border:1px solid var(--line);margin:8px 0;background:#eef2f5;position:relative;z-index:1;overflow:hidden}
+  .map .tapguard{position:absolute;inset:0;z-index:500;display:grid;place-items:center;background:rgba(20,30,60,.18);color:#fff;font-weight:700;font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6);cursor:pointer}
+  .maphint{font-size:.78rem;color:var(--ink-soft)}
+  .leaflet-popup-content{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:.85rem;line-height:1.5}
   footer{text-align:center;padding:42px 20px 66px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
   footer .script{font-size:1.9rem;color:var(--aurora);display:block}
   .backtop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
   .backtop.show{opacity:1;pointer-events:auto}
   @media print{
-    nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin{display:none!important}
+    nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin,.map,.maphint{display:none!important}
     body{background:#fff}
     a{color:var(--ink);text-decoration:none}
     header.hero{min-height:auto;padding:20px}
@@ -288,32 +294,7 @@
   <!-- 逐日 -->
   <section id="days">
     <div class="sec-head"><div class="sec-ico">📅</div><div><h2>全程逐日(每天附 A/B/C 方案)</h2><p style="color:var(--ink-soft);font-size:.9rem">奧斯陸 2 + Tromsø 4(極光保底)+ Bodø 1 + Lofoten 6 + 奧斯陸 1。<b>方案僅供選擇,不替你們拍板。</b></p></div></div>
-    <div class="card" id="routemap">
-      <h3>🗺 全程動線示意</h3>
-      <svg viewBox="0 0 360 178" role="img" aria-label="行程路線示意:台北經北京飛奧斯陸 2 晚,飛 Tromsø 4 晚,飛 Bodø 1 晚,飛進 Lofoten 自駕 6 晚,聯程經 Bodø 飛回奧斯陸 1 晚後返台" style="width:100%;height:auto;display:block">
-        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#9aa7b5"/></marker></defs>
-        <path d="M14,148 L32,133" stroke="#9aa7b5" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"/>
-        <text x="6" y="163" font-size="8.5" fill="#6a5358">✈ ⇄ 台北(經北京轉機)</text>
-        <path d="M56,106 L124,52" stroke="#9aa7b5" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"/>
-        <text x="55" y="72" font-size="8.5" fill="#6a5358">✈ SK4412</text>
-        <path d="M151,45 L198,58" stroke="#9aa7b5" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"/>
-        <text x="152" y="44" font-size="8.5" fill="#6a5358">✈ SK4561</text>
-        <path d="M230,70 L282,86" stroke="#9aa7b5" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"/>
-        <text x="234" y="70" font-size="8.5" fill="#6a5358">✈ WF806</text>
-        <path d="M291,110 C245,158 118,160 62,132" stroke="#9aa7b5" stroke-width="1.6" stroke-dasharray="5 4" fill="none" marker-end="url(#arr)"/>
-        <text x="180" y="172" font-size="8.5" fill="#6a5358" text-anchor="middle">✈ WF892+SK4107(經 Bodø 轉機・行李直掛 OSL)</text>
-        <circle cx="50" cy="120" r="16" fill="#c9a24b"/><text x="50" y="124" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">2+1</text>
-        <text x="50" y="105" font-size="10" fill="#3c2a2e" text-anchor="middle" font-weight="700">奧斯陸</text>
-        <circle cx="135" cy="40" r="16" fill="#3f9d82"/><text x="135" y="44" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">4</text>
-        <text x="135" y="16" font-size="10" fill="#3c2a2e" text-anchor="middle" font-weight="700">Tromsø 🌌</text>
-        <circle cx="213" cy="62" r="16" fill="#2c6e9a"/><text x="213" y="66" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">1</text>
-        <text x="211" y="93" font-size="10" fill="#3c2a2e" text-anchor="middle" font-weight="700">Bodø</text>
-        <circle cx="300" cy="95" r="16" fill="#b23a5b"/><text x="300" y="99" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">6</text>
-        <text x="300" y="126" font-size="10" fill="#3c2a2e" text-anchor="middle" font-weight="700">Lofoten 🚗</text>
-      </svg>
-      <p style="font-size:.78rem;color:var(--ink-soft);margin-top:2px">圓內數字=住宿晚數(奧斯陸 2 晚+回程緩衝 1 晚)・虛線=航段;<b>示意圖,非比例、非真實地理位置</b>。</p>
-    </div>
-    <div class="note"><span class="tag">🧭 為什麼「先 Tromsø、後 Lofoten」</span>① <b>在小屋慢遊收尾最像蜜月</b> ── 最後 6 晚在 Lofoten 漁村自己煮、看海,只有這個順序給得了。② <b>怕冷</b>:先在有城市配套的 Tromsø 暖身,再進相對原始的小屋。③ <b>體力</b>:追光熬夜、雪橇放精神最好的前段,煮飯看海放後段。④ <b>極光</b>:先在最強的場(Tromsø+嚮導團)看掉,後段 Lofoten(3 月也是看極光的好月份)全是紅利。回程安全則靠 <b>3/12 奧斯陸緩衝夜</b>守門,不受順序影響。<br><b>只有當你們把「回程零風險」擺第一、或更想以「在 Tromsø 追到極光」當高潮收尾、不在乎在小屋收尾時,才考慮翻成先 Lofoten。</b></div>
+        <div class="note"><span class="tag">🧭 為什麼「先 Tromsø、後 Lofoten」</span>① <b>在小屋慢遊收尾最像蜜月</b> ── 最後 6 晚在 Lofoten 漁村自己煮、看海,只有這個順序給得了。② <b>怕冷</b>:先在有城市配套的 Tromsø 暖身,再進相對原始的小屋。③ <b>體力</b>:追光熬夜、雪橇放精神最好的前段,煮飯看海放後段。④ <b>極光</b>:先在最強的場(Tromsø+嚮導團)看掉,後段 Lofoten(3 月也是看極光的好月份)全是紅利。回程安全則靠 <b>3/12 奧斯陸緩衝夜</b>守門,不受順序影響。<br><b>只有當你們把「回程零風險」擺第一、或更想以「在 Tromsø 追到極光」當高潮收尾、不在乎在小屋收尾時,才考慮翻成先 Lofoten。</b></div>
     <div class="daybar"><a class="chip" href="#d0226">✈ 2/26 出發</a><a class="chip" href="#d0227">🏛 奧斯陸</a><a class="chip" href="#d0301">🌌 Tromsø</a><a class="chip" href="#d0305">🛟 Bodø</a><a class="chip" href="#d0306">🎣 Lofoten</a><a class="chip" href="#d0312">🛬 返程</a></div>
     <div class="card" id="stay-all">
       <h3>🛏 全程 14 晚住宿一覽(速查;訂房明細見各段專區)</h3>
@@ -409,7 +390,7 @@
     <div class="sec-head"><div class="sec-ico">🏛</div><div><h2>奧斯陸在地・逐日(2/27–2/28+3/12 緩衝夜)</h2><p style="color:var(--ink-soft);font-size:.9rem">抵達日睡飽調時差、週日看博物館(A/B/C 由你們選)、緩衝夜採買伴手禮;住 Scandic Vulkan(樓下 Mathallen)。</p></div></div>
 
     <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>抵達</b>:2/27(六)HU769 <b>06:00 落地 OSL</b>(國際線・出關約 1h)。<b>離開</b>:3/1(一)SK4412 <b>10:00 飛 Tromsø</b>(08:30 前抵機場、bag drop 09:20 硬底線 → 只排早上)。<b>回程</b>:3/12(五)12:10 回 OSL 過緩衝夜、3/13(六)約 09:30 出發去機場。<b>住宿</b>:Scandic Vulkan 2/27–28 ✅ 已訂(含早;飯店確認雙人床)+ 3/12 ⏳ 待訂。</div>
-    <div class="daybar"><a class="chip" href="#o-day1">D1 2/27 抵達</a><a class="chip" href="#o-day2">D2 2/28 全日</a><a class="chip" href="#o-day3">3/12 緩衝夜</a><a class="chip" href="#o-warn">⚠ 提醒</a></div>
+    <div class="daybar"><a class="chip" href="#o-day1">D1 2/27 抵達</a><a class="chip" href="#o-day2">D2 2/28 全日</a><a class="chip" href="#o-day3">3/12 緩衝夜</a><a class="chip" href="#o-map">📍 地圖</a><a class="chip" href="#o-warn">⚠ 提醒</a></div>
 
     <div class="seg" id="o-day1" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/master-oslo.jpg" alt="">🛬 Day 1(2/27 六)抵達・睡飽調時差</div>
     <div class="day r-oslo">
@@ -469,6 +450,11 @@
       <div class="dmeta">🛫 上午的 Lofoten 還車與飛行操作 → 見 <a href="#l-day12">〈Lofoten Day 12〉</a>;此晚住宿 ⏳ 待訂(續住 Scandic Vulkan 或近 Oslo S 的 Citybox)。</div>
     </div>
 
+    <div class="card" id="o-map">
+      <h3>📍 奧斯陸在地地圖(標記=行程活動點)</h3>
+      <div class="map" id="map-oslo"></div>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線時用各行程列的 📍。</p>
+    </div>
     <div class="warn" id="o-warn"><span class="tag">⚠ 全段提醒</span>① <b>週日(2/28)商店/超市/Vinmonopolet 依法關門</b>、博物館多有開 → 採買一律排週六(2/27)與 3/12(五)。② <b>Vinmonopolet</b>:週五 18:00 關、週六約 16:00 前、週日休。③ 歌劇院屋頂大理石冬季結冰濕滑,防滑鞋慢走。④ 本段營業時間為 2026 查證值,<b>行前一個月再上各官網核對</b>。</div>
   </section>
 
@@ -703,7 +689,9 @@
     </div>
 
     <div class="card" id="t-map">
-      <h3>📍 Tromsø 在地地圖速查(點即開 Google Maps)</h3>
+      <h3>📍 Tromsø 在地地圖速查</h3>
+      <div class="map" id="map-tromso"></div>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <h4>景點・活動・補給</h4>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">Fjellheisen 纜車</a>
@@ -1011,7 +999,9 @@
     </div>
 
     <div class="card" id="l-map">
-      <h3>📍 Lofoten 在地地圖速查(點即開 Google Maps)</h3>
+      <h3>📍 Lofoten 在地地圖速查</h3>
+      <div class="map" id="map-lofoten"></div>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">Leknes 採買</a>
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">Hamnøy 橋</a>
@@ -1361,6 +1351,88 @@
   // 摺疊區:列印前展開、錨點命中自動展開
   addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
   addEventListener('hashchange',()=>{try{const el=document.querySelector(location.hash);const d=el&&el.closest('details');if(d)d.open=true}catch(e){}});
+  // 在地地圖(Leaflet + OpenStreetMap;座標經 2026/8 逐點查證;點一下啟用操作,避免捲頁誤觸)
+  document.addEventListener('DOMContentLoaded',()=>{
+    if(!window.L)return;
+    const COLS={l:"#b23a5b",s:"#c9a24b",t:"#2c6e9a",a:"#3f9d82"};
+    const MAPS={
+      oslo:[
+        [59.9223,10.7509,"🛏 Scandic Vulkan(住宿)","2/27–28 已訂+3/12 待訂","l"],
+        [59.92401,10.75888,"🥐 Godt Brød Grünerløkka(麵包早餐)","2/27 早","s"],
+        [59.92212,10.75203,"🍽 Mathallen 美食街(住宿樓下)","2/27・2/28 午・3/12 晚","s"],
+        [59.90562,10.75516,"🎨 MUNCH 孟克博物館","2/27 下午或 2/28","a"],
+        [59.91163,10.72843,"🏛 國家博物館(週一休)","2/28 A 案","a"],
+        [59.90752,10.75268,"🏟 歌劇院屋頂(結冰防滑)","2/27–28・3/12 傍晚","a"],
+        [59.90993,10.72504,"⚓ Aker Brygge 海濱","2/27 C 案","a"],
+        [59.92473,10.70749,"⛲ 維格蘭雕塑公園(24h 免費)","2/27 B 案或 2/28 C 案","a"],
+        [59.90336,10.69955,"🚢 Fram 極地船博物館","2/28 B 案(30 號公車)","a"],
+        [59.90351,10.69806,"🛶 Kon-Tiki 博物館","2/28 B 案","a"],
+        [59.96445,10.66679,"⛷ Holmenkollen 跳台+滑雪博物館(10–16)","2/28 C 案上午","a"],
+        [59.91093,10.75284,"🚉 奧斯陸中央車站 Oslo S","機場火車起訖","t"],
+        [59.91169,10.75263,"🛍 Byporten(KIWI 週五到 22:00)","3/12 採買","s"],
+        [59.91247,10.75301,"🍷 Vinmonopolet Oslo City(週五 18:00 關)","3/12 先衝","s"],
+        [59.91291,10.74188,"🚶 Karl Johans gate 紀念品街","3/12 採買","s"]
+      ],
+      tromso:[
+        [69.67951,18.90746,"✈ Tromsø 機場(Alamo 取還車)","3/1 取・3/3 還","t"],
+        [69.77428,19.25953,"🛏 Day1 住處 Ullstindvegen 157","3/1","l"],
+        [69.63034,18.02317,"🛏 Day2 住處 Sommarøy(Prestvikvegen)","3/2","l"],
+        [69.647,18.95197,"🛏 Day3–4 住宿 Fiskergata 6","3/3–4","l"],
+        [69.64803,18.98742,"⛪ 北極大教堂","3/1","a"],
+        [69.64108,18.98621,"🚡 Fjellheisen 纜車山下站","3/1 卡藍調","a"],
+        [69.6514,18.95766,"🌭 Raketten 鹿肉熱狗(二–六 11–17)","3/3","s"],
+        [69.64237,18.97769,"🛒 Coop Extra Tromsdalen","3/1 採買","s"],
+        [69.67747,18.74561,"🛒 Eide Handel(上島前補貨)","3/2","s"],
+        [69.69441,18.62083,"🏞 Ersfjordbotn 峽灣","3/2","a"],
+        [69.69289,18.61529,"🍽 Bryggejentene 午餐","3/2","s"],
+        [69.66189,18.56271,"🏔 Kattfjordeidet 山口","3/2・帶狀地形概值","a"],
+        [69.60145,18.02084,"🏖 Brensholmen 海灘","3/2・落點概值","a"],
+        [69.6236,18.0456,"🌉 Sommarøy 跨海橋(招牌機位)","3/2","a"],
+        [69.63253,18.90623,"🏖 Telegrafbukta","3/3 順遊","a"],
+        [69.64968,18.96085,"🐕 Polar Adventures(集合點以確認信為準)","3/4 雪橇","a"],
+        [69.64998,18.95597,"🍔 最北麥當勞(Storgata 70)","3/4","s"],
+        [69.64368,18.9499,"🐟 Polaria 水族館(16:00 關)","3/4","a"],
+        [69.6482,18.95661,"🎁 禮品店(Strandgata 36)","3/4 明信片主力","s"],
+        [69.67367,18.92331,"⚡ Obs Jekta 快充","3/2–3","t"]
+      ],
+      lofoten:[
+        [68.15346,13.61419,"✈ Leknes 機場 LKN(Hertz 取還車)","3/6 取・3/12 還","t"],
+        [68.14468,13.61954,"🛒 REMA 1000 Leknes(180kW 快充)","3/6 大採買・3/8/3/11 補","s"],
+        [68.14862,13.6166,"🍷 Vinmonopolet Leknes(週六約 15–16 關)","3/6 先衝","s"],
+        [68.0255,13.1833,"🛏 Mørkveden(Ramberg 住處)","3/6–7","l"],
+        [68.10656,13.29513,"🏖 Skagsanden 極光灘","3/6 藍調+守極光","a"],
+        [68.14799,14.20073,"⚽ Henningsvær 海上足球場","3/7","a"],
+        [68.19799,13.52919,"🏖 Haukland 海灘","3/8 長走","a"],
+        [68.21368,13.50829,"🏖 Uttakleiv 海灘(極光首選)","3/8","a"],
+        [67.93356,13.08652,"🛏 Reine cabin(46 Kirkeveien)","3/8–10","l"],
+        [67.94533,13.12972,"🌉 Hamnøy 橋(招牌機位・單線橋)","3/8 起","a"],
+        [67.9412,13.11101,"🏘 Sakrisøy 黃屋","3/8–9","a"],
+        [67.94182,13.11186,"🦐 Anita's Sjømat(冬季約 12:00 開)","3/9","s"],
+        [67.93547,13.09479,"⛴ Reine 碼頭(觀光船・前日電話預訂)","3/9","t"],
+        [67.87962,12.98404,"🏚 Å 路盡頭漁村","3/10","a"],
+        [68.03541,13.3477,"🏘 Nusfjord 古漁村(入村費約 100 NOK)","3/10","a"],
+        [68.07343,13.53625,"🛏 Hemmingodden Lodge(Ballstad)","3/11","l"],
+        [68.0658,13.53473,"🥾 Ballstadheia 登山口","3/11・行前以 ut.no 核對","a"],
+        [68.23948,14.56681,"⚡ Svolvær 快充","3/7 順路","t"],
+        [68.24422,13.75764,"🏛 Lofotr 維京博物館(Borg)","雨天備案","a"]
+      ]
+    };
+    for(const key of Object.keys(MAPS)){
+      const el=document.getElementById('map-'+key);if(!el)continue;
+      const m=L.map(el,{scrollWheelZoom:false,dragging:false});
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
+      const b=[];
+      MAPS[key].forEach(p=>{
+        b.push([p[0],p[1]]);
+        L.circleMarker([p[0],p[1]],{radius:8,color:'#fff',weight:2,fillColor:COLS[p[4]],fillOpacity:.95}).addTo(m)
+          .bindPopup('<b>'+p[2]+'</b><br>'+p[3]+'<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+p[0]+','+p[1]+'">🧭 導航 →</a>');
+      });
+      m.fitBounds(b,{padding:[26,26]});
+      const g=document.createElement('div');g.className='tapguard';g.textContent='👆 點一下啟用地圖操作';
+      el.appendChild(g);
+      g.addEventListener('click',()=>{g.remove();m.dragging.enable();m.scrollWheelZoom.enable();m.invalidateSize()});
+    }
+  });
 </script>
 </body>
 </html>
