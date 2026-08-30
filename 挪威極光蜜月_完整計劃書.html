@@ -150,6 +150,11 @@
   .map .tapguard{position:absolute;inset:0;z-index:500;display:grid;place-items:center;background:rgba(20,30,60,.18);color:#fff;font-weight:700;font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6);cursor:pointer}
   .maphint{font-size:.78rem;color:var(--ink-soft)}
   .leaflet-popup-content{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:.85rem;line-height:1.5}
+  .mapdays{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+  button.chip{cursor:pointer;font-family:inherit}
+  .mapdays .chip.now{background:var(--night);color:#cfe;border-color:var(--night)}
+  .leaflet-tooltip.mnum{background:var(--night);color:#fff;border:2px solid #fff;border-radius:50%;width:22px;height:22px;line-height:17px;text-align:center;font-weight:700;font-size:.72rem;box-shadow:0 1px 4px rgba(0,0,0,.4);padding:0}
+  .leaflet-tooltip.mnum::before{display:none}
   footer{text-align:center;padding:42px 20px 66px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
   footer .script{font-size:1.9rem;color:var(--aurora);display:block}
   .backtop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
@@ -217,9 +222,8 @@
     <h3>📌 進度一眼看</h3>
     <div class="chips">
       <span class="chip ok">✓ 機票全訂(國際+國內 5 段)</span>
-      <span class="chip ok">✓ 住宿 13/14 晚(含奧斯陸 2/27–28)</span>
+      <span class="chip ok">✓ 住宿 14 晚全訂完封 🎉</span>
       <span class="chip ok">✓ 租車 2 段</span>
-      <a class="chip pend" href="#timeline">⏳ 3/12 緩衝夜待訂</a>
       <a class="chip pend" href="#timeline">⏳ 極光團/雪橇 12 月訂</a>
       <a class="chip x" href="#check">⭐ 台胞證必辦</a>
     </div>
@@ -309,7 +313,7 @@
           <tr><td>3/6(六)–3/7(日)</td><td>Ramberg</td><td>Mørkveden <a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a></td><td>✅ NT$10,611(2 晚)</td></tr>
           <tr><td>3/8(一)–3/10(三)</td><td>Reine</td><td>Reine cabin(46 Kirkeveien)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.933564,13.086521">📍</a></td><td>✅ NT$27,661(3 晚)</td></tr>
           <tr><td>3/11(四)</td><td>Ballstad</td><td>Hemmingodden Lodge <a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0734341,13.5362506">📍</a></td><td>✅ NT$8,750</td></tr>
-          <tr><td>3/12(五)</td><td>奧斯陸(緩衝夜)</td><td>續住 Scandic Vulkan 或近 Oslo S 的 Citybox</td><td>⏳ 待訂(約 3,700/晚推估)</td></tr>
+          <tr><td>3/12(五)</td><td>奧斯陸(緩衝夜)</td><td>Scandic Vulkan(續住・標準大床房)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=59.9223,10.7509">📍</a></td><td>✅ NT$4,426(含 3/13 早餐)</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -328,7 +332,7 @@
       <div class="opt"><b>C 雪中+滑雪</b>:<b>上午</b> Holmenkollen 跳台+滑雪博物館<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Holmenkollen">📍</a>(10–16)→ 下午維格蘭公園</div>
       <div class="dmeta">📅 <b>今天是週日</b>:商店/超市/Vinmonopolet 關、博物館全開。 <a href="#o-day2">⏱ 完整時間軸 →</a></div></div>
     <div class="dmeta">🛏 <b>奧斯陸住宿(2/27–3/1・2 晚)✅ 已訂:Scandic Vulkan・NT$7,338</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=59.9223,10.7509">📍</a> Maridalsveien 13A(Vulkan/Grünerløkka・樓下 Mathallen;入住 16:00 後、退房 12:00)── Trip.com 訂單 …427330(2026/8/22 訂;<b>含早餐 ✅</b>+健身房/行李寄存);<b>房型:訂單顯示「標準雙床房」,已 email 飯店並獲確認改提供「1 張雙人床」</b>;特殊需求已隨原訂單提交:安靜房+寄放行李+honeymoon。</div>
-    <div class="warn"><span class="tag">⚠ 奧斯陸兩件待辦</span>① <b>3/12 緩衝夜尚未訂</b> → 續住 Scandic Vulkan(約 3,700/晚推估)或改近 Oslo S 的 Citybox。② <b>出發帶著飯店確認雙人床的 email</b>(訂單頁面仍顯示雙床房,check-in 若有出入以信件為憑)。</div>
+    <div class="warn"><span class="tag">⚠ 奧斯陸唯一待辦</span><b>出發帶著飯店確認雙人床的 email</b>(2/27–28 訂單頁面仍顯示雙床房,check-in 若有出入以信件為憑)。3/12 已續訂 → <b>全程 14 晚完封</b>;⚠ 3/12 這筆<b>不可修改、取消不退款</b>,行程若變動需認賠。</div>
     <div class="note"><span class="tag">💤 第一天為什麼先在奧斯陸睡飽</span>你們剛搭完紅眼、又在北京熬了一夜,2/27 早上落地一定很累,所以頭兩晚都待奧斯陸、把時差睡回來再往北飛,別一下飛機就趕去追極光(那樣 Tromsø 的第一晚會睏到沒心情看)。回程 3/12 的奧斯陸這晚也一定要留著 ── 萬一北邊班機誤點,有這一晚墊著,才不會趕不上 3/13 中午回家的班機;順便在這裡買伴手禮,選擇比小漁村多得多。</div>
 
     <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-tromso-aurora.jpg" alt="">🌌 Tromsø 追極光(3/1–3/4,4 晚)</div>
@@ -372,12 +376,12 @@
 
     <div class="seg" role="heading" aria-level="3">🛬 返程(3/12–3/14)</div>
     <div class="day r-fly" id="d0312"><div class="dhead"><span class="ddate">3/12 五</span><span class="dtitle">Lofoten→奧斯陸緩衝夜</span><span class="flag fly">✈ WF892+SK4107 已訂</span></div>
-      <div class="opt">回 LKN <b>07:30 還車(憑證確認:3/12 門市 07:00–18:00 營業・有人服務)</b> → <b>WF892 09:30→10:00 BOO</b> 轉 <b>SK4107 10:35→12:10 OSL</b>(已訂),回奧斯陸過一晚(吸收延誤、採買伴手禮;<b>此晚 ⏳ 待訂</b>──首選續住 Scandic Vulkan(2/27–28 已訂),或改近 Oslo S 的 Citybox)。 <a href="#o-day3">⏱ 奧斯陸下午時間軸 →</a></div>
+      <div class="opt">回 LKN <b>07:30 還車(憑證確認:3/12 門市 07:00–18:00 營業・有人服務)</b> → <b>WF892 09:30→10:00 BOO</b> 轉 <b>SK4107 10:35→12:10 OSL</b>(已訂),回奧斯陸過一晚(吸收延誤、採買伴手禮;<b>此晚 ✅ 已訂:續住 Scandic Vulkan</b>・標準大床房 4,426・含隔日早餐)。 <a href="#o-day3">⏱ 奧斯陸下午時間軸 →</a></div>
       
       <div class="dmeta">✅ 已確認:<b>同一張聯程票(PNR BOXYI6)、行李直掛 OSL</b> ── 受保護。博德轉機 35 分雖短,但同票有保障:萬一 WF892 誤點沒接到,SAS/Widerøe 免費改下一班 BOO→OSL;加上 3/12 奧斯陸緩衝夜,3/13 國際線無虞。落地博德直接走去登機口(機場小、免再安檢);行李 Leknes 掛、奧斯陸領。</div>
       </div>
     <div class="day r-fly" id="d0313"><div class="dhead"><span class="ddate">3/13 六</span><span class="dtitle">奧斯陸 → 北京(HU770)</span><span class="flag fly">✈ 12:30 起飛</span></div>
-      <div class="opt">退房 → <b>約 09:30 到 OSL 機場</b>(12:30 起飛、提前 3h)→ HU770 飛北京(紅眼,翌日 04:30 抵)。<b>伴手禮在前一晚 3/12 於奧斯陸先買齊</b>(3/13 上午沒有觀光時間)。</div>
+      <div class="opt">07:30 飯店早餐(房價含・週六 07:30 開)→ 退房 → <b>約 09:30 到 OSL 機場</b>(12:30 起飛、提前 3h)→ HU770 飛北京(紅眼,翌日 04:30 抵)。<b>伴手禮在前一晚 3/12 於奧斯陸先買齊</b>(3/13 上午沒有觀光時間)。</div>
       <div class="dmeta">✈ <b>機場操作(OSL・國際線出境)</b>:① <b>國際線、離開申根</b> → 有<b>護照查驗 / 出境管制</b>,比國內線久,務必<b>提前 3h</b> 到;② 海航 check-in 櫃台通常起飛前約 3h 開、60 分前關,先確認航廈/櫃台位置;③ <b>行李掛到最終點(台北),北京國際轉機免提領</b>;④ 若有購物,出境前先辦<b>申根退稅 Tax Free</b>;⑤ 隨身帶<b>護照 + 台胞證</b>(北京轉機查驗)。</div></div>
     <div class="day r-fly" id="d0314"><div class="dhead"><span class="ddate">3/14 日</span><span class="dtitle">北京 → 台北 → 台南</span><span class="flag fly">✈ 08:00→11:10</span></div>
       <div class="opt">04:30 抵北京、轉機約 3.5h(查台胞證)→ <b>HU7987 08:00 飛、11:10 抵台北</b> → 機捷+高鐵 → 台南,白天到家、行程圓滿 🎉</div></div>
@@ -389,7 +393,7 @@
   <section id="oslo">
     <div class="sec-head"><div class="sec-ico">🏛</div><div><h2>奧斯陸在地・逐日(2/27–2/28+3/12 緩衝夜)</h2><p style="color:var(--ink-soft);font-size:.9rem">抵達日睡飽調時差、週日看博物館(A/B/C 由你們選)、緩衝夜採買伴手禮;住 Scandic Vulkan(樓下 Mathallen)。</p></div></div>
 
-    <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>抵達</b>:2/27(六)HU769 <b>06:00 落地 OSL</b>(國際線・出關約 1h)。<b>離開</b>:3/1(一)SK4412 <b>10:00 飛 Tromsø</b>(08:30 前抵機場、bag drop 09:20 硬底線 → 只排早上)。<b>回程</b>:3/12(五)12:10 回 OSL 過緩衝夜、3/13(六)約 09:30 出發去機場。<b>住宿</b>:Scandic Vulkan 2/27–28 ✅ 已訂(含早;飯店確認雙人床)+ 3/12 ⏳ 待訂。</div>
+    <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>抵達</b>:2/27(六)HU769 <b>06:00 落地 OSL</b>(國際線・出關約 1h)。<b>離開</b>:3/1(一)SK4412 <b>10:00 飛 Tromsø</b>(08:30 前抵機場、bag drop 09:20 硬底線 → 只排早上)。<b>回程</b>:3/12(五)12:10 回 OSL 過緩衝夜、3/13(六)約 09:30 出發去機場。<b>住宿</b>:Scandic Vulkan 全程三晚 ✅ 已訂(2/27–28 含早・飯店確認雙人床;3/12 續住標準大床房・含 3/13 早餐)。</div>
     <div class="daybar"><a class="chip" href="#o-day1">D1 2/27 抵達</a><a class="chip" href="#o-day2">D2 2/28 全日</a><a class="chip" href="#o-day3">3/12 緩衝夜</a><a class="chip" href="#o-map">📍 地圖</a><a class="chip" href="#o-warn">⚠ 提醒</a></div>
 
     <div class="seg" id="o-day1" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/master-oslo.jpg" alt="">🛬 Day 1(2/27 六)抵達・睡飽調時差</div>
@@ -439,7 +443,7 @@
         <thead><tr><th>時間</th><th>奧斯陸下午(伴手禮主力日)</th></tr></thead>
         <tbody>
           <tr><td>12:10</td><td><b>SK4107 落地 OSL(國內線)</b>→ 提領行李(Leknes 直掛到這)→ Flytoget/Vy 進市區</td></tr>
-          <tr><td>13:15</td><td>住宿放行李(續住 Scandic Vulkan 或 Citybox・⏳ 待訂)</td></tr>
+          <tr><td>13:15</td><td>住宿放行李(<b>續住 Scandic Vulkan ✅ 已訂</b>;入住 16:00 後,先寄行李)</td></tr>
           <tr><td>14:00–18:00</td><td><b>伴手禮採買(順序有玄機)</b>:① 想買酒(aquavit 等)<b>先衝 Vinmonopolet ── 週五 18:00 關</b>(Oslo City / Oslo S 分店<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Vinmonopolet+Stenersgata+1+Oslo">📍</a>;明早來不及)② <b>Karl Johans gate</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Karl+Johans+gate">📍</a> 紀念品店(約開到 19–21 時)③ <b>食品類超市買最省</b>:brunost 棕起司/Freia 巧克力/Kvikk Lunsj → Byporten 的 KIWI<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Byporten+Oslo">📍</a> 週五開到 22:00(購物中心本體 10–21)</td></tr>
           <tr><td>~18:10</td><td>日落(概值)→ 逛完順走<b>歌劇院屋頂夜景</b>收尾</td></tr>
           <tr><td>19:30</td><td>晚餐:Mathallen(週五 10:00–20:00・部分餐廳更晚)或 Oslo S 周邊</td></tr>
@@ -447,13 +451,13 @@
         </tbody>
       </table></div>
       <div class="dmeta">🛍 <b>退稅(Tax Free)</b>:同店同日滿 <b>NOK 315</b>(食品 NOK 290)才可辦 → 結帳時出示護照拿退稅單;3/13(六)在 OSL <b>安檢前</b>櫃檯辦理(Global Blue 報到區 8・週六 05:00 起/Planet 報到區 7・09:00 起),商品需可出示。🚄 3/13(六)早上 Oslo S→OSL:Flytoget 週六約 20 分一班/Vy 每小時 2–3 班(~NOK 124–129),09:30 出發沒問題。均為 2026 查證值,行前再核對。</div>
-      <div class="dmeta">🛫 上午的 Lofoten 還車與飛行操作 → 見 <a href="#l-day12">〈Lofoten Day 12〉</a>;此晚住宿 ⏳ 待訂(續住 Scandic Vulkan 或近 Oslo S 的 Citybox)。</div>
+      <div class="dmeta">🛫 上午的 Lofoten 還車與飛行操作 → 見 <a href="#l-day12">〈Lofoten Day 12〉</a>;此晚 ✅ 已訂:<b>續住 Scandic Vulkan・標準大床房・NT$4,426</b>(Trip.com 訂單 …572696;含 3/13 早餐,週六 07:30 開、09:30 出發前吃得到;特殊需求已提交:安靜房+寄放行李;⚠ 不可修改、取消不退款)。</div>
     </div>
 
     <div class="card" id="o-map">
       <h3>📍 奧斯陸在地地圖(標記=行程活動點)</h3>
       <div class="map" id="map-oslo"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線時用各行程列的 📍。</p>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線時用各行程列的 📍。</p>
     </div>
     <div class="warn" id="o-warn"><span class="tag">⚠ 全段提醒</span>① <b>週日(2/28)商店/超市/Vinmonopolet 依法關門</b>、博物館多有開 → 採買一律排週六(2/27)與 3/12(五)。② <b>Vinmonopolet</b>:週五 18:00 關、週六約 16:00 前、週日休。③ 歌劇院屋頂大理石冬季結冰濕滑,防滑鞋慢走。④ 本段營業時間為 2026 查證值,<b>行前一個月再上各官網核對</b>。</div>
   </section>
@@ -691,7 +695,7 @@
     <div class="card" id="t-map">
       <h3>📍 Tromsø 在地地圖速查</h3>
       <div class="map" id="map-tromso"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <h4>景點・活動・補給</h4>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">Fjellheisen 纜車</a>
@@ -1001,7 +1005,7 @@
     <div class="card" id="l-map">
       <h3>📍 Lofoten 在地地圖速查</h3>
       <div class="map" id="map-lofoten"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
+      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">Leknes 採買</a>
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">Hamnøy 橋</a>
@@ -1119,12 +1123,12 @@
     <div class="sec-head"><div class="sec-ico">💰</div><div><h2>費用(2 人合計・機票已全訂)</h2><p style="color:var(--ink-soft);font-size:.9rem">已訂用實際金額、待訂用預估區間;完整帳見 <a href="費用紀錄.md" target="_blank" rel="noopener">費用紀錄.md</a></p></div></div>
     <div class="card scroll-x">
       <div class="stats">
-        <div class="stat"><span>✅ 已訂(實際)</span><b style="color:var(--aurora)">NT$213,418</b><span>機票+住宿 13 晚+租車 2 段</span></div>
-        <div class="stat"><span>⬜ 待訂(預估)</span><b style="color:var(--ink-soft)">約 8.4–12.9 萬</b><span>含 3/12 緩衝夜待訂</span></div>
+        <div class="stat"><span>✅ 已訂(實際)</span><b style="color:var(--aurora)">NT$217,844</b><span>機票+住宿 14 晚+租車 2 段</span></div>
+        <div class="stat"><span>⬜ 待訂(預估)</span><b style="color:var(--ink-soft)">約 8.0–12.4 萬</b><span>活動/餐食/保險/行政/雜支</span></div>
         <div class="stat"><span>💰 全程合計</span><b style="color:#8a6a1e">約 30–34.5 萬</b><span>2 人・不含買房與婚宴</span></div>
       </div>
-      <div class="pbar"><i style="width:49%;background:var(--night)">機票 49%</i><i style="width:34%;background:var(--aurora)">住宿 34%</i><i style="width:17%;background:var(--sky)">租車 17%</i></div>
-      <p style="font-size:.78rem;color:var(--ink-soft);margin-bottom:8px">已訂 213,418 的組成:機票 104,556・住宿 73,586・租車 35,276(實際金額,與下表一致)</p>
+      <div class="pbar"><i style="width:48%;background:var(--night)">機票 48%</i><i style="width:36%;background:var(--aurora)">住宿 36%</i><i style="width:16%;background:var(--sky)">租車 16%</i></div>
+      <p style="font-size:.78rem;color:var(--ink-soft);margin-bottom:8px">已訂 217,844 的組成:機票 104,556・住宿 78,012・租車 35,276(實際金額,與下表一致)</p>
       <h3>✅ 已訂(實際,2 人)</h3>
       <table class="wide">
         <thead><tr><th>項目</th><th>金額(2人)</th><th>說明</th></tr></thead>
@@ -1136,24 +1140,24 @@
           <tr><td>Lofoten 住宿 Reine 3 晚</td><td><b>27,661</b></td><td>3/8–10 Reine cabin(46 Kirkeveien)</td></tr>
           <tr><td>Lofoten 住宿 Ballstad 1 晚</td><td><b>8,750</b></td><td>3/11 Hemmingodden Lodge</td></tr>
           <tr><td>Bodø 住宿 1 晚</td><td><b>5,049</b></td><td>3/5 Home Hotel Grand Bodø(含早餐+fika+晚間簡餐)</td></tr>
-          <tr><td>奧斯陸住宿 2 晚</td><td><b>7,338</b></td><td>2/27–28 Scandic Vulkan(含早餐;訂單為雙床房・飯店 email 確認改雙人床;3/12 另訂)</td></tr>
+          <tr><td>奧斯陸住宿 2 晚</td><td><b>7,338</b></td><td>2/27–28 Scandic Vulkan(含早餐;訂單為雙床房・飯店 email 確認改雙人床)</td></tr>
+          <tr><td>奧斯陸住宿 3/12</td><td><b>4,426</b></td><td>緩衝夜續住 Scandic Vulkan 標準大床房(含 3/13 早餐;⚠ 不可修改/取消不退款)</td></tr>
           <tr><td>租車 Tromsø 2 天(Alamo ID.3 或同級・電動)</td><td><b>5,863</b></td><td>Trip.com 線上預付;含碰撞/盜搶/第三責任險 + 租車保障、無限里程、等電取還;取 3/1 13:00 / 還 3/3 12:00(機場)</td></tr>
           <tr><td>租車 LKN 6 天(Hertz ID.4 或同級・電動 4WD)</td><td><b>29,413</b></td><td>Trip.com 線上預付;含碰撞/盜搶/第三責任險 + Trip.com 租車保障、無限里程、等電取還、冬季設備費</td></tr>
-          <tr><td><b>已訂小計</b></td><td><b>213,418</b></td><td>機票 + 住宿 13 晚(奧斯陸 2+Tromsø 4+Bodø 1+Lofoten 6)+ 租車 2 段(依收據校正)</td></tr>
+          <tr><td><b>已訂小計</b></td><td><b>217,844</b></td><td>機票 + 住宿 14 晚(奧斯陸 3+Tromsø 4+Bodø 1+Lofoten 6)+ 租車 2 段(依收據校正)</td></tr>
         </tbody>
       </table>
       <h3>⬜ 待訂(預估,2 人)</h3>
       <table class="wide">
         <thead><tr><th>項目</th><th>預估(2人)</th><th>說明</th></tr></thead>
         <tbody>
-          <tr><td>住宿(3/12 奧斯陸緩衝夜 1 晚)⏳ 待訂</td><td>3,500–4,700</td><td>續住 Scandic Vulkan(約 3,700/晚推估)或近 Oslo S 的 Citybox;2/27–28 已訂並轉入上表</td></tr>
           <tr><td>活動(極光追雲團+狗拉雪橇+Fjellheisen 纜車)</td><td>30,000–52,000</td><td>Tromsø 極光為主力;另含 Lofoten 交通船</td></tr>
           <tr><td>餐食(14 天・自炊為主)</td><td>25,000–40,000</td><td>自炊可壓低</td></tr>
           <tr><td>旅遊險(2 人)</td><td>~7,000</td><td>機票已含 TripFlex(改/退彈性)→ 重點買<b>海外醫療+行李+延誤</b>,取消險需求可降、金額可再壓</td></tr>
           <tr><td>台胞證 ×2 / ETIAS ×2</td><td>~4,400</td><td>必辦</td></tr>
           <tr><td>台灣端高鐵+機捷(來回)</td><td>~6,000</td><td>2/26 早上北上、3/14 返</td></tr>
           <tr><td>雜支(SIM/伴手/停車/交通船等)</td><td>8,000–15,000</td><td></td></tr>
-          <tr><td><b>待訂小計</b></td><td><b>約 84,000–129,000</b></td><td>住宿僅剩 3/12 一晚;租車全轉已訂</td></tr>
+          <tr><td><b>待訂小計</b></td><td><b>約 80,000–124,000</b></td><td>機票/住宿/租車全訂完;剩活動與行政雜支</td></tr>
         </tbody>
       </table>
       <h3>💳 押金與圈存總覽(不列入花費・還車/退房後退還)</h3>
@@ -1163,7 +1167,7 @@
         <div class="stat"><span>Reine cabin(押金)</span><b style="color:var(--sky)">≈NT$1 萬</b><span>NOK 3,000・退房後 7 天內退還</span></div>
       </div>
       <div class="gold"><span class="tag">⚠ 最壞情境:兩筆租車圈存同時在卡上,合計約 13 萬</span>還車後 30–60 天才解圈、不另通知 → 出發前調高臨時額度或兩段各由一人當主駕分散兩張卡(詳見 <a href="#timeline">倒數待辦 ⑪</a>)。<span style="font-size:.78rem;color:var(--ink-soft)">金額為約值,以取車當下預授權為準。</span></div>
-      <div class="gold"><span class="tag">💰 全程兩人預估總額:約 30–34.5 萬台幣</span>已訂(實際)<b>213,418</b>(機票 + 住宿 13 晚 + 租車 2 段)+ 待訂(預估)約 <b>8.4–12.9 萬</b>(含 3/12 緩衝夜)。不含買房與婚禮宴客。</div>
+      <div class="gold"><span class="tag">💰 全程兩人預估總額:約 30–34.5 萬台幣</span>已訂(實際)<b>217,844</b>(機票 + 住宿 14 晚 + 租車 2 段)+ 待訂(預估)約 <b>8.0–12.4 萬</b>(活動/餐食/保險/行政/雜支)。不含買房與婚禮宴客。</div>
       <div class="note"><span class="tag">🎟 活動單項參考價(定案)</span>極光追雲團(含接送)約 NOK 1,350 起(≈ TWD 3,900 起)。狗拉雪橇半日:Polar Adventures 自駕約 NOK 2,040、Villmarkssenter 高季約 NOK 3,900。Fjellheisen 纜車來回 NOK 495(行前確認整建/營運)。北極大教堂門票 NOK 90。匯率 1 NOK ≈ 3.0–3.3 TWD。價格為 2025–26 查證值,行前再確認。</div>
     </div>
   </section>
@@ -1247,8 +1251,8 @@
       <table class="wide">
         <thead><tr><th>時間</th><th>待辦</th></tr></thead>
         <tbody>
-          <tr><td><b>✅ 已完成(至 2026/8)</b></td><td>機票全訂:國際(海航)+ 國內 5 段(含 BOO↔LKN 小飛機、回程聯程直掛)・住宿 13 晚全訂(奧斯陸 2+Tromsø 4+Bodø 1+Lofoten 6;奧斯陸經飯店 email 確認改雙人床)・兩段租車已訂(Tromsø Alamo ID.3 / LKN Hertz ID.4 4WD)・確認書+收據已收齊備份</td></tr>
-          <tr><td><b>現在 2026/8–9</b></td><td>① <b>訂 3/12 奧斯陸緩衝夜</b>(續住 Scandic Vulkan 或近 Oslo S 的 Citybox;2/27–28 已訂妥・飯店 email 確認雙人床 → <b>確認信存檔+列印放文件包</b>)② HR 書面確認婚假(<b>登記日已定 2/12 五</b>,在 2/26 出發前)③ <b>辦台胞證(5 年)</b> ④ 向海航確認北京<b>過夜轉機(去程約 10h)</b>是否需重新安檢、有無休息區/過夜旅館</td></tr>
+          <tr><td><b>✅ 已完成(至 2026/8)</b></td><td>機票全訂:國際(海航)+ 國內 5 段(含 BOO↔LKN 小飛機、回程聯程直掛)・<b>住宿 14 晚全訂完封</b>(奧斯陸 2+1+Tromsø 4+Bodø 1+Lofoten 6;奧斯陸 2/27–28 經飯店 email 確認改雙人床、3/12 續住大床房)・兩段租車已訂(Tromsø Alamo ID.3 / LKN Hertz ID.4 4WD)・確認書+收據已收齊備份</td></tr>
+          <tr><td><b>現在 2026/8–9</b></td><td>① <b>奧斯陸文件收尾</b>:3/12 已續訂 ✅ → 下載兩筆訂單的確認函/收據放文件包+<b>飯店雙人床確認信轉存 PDF 列印</b>② HR 書面確認婚假(<b>登記日已定 2/12 五</b>,在 2/26 出發前)③ <b>辦台胞證(5 年)</b> ④ 向海航確認北京<b>過夜轉機(去程約 10h)</b>是否需重新安檢、有無休息區/過夜旅館</td></tr>
           <tr><td>2026/12–2027/1</td><td>⑤ 訂 Tromsø 極光追雲團 + 狗拉雪橇(均含接送)</td></tr>
           <tr><td>2027/1–2</td><td>⑥ 查 Fjellheisen 載客、辦 ETIAS、訂奧斯陸門票、<b>辦國際駕照 IDP ×2</b>(監理站當場核發、NT$250/人;帶身分證+駕照+護照+2 吋照 2 張;<b>效期僅 1 年、太早辦會過期</b>;租車須「台灣駕照+IDP」兩樣正本,第二駕駛也要)⑦ 再確認台胞證效期、護照、<b>電話向 Hertz 預約釘胎</b>(+確認還車地點,同一通 <span class="phone">+47-76081844</span>)</td></tr>
           <tr><td>出發前 1–2 週</td><td>⑧ 抵 Lofoten 前一天打 <span class="phone">+47 994 91 805</span> 訂交通船<br>⑨ 旅遊險(機票已含 TripFlex 改/退彈性 → 重點買<b>海外醫療+行李+延誤</b>)、線上報到、yr.no<br>⑩ <b>訂好 2/26 約 07:00–07:30 北上的高鐵車票</b><br>⑪ <b>調高主駕信用卡臨時額度</b>(押金:Tromsø Alamo=<b>租金+NOK 10,000≈NT$3.4 萬</b>(憑證載明)、LKN Hertz 上限約 USD 3,000≈NT$9.6 萬;還車後 30–60 天才解圈,<b>兩筆會同時圈存(最壞合計約 13 萬)</b> → 額度抓寬,或兩段各由一人當主駕分散到兩張卡;另 <b>Reine cabin 入住刷 NOK 3,000 損壞押金</b>(≈NT$1 萬、退房後 7 天退還))+兩張卡都開通海外交易;<b>注意:Alamo 不收 JCB、卡號須凸字</b>(Hertz 收 JCB);<b>雙卡分工:押金卡與日常消費卡分開</b>(押金量級總覽 → <a href="#budget">💳 預算章</a>)</td></tr>
@@ -1271,7 +1275,7 @@
         <span class="chip ok">✓ 國內機票 5 段(含 BOO↔LKN、回程聯程)</span>
         <span class="chip ok">✓ 住宿 13 晚(奧斯陸 2+Tromsø 4+Bodø 1+Lofoten 6)</span>
         <span class="chip ok">✓ 奧斯陸 2/27–28 Scandic Vulkan(飯店確認雙人床・帶確認信)</span>
-        <span class="chip pend">⏳ 3/12 奧斯陸緩衝夜待訂</span>
+        <span class="chip ok">✓ 3/12 奧斯陸續住(大床房・含早)</span>
         <span class="chip ok">✓ Tromsø 租車 Alamo ID.3(3/1–3/3)</span>
         <span class="chip ok">✓ LKN 租車 Hertz ID.4 4WD(釘胎記得電話預約)</span>
         <span class="chip pend">⏳ 國際駕照 IDP ×2(效期 1 年、2027/1–2 再辦)</span>
@@ -1417,17 +1421,60 @@
         [68.24422,13.75764,"🏛 Lofotr 維京博物館(Borg)","雨天備案","a"]
       ]
     };
+    // 日期篩選:p=當天造訪點(依時間表順序的 MAPS 索引);r=1 有定案動線(畫編號+虛線)、r=0 方案未定(只亮點不畫線)
+    const DAYFILTER={
+      oslo:[
+        {l:"D1 2/27",p:[11,0,1,2,3,7,5,6],r:0},
+        {l:"D2 2/28",p:[0,3,4,5,8,9,10,2],r:0},
+        {l:"3/12",p:[11,0,13,14,12,5,2],r:1}
+      ],
+      tromso:[
+        {l:"D1 3/1",p:[0,4,5,7,1],r:1},
+        {l:"D2 3/2",p:[1,8,9,10,11,12,13,2],r:1},
+        {l:"D3 3/3",p:[2,3,14,19,0,6],r:1},
+        {l:"D4 3/4",p:[15,16,18,17],r:1},
+        {l:"D5 3/5",p:[3,0],r:1}
+      ],
+      lofoten:[
+        {l:"3/6",p:[0,2,1,3,4],r:1},
+        {l:"3/7",p:[3,1,5],r:1},
+        {l:"3/8",p:[3,6,7,1,8,9,10],r:1},
+        {l:"3/9",p:[10,11,12,8],r:1},
+        {l:"3/10",p:[8,13,14],r:0},
+        {l:"3/11",p:[8,1,15,16],r:1},
+        {l:"3/12",p:[15,0],r:1}
+      ]
+    };
     for(const key of Object.keys(MAPS)){
       const el=document.getElementById('map-'+key);if(!el)continue;
       const m=L.map(el,{scrollWheelZoom:false,dragging:false});
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
-      const b=[];
+      const b=[],mk=[];
       MAPS[key].forEach(p=>{
         b.push([p[0],p[1]]);
-        L.circleMarker([p[0],p[1]],{radius:8,color:'#fff',weight:2,fillColor:COLS[p[4]],fillOpacity:.95}).addTo(m)
-          .bindPopup('<b>'+p[2]+'</b><br>'+p[3]+'<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+p[0]+','+p[1]+'">🧭 導航 →</a>');
+        mk.push(L.circleMarker([p[0],p[1]],{radius:8,color:'#fff',weight:2,fillColor:COLS[p[4]],fillOpacity:.95}).addTo(m)
+          .bindPopup('<b>'+p[2]+'</b><br>'+p[3]+'<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+p[0]+','+p[1]+'">🧭 導航 →</a>'));
       });
-      m.fitBounds(b,{padding:[26,26]});
+      const bar=document.createElement('div');bar.className='mapdays';
+      el.parentNode.insertBefore(bar,el);
+      let curLine=null;
+      const setDay=sel=>{
+        if(curLine){m.removeLayer(curLine);curLine=null}
+        mk.forEach(x=>{x.setStyle({opacity:sel?0.25:1,fillOpacity:sel?0.15:.95});x.unbindTooltip()});
+        if(!sel){m.fitBounds(b,{padding:[26,26]})}
+        else{
+          sel.p.forEach((i,n)=>{
+            mk[i].setStyle({opacity:1,fillOpacity:.95});
+            if(sel.r)mk[i].bindTooltip(String(n+1),{permanent:true,direction:'center',className:'mnum'}).openTooltip();
+          });
+          if(sel.r)curLine=L.polyline(sel.p.map(i=>[MAPS[key][i][0],MAPS[key][i][1]]),{color:'#2c6e9a',weight:2,dashArray:'6 6',opacity:.7}).addTo(m);
+          m.fitBounds(sel.p.map(i=>[MAPS[key][i][0],MAPS[key][i][1]]),{padding:[34,34]});
+        }
+        [...bar.children].forEach(c=>c.classList.toggle('now',c._sel===sel));
+      };
+      const mkBtn=(label,sel)=>{const btn=document.createElement('button');btn.className='chip';btn.textContent=label;btn._sel=sel;btn.onclick=()=>setDay(sel);bar.appendChild(btn)};
+      mkBtn('全部',null);(DAYFILTER[key]||[]).forEach(d=>mkBtn(d.l,d));
+      setDay(null);
       const g=document.createElement('div');g.className='tapguard';g.textContent='👆 點一下啟用地圖操作';
       el.appendChild(g);
       g.addEventListener('click',()=>{g.remove();m.dragging.enable();m.scrollWheelZoom.enable();m.invalidateSize()});
