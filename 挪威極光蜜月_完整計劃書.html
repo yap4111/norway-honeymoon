@@ -2,11 +2,13 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light">
 <title>挪威極光蜜月・完整計劃書(整合版) · 2027/2/26–3/14</title>
+<link rel="preload" as="image" href="images/nor-aurora.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush-soft:#fbeef1;
@@ -15,18 +17,22 @@
     --shadow:0 10px 40px -18px rgba(20,30,60,.45);--shadow-sm:0 6px 22px -14px rgba(20,30,60,.45);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:60px}
-  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:clip}
   h1,h2,h3,h4{font-family:"Noto Serif TC",serif;line-height:1.4;font-weight:700}
   .script{font-family:"Dancing Script",cursive;font-weight:700}
   a{color:#2c6e5a}
   #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--aurora),var(--gold));z-index:120;transition:width .1s}
-  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px 16px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:110;background:rgba(255,249,245,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:9px max(16px, env(safe-area-inset-right)) 9px max(16px, env(safe-area-inset-left))}
   .nav-brand{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--rose);white-space:nowrap;font-size:.95rem}
+  @media(max-width:520px){.nav-brand{font-size:0}.nav-brand::before{content:"🌌";font-size:1rem}}
+  .nav-scroll{position:relative;flex:1;min-width:0}
+  .nav-scroll::after{content:"";position:absolute;top:0;right:0;bottom:0;width:26px;background:linear-gradient(90deg,rgba(255,249,245,0),rgba(255,249,245,.94));pointer-events:none;transition:opacity .2s}
+  .nav-scroll.at-end::after{opacity:0}
   .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
   .nav-links::-webkit-scrollbar{display:none}
-  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;white-space:nowrap;padding:6px 10px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;white-space:nowrap;padding:9px 12px;border-radius:20px;transition:.2s;font-weight:500}
   .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
   .nav-links a.active{background:var(--night);color:#cfe}
   header.hero{position:relative;min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:84px 20px 50px;color:#fff;overflow:hidden}
@@ -35,7 +41,7 @@
   .hero h1{font-size:clamp(1.7rem,5vw,2.9rem);font-weight:900;letter-spacing:1px;text-shadow:0 2px 18px rgba(0,0,0,.6)}
   .hero .sub{margin-top:12px;max-width:700px;font-size:clamp(.95rem,2.2vw,1.12rem);text-shadow:0 1px 10px rgba(0,0,0,.6)}
   .hero .meta{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
-  .hpill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);padding:7px 14px;border-radius:30px;font-size:.84rem}
+  .hpill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:7px 14px;border-radius:30px;font-size:.84rem}
   .hpill b{color:#8fe3c6}
   main{max-width:1040px;margin:0 auto;padding:26px 16px 70px}
   section{padding:24px 0;scroll-margin-top:60px}
@@ -70,22 +76,27 @@
   .flag.fly{background:#e7eef7;color:var(--sky)}
   .flag.aur{background:#e7f3ee;color:var(--aurora)}
   .flag.tw{background:#fdeef0;color:var(--rose)}
-  .flag.opt{background:#fbf1dc;color:#a9842f}
+  .flag.opt{background:#fbf1dc;color:#8a6a1e}
   .opt{font-size:.9rem;margin:4px 0;padding-left:8px;border-left:3px solid var(--gold-soft)}
   .opt b{color:var(--rose)}
   .dmeta{font-size:.83rem;color:var(--ink-soft);margin-top:5px}
   .nightline{color:var(--aurora);font-weight:600}
-  .pin{text-decoration:none;font-size:.8rem;white-space:nowrap}
+  .pin{text-decoration:none;white-space:nowrap;display:inline-block;font-size:1.05rem;padding:8px 6px;margin:-6px -3px;line-height:1;vertical-align:middle}
   .warn{background:linear-gradient(180deg,#fff6f7,#fdeef0);border:1px solid #f0c9d2;border-left:5px solid var(--rose);border-radius:12px;padding:13px 16px;margin:11px 0;font-size:.9rem}
   .warn .tag{font-weight:700;color:var(--rose);display:block;margin-bottom:3px}
   .note{background:#eef6f3;border:1px solid #cfe7df;border-left:5px solid var(--aurora);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
   .note .tag{font-weight:700;color:var(--aurora);display:block;margin-bottom:3px}
   .gold{background:#fbf6ec;border:1px solid var(--gold-soft);border-left:5px solid var(--gold);border-radius:12px;padding:12px 15px;margin:11px 0;font-size:.89rem}
-  .gold .tag{font-weight:700;color:#a9842f;display:block;margin-bottom:3px}
+  .gold .tag{font-weight:700;color:#8a6a1e;display:block;margin-bottom:3px}
   .chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
-  .chip{background:#eef6f3;color:#2c6e5a;border:1px solid #cfe7df;padding:4px 11px;border-radius:20px;font-size:.8rem}
+  .chip{background:#eef6f3;color:#2c6e5a;border:1px solid #cfe7df;padding:7px 12px;border-radius:20px;font-size:.8rem}
   .chip.ok{background:#e7f3ee;color:#2c7a5a;border-color:#bfe0d6}
   .chip.x{background:#fdeef0;color:var(--rose);border-color:#f0c9d2}
+  .chip.pend{background:#fbf1dc;color:#8a6a1e;border-color:#ecd9a8}
+  a.chip{text-decoration:none}
+  a.chip[target="_blank"]::after{content:" ↗";font-size:.72em;opacity:.75}
+  .scroll-x .wide{min-width:640px}
+  @media(max-width:640px){table{font-size:.87rem}.dmeta{font-size:.86rem}}
   .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:10px 0;color:var(--aurora)}
   .divider::before,.divider::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,#bfe0d6)}
   .divider::after{background:linear-gradient(90deg,#bfe0d6,transparent)}
@@ -93,18 +104,58 @@
   .tocard{background:linear-gradient(135deg,#16213a,#1f3a4d);color:#dfeaf2;border-radius:16px;padding:16px 18px;margin:6px 0 14px}
   .tocard b{color:#8fe3c6}
   .tocard a{color:#8fe3c6}
+  .tocard .tgroup{font-size:.8rem;color:#9fb3c4;margin:8px 0 2px}
+  .tocard a.chip{background:rgba(255,255,255,.12);color:#dfeaf2;border-color:rgba(255,255,255,.25)}
+  /* ── 新增元件:日曆條 / 段內日期條 / 統計卡 / 機率條 / 目錄面板 / 地區色框 ── */
+  .daystrip{display:flex;gap:3px;overflow-x:auto;padding-bottom:4px}
+  .dcell{flex:1 0 46px;min-width:46px;text-align:center;border-radius:8px;padding:5px 2px;text-decoration:none;color:var(--ink);line-height:1.35}
+  .dcell b{display:block;font-size:.74rem}
+  .dcell span{display:block;font-size:.66rem;color:var(--ink-soft)}
+  .dcell em{font-style:normal;font-size:.8rem}
+  .dc-fly{background:#eef1f4}.dc-oslo{background:#fbf6ec}.dc-tromso{background:#e7f3ee}.dc-bodo{background:#e7eef7}.dc-lofoten{background:#fdeef0}
+  .daybar{position:sticky;top:54px;z-index:80;display:flex;gap:6px;overflow-x:auto;padding:8px 2px;background:rgba(251,246,241,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);scrollbar-width:none;margin:0 0 10px}
+  .daybar::-webkit-scrollbar{display:none}
+  .daybar .chip{flex:none}
+  .daybar .chip.now{background:var(--night);color:#cfe;border-color:var(--night)}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .stat{flex:1;min-width:140px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+  .stat b{display:block;font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.3rem;line-height:1.5}
+  .stat span{font-size:.78rem;color:var(--ink-soft)}
+  .pbar{display:flex;height:26px;border-radius:13px;overflow:hidden;margin:8px 0}
+  .pbar i{display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-size:.72rem;white-space:nowrap}
+  .prob{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:.82rem}
+  .prob b{flex:none;width:3.4em}
+  .prob .bar{flex:1;height:12px;border-radius:6px;background:#eee5d8;overflow:hidden}
+  .prob .bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--aurora),#8fe3c6)}
+  .prob span{flex:none;color:var(--ink-soft)}
+  .fab{position:fixed;right:16px;bottom:calc(70px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--rose);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;z-index:115}
+  .backdrop{position:fixed;inset:0;background:rgba(20,25,45,.45);z-index:125;opacity:0;pointer-events:none;transition:.25s}
+  .backdrop.show{opacity:1;pointer-events:auto}
+  .sheet{position:fixed;left:0;right:0;bottom:0;max-height:70vh;overflow-y:auto;background:#fff;border-radius:20px 20px 0 0;z-index:130;transform:translateY(102%);transition:transform .25s;overscroll-behavior:contain;padding:14px 16px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -10px 40px rgba(20,30,60,.25)}
+  .sheet.show{transform:none}
+  .sheet h4{color:var(--ink-soft);font-size:.8rem;margin:10px 0 4px;font-weight:500}
+  .sheet a{display:block;min-height:44px;line-height:44px;padding:0 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.95rem}
+  .sheet a.active{background:var(--blush-soft);color:var(--rose);font-weight:700}
+  .day.r-oslo{border-left:4px solid var(--gold)}
+  .day.r-tromso{border-left:4px solid var(--aurora)}
+  .day.r-bodo{border-left:4px solid var(--sky)}
+  .day.r-lofoten{border-left:4px solid var(--rose)}
+  .day.r-fly{border-left:4px solid #9aa7b5}
+  [id].seg,[id].day,[id].card,[id].warn{scroll-margin-top:108px}
+  summary{cursor:pointer;color:var(--rose);font-weight:700;font-size:.92rem;padding:4px 0}
+  details{margin:8px 0}
   footer{text-align:center;padding:42px 20px 66px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
   footer .script{font-size:1.9rem;color:var(--aurora);display:block}
-  .backtop{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .backtop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
   .backtop.show{opacity:1;pointer-events:auto}
   @media print{nav,#progress,.backtop{display:none}}
 </style>
 </head>
 <body>
 <div id="progress"></div>
-<nav><div class="nav-inner">
+<nav aria-label="章節導覽"><div class="nav-inner">
   <span class="nav-brand">🌌 完整計劃書</span>
-  <div class="nav-links" id="navlinks">
+  <div class="nav-scroll" id="navscroll"><div class="nav-links" id="navlinks">
     <a href="#flights">✈ 機票/轉機</a>
     <a href="#tw">🚄 台灣交通</a>
     <a href="#days">📅 逐日</a>
@@ -117,7 +168,7 @@
     <a href="#apps">📱 App</a>
     <a href="#timeline">🗓 倒數</a>
     <a href="#check">✅ 檢查</a>
-  </div>
+  </div></div>
 </div></nav>
 
 <header class="hero">
@@ -125,6 +176,7 @@
   <h1>挪威極光蜜月・完整計劃書</h1>
   <p class="sub">把所有規劃整合成這一份。機票已訂(海南航空・北京轉機)、日期已定、行李直掛奧斯陸。行程仍保留多種方案 ── 等你們一起決定,我不替你們拍板。出發 2027/2/26、返抵 3/14;挪威端 14 晚。</p>
   <div class="meta">
+    <span class="hpill" id="cd">🛫 <b>2027/2/26</b> 出發</span>
     <span class="hpill">🛫 <b>2/26 出發</b> · 🛬 3/14 返</span>
     <span class="hpill">❄ 挪威 14 晚</span>
     <span class="hpill">🌌 Oslo·Tromsø·Lofoten</span>
@@ -133,9 +185,52 @@
 
 <main>
 
-  <div class="tocard">📖 <b>這份是「整合主檔」</b>:機票/轉機 → 台灣交通 → 逐日(每天 A/B/C 方案)→ Tromsø 在地 5 日 → 西 Lofoten 在地 6 日(含電量/交通船)→ 冬季自駕 → 極光攻略 → 預算 → 打包 → 建議 App → 倒數待辦 → 檢查清單,一頁到底。<b>凡是還沒定的,都以「方案」呈現、保留選擇權。</b></div>
+  <div class="tocard">📖 <b>這份是「整合主檔」</b>:所有規劃一頁到底,點下方章節直達。<b>凡是還沒定的,都以「方案」呈現、保留選擇權。</b>
+    <div class="tgroup">🧭 行程</div>
+    <div class="chips"><a class="chip" href="#flights">✈ 機票/轉機</a><a class="chip" href="#tw">🚄 台灣交通</a><a class="chip" href="#days">📅 逐日</a><a class="chip" href="#tromso">🧊 Tromsø 5日</a><a class="chip" href="#lofoten">🎣 Lofoten 6日</a></div>
+    <div class="tgroup">📖 攻略</div>
+    <div class="chips"><a class="chip" href="#winter">❄ 冬季自駕</a><a class="chip" href="#aurora">🌌 極光</a><a class="chip" href="#budget">💰 預算</a><a class="chip" href="#pack">🎒 打包</a><a class="chip" href="#apps">📱 App</a></div>
+    <div class="tgroup">🧳 行前</div>
+    <div class="chips"><a class="chip" href="#timeline">🗓 倒數</a><a class="chip" href="#check">✅ 檢查</a></div>
+  </div>
+
+  <div class="card">
+    <h3>📌 進度一眼看</h3>
+    <div class="chips">
+      <span class="chip ok">✓ 機票全訂(國際+國內 5 段)</span>
+      <span class="chip ok">✓ 住宿 11 晚</span>
+      <span class="chip ok">✓ 租車 2 段</span>
+      <a class="chip pend" href="#timeline">⏳ 奧斯陸 3 晚重訂中</a>
+      <a class="chip pend" href="#timeline">⏳ 極光團/雪橇 12 月訂</a>
+      <a class="chip x" href="#check">⭐ 台胞證必辦</a>
+    </div>
+  </div>
 
   <div class="warn"><span class="tag">⚠ 最重要:台胞證必辦!</span>你們是經<b>中國大陸(北京)轉機到第三國,依規定須持有效台胞證</b> ── 否則<b>在桃園報到就可能被拒絕登機</b>(有實際案例),回程一樣查驗。<b>請儘早辦 5 年效期台胞證。</b></div>
+
+  <div class="card">
+    <h3>🗓 17 天一眼看(點日期直達當天)</h3>
+    <div class="daystrip">
+      <a class="dcell dc-fly" href="#d0226"><b>2/26</b><span>飛行</span><em>✈</em></a>
+      <a class="dcell dc-oslo" href="#d0227"><b>2/27</b><span>Oslo</span><em>🏛</em></a>
+      <a class="dcell dc-oslo" href="#d0228"><b>2/28</b><span>Oslo</span><em>🏛</em></a>
+      <a class="dcell dc-tromso" href="#t-day1"><b>3/1</b><span>Tromsø</span><em>🌌</em></a>
+      <a class="dcell dc-tromso" href="#t-day2"><b>3/2</b><span>Sommarøy</span><em>🌌</em></a>
+      <a class="dcell dc-tromso" href="#t-day3"><b>3/3</b><span>Tromsø</span><em>🌌</em></a>
+      <a class="dcell dc-tromso" href="#t-day4"><b>3/4</b><span>Tromsø</span><em>🐕</em></a>
+      <a class="dcell dc-bodo" href="#d0305"><b>3/5</b><span>Bodø</span><em>✈</em></a>
+      <a class="dcell dc-lofoten" href="#l-day6"><b>3/6</b><span>Ramberg</span><em>🚗</em></a>
+      <a class="dcell dc-lofoten" href="#l-day7"><b>3/7</b><span>H.vær</span><em>🏘</em></a>
+      <a class="dcell dc-lofoten" href="#l-day8"><b>3/8</b><span>Reine</span><em>🏖</em></a>
+      <a class="dcell dc-lofoten" href="#l-day9"><b>3/9</b><span>Reine</span><em>⛴</em></a>
+      <a class="dcell dc-lofoten" href="#l-day10"><b>3/10</b><span>Reine</span><em>🚶</em></a>
+      <a class="dcell dc-lofoten" href="#l-day11"><b>3/11</b><span>Ballstad</span><em>🥾</em></a>
+      <a class="dcell dc-fly" href="#l-day12"><b>3/12</b><span>→Oslo</span><em>✈</em></a>
+      <a class="dcell dc-fly" href="#d0313"><b>3/13</b><span>→北京</span><em>✈</em></a>
+      <a class="dcell dc-fly" href="#d0314"><b>3/14</b><span>回家</span><em>🏠</em></a>
+    </div>
+    <p style="font-size:.78rem;color:var(--ink-soft);margin-top:4px">色塊=地區:🏛 奧斯陸・🌌 Tromsø・✈ 飛行/返程・Bodø・Lofoten(與逐日卡左框同色系)</p>
+  </div>
 
   <!-- 機票 -->
   <section id="flights">
@@ -182,61 +277,61 @@
     <div class="sec-head"><div class="sec-ico">📅</div><div><h2>全程逐日(每天附 A/B/C 方案)</h2><p style="color:var(--ink-soft);font-size:.9rem">奧斯陸 2 + Tromsø 4(極光保底)+ Bodø 1 + Lofoten 6 + 奧斯陸 1。<b>方案僅供選擇,不替你們拍板。</b></p></div></div>
     <div class="note"><span class="tag">🧭 為什麼「先 Tromsø、後 Lofoten」</span>① <b>在小屋慢遊收尾最像蜜月</b> ── 最後 6 晚在 Lofoten 漁村自己煮、看海,只有這個順序給得了。② <b>怕冷</b>:先在有城市配套的 Tromsø 暖身,再進相對原始的小屋。③ <b>體力</b>:追光熬夜、雪橇放精神最好的前段,煮飯看海放後段。④ <b>極光</b>:先在最強的場(Tromsø+嚮導團)看掉,後段 Lofoten(3 月也是看極光的好月份)全是紅利。回程安全則靠 <b>3/12 奧斯陸緩衝夜</b>守門,不受順序影響。<br><b>只有當你們把「回程零風險」擺第一、或更想以「在 Tromsø 追到極光」當高潮收尾、不在乎在小屋收尾時,才考慮翻成先 Lofoten。</b></div>
 
-    <div class="seg">🇹🇼 台灣端 + 去程(2/26)</div>
+    <div class="seg" role="heading" aria-level="3">🇹🇼 台灣端 + 去程(2/26)</div>
     <div class="day"><div class="dhead"><span class="ddate">2/26 五</span><span class="dtitle">台南 → 桃園 → 北京(HU7988)</span><span class="flag tw">🚄 早上北上</span><span class="flag fly">✈ 13:05 起飛</span></div>
       <div class="opt">約 07:00–07:30 高鐵北上 → 10:00 前抵桃機從容報到 → <b>HU7988 13:05 飛、16:30 抵北京</b> → 北京過夜轉機 10h25m(隔日 02:55 飛 HU769)。<b>行李直掛 OSL、備妥台胞證。</b></div></div>
 
-    <div class="seg"><img class="segimg" src="images/master-oslo-vigeland.jpg" alt="">🏛 奧斯陸抵達(2/27–2/28,2 晚)</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/master-oslo-vigeland.jpg" alt="">🏛 奧斯陸抵達(2/27–2/28,2 晚)</div>
     <div class="day"><div class="dhead"><span class="ddate">2/27 六</span><span class="dtitle">北京 → 奧斯陸(06:00 抵)</span><span class="flag fly">✈ HU769</span><span class="flag aur">🌌 緯度低機率低</span></div>
       <div class="opt">HU769 02:55 起飛、<b>06:00 抵 OSL</b>,搭 Flytoget(約 20 分)或 Vy 區間車(約 25 分、較省)到 Oslo S → <b>34 號公車 3 站 / 計程車</b>到住宿寄行李(首選 <b>Scandic Vulkan・重訂中</b>;入住 16:00 後)→ 樓下 <b>Mathallen 早午餐</b>、上午補眠或河畔輕鬆逛。</div>
-      <div class="opt">下午輕鬆 Oslo:<b>A</b> MUNCH 孟克《吶喊》<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=MUNCH+museum+Oslo">📍</a> / <b>B</b> 維格蘭雕塑公園(雪中)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Vigelandsparken">📍</a> / <b>C</b> 歌劇院屋頂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Oslo+Opera+House">📍</a>+Aker Brygge<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Aker+Brygge">📍</a>。早睡調時差。</div></div>
+      <div class="opt">下午輕鬆 Oslo:<b>A</b> MUNCH 孟克《吶喊》<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=MUNCH+museum+Oslo">📍</a> / <b>B</b> 維格蘭雕塑公園(雪中)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Vigelandsparken">📍</a> / <b>C</b> 歌劇院屋頂<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Oslo+Opera+House">📍</a>+Aker Brygge<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Aker+Brygge">📍</a>。早睡調時差。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">2/28 日</span><span class="dtitle">奧斯陸全日</span></div>
-      <div class="opt"><b>A 文藝</b>:MUNCH + 國家博物館<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nasjonalmuseet">📍</a> + 歌劇院屋頂</div>
-      <div class="opt"><b>B 半島(雪 OK)</b>:Bygdøy → Fram 極地船<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fram+Museum">📍</a> + Kon-Tiki(維京船博物館 2027 仍關閉)</div>
-      <div class="opt"><b>C 雪中+滑雪</b>:維格蘭公園 → Holmenkollen 跳台+滑雪博物館<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Holmenkollen">📍</a></div></div>
-    <div class="dmeta">🛏 <b>奧斯陸住宿(2/27、2/28、3/12)⏳ 重訂中</b>:定案首選 <b>Scandic Vulkan</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=59.9223,10.7509">📍</a> Maridalsveien 13A(Vulkan/Grünerløkka・樓下 Mathallen・含早餐;入住 16:00 後、退房 12:00;參考價約 NT$3,600–3,700/晚)── 原 2/27–28 訂單<b>誤訂「雙床房=2 張單人床」已申請免費取消</b>;<b>重訂時選「Double / Queen 雙人床房」</b>、確認含早+可免費取消,並把 <b>3/12 緩衝夜一併訂</b>(續住同間,或改 Citybox 近 Oslo S)。特殊需求記得重新提交:安靜房+寄放行李+honeymoon。</div>
+      <div class="opt"><b>A 文藝</b>:MUNCH + 國家博物館<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nasjonalmuseet">📍</a> + 歌劇院屋頂</div>
+      <div class="opt"><b>B 半島(雪 OK)</b>:Bygdøy → Fram 極地船<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fram+Museum">📍</a> + Kon-Tiki(維京船博物館 2027 仍關閉)</div>
+      <div class="opt"><b>C 雪中+滑雪</b>:維格蘭公園 → Holmenkollen 跳台+滑雪博物館<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Holmenkollen">📍</a></div></div>
+    <div class="dmeta">🛏 <b>奧斯陸住宿(2/27、2/28、3/12)⏳ 重訂中</b>:定案首選 <b>Scandic Vulkan</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=59.9223,10.7509">📍</a> Maridalsveien 13A(Vulkan/Grünerløkka・樓下 Mathallen・含早餐;入住 16:00 後、退房 12:00;參考價約 NT$3,600–3,700/晚)── 原 2/27–28 訂單<b>誤訂「雙床房=2 張單人床」已申請免費取消</b>;<b>重訂時選「Double / Queen 雙人床房」</b>、確認含早+可免費取消,並把 <b>3/12 緩衝夜一併訂</b>(續住同間,或改 Citybox 近 Oslo S)。特殊需求記得重新提交:安靜房+寄放行李+honeymoon。</div>
     <div class="note"><span class="tag">💤 第一天為什麼先在奧斯陸睡飽</span>你們剛搭完紅眼、又在北京熬了一夜,2/27 早上落地一定很累,所以頭兩晚都待奧斯陸、把時差睡回來再往北飛,別一下飛機就趕去追極光(那樣 Tromsø 的第一晚會睏到沒心情看)。回程 3/12 的奧斯陸這晚也一定要留著 ── 萬一北邊班機誤點,有這一晚墊著,才不會趕不上 3/13 中午回家的班機;順便在這裡買伴手禮,選擇比小漁村多得多。</div>
 
-    <div class="seg"><img class="segimg" src="images/nor-tromso-aurora.jpg" alt="">🌌 Tromsø 追極光(3/1–3/4,4 晚)</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-tromso-aurora.jpg" alt="">🌌 Tromsø 追極光(3/1–3/4,4 晚)</div>
     <div class="note"><span class="tag">🧊 Tromsø 已定案</span>Tromsø 段已依<b>實際訂房定案</b>(Day1 市區東北 → Day2 Sommarøy → Day3–4 市中心、租電動車)。下方為摘要;<b>完整逐日時間軸、光線表、電量充電與訂位清單</b> → 見專區 <a href="#tromso"><b>〈Tromsø 在地 5 日〉</b></a>。</div>
     <div class="day"><div class="dhead"><span class="ddate">3/1 一</span><span class="dtitle">抵達 → 市區午餐 → 纜車藍調 → 東北住處</span><span class="flag fly">✈ SK4412 已訂</span><span class="flag aur">🌌 第一晚</span></div>
-      <div class="opt"><b>SAS SK4412 OSL 10:00→12:00 抵 Tromsø(已訂)</b>,<b>Alamo 機場取車 ✅ 已訂(ID.3 或同級・電動)</b> → <b>市區午餐</b>(省錢 Risø café / 正餐 Bardus;<b>Raketten 鹿肉熱狗週一/日休</b>) → 北極大教堂拍外觀<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">📍</a> → <b>Fjellheisen 纜車卡藍調</b>(日落約 16:42)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">📍</a> → 回東北住處自炊。</div>
+      <div class="opt"><b>SAS SK4412 OSL 10:00→12:00 抵 Tromsø(已訂)</b>,<b>Alamo 機場取車 ✅ 已訂(ID.3 或同級・電動)</b> → <b>市區午餐</b>(省錢 Risø café / 正餐 Bardus;<b>Raketten 鹿肉熱狗週一/日休</b>) → 北極大教堂拍外觀<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">📍</a> → <b>Fjellheisen 纜車卡藍調</b>(日落約 16:42)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">📍</a> → 回東北住處自炊。</div>
       <div class="dmeta">✈ <b>機場操作(OSL→TOS・SAS 國內線)</b>:① 前晚用 <b>SAS App 線上報到</b>(起飛前 22h 開放);② 早上從市區搭 <b>Flytoget(約 20 分)或 Vy 區間車(約 25 分、便宜近半)</b>到 OSL,兩者都停 Oslo S 與 Nationaltheatret;③ <b>08:30 前抵機場</b> ── 自助 bag drop <b>起飛前 40 分關(09:20 硬底線)</b>;④ 國內線=申根境內、<b>無護照查驗</b>、只過安檢;⑤ 市區公車/電車用 <b>Ruter App</b> 購票(車上不售票、任何門上車、行李免費),機場火車票另購(Vy/Flytoget App)。</div>
       <div class="dmeta nightline">🌌 在 Tromsdalen/市區超市買食材,往東北回 Ullstindvegen 157 <b>自炊</b>;晴天屋外守第一晚極光。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/2 二</span><span class="dtitle">景觀公路 → Sommarøy 漁村</span><span class="flag aur">🌌 第二晚</span></div>
-      <div class="opt">早餐咖啡自理 → 由東北穿市區上 Kvaløya,沿 Fv862 西行繞 <b>Ersfjordbotn</b> 經典峽灣<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ersfjordbotn">📍</a> → <b>午餐 Bryggejentene</b> → Brensholmen 海灘 → 抵最西的 <b>Sommarøy</b> 漁村(Prestvikvegen)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y">📍</a>。</div>
+      <div class="opt">早餐咖啡自理 → 由東北穿市區上 Kvaløya,沿 Fv862 西行繞 <b>Ersfjordbotn</b> 經典峽灣<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ersfjordbotn">📍</a> → <b>午餐 Bryggejentene</b> → Brensholmen 海灘 → 抵最西的 <b>Sommarøy</b> 漁村(Prestvikvegen)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y">📍</a>。</div>
       <div class="dmeta nightline">🌌 傍晚在 Sommarøy 拍藍調漁村(跨海橋+紅漁屋),回住處<b>自炊</b>;晴天同場守極光。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/3 三</span><span class="dtitle">開回市區・機場還車 → 追極光</span><span class="flag aur">🌌 第三晚</span></div>
-      <div class="opt">早餐咖啡自理 → 上午從 Sommarøy 開回 Tromsø(冬季路況抓久、早出發),<b>先到市中心 Fiskergata 6 寄行李</b> → 順遊 Telegrafbukta<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Telegrafbukta+Troms%C3%B8">📍</a> → 把電充飽(依還車電量政策) → <b>機場還車</b> → 搭車回市區逛街、傍晚入住。</div>
+      <div class="opt">早餐咖啡自理 → 上午從 Sommarøy 開回 Tromsø(冬季路況抓久、早出發),<b>先到市中心 Fiskergata 6 寄行李</b> → 順遊 Telegrafbukta<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Telegrafbukta+Troms%C3%B8">📍</a> → 把電充飽(依還車電量政策) → <b>機場還車</b> → 搭車回市區逛街、傍晚入住。</div>
       <div class="dmeta nightline">🌌 晚上<b>小巴追雲極光團(含接送)</b>再拼一次;選免費取消、提前訂。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/4 四</span><span class="dtitle">狗拉雪橇 + 市區購物</span><span class="flag aur">🌌 第四晚</span></div>
-      <div class="opt">上午<b>狗拉雪橇半日</b>(Polar Adventures 自駕、含接送)→ 下午<b>全世界最北的麥當勞</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=McDonald%27s+Storgata+70+Troms%C3%B8">📍</a>、禮品店買明信片/貼紙、Polaria 水族館(16:00 關)。</div>
+      <div class="opt">上午<b>狗拉雪橇半日</b>(Polar Adventures 自駕、含接送)→ 下午<b>全世界最北的麥當勞</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=McDonald%27s+Storgata+70+Troms%C3%B8">📍</a>、禮品店買明信片/貼紙、Polaria 水族館(16:00 關)。</div>
       <div class="dmeta">🚌 這天沒車靠接送;若前三晚沒看到極光,<b>今晚最後機會</b>。<b>4 晚累積看到機率很高。</b></div></div>
 
-    <div class="seg">🛟 Bodø 過夜防火牆(3/5,1 晚)</div>
+    <div class="seg" role="heading" aria-level="3">🛟 Bodø 過夜防火牆(3/5,1 晚)</div>
     <div class="day"><div class="dhead"><span class="ddate">3/5 五</span><span class="dtitle">Tromsø→Bodø</span><span class="flag fly">✈ SK4561 已訂</span></div>
-      <div class="opt"><b>SAS SK4561 TOS 11:40→12:40 抵 Bodø(已訂)</b>,Bodø 過一晚(擋隔天 Widerøe 取消連鎖);下午可選 Saltstraumen 大漩渦<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Saltstraumen">📍</a>。</div>
-      <div class="dmeta">🛏 <b>Bodø 住宿(3/5)✅ 已訂:Home Hotel Grand Bodø・NT$5,049</b>(標準雙人房)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.2842,14.3781">📍</a> Professor Schyttes gate 1,市中心正核心、離 Sentrumsterminalen 巴士總站步行 2–3 分;check-in 15:00 起、退房 12:00。<b>房價含三餐+全天免費茶咖啡(飯店 2026/8 私訊確認)</b>:早餐 六日 07:30–10:00(平日 06:30–09:30)・<b>fika 15:00–17:00</b>(正好接 15:00 入住)・<b>晚間簡餐自助 18:00–20:00</b>(湯/沙拉/熱菜)→ 這晚免自炊免外食。<b>3/6(六)早餐 07:30 開 ✅ 已確認</b>,吃完約 08:15 出發趕 10:55 WF806 很從容。💆 可選:合作 <b>Feel 24 Balansen spa</b>(桑拿+熱水浴缸・入場 NOK 190/人、房客護理 85 折)──緩衝夜放鬆好選項(營業時間不固定、先問櫃台)。想早入住視空房、先聯繫飯店;<b>訂單修改須透過 Booking.com</b>。</div>
+      <div class="opt"><b>SAS SK4561 TOS 11:40→12:40 抵 Bodø(已訂)</b>,Bodø 過一晚(擋隔天 Widerøe 取消連鎖);下午可選 Saltstraumen 大漩渦<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Saltstraumen">📍</a>。</div>
+      <div class="dmeta">🛏 <b>Bodø 住宿(3/5)✅ 已訂:Home Hotel Grand Bodø・NT$5,049</b>(標準雙人房)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.2842,14.3781">📍</a> Professor Schyttes gate 1,市中心正核心、離 Sentrumsterminalen 巴士總站步行 2–3 分;check-in 15:00 起、退房 12:00。<b>房價含三餐+全天免費茶咖啡(飯店 2026/8 私訊確認)</b>:早餐 六日 07:30–10:00(平日 06:30–09:30)・<b>fika 15:00–17:00</b>(正好接 15:00 入住)・<b>晚間簡餐自助 18:00–20:00</b>(湯/沙拉/熱菜)→ 這晚免自炊免外食。<b>3/6(六)早餐 07:30 開 ✅ 已確認</b>,吃完約 08:15 出發趕 10:55 WF806 很從容。💆 可選:合作 <b>Feel 24 Balansen spa</b>(桑拿+熱水浴缸・入場 NOK 190/人、房客護理 85 折)──緩衝夜放鬆好選項(營業時間不固定、先問櫃台)。想早入住視空房、先聯繫飯店;<b>訂單修改須透過 Booking.com</b>。</div>
       <div class="dmeta">🚌 <b>Bodø 交通(無車)</b>:市區小、<b>機場離市中心僅 ~2km</b> → 巴士 <b>1/4 號</b>(每 10–15 分、約 5 分、NOK 44)、走路 15–25 分或計程車 5 分皆可。<b>Saltstraumen 大漩渦</b>:巴士 <b>300 號</b>約 30 分–1h、<b>每約 4 小時一班(天天有)</b>,且要對<b>潮汐高峰</b>才壯觀 → 行前查 Reis Nordland 班表 + 潮汐表;算不準就市區休息(這晚本是緩衝/補眠)。</div>
       <div class="dmeta">🚦 Tromsø→Lofoten 採<b>最低風險的「飛 Bodø 過夜 → Widerøe → Leknes」</b>(已定案;3 月自駕長征 / 載車渡輪風險高,不採)。</div></div>
 
-    <div class="seg"><img class="segimg" src="images/west-hamnoy.jpg" alt="">🎣 西 Lofoten 四村住(3/6–3/11,6 晚)</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-hamnoy.jpg" alt="">🎣 西 Lofoten 四村住(3/6–3/11,6 晚)</div>
     <div class="note"><span class="tag">🎣 Lofoten 已定案</span>住宿:<b>Ramberg(已訂)→ Reine cabin(已訂)→ Ballstad(收尾近機場)</b>、全程<b>自走低風險健行</b>、看峽灣以 Reinefjorden 觀光船為主。下方為摘要;<b>完整逐日時間軸、健行、住宿訂房、地圖速查</b> → 見專區 <a href="#lofoten"><b>〈西 Lofoten 在地 6 日〉</b></a>。</div>
     <div class="day"><div class="dhead"><span class="ddate">3/6 六</span><span class="dtitle">飛進 Lofoten・大採買・入住 Ramberg</span><span class="flag fly">✈ WF806 已訂</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">WF806 11:20 抵 LKN,<b>Hertz 取車 ✅ 已訂(VW ID.4 或同級・電動 4WD)</b> → <b>Leknes 大超市</b>一次買齊幾天食材 → 往 Flakstadøya(過 Napp 隧道),入住 <b>Mørkveden(島南側)✅ 已訂</b>(約 30–35 分)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a>。傍晚到 <b>Skagsanden 沙灘</b>(北邊約 12–15 分)拍藍調<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a>。</div>
+      <div class="opt">WF806 11:20 抵 LKN,<b>Hertz 取車 ✅ 已訂(VW ID.4 或同級・電動 4WD)</b> → <b>Leknes 大超市</b>一次買齊幾天食材 → 往 Flakstadøya(過 Napp 隧道),入住 <b>Mørkveden(島南側)✅ 已訂</b>(約 30–35 分)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a>。傍晚到 <b>Skagsanden 沙灘</b>(北邊約 12–15 分)拍藍調<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a>。</div>
       <div class="dmeta nightline">🌌 窩木屋自炊;放晴就在 Skagsanden 等極光(著名極光灘)。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/7 日</span><span class="dtitle">Henningsvær 一日:足球場 + 藝術漁村藍調</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">由 Ramberg 東行 <b>Henningsvær</b>(單程約 2h、來回約 4h)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r">📍</a>:招牌<b>海上足球場</b>、藝術漁村、傍晚漁村藍調街拍,再開回 Ramberg(雪路慢行)。<b>⚠ 此日為週日,商店/畫廊多關門</b>(明信片改 3/4 Tromsø/3/6 Leknes 買);這天換掉 Kvalvika 健行。</div></div>
+      <div class="opt">由 Ramberg 東行 <b>Henningsvær</b>(單程約 2h、來回約 4h)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r">📍</a>:招牌<b>海上足球場</b>、藝術漁村、傍晚漁村藍調街拍,再開回 Ramberg(雪路慢行)。<b>⚠ 此日為週日,商店/畫廊多關門</b>(明信片改 3/4 Tromsø/3/6 Leknes 買);這天換掉 Kvalvika 健行。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/8 一</span><span class="dtitle">Ramberg → 海灘長走 → 入住 Reine cabin</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">由 Ramberg 出發,<b>Haukland↔Uttakleiv 海灘平路長走</b>(免登頂,4–5h)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Haukland+Beach">📍</a> → 南下入住 <b>Reine cabin(46 Kirkeveien)✅ 已訂</b>(lockbox 自助);傍晚拍<b>招牌 Hamnøy 橋藍調</b>(離 Reine 2–5 分)。</div></div>
+      <div class="opt">由 Ramberg 出發,<b>Haukland↔Uttakleiv 海灘平路長走</b>(免登頂,4–5h)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Haukland+Beach">📍</a> → 南下入住 <b>Reine cabin(46 Kirkeveien)✅ 已訂</b>(lockbox 自助);傍晚拍<b>招牌 Hamnøy 橋藍調</b>(離 Reine 2–5 分)。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/9 二</span><span class="dtitle">彈性日・Reinefjorden 觀光船看峽灣(住 Reine)</span><span class="flag aur">🌌 夜</span></div>
       <div class="opt">上午漁村深拍 + 逛禮品店;午後在 Reine 碼頭搭 <b>Reinefjorden 觀光船</b>穿雪山峽灣(電話 <span class="phone">+47 994 91 805</span>,週六停)。<b>Værøy 視 2027 班表 + 天氣再評估</b>(冬季當天來回不可靠)。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/10 三</span><span class="dtitle">Reine 散步慢遊 + Å/Nusfjord 深拍</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">上午擇一深拍 <b>Å 路盡頭</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a> 或 <b>Nusfjord 古漁村</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>;下午 <b>Reine 村內散步慢遊</b>(純步行:彩色木屋、碼頭、進村橋觀景、靜水倒影),傍晚接 Reine 藍調。</div></div>
+      <div class="opt">上午擇一深拍 <b>Å 路盡頭</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a> 或 <b>Nusfjord 古漁村</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>;下午 <b>Reine 村內散步慢遊</b>(純步行:彩色木屋、碼頭、進村橋觀景、靜水倒影),傍晚接 Reine 藍調。</div></div>
     <div class="day"><div class="dhead"><span class="ddate">3/11 四</span><span class="dtitle">換 Ballstad・Ballstadheia 登高拍漁村藍調</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">退房換住 <b>Ballstad</b>(離 LKN 機場僅 15–20 分);午後 <b>Ballstadheia 登高</b>(約 270m,microspikes)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ballstadheia">📍</a> 俯瞰 <b>Ballstad 漁村藍調</b>,戴頭燈下山。把電充飽、備好 3/12 早班機。</div></div>
+      <div class="opt">退房換住 <b>Ballstad</b>(離 LKN 機場僅 15–20 分);午後 <b>Ballstadheia 登高</b>(約 270m,microspikes)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ballstadheia">📍</a> 俯瞰 <b>Ballstad 漁村藍調</b>,戴頭燈下山。把電充飽、備好 3/12 早班機。</div></div>
 
-    <div class="seg">🛬 返程(3/12–3/14)</div>
+    <div class="seg" role="heading" aria-level="3">🛬 返程(3/12–3/14)</div>
     <div class="day"><div class="dhead"><span class="ddate">3/12 五</span><span class="dtitle">Lofoten→奧斯陸緩衝夜</span><span class="flag fly">✈ WF892+SK4107 已訂</span></div>
       <div class="opt">回 LKN <b>07:30 還車(憑證確認:3/12 門市 07:00–18:00 營業・有人服務)</b> → <b>WF892 09:30→10:00 BOO</b> 轉 <b>SK4107 10:35→12:10 OSL</b>(已訂),回奧斯陸過一晚(吸收延誤、採買伴手禮;<b>此晚 ⏳ 與 2/27–28 一併重訂中</b>──首選續住 Scandic Vulkan,或改近 Oslo S 的 Citybox)。</div>
       <div class="dmeta">✅ 已確認:<b>同一張聯程票(PNR BOXYI6)、行李直掛 OSL</b> ── 受保護。博德轉機 35 分雖短,但同票有保障:萬一 WF892 誤點沒接到,SAS/Widerøe 免費改下一班 BOO→OSL;加上 3/12 奧斯陸緩衝夜,3/13 國際線無虞。落地博德直接走去登機口(機場小、免再安檢);行李 Leknes 掛、奧斯陸領。</div></div>
@@ -260,9 +355,9 @@
       <div class="scroll-x"><table>
         <thead><tr><th>日期</th><th>住宿</th><th>價格(2 人)</th></tr></thead>
         <tbody>
-          <tr><td>3/1</td><td>Ullstindvegen 157(市區東北)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.7742753,19.2595344">📍</a></td><td>NT$2,154</td></tr>
-          <tr><td>3/2</td><td>Prestvikvegen(Sommarøy)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a></td><td>NT$4,895</td></tr>
-          <tr><td>3/3–3/4</td><td>Fiskergata 6(市中心,2 晚)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fiskergata+6%2C+9008+Troms%C3%B8">📍</a></td><td>NT$7,128</td></tr>
+          <tr><td>3/1</td><td>Ullstindvegen 157(市區東北)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.7742753,19.2595344">📍</a></td><td>NT$2,154</td></tr>
+          <tr><td>3/2</td><td>Prestvikvegen(Sommarøy)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a></td><td>NT$4,895</td></tr>
+          <tr><td>3/3–3/4</td><td>Fiskergata 6(市中心,2 晚)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fiskergata+6%2C+9008+Troms%C3%B8">📍</a></td><td>NT$7,128</td></tr>
           <tr><td><b>合計</b></td><td><b>4 晚</b></td><td><b>NT$14,177</b></td></tr>
         </tbody>
       </table></div>
@@ -285,56 +380,56 @@
       <p style="font-size:.82rem;color:var(--ink-soft)">天文黑夜約 19:40 起(看極光);時刻為查證概值,行前再以 timeanddate.com 核對 2027 實際日期。</p>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-cathedral.jpg" alt="">🚡 Day 1(3/1 一)抵達半日・纜車藍調</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-cathedral.jpg" alt="">🚡 Day 1(3/1 一)抵達半日・纜車藍調</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/1 一</span><span class="dtitle">機場取車 → 市區午餐 → 北極大教堂 → Fjellheisen 卡藍調 → 回東北住處</span><span class="flag aur">🌌 第一晚</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>12:00</td><td>SAS 落地 TOS<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>,<b>Alamo 機場取車 ✅ 已訂</b>(ID.3 或同級・電動;<b>取車時段 13:00</b>、門市 08:00–23:30、航廈步行可達;<b>⚠ Alamo 航班延誤「不保留車輛」→ 延誤時第一時間打門市 / Trip.com</b>,門市開到深夜、晚到仍可辦;證件:護照+台駕照+IDP+主駕名下晶片卡(<b>Alamo 收 Visa/萬事達/Amex/大來,不收 JCB;卡號須凸字</b>)+<b>租車憑證(必出示)</b>;<b>押金=租金+NOK 10,000(約 NT$3.4 萬)</b>;門市電話 <span class="phone">+47-90814000</span>;取車流程:確認<b>釘胎</b>、簽約前核對金額、拍車況、<b>記電量=還車基準(等電取還)</b>;⚡<b>Mer P3 快充</b>)</td></tr>
-          <tr><td>13:00–14:00</td><td><b>市區午餐(依預算)</b>:💰省錢 <b>Risø Mat &amp; Kaffebar</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ris%C3%B8+Mat+og+Kaffebar+Troms%C3%B8">📍</a>(三明治・湯・咖啡,café 價位)或超市/麵包店熟食 / 🍽坐下吃正餐 <b>Bardus Bistro</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Bardus+Bistro+Troms%C3%B8">📍</a>(北歐在地・馴鹿堡/帝王蟹,~200–300 NOK・先訂位)。<b>⚠ 想吃的 Raketten 鹿肉熱狗「週一/日公休」 → 改到 Day3 在市區吃</b></td></tr>
-          <tr><td>14:15–14:45</td><td>過橋開往北極大教堂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">📍</a>,拍三角形外觀(內部冬季 14:00 才開、NOK 90,可略;🅿教堂旁小停車場、有限)</td></tr>
-          <tr><td><b>15:00–16:50</b></td><td><b>Fjellheisen 纜車上山卡藍調</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">📍</a>(來回 NOK 495,<b>線上先買</b>)— 跨日落 16:42 + 市區夜景。<b>當天唯一硬時間窗</b>;🅿山腳停車場付費、無充電(要充改 Obs Jekta)</td></tr>
+          <tr><td>12:00</td><td>SAS 落地 TOS<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>,<b>Alamo 機場取車 ✅ 已訂</b>(ID.3 或同級・電動;<b>取車時段 13:00</b>、門市 08:00–23:30、航廈步行可達;<b>⚠ Alamo 航班延誤「不保留車輛」→ 延誤時第一時間打門市 / Trip.com</b>,門市開到深夜、晚到仍可辦;證件:護照+台駕照+IDP+主駕名下晶片卡(<b>Alamo 收 Visa/萬事達/Amex/大來,不收 JCB;卡號須凸字</b>)+<b>租車憑證(必出示)</b>;<b>押金=租金+NOK 10,000(約 NT$3.4 萬)</b>;門市電話 <span class="phone">+47-90814000</span>;取車流程:確認<b>釘胎</b>、簽約前核對金額、拍車況、<b>記電量=還車基準(等電取還)</b>;⚡<b>Mer P3 快充</b>)</td></tr>
+          <tr><td>13:00–14:00</td><td><b>市區午餐(依預算)</b>:💰省錢 <b>Risø Mat &amp; Kaffebar</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ris%C3%B8+Mat+og+Kaffebar+Troms%C3%B8">📍</a>(三明治・湯・咖啡,café 價位)或超市/麵包店熟食 / 🍽坐下吃正餐 <b>Bardus Bistro</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Bardus+Bistro+Troms%C3%B8">📍</a>(北歐在地・馴鹿堡/帝王蟹,~200–300 NOK・先訂位)。<b>⚠ 想吃的 Raketten 鹿肉熱狗「週一/日公休」 → 改到 Day3 在市區吃</b></td></tr>
+          <tr><td>14:15–14:45</td><td>過橋開往北極大教堂<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Arctic+Cathedral+Troms%C3%B8">📍</a>,拍三角形外觀(內部冬季 14:00 才開、NOK 90,可略;🅿教堂旁小停車場、有限)</td></tr>
+          <tr><td><b>15:00–16:50</b></td><td><b>Fjellheisen 纜車上山卡藍調</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">📍</a>(來回 NOK 495,<b>線上先買</b>)— 跨日落 16:42 + 市區夜景。<b>當天唯一硬時間窗</b>;🅿山腳停車場付費、無充電(要充改 Obs Jekta)</td></tr>
           <tr><td>17:15–17:40</td><td>(可選)市區海港藍調散步,或早點回住處自炊休息(隔天 Sommarøy 行程較長)</td></tr>
-          <tr><td>18:00–18:45</td><td>過 Tromsø 大橋到 mainland,<b>Coop Extra Tromsdalen 採買晚餐食材</b>(Solstrandvegen 23)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Coop+Extra+Solstrandvegen+23+Tromsdalen">📍</a>(週一–六 07:00–23:00;🅿店家免費停車)</td></tr>
-          <tr><td>18:45 起</td><td>往<b>東北</b>回 Ullstindvegen 157 住處<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.7742753,19.2595344">📍</a>(座標 69.7743, 19.2595,約 20–25 分)<b>自炊</b>;晴天屋外守第一晚極光</td></tr>
+          <tr><td>18:00–18:45</td><td>過 Tromsø 大橋到 mainland,<b>Coop Extra Tromsdalen 採買晚餐食材</b>(Solstrandvegen 23)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Coop+Extra+Solstrandvegen+23+Tromsdalen">📍</a>(週一–六 07:00–23:00;🅿店家免費停車)</td></tr>
+          <tr><td>18:45 起</td><td>往<b>東北</b>回 Ullstindvegen 157 住處<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.7742753,19.2595344">📍</a>(座標 69.7743, 19.2595,約 20–25 分)<b>自炊</b>;晴天屋外守第一晚極光</td></tr>
         </tbody>
       </table></div>
       <div class="dmeta">⚠️ Fjellheisen 強風會停駛、官網提到整建中,<b>當天上 fjellheisen.no 確認</b>;若停駛改在 Telegrafbukta 等地拍藍調。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-rorbuer.jpg" alt="">🛣 Day 2(3/2 二)景觀公路 → Sommarøy 漁村藍調</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-rorbuer.jpg" alt="">🛣 Day 2(3/2 二)景觀公路 → Sommarøy 漁村藍調</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/2 二</span><span class="dtitle">東北住處 → 穿市區上 Kvaløya → Ersfjordbotn → Brensholmen → Sommarøy(最長的一天)</span><span class="flag aur">🌌 第二晚</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>~08:00</td><td>住處<b>自理早餐 + 泡咖啡</b>,整裝出發</td></tr>
-          <tr><td>09:00</td><td>由<b>東北住處</b>出發,穿過 Tromsø 市區上 Kvaløya(約 40 分),先到 <b>Eide Handel</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Eide+Handel+Kval%C3%B8ya">📍</a> 補今晚 Sommarøy 食材(<b>島上補不到</b>,務必先買齊;🅿店家免費停車、⚡<b>YX Kvaløysletta 快充</b>上島前順充)</td></tr>
-          <tr><td>10:15–11:45</td><td><b>繞進 Ersfjordbotn</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ersfjordbotn">📍</a> — Kvaløya 最經典峽灣雪山 + 咖啡店(支線往北、原路折返)</td></tr>
-          <tr><td>12:00–13:00</td><td><b>午餐:Bryggejentene</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6928929,18.6152919">📍</a>(Kvaløya・你們選定)</td></tr>
-          <tr><td>13:15–14:30</td><td>續往西南,停 Kattfjordeidet 山口<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Kattfjordeidet+Kval%C3%B8ya">📍</a>、<b>Brensholmen 海灘</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Brensholmen+Kval%C3%B8ya">📍</a>(往 Senja 渡輪口、有沙灘海景;🅿景點停車多免費)</td></tr>
-          <tr><td>14:30–15:00</td><td>過 <b>Sommarøy 跨海橋</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a>取景 → 放行李到 Prestvikvegen 住處<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a>(🅿橋邊+村內停車;⚡Arctic Hotel Type2、住處插座向房東確認)</td></tr>
-          <tr><td><b>16:30–17:50</b></td><td><b>Sommarøy 漁村拍藍調</b>(依〈攝影機位〉順序:<b>①跨海橋</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a>先拍藍調 → <b>②白沙灘</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6336,18.0073">📍</a> → <b>③紅漁屋燈火 Arctic Hotel</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y+Arctic+Hotel">📍</a>);天文夜 19:40 起可同場守極光</td></tr>
-          <tr><td>18:00 起</td><td>回 Prestvikvegen 住處<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a><b>自炊</b>晚餐</td></tr>
+          <tr><td>09:00</td><td>由<b>東北住處</b>出發,穿過 Tromsø 市區上 Kvaløya(約 40 分),先到 <b>Eide Handel</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Eide+Handel+Kval%C3%B8ya">📍</a> 補今晚 Sommarøy 食材(<b>島上補不到</b>,務必先買齊;🅿店家免費停車、⚡<b>YX Kvaløysletta 快充</b>上島前順充)</td></tr>
+          <tr><td>10:15–11:45</td><td><b>繞進 Ersfjordbotn</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ersfjordbotn">📍</a> — Kvaløya 最經典峽灣雪山 + 咖啡店(支線往北、原路折返)</td></tr>
+          <tr><td>12:00–13:00</td><td><b>午餐:Bryggejentene</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6928929,18.6152919">📍</a>(Kvaløya・你們選定)</td></tr>
+          <tr><td>13:15–14:30</td><td>續往西南,停 Kattfjordeidet 山口<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Kattfjordeidet+Kval%C3%B8ya">📍</a>、<b>Brensholmen 海灘</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Brensholmen+Kval%C3%B8ya">📍</a>(往 Senja 渡輪口、有沙灘海景;🅿景點停車多免費)</td></tr>
+          <tr><td>14:30–15:00</td><td>過 <b>Sommarøy 跨海橋</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a>取景 → 放行李到 Prestvikvegen 住處<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a>(🅿橋邊+村內停車;⚡Arctic Hotel Type2、住處插座向房東確認)</td></tr>
+          <tr><td><b>16:30–17:50</b></td><td><b>Sommarøy 漁村拍藍調</b>(依〈攝影機位〉順序:<b>①跨海橋</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a>先拍藍調 → <b>②白沙灘</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6336,18.0073">📍</a> → <b>③紅漁屋燈火 Arctic Hotel</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y+Arctic+Hotel">📍</a>);天文夜 19:40 起可同場守極光</td></tr>
+          <tr><td>18:00 起</td><td>回 Prestvikvegen 住處<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a><b>自炊</b>晚餐</td></tr>
         </tbody>
       </table></div>
       <div class="dmeta">⚠️ 住處在<b>市區東北</b>,到 Sommarøy 全程車程 <b>~1h45–2h</b>(穿市區+上 Kvaløya),務必 <b>09:00 前出發</b>、Ersfjord 繞路<b>時間夠才繞</b>;冬季橋面橫風強曾關閉,過橋當心側風;不建議大繞北端 Grøtfjord/Tromvik。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-tromso-aurora.jpg" alt="">🚗 Day 3(3/3 三)開回市區還車 → 極光追雲團</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-tromso-aurora.jpg" alt="">🚗 Day 3(3/3 三)開回市區還車 → 極光追雲團</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/3 三</span><span class="dtitle">Sommarøy → Tromsø(午前機場還車)→ 入住市中心 → 晚上追極光</span><span class="flag aur">🌌 第三晚</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>~08:00</td><td>Sommarøy 住處<b>自理早餐 + 泡咖啡</b>,退房整裝</td></tr>
-          <tr><td>08:30–10:15</td><td>Sommarøy<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a> → Tromsøya 自駕(<b>冬季抓 1.5–2h</b>,可能遇車隊管制,早出發、查 175.no 路況)</td></tr>
-          <tr><td>10:15–10:45</td><td><b>先開到 Fiskergata 6 寄放行李</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fiskergata+6%2C+9008+Troms%C3%B8">📍</a>(行李先放飯店、逛街免拖;15:00 才正式入住)</td></tr>
-          <tr><td>10:45–11:30</td><td>(可選)順遊 <b>Telegrafbukta</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Telegrafbukta+Troms%C3%B8">📍</a> 雪景海岸(🅿免費停車)→ <b>把電充飽</b>(機場 Mer P3 / Obs Jekta;依還車電量政策)</td></tr>
-          <tr><td>11:15–12:00</td><td><b>Alamo 機場還車(✅ 已訂・還車期限 12:00)</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>(提早到、<b>電量補回取車水位(等電取還)</b>、清雪拍車況/電量/里程存證;<b>勿遲於 12:00</b> 以免被多算一天)</td></tr>
+          <tr><td>08:30–10:15</td><td>Sommarøy<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍</a> → Tromsøya 自駕(<b>冬季抓 1.5–2h</b>,可能遇車隊管制,早出發、查 175.no 路況)</td></tr>
+          <tr><td>10:15–10:45</td><td><b>先開到 Fiskergata 6 寄放行李</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fiskergata+6%2C+9008+Troms%C3%B8">📍</a>(行李先放飯店、逛街免拖;15:00 才正式入住)</td></tr>
+          <tr><td>10:45–11:30</td><td>(可選)順遊 <b>Telegrafbukta</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Telegrafbukta+Troms%C3%B8">📍</a> 雪景海岸(🅿免費停車)→ <b>把電充飽</b>(機場 Mer P3 / Obs Jekta;依還車電量政策)</td></tr>
+          <tr><td>11:15–12:00</td><td><b>Alamo 機場還車(✅ 已訂・還車期限 12:00)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>(提早到、<b>電量補回取車水位(等電取還)</b>、清雪拍車況/電量/里程存證;<b>勿遲於 12:00</b> 以免被多算一天)</td></tr>
           <tr><td>12:00–12:30</td><td>搭 Flybussen / 計程車回市中心(<b>已無行李、輕裝</b>)</td></tr>
-          <tr><td>12:30–15:00</td><td>市中心午餐 + 逛 Storgata 主街:<b>在地必吃 Raketten 鹿肉熱狗</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.651401,18.957655">📍</a>(Stortorget 廣場・1911 老攤、文化遺產・<b>週二–六 11:00–17:00</b>・~70–100 NOK)(購物可與 Day4 分流)</td></tr>
+          <tr><td>12:30–15:00</td><td>市中心午餐 + 逛 Storgata 主街:<b>在地必吃 Raketten 鹿肉熱狗</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.651401,18.957655">📍</a>(Stortorget 廣場・1911 老攤、文化遺產・<b>週二–六 11:00–17:00</b>・~70–100 NOK)(購物可與 Day4 分流)</td></tr>
           <tr><td>15:00–17:00</td><td>正式入住、休息、晚餐、著裝保暖</td></tr>
           <tr><td><b>17:00–深夜</b></td><td><b>極光追雲團(小巴・含飯店接送)</b>— 嚮導機動追晴空,命中率最高;約 NOK 1350 起</td></tr>
         </tbody>
@@ -342,16 +437,16 @@
       <div class="dmeta nightline">🌌 前兩晚郊區若沒看到,這晚靠追雲團再拼;選<b>免費取消</b>方案、提前 1–2 天訂。極光不保證看到。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-husky.jpg" alt="">🐕 Day 4(3/4 四)狗拉雪橇 → 市區購物</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-husky.jpg" alt="">🐕 Day 4(3/4 四)狗拉雪橇 → 市區購物</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/4 四</span><span class="dtitle">上午狗拉雪橇(含接送・自駕)→ 下午最北麥當勞 + 禮品店</span><span class="flag aur">🌌 第四晚(最後機會)</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>09:45–13:45</td><td><b>狗拉雪橇半日團</b>(Polar Adventures Self-Drive・<b>含接送</b>・自己駕,約 NOK 2,040;集合在碼頭、離住處步行可達)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polar+Adventures+AS+Troms%C3%B8">📍</a></td></tr>
-          <tr><td>14:00–14:40</td><td><b>全世界最北的麥當勞</b>(Storgata 70)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=McDonald%27s+Storgata+70+Troms%C3%B8">📍</a>打卡、收集限定紙袋</td></tr>
-          <tr><td>14:40–15:20</td><td>禮品店買<b>明信片 / 貼紙 / 磁鐵</b>(Tromsø Gift &amp; Souvenir, Strandgata 36;可辦退稅)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+Gift+og+Souvenir+Shop+Strandgata+36">📍</a> ── <b>全程明信片/貼紙主力日</b>(正常營業+退稅,一次買足;避免 3/7 週日 Henningsvær 店關落空)</td></tr>
-          <tr><td>15:20–16:00</td><td>Domkirke 木造教堂外觀<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tromso+Domkirke">📍</a> → <b>Polaria 水族館</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polaria+Troms%C3%B8">📍</a>(冬季 16:00 關,要趕早入場)</td></tr>
+          <tr><td>09:45–13:45</td><td><b>狗拉雪橇半日團</b>(Polar Adventures Self-Drive・<b>含接送</b>・自己駕,約 NOK 2,040;集合在碼頭、離住處步行可達)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polar+Adventures+AS+Troms%C3%B8">📍</a></td></tr>
+          <tr><td>14:00–14:40</td><td><b>全世界最北的麥當勞</b>(Storgata 70)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=McDonald%27s+Storgata+70+Troms%C3%B8">📍</a>打卡、收集限定紙袋</td></tr>
+          <tr><td>14:40–15:20</td><td>禮品店買<b>明信片 / 貼紙 / 磁鐵</b>(Tromsø Gift &amp; Souvenir, Strandgata 36;可辦退稅)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+Gift+og+Souvenir+Shop+Strandgata+36">📍</a> ── <b>全程明信片/貼紙主力日</b>(正常營業+退稅,一次買足;避免 3/7 週日 Henningsvær 店關落空)</td></tr>
+          <tr><td>15:20–16:00</td><td>Domkirke 木造教堂外觀<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Tromso+Domkirke">📍</a> → <b>Polaria 水族館</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Polaria+Troms%C3%B8">📍</a>(冬季 16:00 關,要趕早入場)</td></tr>
           <tr><td>16:00 後</td><td>碼頭散步、拍海港藍調(約 16:55–17:55)</td></tr>
           <tr><td>傍晚/晚上</td><td>晚餐;<b>若前三晚都沒極光,今晚是最後機會</b>再報一次含接送極光團(隔天早起,別玩太累)</td></tr>
         </tbody>
@@ -359,14 +454,14 @@
       <div class="dmeta">⚠️ 雪橇務必選「<b>含接送 incl. transport</b>」版本(這天沒車),旺季常滿,<b>提前 1–2 個月訂上午梯次</b>。別選全日團,否則下午沒時間逛街與進 Polaria。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/master-tromso-city.jpg" alt="">🛫 Day 5(3/5 五)離開日</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/master-tromso-city.jpg" alt="">🛫 Day 5(3/5 五)離開日</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/5 五</span><span class="dtitle">退房 → 09:50 到機場 → 11:40 飛 Bodø</span><span class="flag fly">✈ SK4561 已訂</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>08:30–09:00</td><td>Fiskergata 6 退房(中午 12:00 前皆可,提早退)</td></tr>
-          <tr><td>09:00–09:20</td><td>搭 Flybussen / 計程車到 TOS 機場<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>(沒車,先確認班次或預約計程車、留雪天緩衝)</td></tr>
+          <tr><td>09:00–09:20</td><td>搭 Flybussen / 計程車到 TOS 機場<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Troms%C3%B8+lufthavn+Langnes">📍</a>(沒車,先確認班次或預約計程車、留雪天緩衝)</td></tr>
           <tr><td>09:50</td><td>抵 TOS,辦登機 / 掛行李(國內線小機場,作業快)</td></tr>
           <tr><td><b>11:40</b></td><td><b>TOS → Bodø 起飛</b>,Tromsø 段結束,接續 Lofoten 行程</td></tr>
         </tbody>
@@ -374,15 +469,15 @@
       <div class="dmeta">✈ <b>機場操作(TOS・SAS 國內線)</b>:① 起飛前 22h 用 <b>SAS App 線上報到</b>、存電子登機證(免排隊);② TOS 有<b>自助掛行李機</b>,SAS 國內線 <b>check-in / 掛行李 起飛前 40 分關閉</b>,建議起飛前 ~1.5h 到;③ 國內線屬<b>申根境內、無護照查驗,只過安檢</b>(登機證即可,外國人仍隨身帶護照);④ 安檢液體 100ml 規定照舊;手提行李約 8kg。</div>
     </div>
 
-    <div class="seg">📸 攝影機位 &amp; 🍳 自炊菜單(郊區兩晚主題)</div>
+    <div class="seg" role="heading" aria-level="3">📸 攝影機位 &amp; 🍳 自炊菜單(郊區兩晚主題)</div>
     <div class="card">
       <h3>📸 Sommarøy 藍調機位 &amp; 住處看極光</h3>
-      <p><b>你們住:</b>Prestvika Strandkafé og Gjestgiveri(Prestvikvegen 2)── 蓋在 Prestvika 海灣<b>沙灘邊、面海第一排</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍 地圖</a></p>
+      <p><b>你們住:</b>Prestvika Strandkafé og Gjestgiveri(Prestvikvegen 2)── 蓋在 Prestvika 海灣<b>沙灘邊、面海第一排</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6303447,18.0231692">📍 地圖</a></p>
       <h4>三個拍攝點(都在島上、彼此車程幾分鐘)</h4>
       <ul class="clean">
-        <li><b>① Sommarøybrua 跨海橋停車場 ★招牌</b>:雪山 + 白沙 + 藍綠海 + 紅木屋 + 橋<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a></li>
-        <li><b>② Sommarøy 主白沙灘</b>(Store Sommarøya 村心):用沙洲/海岸線當前景拍藍調與雪山倒影<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6336,18.0073">📍</a></li>
-        <li><b>③ 紅漁屋燈火</b>:港邊 Arctic Hotel rorbuer,冷藍天空配暖色屋燈最對比<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y+Arctic+Hotel">📍</a></li>
+        <li><b>① Sommarøybrua 跨海橋停車場 ★招牌</b>:雪山 + 白沙 + 藍綠海 + 紅木屋 + 橋<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6236,18.0456">📍</a></li>
+        <li><b>② Sommarøy 主白沙灘</b>(Store Sommarøya 村心):用沙洲/海岸線當前景拍藍調與雪山倒影<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.6336,18.0073">📍</a></li>
+        <li><b>③ 紅漁屋燈火</b>:港邊 Arctic Hotel rorbuer,冷藍天空配暖色屋燈最對比<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sommar%C3%B8y+Arctic+Hotel">📍</a></li>
       </ul>
       <p style="font-size:.85rem;color:var(--ink-soft)">順序:日落 16:46 後先到①拍藍調(最美約 16:46–17:47)→ 走到②沙灘 → 最後拍③亮燈紅屋。</p>
       <div class="note"><span class="tag">🌌 住處能直接看極光嗎?能,而且條件很好</span>Sommarøy <b>光害極低、海空開闊</b>,住處就在面海沙灘邊。<b>只要當晚晴、雲少,走出門到沙灘就能看</b>(極光多在<b>北方</b>天空,找面北、避開戶外燈的方向)。出發前看 <b>yr.no 雲量</b> + 極光預報 KP;備腳架、暖暖包,相機備用電池貼身保暖(低溫掉電快)。極光不保證,故保留 3/3 晚追雲團當保險。</div>
@@ -416,7 +511,7 @@
       <div class="gold"><span class="tag">💡 提醒</span>先確認小屋廚房有哪些鍋具/爐具,缺什麼在 Coop 補。超市只賣<b>啤酒</b>(約 20:00 後不賣),葡萄酒/烈酒要到市區 <b>Vinmonopolet</b>(Sommarøy 沒有)→ 想小酌在市區先買。保溫瓶守極光超實用,沒帶 Coop 有賣。</div>
     </div>
 
-    <div class="seg">🔋 電動車・電量與充電評估</div>
+    <div class="seg" role="heading" aria-level="3">🔋 電動車・電量與充電評估</div>
     <div class="gold"><span class="tag">結論:續航不是問題(但別忘了充)</span>三天總里程約 <b>210–235 km</b>(因 D1 在市區東北、Day2 拉到 ~110–130 km)。中/大電池冬季單次續航(~260–320 km)仍夠;<b>小電池(45 kWh)建議中途充一次</b>。重點:<b>取車先充飽 + 住處能插電 + 還車電量政策</b>。</div>
     <div class="card">
       <h3>每日里程 &amp; 冬季續航</h3>
@@ -452,9 +547,9 @@
     </div>
     <div class="warn"><span class="tag">⚠ 待確認(問租車公司 / 房東)</span>① <b>車款電池容量</b>(決定要不要中途充)② 兩個郊區住處<b>能否插電過夜</b> ③ <b>還車電量政策</b>(多數電動車不要求還滿,但有些收低電量補電費)。</div>
 
-    <div class="seg">📋 該先訂 / 先確認的東西</div>
+    <div class="seg" role="heading" aria-level="3">📋 該先訂 / 先確認的東西</div>
     <div class="card scroll-x">
-      <table>
+      <table class="wide">
         <thead><tr><th>項目</th><th>重點</th><th>時機</th></tr></thead>
         <tbody>
           <tr><td>🚗 <b>租電動車</b>(✅ 已訂)</td><td><b>Alamo・VW ID.3 或同級(電動)・NT$5,863</b>(Trip.com 線上預付、含碰撞/盜搶/第三責任+租車保障)・2 天無限里程・<b>等電取還</b>;取 3/1 13:00 → 還 3/3 12:00(皆機場);免費取消至 3/1 12:00;押金=租金+NOK 10,000;門市 <span class="phone">+47-90814000</span>;<b>⚠ 航班延誤不保留車輛 → 延誤即聯繫門市</b>;待辦:確認/預約<b>釘胎</b></td><td>已完成(釘胎待確認)</td></tr>
@@ -512,9 +607,9 @@
       <div class="scroll-x"><table>
         <thead><tr><th>日期</th><th>住宿</th><th>價格(2 人)</th></tr></thead>
         <tbody>
-          <tr><td>3/6–3/7</td><td>Mørkveden(Ramberg/Flakstadøya 南側)✅ 已訂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a></td><td>NT$10,611</td></tr>
-          <tr><td>3/8–3/10</td><td>Reine cabin(46 Kirkeveien)✅ 已訂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.933564,13.086521">📍</a></td><td>NT$27,661</td></tr>
-          <tr><td>3/11</td><td>Ballstad・<b>Hemmingodden Lodge</b> ✅ 已訂<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0734341,13.5362506">📍</a></td><td>NT$8,750</td></tr>
+          <tr><td>3/6–3/7</td><td>Mørkveden(Ramberg/Flakstadøya 南側)✅ 已訂<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a></td><td>NT$10,611</td></tr>
+          <tr><td>3/8–3/10</td><td>Reine cabin(46 Kirkeveien)✅ 已訂<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.933564,13.086521">📍</a></td><td>NT$27,661</td></tr>
+          <tr><td>3/11</td><td>Ballstad・<b>Hemmingodden Lodge</b> ✅ 已訂<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0734341,13.5362506">📍</a></td><td>NT$8,750</td></tr>
           <tr><td><b>已訂合計</b></td><td><b>3 段・6 晚</b></td><td><b>NT$47,022</b></td></tr>
         </tbody>
       </table></div>
@@ -539,17 +634,17 @@
       <p style="font-size:.82rem;color:var(--ink-soft)">日照逐日約 +8 分變長;天文夜(約 19:30 後)放晴可守極光。時刻為概值,行前以 timeanddate.com 核對 2027 實際日期。</p>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/west-skagsanden.jpg" alt="">🛬 Day 6(3/6 六)抵達・大採買・入住 Ramberg・Skagsanden 藍調</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-skagsanden.jpg" alt="">🛬 Day 6(3/6 六)抵達・大採買・入住 Ramberg・Skagsanden 藍調</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/6 六</span><span class="dtitle">LKN 取車 → Leknes 大採買 → 入住 Ramberg(已訂)→ Skagsanden 藍調</span><span class="flag fly">✈ WF806 已訂</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>11:20</td><td>WF806 抵 LKN,<b>Hertz 機場取車 ✅ 已訂</b>(VW ID.4 或同級・電動 <b>4WD</b>;門市 10:00–14:00、取車時段 12:00、航班延誤訂單保留至當天 13:00;航廈步行可達;備妥 microspikes、頭燈)</td></tr>
-          <tr><td>12:00</td><td><b>Leknes 大採買(週六＝週日關門前最後正常採買)</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>:① <b>先衝 Vinmonopolet 買酒</b>(週六約 15:00–16:00 提早關、週日全休,全程想喝的一次買齊)→ ② Coop Extra / Rema 1000 食材<b>買足 3/6–3/8(含週日)份量</b> → ③ 順手買明信片/磁鐵;🅿 停車免費、⚡<b>REMA1000 180kW 快充</b>(全島過路主充)</td></tr>
-          <tr><td>13:30</td><td>往 Flakstadøya(過 Napp 隧道),抵 <b>Mørkveden(Flakstadveien 651,Flakstadøya 南側)✅ 已訂</b>(約 30–35 分)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a> <b>放行李</b>(✅ 已確認<b>密碼鑰匙盒自助入住</b>・正式 check-in 15:00,13:30 早到放行李先訊息房東;確認碼 HMMATQ2TYY;退房 3/8 12:00;🅿私人停車、⚡<b>住處無充電設施 → 充電靠 Leknes/Svolvær 過路快充</b>)</td></tr>
-          <tr><td>16:50</td><td><b>Skagsanden 沙灘藍調</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a>(往北約 12–15 分;濕沙鏡面倒影 + 雪峰,著名極光灘;🅿車牌 App 付費)</td></tr>
-          <tr><td>18:40</td><td>回小屋<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a>自炊;晴天就在 Skagsanden<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a> / 門口守極光</td></tr>
+          <tr><td>12:00</td><td><b>Leknes 大採買(週六＝週日關門前最後正常採買)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>:① <b>先衝 Vinmonopolet 買酒</b>(週六約 15:00–16:00 提早關、週日全休,全程想喝的一次買齊)→ ② Coop Extra / Rema 1000 食材<b>買足 3/6–3/8(含週日)份量</b> → ③ 順手買明信片/磁鐵;🅿 停車免費、⚡<b>REMA1000 180kW 快充</b>(全島過路主充)</td></tr>
+          <tr><td>13:30</td><td>往 Flakstadøya(過 Napp 隧道),抵 <b>Mørkveden(Flakstadveien 651,Flakstadøya 南側)✅ 已訂</b>(約 30–35 分)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a> <b>放行李</b>(✅ 已確認<b>密碼鑰匙盒自助入住</b>・正式 check-in 15:00,13:30 早到放行李先訊息房東;確認碼 HMMATQ2TYY;退房 3/8 12:00;🅿私人停車、⚡<b>住處無充電設施 → 充電靠 Leknes/Svolvær 過路快充</b>)</td></tr>
+          <tr><td>16:50</td><td><b>Skagsanden 沙灘藍調</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a>(往北約 12–15 分;濕沙鏡面倒影 + 雪峰,著名極光灘;🅿車牌 App 付費)</td></tr>
+          <tr><td>18:40</td><td>回小屋<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0254974,13.1833">📍</a>自炊;晴天就在 Skagsanden<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Skagsanden+Beach">📍</a> / 門口守極光</td></tr>
         </tbody>
       </table></div>
       <div class="dmeta">✈ <b>機場操作(Bodø → Leknes・Widerøe WF806)</b>:① 3/5 在 Bodø 已領行李過夜 → <b>3/6 早上於 Bodø 重新報到 / 掛行李</b>;② Widerøe 可 <b>App / 自助機線上報到</b>(起飛前 24h);③ Bodø 為小機場、<b>國內線安檢快、無護照查驗</b>;④ Widerøe 託運上限 <b>23kg・L+W+H ≤158cm</b>、手提約 8kg;⑤ 建議起飛前 ~1h 到 Bodø 機場;抵 LKN(11:20)後機場取車。</div>
@@ -558,14 +653,14 @@
       <div class="dmeta">📷 Skagsanden 腳架勿浸水(零下凍關節)、退浪線後站;這片沙灘是 Lofoten 最佳極光灘之一。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/west-sakrisoy.jpg" alt="">🏘 Day 7(3/7 日)Henningsvær 一日:招牌足球場 + 藝術漁村藍調</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-sakrisoy.jpg" alt="">🏘 Day 7(3/7 日)Henningsvær 一日:招牌足球場 + 藝術漁村藍調</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/7 日</span><span class="dtitle">由 Ramberg 東行 Henningsvær(單程約 2h)→ 海上足球場 + 藝術漁村 + 藍調</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>08:00</td><td>由 Ramberg 出發往東到 <b>Henningsvær</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r">📍</a>(<b>單程約 2 小時</b>;天亮後行車)</td></tr>
-          <tr><td>10:00</td><td><b>Henningsvær 海上足球場(Henningsvær Stadion)</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r+Stadion">📍</a> + 藝術漁村、畫廊/設計店(Engelskmannsbrygga、KaviarFactory 一帶);🅿<b>村內極窄→停村外走路、付費</b>;無充電(充電在 Leknes/Svolvær)</td></tr>
+          <tr><td>08:00</td><td>由 Ramberg 出發往東到 <b>Henningsvær</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r">📍</a>(<b>單程約 2 小時</b>;天亮後行車)</td></tr>
+          <tr><td>10:00</td><td><b>Henningsvær 海上足球場(Henningsvær Stadion)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Henningsv%C3%A6r+Stadion">📍</a> + 藝術漁村、畫廊/設計店(Engelskmannsbrygga、KaviarFactory 一帶);🅿<b>村內極窄→停村外走路、付費</b>;無充電(充電在 Leknes/Svolvær)</td></tr>
           <tr><td>12:30</td><td>咖啡/午餐(行前查 IG 確認當天有店開)、港邊彩色木屋街拍;<b>⚠ 週日商店/畫廊多關門 → 明信片/貼紙改 3/4 Tromsø 或 3/6 Leknes 買齊,勿指望此日採購</b></td></tr>
           <tr><td>16:50</td><td><b>Henningsvær 漁村藍調</b>(港邊彩色木構 + 村燈 + 峽灣冷藍)</td></tr>
           <tr><td>18:00</td><td>開回 Ramberg(<b>約 2 小時</b>、摸黑雪路慢行,約 20:00 到)→ 自炊</td></tr>
@@ -575,30 +670,30 @@
       <div class="dmeta">📅 <b>此日為週日</b>:Henningsvær 購物/畫廊大機率關門 → 定位成「<b>海上足球場 + 漁村藍調戶外街拍</b>」,室內消費別期待;明信片/貼紙改前段 3/4 Tromsø 或 3/6 Leknes 買齊。不想跑長途就直接用備案改 Kvalvika 健行。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/west-hamnoy.jpg" alt="">🏖 Day 8(3/8 一)Ramberg → Haukland↔Uttakleiv → 入住 Reine(已訂)</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-hamnoy.jpg" alt="">🏖 Day 8(3/8 一)Ramberg → Haukland↔Uttakleiv → 入住 Reine(已訂)</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/8 一</span><span class="dtitle">Haukland↔Uttakleiv 海灘長走 → 南下入住 Reine cabin → Hamnøy 橋招牌藍調</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>09:00</td><td>由 Ramberg 退房出發(行李帶著)</td></tr>
-          <tr><td>09:40</td><td><b>Haukland ↔ Uttakleiv 海灘平路長走 4–5h</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Haukland+Beach">📍</a>(離 Ramberg 約 30 分;免登頂、低風險;或縮短改 Nusfjord 古漁村深拍);🅿<b>Haukland 20 NOK/時、Uttakleiv YouPark 上限 300/24h</b></td></tr>
-          <tr><td>16:00</td><td>南下入住 <b>Reine cabin(46 Kirkeveien)✅ 已訂</b>(入住 16:00–21:00,鑰匙在現場 lockbox 自助;<b>入住須刷 NOK 3,000 損壞押金</b>(≈NT$1 萬)、退房後 7 天內退還;確認碼 5988.399.928)<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.933564,13.086521">📍</a></td></tr>
-          <tr><td>16:50</td><td><b>Hamnøy 橋招牌藍調</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">📍</a>(離 Reine 2–5 分:紅屋 + 雪峰 + 倒影)+ Sakrisøy 黃屋<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sakris%C3%B8y">📍</a></td></tr>
+          <tr><td>09:40</td><td><b>Haukland ↔ Uttakleiv 海灘平路長走 4–5h</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Haukland+Beach">📍</a>(離 Ramberg 約 30 分;免登頂、低風險;或縮短改 Nusfjord 古漁村深拍);🅿<b>Haukland 20 NOK/時、Uttakleiv YouPark 上限 300/24h</b></td></tr>
+          <tr><td>16:00</td><td>南下入住 <b>Reine cabin(46 Kirkeveien)✅ 已訂</b>(入住 16:00–21:00,鑰匙在現場 lockbox 自助;<b>入住須刷 NOK 3,000 損壞押金</b>(≈NT$1 萬)、退房後 7 天內退還;確認碼 5988.399.928)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=67.933564,13.086521">📍</a></td></tr>
+          <tr><td>16:50</td><td><b>Hamnøy 橋招牌藍調</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">📍</a>(離 Reine 2–5 分:紅屋 + 雪峰 + 倒影)+ Sakrisøy 黃屋<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sakris%C3%B8y">📍</a></td></tr>
           <tr><td>18:30</td><td>自炊;晴天 Uttakleiv / 就近守極光</td></tr>
         </tbody>
       </table></div>
       <div class="dmeta">📷 招牌 Hamnøy 橋、Sakrisøy 黃屋藍調這天起都拍得到(雖不住,離 Reine 僅 2–5 分);腳架升 150cm 越橋欄。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-reine-winter.jpg" alt="">⛴ Day 9(3/9 二)彈性日・Reinefjorden 觀光船看峽灣</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-reine-winter.jpg" alt="">⛴ Day 9(3/9 二)彈性日・Reinefjorden 觀光船看峽灣</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/9 二</span><span class="dtitle">漁村深拍 + Reinefjorden 觀光船穿峽灣(住 Reine)</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>上午</td><td>漁村深度補拍(Hamnøy/Sakrisøy 細節、鱈魚架)+ <b>Anita's Sjømat(Sakrisøy)</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Anitas+Sj%C3%B8mat+Sakris%C3%B8y">📍</a>買在地小物/明信片(<b>冬季約 12:00 才開,別排純上午</b>)</td></tr>
-          <tr><td>13:30</td><td><b>Reine 碼頭搭 Reinefjorden 觀光船</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+havn+Lofoten">📍</a>看雪山峽灣瀑布(~1–1.5h,起價 NOK 298,24h 前免費取消;電話 <span class="phone">+47 994 91 805</span>,週六停)</td></tr>
+          <tr><td>上午</td><td>漁村深度補拍(Hamnøy/Sakrisøy 細節、鱈魚架)+ <b>Anita's Sjømat(Sakrisøy)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Anitas+Sj%C3%B8mat+Sakris%C3%B8y">📍</a>買在地小物/明信片(<b>冬季約 12:00 才開,別排純上午</b>)</td></tr>
+          <tr><td>13:30</td><td><b>Reine 碼頭搭 Reinefjorden 觀光船</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+havn+Lofoten">📍</a>看雪山峽灣瀑布(~1–1.5h,起價 NOK 298,24h 前免費取消;電話 <span class="phone">+47 994 91 805</span>,週六停)</td></tr>
           <tr><td>16:50</td><td>Sakrisøy / Reine 藍調</td></tr>
           <tr><td>18:30</td><td>自炊;晴天守極光</td></tr>
         </tbody>
@@ -607,14 +702,14 @@
       <div class="dmeta">🚢 <b>Værøy(偉略島)</b>:冬季渡輪當天來回不可靠(班表 2026 下半年才出、易停航)→ 看峽灣以 Reinefjorden 觀光船為主;Værøy 等 2027 班表出來、若有乾淨去回 + 天氣好再評估。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/west-aa.jpg" alt="">🚶 Day 10(3/10 三)Reine 散步慢遊 + Å/Nusfjord 深拍</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-aa.jpg" alt="">🚶 Day 10(3/10 三)Reine 散步慢遊 + Å/Nusfjord 深拍</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/10 三</span><span class="dtitle">Reine 村內散步慢遊(不開車)+ Å 或 Nusfjord 深度攝影</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>上午</td><td>擇一深拍:<b>Å 路盡頭老漁村 + 金字塔鱈魚架</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a>(Reine 南下 15–20 分)或 <b>Nusfjord UNESCO 古漁村</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>(北上約 40 分);🅿 Å 路盡頭停車場付費(<b>無充電/加油→出發前充飽</b>);Nusfjord 入口停車含<b>入村費約 100 NOK</b></td></tr>
-          <tr><td>14:00</td><td><b>Reine 散步慢遊(純步行・不開車)</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+Lofoten">📍</a>:村內彩色木屋、碼頭、進村橋觀景、靜水倒影</td></tr>
+          <tr><td>上午</td><td>擇一深拍:<b>Å 路盡頭老漁村 + 金字塔鱈魚架</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a>(Reine 南下 15–20 分)或 <b>Nusfjord UNESCO 古漁村</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>(北上約 40 分);🅿 Å 路盡頭停車場付費(<b>無充電/加油→出發前充飽</b>);Nusfjord 入口停車含<b>入村費約 100 NOK</b></td></tr>
+          <tr><td>14:00</td><td><b>Reine 散步慢遊(純步行・不開車)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+Lofoten">📍</a>:村內彩色木屋、碼頭、進村橋觀景、靜水倒影</td></tr>
           <tr><td>16:50</td><td>接 Reine 碼頭/橋 藍調(屋燈全亮)</td></tr>
           <tr><td>18:30</td><td>自炊;晴天守極光</td></tr>
         </tbody>
@@ -622,15 +717,15 @@
       <div class="dmeta">🚶 今天不趕路、以 <b>Reine 慢遊 + 攝影</b>為主;想多走可順走 Sakrisøy/Hamnøy(2–5 分車程)。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/west-nusfjord.jpg" alt="">🥾 Day 11(3/11 四)換 Ballstad + Ballstadheia 登高拍漁村藍調</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/west-nusfjord.jpg" alt="">🥾 Day 11(3/11 四)換 Ballstad + Ballstadheia 登高拍漁村藍調</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/11 四</span><span class="dtitle">換住 Ballstad → Ballstadheia 登高 → 高處拍 Ballstad 漁村藍調</span><span class="flag aur">🌌 夜</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>09:30</td><td>退房,Reine → <b>Ballstad</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0734341,13.5362506">📍</a>(約 50 分;離 LKN 機場僅 15–20 分)</td></tr>
+          <tr><td>09:30</td><td>退房,Reine → <b>Ballstad</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=68.0734341,13.5362506">📍</a>(約 50 分;離 LKN 機場僅 15–20 分)</td></tr>
           <tr><td>11:00</td><td>抵 Ballstad <b>寄放行李</b>、午餐、整裝(<b>Hemmingodden check-in 15:00–22:00、退房 08:00–11:00</b>;<b>⚠ 3/12 要 07:40 出發、早於退房窗 → 入住時先向 Lodge 講好提早自助退房</b>;登山後再正式入住;🅿 Lodge/村內停車、⚡充電向房東確認)</td></tr>
-          <tr><td>13:30</td><td><b>Ballstadheia 登高</b><a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ballstadheia">📍</a>(約 270m,來回 ~4h;第一段較陡、<b>microspikes 必備</b>;往俯瞰漁村的觀景段,不必硬攻頂)</td></tr>
+          <tr><td>13:30</td><td><b>Ballstadheia 登高</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ballstadheia">📍</a>(約 270m,來回 ~4h;第一段較陡、<b>microspikes 必備</b>;往俯瞰漁村的觀景段,不必硬攻頂)</td></tr>
           <tr><td>15:30</td><td>高地沿邊慢走、選機位(俯瞰 <b>Ballstad 漁村</b> + Buksnesfjord + Vestfjord)</td></tr>
           <tr><td>17:30</td><td><b>高處拍 Ballstad 漁村藍調</b>(日落約 17:50)</td></tr>
           <tr><td>18:15</td><td>戴<b>頭燈</b>下山(陡段結冰慢行)→ <b>正式入住</b>(15:00 後)+ 自炊;<b>把電充飽</b>、備好早班機</td></tr>
@@ -639,13 +734,13 @@
       <div class="dmeta">⚠️ Ballstadheia 是冬季可行的安全登高,但傍晚摸黑下山務必 <b>microspikes + 頭燈</b>、陡段慢行;不想摸黑下山就提早降到低處拍、或直接在 Ballstad 港拍藍調(Offersøykammen 為備選白天健行)。</div>
     </div>
 
-    <div class="seg"><img class="segimg" src="images/nor-aurora.jpg" alt="">🛫 Day 12(3/12 五)離開日・LKN 還車飛走</div>
+    <div class="seg" role="heading" aria-level="3"><img class="segimg" loading="lazy" decoding="async" width="30" height="30" src="images/nor-aurora.jpg" alt="">🛫 Day 12(3/12 五)離開日・LKN 還車飛走</div>
     <div class="day">
       <div class="dhead"><span class="ddate">3/12 五</span><span class="dtitle">天未亮出發 → LKN 還車 → WF892 09:30 飛</span><span class="flag fly">✈ WF892 已訂</span></div>
       <div class="scroll-x"><table>
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
-          <tr><td>07:40</td><td>退房出發 Ballstad → LKN<a class="pin" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>(僅約 15–20 分;前晚已把電補到<b>取車水位(等電取還)</b>,冬季黑冰慢行)</td></tr>
+          <tr><td>07:40</td><td>退房出發 Ballstad → LKN<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>(僅約 15–20 分;前晚已把電補到<b>取車水位(等電取還)</b>,冬季黑冰慢行)</td></tr>
           <tr><td>07:45</td><td><b>LKN 還車(✅ 憑證確認:3/12 門市 07:00–18:00・07:30 有人服務)</b>:交車前<b>內外觀+電量+里程整輪拍照存證</b>(時間戳記);憑證註明<b>行前聯絡門市確認還車地點</b>(電話 <span class="phone">+47-76081844</span>,可與預約釘胎同一通)</td></tr>
           <tr><td>08:00–08:30</td><td>進航廈:<b>Widerøe 報到 / 自助掛行李</b>(<b>行李直掛 OSL</b>)→ 安檢(國內、無護照查驗)→ 候機</td></tr>
           <tr><td>09:30</td><td>WF892 起飛(經 BOO→OSL,<b>行李直掛 OSL</b>、聯程受保護)</td></tr>
@@ -655,7 +750,7 @@
       <div class="dmeta">🚗 <b>還車重點(Hertz・3/12 門市 07:00 開門、07:30 還車有人辦理;10:00–14:00 是取車日 3/6 週六的營業時間)</b>:① 電量只需<b>與取車時相同</b>、不用充滿 ── 沒對到就是<b>付差額電費了事</b>(照門市費率、通常較貴),小差額=小錢,<b>切勿為補電冒趕機風險</b>;② 還車照片(車況/電量/里程)<b>保留到押金解圈</b>(還車後 30–60 天、不另通知,4 月中後自查信用卡額度有無恢復);③ 過路費由車上 AutoPass 事後從卡扣款、超速罰單另收行政費約 NOK 375/筆 → 全程守速限;④ 故障/事故先打給 Hertz、勿自行維修;車內禁菸。</div>
     </div>
 
-    <div class="seg">🔋 電動車・Lofoten 電量與充電規劃</div>
+    <div class="seg" role="heading" aria-level="3">🔋 電動車・Lofoten 電量與充電規劃</div>
     <div class="gold"><span class="tag">結論:比 Tromsø 還安心</span>Lofoten 每天只開一小段、距離短,<b>唯一耗電大日是 3/7 亨寧斯偉爾來回(~150–170 km)</b>。Leknes 是充電樞紐(3 座快充),其中 <b>REMA 1000 站有 180kW CCS 快充</b>。重點:<b>Leknes 過路就充 + 住處插電過夜 + 3/7 當天刻意安排一次快充</b>。</div>
     <div class="card">
       <h3>每日里程 &amp; 充電安排</h3>
@@ -689,7 +784,7 @@
     </div>
     <div class="warn"><span class="tag">⚠ 待確認 / 待辦(租車已訂後)</span>① <b>釘胎要先打電話向 Hertz 預訂中心預約</b>(免費、但<b>無法網路預訂</b>;冬季裝備費已含在租金、雪刷/刮冰器免費附)② 實際車款/電池容量取車當下確認(訂單為 ID.4 或同級,決定 3/7 充電節奏)③ <b>Mørkveden(Ramberg)已確認無充電設施 → 靠 Leknes/Svolvær 過路快充</b>;Reine cabin / Hemmingodden(Ballstad)能否插電過夜待確認。✅ 還車電量政策已確認:<b>等電取還</b>(與取車時相同即可、不用充滿;少電照門市費率補收)。</div>
 
-    <div class="seg">🥾 健行(全程自走低風險・不跟團)</div>
+    <div class="seg" role="heading" aria-level="3">🥾 健行(全程自走低風險・不跟團)</div>
     <div class="card">
       <ul class="clean">
         <li><b>Ballstadheia</b>(約 270m,3/11 登高俯瞰 Ballstad 漁村、拍藍調;第一段陡、microspikes)</li>
@@ -751,9 +846,9 @@
       <p style="font-size:.82rem;color:var(--ink-soft)">⚠ <b>3/7 週日大超市關</b> → 3/6 一定把含週日的份量買足;健行/晚歸日(3/7、3/8、3/11)<b>前一晚先做好三明治便當</b>最省時省錢。</p>
     </div>
 
-    <div class="seg">📋 該先訂 / 先確認</div>
+    <div class="seg" role="heading" aria-level="3">📋 該先訂 / 先確認</div>
     <div class="card scroll-x">
-      <table>
+      <table class="wide">
         <thead><tr><th>項目</th><th>重點</th><th>時機</th></tr></thead>
         <tbody>
           <tr><td>🚗 <b>租車(LKN 取還)</b>(✅ 已訂)</td><td><b>Hertz・VW ID.4 或同級(電動 4WD)・NT$29,413</b>(Trip.com 線上預付、含保險/租車保障)・6 天無限里程・<b>等電取還</b>;取 3/6 12:00(門市 10:00–14:00)/ 還 3/12 07:30(<b>當日門市 07:00–18:00・有人服務</b>);憑證號 L688E060075、門市 <span class="phone">+47-76081844</span>、免費取消至 3/6 12:00;<b>待辦:電話預約釘胎(免費、無法網路訂)+確認還車地點</b></td><td>已完成(釘胎待約)</td></tr>
@@ -852,7 +947,13 @@
         <li><b>KP 指數</b>:Tromsø 與 Lofoten 都在極光帶正下方,<b>KP ≥ 2 頭頂就可能出現</b>,不必等大爆發。</li>
         <li><b>最佳時段</b>:約 <b>21:00–02:00</b>(22:00–凌晨 2 點為巔峰)。</li>
       </ul>
-      <div class="gold"><span class="tag">📈 累積機率(為何多留幾晚)</span>任一夜「晴空×有極光活動」約 40–50%;看到一次的累積機率:<b>3 晚約 75%、4 晚約 83%</b>。Tromsø 給到 4 晚 + Lofoten 6 晚,機會很足。</div>
+      <div class="gold"><span class="tag">📈 累積機率(為何多留幾晚)</span>任一夜「晴空×有極光活動」約 40–50%;看到一次的累積機率:<b>3 晚約 75%、4 晚約 83%</b>。Tromsø 給到 4 晚 + Lofoten 6 晚,機會很足。
+        <div class="probbars" style="margin-top:6px">
+          <div class="prob"><b>1 晚</b><div class="bar"><i style="width:45%"></i></div><span>約 40–50%</span></div>
+          <div class="prob"><b>3 晚</b><div class="bar"><i style="width:75%"></i></div><span>約 75%</span></div>
+          <div class="prob"><b>4 晚</b><div class="bar"><i style="width:83%"></i></div><span>約 83%</span></div>
+        </div>
+      </div>
       <div class="note"><span class="tag">🌙 月相:你們的日子超好</span><b>2027 新月在 3/8</b>,剛好落在 Lofoten 追光正中間。整個 <b>3/1–3/11 月光幾乎不干擾</b>(Tromsø 是漸細殘月、Lofoten 繞著新月=全月最黑),連很淡的極光都看得到;追光黃金時段(21:00–02:00)月亮都不在。月相完全站在你們這邊。</div>
       <h3>Tromsø:跟團 vs 自駕</h3>
       <ul class="clean">
@@ -877,7 +978,7 @@
     <div class="sec-head"><div class="sec-ico">💰</div><div><h2>費用(2 人合計・機票已全訂)</h2><p style="color:var(--ink-soft);font-size:.9rem">已訂用實際金額、待訂用預估區間;完整帳見 <a href="費用紀錄.md" target="_blank" rel="noopener">費用紀錄.md</a></p></div></div>
     <div class="card scroll-x">
       <h3>✅ 已訂(實際,2 人)</h3>
-      <table>
+      <table class="wide">
         <thead><tr><th>項目</th><th>金額(2人)</th><th>說明</th></tr></thead>
         <tbody>
           <tr><td>國際機票 海航 TPE⇄OSL(經北京)</td><td><b>67,129</b></td><td>HU7988/769/770/7987,已出票(依收據;含 TripFlex 7,094 改退彈性+AirHelp+行李保障)</td></tr>
@@ -893,7 +994,7 @@
         </tbody>
       </table>
       <h3>⬜ 待訂(預估,2 人)</h3>
-      <table>
+      <table class="wide">
         <thead><tr><th>項目</th><th>預估(2人)</th><th>說明</th></tr></thead>
         <tbody>
           <tr><td>住宿(奧斯陸 3 晚:2/27、2/28、3/12)⏳ 重訂中</td><td>10,000–14,000</td><td>定案 Scandic Vulkan(原雙床房訂單已免費取消,重訂雙人床房;以實價約 3,670/晚推估);3/12 可續住或改 Citybox</td></tr>
@@ -987,7 +1088,7 @@
   <section id="timeline">
     <div class="sec-head"><div class="sec-ico">🗓</div><div><h2>從現在到出發 倒數待辦</h2></div></div>
     <div class="card scroll-x">
-      <table>
+      <table class="wide">
         <thead><tr><th>時間</th><th>待辦</th></tr></thead>
         <tbody>
           <tr><td><b>✅ 已完成(至 2026/8)</b></td><td>機票全訂:國際(海航)+ 國內 5 段(含 BOO↔LKN 小飛機、回程聯程直掛)・住宿 11 晚全訂(Tromsø 4+Bodø 1+Lofoten 6)・兩段租車已訂(Tromsø Alamo ID.3 / LKN Hertz ID.4 4WD)・確認書+收據已收齊備份</td></tr>
@@ -1033,7 +1134,7 @@
 <footer>
   <span class="script">From Tainan to the Aurora</span>
   <p style="max-width:620px;margin:6px auto">一份就夠:從台南家門口,到挪威世界盡頭的極光下。機票已訂、行李直掛、日期已定;其餘的,我們一起慢慢選。記得先辦台胞證!祝雪白、極光爆棚、白頭偕老 🌌</p>
-  <p style="font-size:.78rem;color:#a9b7c0;margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.22</p>
+  <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.22</p>
 </footer>
 
 <button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
