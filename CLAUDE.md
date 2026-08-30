@@ -62,7 +62,7 @@
   - 逐日卡：`.day > .dhead(.ddate .dtitle .flag) > scroll-x>table > .dmeta`。
   - 其他：`.opt .nightline .chips .chip(.ok/.x/.pend=琥珀進行中) .card .sec-head .sec-ico .pin .phone .tocard`。
 - **2026/8 現代化改版新增元件（語意勿混用）**：`.daystrip/.dcell(.dc-*)`＝頁首 17 天日曆條；`.daybar`＝三大段（days/tromso/lofoten）sticky 日期 chip 條（**全頁唯一新增 sticky，別再疊**）；`.stats/.stat`＝大數字卡、`.pbar`＝比例條（帳目變動時要同步寬度與文字）；`.prob`＝極光機率條；`.fab/.sheet/.backdrop`＝📑 目錄面板；`.day` 加 `r-oslo/r-tromso/r-bodo/r-lofoten/r-fly` 地區色左框（4px，與語意卡 5px 有別）。
-- **錨點 id 是對外契約，一經發布不改名**：逐日 `d0226…d0314`（#days）、`o-day1–o-day3`、`t-day1–t-day5`、`l-day6–l-day12`（放在 seg 上）、主題 `o-map/o-warn/t-ev/t-book/t-map/t-warn/l-ev/l-hike/l-food/l-book/l-map/l-warn`、`stay-all`。
+- **錨點 id 是對外契約，一經發布不改名**：逐日 `d0226…d0314`（#days）、`o-day1–o-day3`＋趕機日 `o-0301/o-0313`、`t-day1–t-day5`、`l-day6–l-day12`（放在 seg 上）、主題 `o-map/o-warn/t-ev/t-book/t-map/t-warn/l-ev/l-hike/l-food/l-book/l-map/l-warn`、`stay-all`。
 - **在地互動地圖（2026/8 加入）**：三專區各一張 Leaflet+OSM 地圖（`#map-oslo/tromso/lofoten`，unpkg CDN 帶 SRI），標記資料在頁尾 script 的 `MAPS` 常數（`[lat,lng,名稱,日期,類別]`，類別 l=住宿紅/s=採買金/t=交通藍/a=景點綠）；**座標經 2026/8 workflow 逐點查證（Nominatim/OSM），新增標記必須先查證座標**，概值點在日期欄標明。有 tapguard 防捲頁誤觸；列印隱藏、離線 fallback=各行程列的 📍。行程變動時 MAPS 要同步。地圖上方有**日期篩選條**（`DAYFILTER` 常數：`p`=當天造訪點的 MAPS 索引、依時間表順序；`r:1`=定案動線畫編號+虛線、`r:0`=方案未定只亮點不畫線——A/B/C 未選的日子**絕不畫線**以免替使用者拍板）；改 MAPS 順序或增刪點時 **DAYFILTER 索引必須連動改**。新增 id 前先 grep 全檔確認唯一。
 - **摺疊紅線**：`<details>` 摺疊區內**不得放 note/warn/gold/硬限制/營業日警示**（只能收清單型內容）；JS 已做 beforeprint 全展開與錨點命中自動展開。
 - **JS 架構**：單一 rAF scroll handler 輸出 activeId，nav/daybar/目錄 sheet 三處共用；別再加 IntersectionObserver 或第二個 scroll listener。
