@@ -148,7 +148,19 @@
   footer .script{font-size:1.9rem;color:var(--aurora);display:block}
   .backtop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
   .backtop.show{opacity:1;pointer-events:auto}
-  @media print{nav,#progress,.backtop{display:none}}
+  @media print{
+    nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin{display:none!important}
+    body{background:#fff}
+    a{color:var(--ink);text-decoration:none}
+    header.hero{min-height:auto;padding:20px}
+    header.hero::before{background:var(--night)}
+    .card,.note,.warn,.gold{break-inside:avoid;box-shadow:none}
+    .day{break-inside:auto;box-shadow:none}
+    tr{break-inside:avoid}
+    .scroll-x{overflow:visible}
+    table{font-size:.72rem}
+    .chip{border:1px solid #ccc}
+  }
 </style>
 </head>
 <body>
@@ -366,6 +378,13 @@
   <section id="tromso">
     <div class="sec-head"><div class="sec-ico">🧊</div><div><h2>Tromsø 在地 5 日・定案逐日(3/1–3/5)</h2><p style="color:var(--ink-soft);font-size:.9rem">依實際訂房定案:Day1 市區東北 → Day2 Sommarøy 漁村 → Day3–4 市中心。租<b>電動車</b>、機場取還;對齊 3 月初的「藍調」與短白天。郊區晚餐<b>自炊</b>。</p></div></div>
 
+    <div class="gallery">
+      <figure><img src="images/nor-cathedral.jpg" alt="北極大教堂" loading="lazy"><figcaption>北極大教堂</figcaption></figure>
+      <figure><img src="images/nor-rorbuer.jpg" alt="Sommarøy 紅漁屋" loading="lazy"><figcaption>Sommarøy 紅漁屋</figcaption></figure>
+      <figure><img src="images/nor-husky.jpg" alt="狗拉雪橇" loading="lazy"><figcaption>狗拉雪橇</figcaption></figure>
+      <figure><img src="images/master-tromso-city.jpg" alt="Tromsø 市區" loading="lazy"><figcaption>Tromsø 市區</figcaption></figure>
+      <figure><img src="images/nor-tromso-aurora.jpg" alt="Tromsø 極光" loading="lazy"><figcaption>追極光</figcaption></figure>
+    </div>
     <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>抵達</b>:3/1 一 SAS 由 Oslo <b>12:00 落地 Tromsø(TOS)</b>。<b>離開</b>:3/5 五 <b>TOS→Bodø 11:40 起飛</b>(約 09:50 到機場,只排早上)。<b>住宿</b>:3/1 市區東北(Ullstindvegen 157,69.7743,19.2595)→ 3/2 Sommarøy(Prestvikvegen)→ 3/3、3/4 市中心(Fiskergata 6,15:00 入住)。<b>租車</b>:3/1 機場取、<b>3/3 機場還</b> → 3/3 晚與 3/4 沒車,極光團與雪橇都選「<b>含接送</b>」。</div>
     <div class="daybar"><a class="chip" href="#t-day1">D1 3/1</a><a class="chip" href="#t-day2">D2 3/2</a><a class="chip" href="#t-day3">D3 3/3</a><a class="chip" href="#t-day4">D4 3/4</a><a class="chip" href="#t-day5">D5 3/5</a><a class="chip" href="#t-ev">🔋 電量</a><a class="chip" href="#t-book">📋 該先訂</a><a class="chip" href="#t-map">📍 地圖</a><a class="chip" href="#t-warn">⚠ 提醒</a></div>
 
@@ -506,6 +525,7 @@
     <div class="card">
       <h3>🍳 郊區自炊菜單 &amp; 採買清單(Day1 市區東北・Day2 Sommarøy)</h3>
       <p>兩晚都在小屋自炊:<b>Day1 在 Tromsdalen/市區超市</b>先買、<b>Day2 在 Kvaløysletta(Coop Extra / Eide Handel)</b>買 Sommarøy 食材;挪威物價高,自炊最省、又能吃到當地食材。</p>
+      <details><summary>🍳 點開看菜單與採買清單</summary>
       <h4>🥣 早餐建議(住處自理・10–15 分搞定)</h4>
       <ul class="clean">
         <li><b>最快</b>:麵包 / 脆麵包 knekkebrød + <b>挪威棕起司 brunost(刨片必試)</b> + 果醬 + 水煮蛋或炒蛋 + 優格加莓果。</li>
@@ -528,6 +548,7 @@
         <li><b>🌌 追極光宵夜</b>:熱可可粉、即溶熱茶(裝<b>保溫瓶</b>帶出門)、餅乾、能量棒</li>
         <li><b>調味</b>:鹽、胡椒、奶油、油(小屋不一定有,先確認)</li>
       </ul>
+      </details>
       <div class="gold"><span class="tag">💡 提醒</span>先確認小屋廚房有哪些鍋具/爐具,缺什麼在 Coop 補。超市只賣<b>啤酒</b>(約 20:00 後不賣),葡萄酒/烈酒要到市區 <b>Vinmonopolet</b>(Sommarøy 沒有)→ 想小酌在市區先買。保溫瓶守極光超實用,沒帶 Coop 有賣。</div>
     </div>
 
@@ -611,7 +632,7 @@
       </div>
     </div>
 
-    <div class="warn" id="t-warn"><span class="tag">⚠ 全段提醒</span>① 冬季雪路:Fv862 部分路段窄、結冰、橫風;Sandnessund 橋與 Sommarøy 橋都曾因強風關閉,務必釘胎/4WD、查路況、預留緩衝。② 沒車時段(3/3 晚、3/4):極光團與雪橇都要選<b>含接送</b>。③ 極光不保證:全選<b>免費取消</b>、提前預約。④ 價格/營業時間為 2025–26 年查證值,<b>行前一個月再上各官網確認</b>(Fjellheisen NOK 495、教堂 NOK 90、極光團 NOK 1350 起、雪橇 NOK 2040 起)。⑤ <b>Raketten 鹿肉熱狗週二–六 11:00–17:00、週一/日公休</b>(Day1 週一沒開,留 Day3 吃);Polaria 冬季 16:00 關,別排太晚。</div>
+    <div class="warn" id="t-warn"><span class="tag">⚠ 全段提醒</span>① 冬季雪路:Fv862 部分路段窄、結冰、橫風;Sandnessund 橋與 Sommarøy 橋都曾因強風關閉,務必釘胎/4WD、查路況、預留緩衝。② 沒車時段(3/3 晚、3/4):極光團與雪橇都要選<b>含接送</b>。③ 極光不保證:全選<b>免費取消</b>、提前預約。④ 價格/營業時間為 2025–26 年查證值,<b>行前一個月再上各官網確認</b>(Fjellheisen NOK 495、教堂 NOK 90、極光團 NOK 1350 起、雪橇 NOK 2040 起)。⑤ <b>Raketten 鹿肉熱狗週二–六 11:00–17:00、週一/日公休</b>(Day1 週一沒開,留 Day3 吃);Polaria 冬季 16:00 關,別排太晚。<br>❄ 通用雪地駕駛要領與每日必查(yr.no / 175.no / varsom.no)→ <a href="#winter"><b>〈冬季雪地自駕〉</b></a></div>
   </section>
 
   <div class="divider">❄ ❄ ❄</div>
@@ -620,6 +641,13 @@
   <section id="lofoten">
     <div class="sec-head"><div class="sec-ico">🎣</div><div><h2>西 Lofoten 在地 6 日・定案逐日(3/6–3/12)</h2><p style="color:var(--ink-soft);font-size:.9rem">三段住宿:Ramberg(已訂)→ Reine cabin(已訂)→ Ballstad(收尾近機場)、全程<b>自走低風險健行</b>、深度攝影 + 多拍漁村藍調、自炊。</p></div></div>
 
+    <div class="gallery">
+      <figure><img src="images/west-hamnoy.jpg" alt="Hamnøy 橋紅屋" loading="lazy"><figcaption>Hamnøy 橋紅屋</figcaption></figure>
+      <figure><img src="images/west-sakrisoy.jpg" alt="Sakrisøy 黃屋" loading="lazy"><figcaption>Sakrisøy 黃屋</figcaption></figure>
+      <figure><img src="images/west-skagsanden.jpg" alt="Skagsanden 極光灘" loading="lazy"><figcaption>Skagsanden 極光灘</figcaption></figure>
+      <figure><img src="images/west-aa.jpg" alt="Å 漁村" loading="lazy"><figcaption>Å 路盡頭漁村</figcaption></figure>
+      <figure><img src="images/west-nusfjord.jpg" alt="Nusfjord 古漁村" loading="lazy"><figcaption>Nusfjord 古漁村</figcaption></figure>
+    </div>
     <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>進</b>:3/6(六)WF806 由 Bodø 10:55 → <b>11:20 抵 Leknes(LKN)</b>,機場取車(自駕)。<b>出</b>:3/12(五)<b>WF892 LKN 09:30 起飛</b>(行李直掛 OSL)→ 只排早上、LKN 還車。<b>住</b>:6 晚自炊,<b>Ramberg(3/6–7,已訂)</b>→ <b>Reine cabin(3/8–10,已訂)</b>→ <b>Ballstad(3/11,Hemmingodden Lodge・已訂)</b>。Hamnøy 紅屋、Sakrisøy 黃屋改拍照點。</div>
     <div class="daybar"><a class="chip" href="#l-day6">3/6</a><a class="chip" href="#l-day7">3/7</a><a class="chip" href="#l-day8">3/8</a><a class="chip" href="#l-day9">3/9</a><a class="chip" href="#l-day10">3/10</a><a class="chip" href="#l-day11">3/11</a><a class="chip" href="#l-day12">3/12</a><a class="chip" href="#l-ev">🔋 電量</a><a class="chip" href="#l-hike">🥾 健行</a><a class="chip" href="#l-book">📋 該先訂</a><a class="chip" href="#l-map">📍 地圖</a><a class="chip" href="#l-warn">⚠ 提醒</a></div>
 
@@ -835,6 +863,7 @@
         <li><b>3/8(一)過 Leknes 補貨</b>:Haukland→Reine 路上回 Leknes 補 3/8–3/11 生鮮(週一店開)。</li>
         <li><b>村內小店只救急</b>:Reine/Å/Ballstad 有小店(Ballstad 超市離 Hemmingodden 約 200m),但貴又少;Å 連加油站都沒有,離 Leknes 前補滿。</li>
       </ul>
+      <details><summary>🍳 點開看壓低餐費招數・6 晚菜單・採買清單</summary>
       <h4>💰 壓低餐費招數</h4>
       <ul class="clean">
         <li>買<b>自有品牌</b>(Coop X-tra / Rema 1000 / First Price)最便宜;<b>冷凍蔬菜、冷凍魚</b>比生鮮省。</li>
@@ -864,6 +893,7 @@
         <li><b>便當/守極光</b>:吐司+起司火腿(做三明治)、能量棒、餅乾、熱可可粉(保溫瓶)</li>
         <li><b>調味</b>:鹽、胡椒、油(小屋不一定有,先確認)</li>
       </ul>
+      </details>
       <p style="font-size:.82rem;color:var(--ink-soft)">⚠ <b>3/7 週日大超市關</b> → 3/6 一定把含週日的份量買足;健行/晚歸日(3/7、3/8、3/11)<b>前一晚先做好三明治便當</b>最省時省錢。</p>
     </div>
 
@@ -942,7 +972,7 @@
       </ul>
     </div>
 
-    <div class="warn"><span class="tag">⚠ 路段封閉</span><b>Nappstraumen 隧道(Leknes 南)2026–2027 整修,每晚 23:00–06:00 封閉</b> → 半夜開車追極光要避開、改走他路或調整時段。</div>
+    <div class="warn"><span class="tag">⚠ 路段封閉</span><b>Nappstraumen 隧道(Leknes 南)2026–2027 整修,每晚 23:00–06:00 封閉</b> → 半夜開車追極光要避開、改走他路或調整時段。<br>❄ 通用雪地駕駛要領與每日必查(yr.no / 175.no / varsom.no)→ <a href="#winter"><b>〈冬季雪地自駕〉</b></a></div>
 
     <div class="note"><span class="tag">⚡ 電動車冬季(重點摘要)</span>低溫續航打 <b>7–8 折</b>、別低於 <b>20%</b>、插電時先<b>預熱車內</b>、住處盡量<b>插電過夜</b>;完整充電點與里程見各段〈🔋 電量與充電〉。</div>
   </section>
@@ -1170,7 +1200,7 @@
 <footer>
   <span class="script">From Tainan to the Aurora</span>
   <p style="max-width:620px;margin:6px auto">一份就夠:從台南家門口,到挪威世界盡頭的極光下。機票已訂、行李直掛、日期已定;其餘的,我們一起慢慢選。記得先辦台胞證!祝雪白、極光爆棚、白頭偕老 🌌</p>
-  <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.22</p>
+  <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.30</p>
 </footer>
 
 <button class="fab" id="tocfab" aria-label="開啟目錄" aria-expanded="false">📑</button>

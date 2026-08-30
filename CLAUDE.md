@@ -59,7 +59,11 @@
 - **CSS class 語意，別混用**：
   - `note` = 硬限制 / 不可變更前提；`warn` = 安全 / 待確認；`gold` = 關鍵結論 / 重點提醒；`seg` = 分區標頭。
   - 逐日卡：`.day > .dhead(.ddate .dtitle .flag) > scroll-x>table > .dmeta`。
-  - 其他：`.opt .nightline .chips .chip(.ok/.x) .card .sec-head .sec-ico .pin .phone .tocard`。
+  - 其他：`.opt .nightline .chips .chip(.ok/.x/.pend=琥珀進行中) .card .sec-head .sec-ico .pin .phone .tocard`。
+- **2026/8 現代化改版新增元件（語意勿混用）**：`.daystrip/.dcell(.dc-*)`＝頁首 17 天日曆條；`.daybar`＝三大段（days/tromso/lofoten）sticky 日期 chip 條（**全頁唯一新增 sticky，別再疊**）；`.stats/.stat`＝大數字卡、`.pbar`＝比例條（帳目變動時要同步寬度與文字）；`.prob`＝極光機率條；`.fab/.sheet/.backdrop`＝📑 目錄面板；`.day` 加 `r-oslo/r-tromso/r-bodo/r-lofoten/r-fly` 地區色左框（4px，與語意卡 5px 有別）。
+- **錨點 id 是對外契約，一經發布不改名**：逐日 `d0226…d0314`（#days）、`t-day1–t-day5`、`l-day6–l-day12`（放在 seg 上）、主題 `t-ev/t-book/t-map/t-warn/l-ev/l-hike/l-food/l-book/l-map/l-warn`、`stay-all`。新增 id 前先 grep 全檔確認唯一。
+- **摺疊紅線**：`<details>` 摺疊區內**不得放 note/warn/gold/硬限制/營業日警示**（只能收清單型內容）；JS 已做 beforeprint 全展開與錨點命中自動展開。
+- **JS 架構**：單一 rAF scroll handler 輸出 activeId，nav/daybar/目錄 sheet 三處共用；別再加 IntersectionObserver 或第二個 scroll listener。
 - **逐日 seg 放當地代表縮圖** `<img class="segimg" src="images/X.jpg">`；**專題 seg（電量/住宿/健行/該先訂/地圖/停車充電）不放圖**。
 - **圖檔在 `images/`**：`nor-*`、`west-*`、`master-*` 是本趟挪威圖；`ch-/gr-/it-/tr-/no-` 是別專案模板，**別用**。用圖前確認檔名存在，且**別把 Lofoten 的圖放到 Tromsø 的天**（曾誤用 `west-hamnoy.jpg` 在 Tromsø Day2）。
 - **Tromsø 5 日與 Lofoten 6 日「呈現方式要對齊」**，統一模板順序：
