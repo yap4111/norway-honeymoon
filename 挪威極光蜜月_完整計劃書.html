@@ -217,6 +217,19 @@
   tr.rowdone td:first-child{opacity:1}
   .pbar i{min-width:0;overflow:hidden}
   @media(max-width:480px){.pbar i{font-size:.62rem}}
+  /* ── 手機:表格改直向堆疊、免左右滑(桌機與列印不受影響) ── */
+  @media screen and (max-width:620px){
+    .scroll-x{overflow-x:visible}
+    .scroll-x table,.scroll-x tbody,.scroll-x tr,.scroll-x td{display:block;width:100%}
+    .scroll-x thead{display:none}
+    .scroll-x table{box-shadow:none}
+    .scroll-x .wide{min-width:0}
+    .scroll-x tbody tr{border-top:1px solid var(--line);padding:8px 10px}
+    .scroll-x tbody tr:first-child{border-top:0}
+    .scroll-x td{border:0;padding:2px 0}
+    .scroll-x td[data-l]::before{content:attr(data-l) ": ";color:var(--sky);font-weight:700;font-size:.78rem}
+    .day .scroll-x td:first-child{font-weight:700;color:var(--sky);font-size:.84rem;margin-bottom:1px}
+  }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.gallery figure:hover img{transform:none}}
   @media print{
     nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin,.map,.maphint,.mapdays,.maplock,.todaybtn{display:none!important}
@@ -1494,6 +1507,15 @@
 <button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
 <script>
   document.addEventListener('touchstart',function(){},{passive:true});
+  // 手機堆疊表格用:從 thead 抄欄名到各 td 的 data-l(逐日時間表除外、長表頭略過)
+  document.querySelectorAll('.scroll-x table').forEach(t=>{
+    if(t.closest('.day'))return;
+    const ths=[...t.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+    if(ths.length<2)return;
+    t.querySelectorAll('tbody tr').forEach(tr=>[...tr.children].forEach((td,i)=>{
+      if(ths[i]&&ths[i].length<=12&&td.textContent.trim())td.setAttribute('data-l',ths[i]);
+    }));
+  });
   const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
   backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
   // 出發倒數(hero pill)
