@@ -9,12 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- ⚠ 本檔需與 images/ 資料夾放在同一目錄開啟 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
   :root{
     --cream:#fbf6f1;--rose:#b23a5b;--rose-deep:#892a44;--blush-soft:#fbeef1;
-    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#6a5358;--line:#ecd9d2;
+    --gold:#c9a24b;--gold-soft:#e7d3a3;--sage:#7f9a7c;--ink:#3c2a2e;--ink-soft:#5c464b;--line:#ecd9d2;
     --aurora:#3f9d82;--night:#16213a;--sky:#2c6e9a;
     --shadow:0 10px 40px -18px rgba(20,30,60,.45);--shadow-sm:0 6px 22px -14px rgba(20,30,60,.45);
   }
@@ -34,7 +35,7 @@
   .nav-scroll.at-end::after{opacity:0}
   .nav-links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
   .nav-links::-webkit-scrollbar{display:none}
-  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;white-space:nowrap;padding:9px 12px;border-radius:20px;transition:.2s;font-weight:500}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:.85rem;white-space:nowrap;padding:11px 12px;border-radius:20px;transition:.2s;font-weight:500}
   .nav-links a:hover{background:var(--blush-soft);color:var(--rose)}
   .nav-links a.active{background:var(--night);color:#cfe}
   header.hero{position:relative;min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:84px 20px 50px;color:#fff;overflow:hidden}
@@ -55,13 +56,13 @@
   .card h4{color:var(--sky);font-size:.98rem;margin:12px 0 5px}
   p,li{font-size:.93rem}
   ul.clean{list-style:none}ul.clean li{position:relative;padding-left:20px;margin:5px 0}
-  ul.clean li::before{content:"❄";position:absolute;left:0;color:var(--aurora);font-size:.8rem;top:3px}
+  ul.clean li::before{content:"";position:absolute;left:1px;top:8px;width:11px;height:11px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2v20M3.34 7l17.32 10M20.66 7L3.34 17' stroke='%233f9d82' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") center/contain no-repeat}
   .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:4px 0}
   @media(max-width:720px){.gallery{grid-template-columns:repeat(2,1fr)}}
   .gallery figure{margin:0;border-radius:12px;overflow:hidden;background:#dfe6ee;box-shadow:var(--shadow-sm)}
   .gallery img{width:100%;height:118px;object-fit:cover;display:block;transition:.35s}
   .gallery figure:hover img{transform:scale(1.07)}
-  .gallery figcaption{font-size:.72rem;color:var(--ink-soft);padding:5px 6px;text-align:center}
+  .gallery figcaption{font-size:.8rem;color:var(--ink-soft);padding:5px 6px;text-align:center}
   table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);margin:8px 0}
   thead th{background:linear-gradient(135deg,var(--night),#2c4a63);color:#fff;padding:9px;text-align:left;font-weight:500;font-size:.8rem}
   td{padding:8px 9px;border-top:1px solid var(--line);vertical-align:top}
@@ -148,19 +149,77 @@
   details{margin:8px 0}
   .map{height:340px;border-radius:12px;border:1px solid var(--line);margin:8px 0;background:#eef2f5;position:relative;z-index:1;overflow:hidden}
   .map .tapguard{position:absolute;inset:0;z-index:500;display:grid;place-items:center;background:rgba(20,30,60,.18);color:#fff;font-weight:700;font-size:.9rem;text-shadow:0 1px 6px rgba(0,0,0,.6);cursor:pointer}
-  .maphint{font-size:.78rem;color:var(--ink-soft)}
+  .maphint{font-size:.82rem;color:var(--ink-soft)}
   .leaflet-popup-content{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:.85rem;line-height:1.5}
   .mapdays{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
   button.chip{cursor:pointer;font-family:inherit}
   .mapdays .chip.now{background:var(--night);color:#cfe;border-color:var(--night)}
   .leaflet-tooltip.mnum{background:var(--night);color:#fff;border:2px solid #fff;border-radius:50%;width:22px;height:22px;line-height:17px;text-align:center;font-weight:700;font-size:.72rem;box-shadow:0 1px 4px rgba(0,0,0,.4);padding:0}
   .leaflet-tooltip.mnum::before{display:none}
+  .leaflet-tooltip.mnum-l{background:var(--rose)}
+  .leaflet-tooltip.mnum-s{background:#a8813a}
+  .leaflet-tooltip.mnum-t{background:var(--sky)}
+  .leaflet-tooltip.mnum-a{background:var(--aurora)}
+  .evmark{background:#fff;border:3px solid var(--sky);border-radius:5px;box-shadow:0 1px 5px rgba(0,0,0,.4);display:grid;place-items:center;font-size:15px;line-height:1}
+  .pmark{background:#fff;border-radius:50%;box-shadow:0 1px 5px rgba(0,0,0,.4);display:grid;place-items:center;font-size:16px;line-height:1}
+  .pmark-l{border:3px solid var(--rose)}.pmark-s{border:3px solid #a8813a}.pmark-t{border:3px solid var(--sky)}.pmark-a{border:3px solid var(--aurora)}
+  .dcell.naur{box-shadow:inset 0 -3px 0 var(--aurora)}
+  .day-light{margin:2px 0 8px}
+  .sky-strip{height:5px;border-radius:3px;margin-bottom:5px;box-shadow:inset 0 0 0 1px rgba(22,33,58,.12)}
+  .day-slots{display:flex;flex-wrap:wrap;gap:6px}
+  .slot{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;font-size:.78rem;line-height:1.3;white-space:nowrap;border:1px solid transparent}
+  .slot b{font-weight:600;font-variant-numeric:tabular-nums}
+  .slot-ic{font-size:.85em}
+  .slot-label{opacity:.75}
+  .slot-dur{font-size:.72rem;opacity:.7;margin-left:2px}
+  .slot-day{background:#faf3e3;border-color:#c9a24b55;color:#7a5f1f}
+  .slot-blue{background:#e7f0f6;border-color:#2c6e9a44;color:#2c6e9a}
+  .slot-aurora{background:var(--night);color:#8fd8c2;border-color:var(--aurora)}
+  .slot-rest{background:#f1ede8;color:#8a8378;border:1px dashed #cfc8bd}
+  .slot-note{font-size:.72rem;color:var(--ink-soft);align-self:center}
+  .todaybtn{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:115;border:0;border-radius:22px;background:var(--aurora);color:#fff;font-family:inherit;font-weight:700;font-size:.9rem;padding:11px 16px;box-shadow:var(--shadow);cursor:pointer}
+  .zoom-sm .pmark{width:19px!important;height:19px!important;margin-left:-9.5px!important;margin-top:-9.5px!important;font-size:11px;border-width:2px}
+  .zoom-sm .evmark{width:18px!important;height:18px!important;margin-left:-9px!important;margin-top:-9px!important;font-size:10px;border-width:2px}
   footer{text-align:center;padding:42px 20px 66px;color:var(--ink-soft);background:radial-gradient(700px 300px at 50% 0%,#eef6f3,transparent)}
   footer .script{font-size:1.9rem;color:var(--aurora);display:block}
   .backtop{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--night);color:#cfe;border:none;cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.3s;z-index:90}
   .backtop.show{opacity:1;pointer-events:auto}
+  /* ── 2026/8/31 優化新增:圖例色點 / 橫捲提示 / 地圖鎖 / 待辦勾選 / 減少動態 ── */
+  .dot{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin:0 3px 0 1px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  .hswrap{position:relative}
+  .hswrap::after{content:"";position:absolute;top:0;right:0;bottom:4px;width:30px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none;transition:opacity .2s}
+  .hswrap.at-end::after{opacity:0}
+  /* ── 可點性系統(評選定案):沙色=靜態標籤、綠框+底邊=可點、✆=撥號、›=散落頁內錨點;深藍實心膠囊為電話專屬色 ── */
+  span.chip:not(.ok):not(.pend):not(.x):not(.legend){background:#f3ede5;border:1px solid transparent;color:var(--ink-soft);font-weight:400;box-shadow:none}
+  a.chip,button.chip:not(.todo){display:inline-flex;align-items:center;border:1px solid rgba(63,157,130,.55);border-bottom-width:2px;box-shadow:0 1px 2px rgba(22,33,58,.06);min-height:34px;padding:4px 12px;cursor:pointer}
+  a.chip:active,button.chip:not(.todo):active{transform:translateY(1px);border-bottom-width:1px;filter:brightness(.95)}
+  a.chip.ok,a.chip.pend,a.chip.x{border-color:currentColor;border-bottom-width:2px}
+  span.chip.ok,span.chip.pend,span.chip.x{border-color:transparent;box-shadow:none}
+  a.chip[href^="#"]::after{content:" ›";opacity:.55;font-weight:700}
+  .tocard a.chip::after,.daybar a.chip::after{content:""}
+  .daybar .chip.now,.mapdays .chip.now{border-color:var(--night)}
+  .tocard a.chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff;box-shadow:none}
+  .tocard a.chip:active{background:rgba(255,255,255,.25);transform:translateY(1px)}
+  a.phone{text-decoration:none;position:relative;display:inline-flex;align-items:center;gap:4px;padding:4px 11px;border-radius:999px;vertical-align:middle;cursor:pointer}
+  a.phone::before{content:"✆";opacity:.9}
+  a.phone::after{content:"";position:absolute;inset:-7px;border-radius:999px}
+  a.phone:active{opacity:.85;transform:translateY(1px)}
+  .map .tapguard{border:0;width:100%;font-family:inherit}
+  .maplock{position:absolute;top:8px;right:8px;z-index:500;border:0;border-radius:20px;background:rgba(22,33,58,.85);color:#fff;font-family:inherit;font-size:.78rem;padding:8px 13px;cursor:pointer;box-shadow:0 1px 6px rgba(0,0,0,.3)}
+  .mapfail{display:grid;place-items:center;height:100%;text-align:center;font-size:.88rem;color:var(--ink-soft);padding:16px;line-height:1.7}
+  .chip.todo:not(.pend):not(.x){background:#fff;color:var(--ink-soft);border-color:#d5cbc4}
+  .chips .chip.todo.done{background:var(--aurora);color:#fff;border-color:var(--aurora)}
+  .chip.todo.done::before{content:"✓ "}
+  .rowck{width:18px;height:18px;margin-right:6px;vertical-align:-3px;accent-color:var(--aurora)}
+  tr.rowdone td{opacity:.5}
+  tr.rowdone td:first-child{opacity:1}
+  .pbar i{min-width:0;overflow:hidden}
+  @media(max-width:480px){.pbar i{font-size:.62rem}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.gallery figure:hover img{transform:none}}
   @media print{
-    nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin,.map,.maphint{display:none!important}
+    nav,#progress,.backtop,.fab,.backdrop,.sheet,.daybar,.gallery,.segimg,.pin,.map,.maphint,.mapdays,.maplock,.todaybtn{display:none!important}
+    .sky-strip,.pbar,.pbar i,.dot,.prob .bar i{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+    .slot-aurora{background:#fff;color:#1d6b56;border-color:var(--aurora)}
     body{background:#fff}
     a{color:var(--ink);text-decoration:none}
     header.hero{min-height:auto;padding:20px}
@@ -171,6 +230,11 @@
     .scroll-x{overflow:visible}
     table{font-size:.72rem}
     .chip{border:1px solid #ccc}
+    .chips .chip.todo.done{background:#fff;color:#1d6b56;border-color:#3f9d82}
+    a.chip,button.chip,a.phone{box-shadow:none}
+    a.chip[href^="#"]::after{content:""}
+    a.phone{background:none;color:var(--night);border:1px solid var(--night)}
+    a.phone::after{content:none}
   }
 </style>
 </head>
@@ -234,26 +298,26 @@
 
   <div class="card">
     <h3>🗓 17 天一眼看(點日期直達當天)</h3>
-    <div class="daystrip">
+    <div class="hswrap"><div class="daystrip">
       <a class="dcell dc-fly" href="#d0226"><b>2/26</b><span>飛行</span><em>✈</em></a>
       <a class="dcell dc-oslo" href="#o-day1"><b>2/27</b><span>Oslo</span><em>🏛</em></a>
       <a class="dcell dc-oslo" href="#o-day2"><b>2/28</b><span>Oslo</span><em>🏛</em></a>
-      <a class="dcell dc-tromso" href="#t-day1"><b>3/1</b><span>Tromsø</span><em>🌌</em></a>
-      <a class="dcell dc-tromso" href="#t-day2"><b>3/2</b><span>Sommarøy</span><em>🌌</em></a>
-      <a class="dcell dc-tromso" href="#t-day3"><b>3/3</b><span>Tromsø</span><em>🌌</em></a>
-      <a class="dcell dc-tromso" href="#t-day4"><b>3/4</b><span>Tromsø</span><em>🐕</em></a>
+      <a class="dcell dc-tromso naur" href="#t-day1"><b>3/1</b><span>Tromsø</span><em>🌌</em></a>
+      <a class="dcell dc-tromso naur" href="#t-day2"><b>3/2</b><span>Sommarøy</span><em>🌌</em></a>
+      <a class="dcell dc-tromso naur" href="#t-day3"><b>3/3</b><span>Tromsø</span><em>🌌</em></a>
+      <a class="dcell dc-tromso naur" href="#t-day4"><b>3/4</b><span>Tromsø</span><em>🐕</em></a>
       <a class="dcell dc-bodo" href="#b-day1"><b>3/5</b><span>Bodø</span><em>✈</em></a>
-      <a class="dcell dc-lofoten" href="#l-day6"><b>3/6</b><span>Ramberg</span><em>🚗</em></a>
-      <a class="dcell dc-lofoten" href="#l-day7"><b>3/7</b><span>H.vær</span><em>🏘</em></a>
-      <a class="dcell dc-lofoten" href="#l-day8"><b>3/8</b><span>Reine</span><em>🏖</em></a>
-      <a class="dcell dc-lofoten" href="#l-day9"><b>3/9</b><span>Reine</span><em>⛴</em></a>
-      <a class="dcell dc-lofoten" href="#l-day10"><b>3/10</b><span>Reine</span><em>🚶</em></a>
-      <a class="dcell dc-lofoten" href="#l-day11"><b>3/11</b><span>Ballstad</span><em>🥾</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day6"><b>3/6</b><span>Ramberg</span><em>🚗</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day7"><b>3/7</b><span>H.vær</span><em>🏘</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day8"><b>3/8</b><span>Reine</span><em>🏖</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day9"><b>3/9</b><span>Reine</span><em>⛴</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day10"><b>3/10</b><span>Reine</span><em>🚶</em></a>
+      <a class="dcell dc-lofoten naur" href="#l-day11"><b>3/11</b><span>Ballstad</span><em>🥾</em></a>
       <a class="dcell dc-fly" href="#l-day12"><b>3/12</b><span>→Oslo</span><em>✈</em></a>
       <a class="dcell dc-fly" href="#o-0313"><b>3/13</b><span>→北京</span><em>✈</em></a>
       <a class="dcell dc-fly" href="#d0314"><b>3/14</b><span>回家</span><em>🏠</em></a>
-    </div>
-    <p style="font-size:.78rem;color:var(--ink-soft);margin-top:4px">色塊=地區:🏛 奧斯陸・🌌 Tromsø・✈ 飛行/返程・Bodø・Lofoten(與逐日卡左框同色系)</p>
+    </div></div>
+    <p style="font-size:.8rem;color:var(--ink-soft);margin-top:4px">色塊=地區:<span class="dot" style="background:#fbf6ec;box-shadow:0 0 0 2px #c9a24b"></span>奧斯陸・<span class="dot" style="background:#e7f3ee;box-shadow:0 0 0 2px #3f9d82"></span>Tromsø・<span class="dot" style="background:#e7eef7;box-shadow:0 0 0 2px #2c6e9a"></span>Bodø・<span class="dot" style="background:#fdeef0;box-shadow:0 0 0 2px #b23a5b"></span>Lofoten・<span class="dot" style="background:#eef1f4;box-shadow:0 0 0 2px #9aa7b5"></span>飛行/返程(與逐日卡左框同色系);<span style="display:inline-block;width:1.1em;height:3px;background:var(--aurora);vertical-align:middle;border-radius:2px"></span> 格底綠線=守極光夜</p>
   </div>
 
   <!-- 機票 -->
@@ -278,6 +342,7 @@
       </table>
       <div class="note"><span class="tag">🛂 北京轉機重點</span>① <b>台胞證必備</b>(去回程都查驗)② <b>行李已直掛奧斯陸</b> ── 北京走國際轉機通道、原則上<b>免入境提領</b>,輕鬆過境(只顧隨身登機箱+證件)③ <b>去程在北京過夜轉機約 10 小時</b>(2/26 16:30 抵 → 2/27 02:55 飛 HU769,候機 10h25m):在 T2 國際轉機區候機過夜,<b>務必向海航/機場確認是否需重新安檢、有無過夜休息區/旅館</b>,備好充電、保暖、眼罩耳塞補眠。回程北京轉機約 3.5h(3/14 04:30 抵 → 08:00 飛)較輕鬆。</div>
       <div class="gold"><span class="tag">🌅 兩個好消息</span>① HU769 <b>06:00 就抵奧斯陸</b>,2/27 第一天(扣補眠)幾乎可整天利用!② 回程 HU7987 <b>3/14 上午 11:10 就抵台北</b>,白天接高鐵回台南、不必趕末班車。</div>
+      <p style="margin-top:8px">📆 <a href="#" id="icsdl"><b>把行程加入手機行事曆(.ics:9 航段+9 段住宿+5 個關鍵提醒)</b></a><span style="font-size:.8rem;color:var(--ink-soft)"> ── 兩人手機各匯入一次;航班含準確時刻、住宿為全天事件(備註含入住方式與確認碼),仍以官方最終確認為準</span></p>
     </div>
   </section>
 
@@ -300,8 +365,7 @@
   <section id="days">
     <div class="sec-head"><div class="sec-ico">📅</div><div><h2>全程逐日(每天附 A/B/C 方案)</h2><p style="color:var(--ink-soft);font-size:.9rem">奧斯陸 2 + Tromsø 4(極光保底)+ Bodø 1 + Lofoten 6 + 奧斯陸 1。<b>方案僅供選擇,不替你們拍板。</b></p></div></div>
         <div class="note"><span class="tag">🧭 為什麼「先 Tromsø、後 Lofoten」</span>① <b>在小屋慢遊收尾最像蜜月</b> ── 最後 6 晚在 Lofoten 漁村自己煮、看海,只有這個順序給得了。② <b>怕冷</b>:先在有城市配套的 Tromsø 暖身,再進相對原始的小屋。③ <b>體力</b>:追光熬夜、雪橇放精神最好的前段,煮飯看海放後段。④ <b>極光</b>:先在最強的場(Tromsø+嚮導團)看掉,後段 Lofoten(3 月也是看極光的好月份)全是紅利。回程安全則靠 <b>3/12 奧斯陸緩衝夜</b>守門,不受順序影響。<br><b>只有當你們把「回程零風險」擺第一、或更想以「在 Tromsø 追到極光」當高潮收尾、不在乎在小屋收尾時,才考慮翻成先 Lofoten。</b></div>
-    <div class="daybar"><a class="chip" href="#d0226">✈ 2/26 出發</a><a class="chip" href="#d0227">🏛 奧斯陸</a><a class="chip" href="#d0301">🌌 Tromsø</a><a class="chip" href="#d0305">🛟 Bodø</a><a class="chip" href="#d0306">🎣 Lofoten</a><a class="chip" href="#d0312">🛬 返程</a></div>
-    <div class="card" id="stay-all">
+    <div class="daybar"><a class="chip" href="#d0226">✈ 2/26 出發</a><a class="chip" href="#d0227">🏛 奧斯陸</a><a class="chip" href="#d0301">🌌 Tromsø</a><a class="chip" href="#d0305">🛟 Bodø</a><a class="chip" href="#d0306">🎣 Lofoten</a><a class="chip" href="#d0312">🛬 返程</a></div>    <div class="card" id="stay-all">
       <h3>🛏 全程 14 晚住宿一覽(速查;訂房明細見各段專區)</h3>
       <div class="scroll-x"><table>
         <thead><tr><th>日期</th><th>地點</th><th>住宿</th><th>狀態・金額(2人)</th></tr></thead>
@@ -369,7 +433,7 @@
     <div class="day r-lofoten" id="d0308"><div class="dhead"><span class="ddate">3/8 一</span><span class="dtitle">Ramberg → 海灘長走 → 入住 Reine cabin</span><span class="flag aur">🌌 夜</span></div>
       <div class="opt">由 Ramberg 出發,<b>Haukland↔Uttakleiv 海灘平路長走</b>(免登頂,4–5h)<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Haukland+Beach">📍</a> → 南下入住 <b>Reine cabin(46 Kirkeveien)✅ 已訂</b>(lockbox 自助);傍晚拍<b>招牌 Hamnøy 橋藍調</b>(離 Reine 2–5 分)。 <a href="#l-day8">⏱ 完整時間軸 →</a></div></div>
     <div class="day r-lofoten" id="d0309"><div class="dhead"><span class="ddate">3/9 二</span><span class="dtitle">彈性日・Reinefjorden 觀光船看峽灣(住 Reine)</span><span class="flag aur">🌌 夜</span></div>
-      <div class="opt">上午漁村深拍 + 逛禮品店;午後在 Reine 碼頭搭 <b>Reinefjorden 觀光船</b>穿雪山峽灣(電話 <span class="phone">+47 994 91 805</span>,週六停)。<b>Værøy 視 2027 班表 + 天氣再評估</b>(冬季當天來回不可靠)。 <a href="#l-day9">⏱ 完整時間軸 →</a></div></div>
+      <div class="opt">上午漁村深拍 + 逛禮品店;午後在 Reine 碼頭搭 <b>Reinefjorden 觀光船</b>穿雪山峽灣(電話 <a class="phone" href="tel:+4799491805">+47 994 91 805</a>,週六停)。<b>Værøy 視 2027 班表 + 天氣再評估</b>(冬季當天來回不可靠)。 <a href="#l-day9">⏱ 完整時間軸 →</a></div></div>
     <div class="day r-lofoten" id="d0310"><div class="dhead"><span class="ddate">3/10 三</span><span class="dtitle">Reine 散步慢遊 + Å/Nusfjord 深拍</span><span class="flag aur">🌌 夜</span></div>
       <div class="opt">上午擇一深拍 <b>Å 路盡頭</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%85+Lofoten">📍</a> 或 <b>Nusfjord 古漁村</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Nusfjord">📍</a>;下午 <b>Reine 村內散步慢遊</b>(純步行:彩色木屋、碼頭、進村橋觀景、靜水倒影),傍晚接 Reine 藍調。 <a href="#l-day10">⏱ 完整時間軸 →</a></div></div>
     <div class="day r-lofoten" id="d0311"><div class="dhead"><span class="ddate">3/11 四</span><span class="dtitle">換 Ballstad・Ballstadheia 登高拍漁村藍調</span><span class="flag aur">🌌 夜</span></div>
@@ -497,7 +561,7 @@
     <div class="card" id="o-map">
       <h3>📍 奧斯陸在地地圖(標記=行程活動點)</h3>
       <div class="map" id="map-oslo"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線時用各行程列的 📍。</p>
+      <p class="maphint"><span class="dot" style="background:#fff;box-shadow:0 0 0 2px #b23a5b"></span>住宿・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #a8813a"></span>採買/美食・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #2c6e9a"></span>交通・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #3f9d82"></span>景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線、編號底色=左列類型色;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線時用各行程列的 📍。</p>
     </div>
     <div class="warn" id="o-warn"><span class="tag">⚠ 全段提醒</span>① <b>週日(2/28)商店/超市/Vinmonopolet 依法關門</b>、博物館多有開 → 採買一律排週六(2/27)與 3/12(五)。② <b>Vinmonopolet</b>:週五 18:00 關、週六約 16:00 前、週日休。③ 歌劇院屋頂大理石冬季結冰濕滑,防滑鞋慢走。④ 本段營業時間為 2026 查證值,<b>行前一個月再上各官網核對</b>。</div>
   </section>
@@ -516,7 +580,7 @@
       <figure><img src="images/nor-tromso-aurora.jpg" alt="Tromsø 極光" loading="lazy"><figcaption>追極光</figcaption></figure>
     </div>
     <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>抵達</b>:3/1 一 SAS 由 Oslo <b>12:00 落地 Tromsø(TOS)</b>。<b>離開</b>:3/5 五 <b>TOS→Bodø 11:40 起飛</b>(約 09:50 到機場,只排早上)。<b>住宿</b>:3/1 市區東北(Ullstindvegen 157,69.7743,19.2595)→ 3/2 Sommarøy(Prestvikvegen)→ 3/3、3/4 市中心(Fiskergata 6,15:00 入住)。<b>租車</b>:3/1 機場取、<b>3/3 機場還</b> → 3/3 晚與 3/4 沒車,極光團與雪橇都選「<b>含接送</b>」。</div>
-    <div class="daybar"><a class="chip" href="#t-day1">3/1 抵達</a><a class="chip" href="#t-day2">3/2</a><a class="chip" href="#t-day3">3/3</a><a class="chip" href="#t-day4">3/4</a><a class="chip" href="#t-day5">3/5 ✈</a><a class="chip" href="#t-ev">🔋 電量</a><a class="chip" href="#t-book">📋 該先訂</a><a class="chip" href="#t-map">📍 地圖</a><a class="chip" href="#t-warn">⚠ 提醒</a></div>
+    <div class="daybar"><a class="chip" href="#t-day1">3/1 抵達</a><a class="chip" href="#t-day2">3/2</a><a class="chip" href="#t-day3">3/3</a><a class="chip" href="#t-day4">3/4</a><a class="chip" href="#t-day5">3/5 ✈</a><a class="chip" href="#t-cook">🍳 自炊</a><a class="chip" href="#t-ev">🔋 電量</a><a class="chip" href="#t-book">📋 該先訂</a><a class="chip" href="#t-map">📍 地圖</a><a class="chip" href="#t-warn">⚠ 提醒</a></div>
 
     <div class="card">
       <h3>🏡 住宿(含實際價格・2 人合計)</h3>
@@ -563,7 +627,7 @@
           <tr><td>18:45 起</td><td>往<b>東北</b>回 Ullstindvegen 157 住處<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=69.7742753,19.2595344">📍</a>(座標 69.7743, 19.2595,約 20–25 分)<b>自炊</b>;晴天屋外守第一晚極光</td></tr>
         </tbody>
       </table></div>
-      <div class="dmeta">🚗 <b>Alamo 取車須知(✅ 已訂)</b>:門市 08:00–23:30、航廈步行可達;<b>⚠ Alamo 航班延誤「不保留車輛」→ 延誤時第一時間打門市 / Trip.com</b>,門市開到深夜、晚到仍可辦<br>・證件:護照+台駕照+IDP+主駕名下晶片卡(<b>Alamo 收 Visa/萬事達/Amex/大來,不收 JCB;卡號須凸字</b>)+<b>租車憑證(必出示)</b><br>・<b>押金=租金+NOK 10,000(約 NT$3.4 萬)</b>;門市電話 <span class="phone">+47-90814000</span><br>・取車流程:確認<b>釘胎</b>、簽約前核對金額、拍車況、<b>記電量=還車基準(等電取還)</b>;⚡<b>Mer P3 快充</b></div>
+      <div class="dmeta">🚗 <b>Alamo 取車須知(✅ 已訂)</b>:門市 08:00–23:30、航廈步行可達;<b>⚠ Alamo 航班延誤「不保留車輛」→ 延誤時第一時間打門市 / Trip.com</b>,門市開到深夜、晚到仍可辦<br>・證件:護照+台駕照+IDP+主駕名下晶片卡(<b>Alamo 收 Visa/萬事達/Amex/大來,不收 JCB;卡號須凸字</b>)+<b>租車憑證(必出示)</b><br>・<b>押金=租金+NOK 10,000(約 NT$3.4 萬)</b>;門市電話 <a class="phone" href="tel:+4790814000">+47-90814000</a><br>・取車流程:確認<b>釘胎</b>、簽約前核對金額、拍車況、<b>記電量=還車基準(等電取還)</b>;⚡<b>Mer P3 快充</b></div>
       <div class="dmeta">⚠️ Fjellheisen 強風會停駛、官網提到整建中,<b>當天上 fjellheisen.no 確認</b>;若停駛改在 Telegrafbukta 等地拍藍調。</div>
     </div>
 
@@ -652,7 +716,7 @@
       <div class="note"><span class="tag">🌌 住處能直接看極光嗎?能,而且條件很好</span>Sommarøy <b>光害極低、海空開闊</b>,住處就在面海沙灘邊。<b>只要當晚晴、雲少,走出門到沙灘就能看</b>(極光多在<b>北方</b>天空,找面北、避開戶外燈的方向)。出發前看 <b>yr.no 雲量</b> + 極光預報 KP;備腳架、暖暖包,相機備用電池貼身保暖(低溫掉電快)。極光不保證,故保留 3/3 晚追雲團當保險。</div>
     </div>
 
-    <div class="card">
+    <div class="card" id="t-cook">
       <h3>🍳 郊區自炊菜單 &amp; 採買清單(Day1 市區東北・Day2 Sommarøy)</h3>
       <p>兩晚都在小屋自炊:<b>Day1 在 Tromsdalen/市區超市</b>先買、<b>Day2 在 Kvaløysletta(Coop Extra / Eide Handel)</b>買 Sommarøy 食材;挪威物價高,自炊最省、又能吃到當地食材。</p>
       <details><summary>🍳 點開看菜單與採買清單</summary>
@@ -723,7 +787,7 @@
       <table class="wide">
         <thead><tr><th>項目</th><th>重點</th><th>時機</th></tr></thead>
         <tbody>
-          <tr><td>🚗 <b>租電動車</b>(✅ 已訂)</td><td><b>Alamo・VW ID.3 或同級(電動)・NT$5,863</b>(Trip.com 線上預付、含碰撞/盜搶/第三責任+租車保障)・2 天無限里程・<b>等電取還</b>;取 3/1 13:00 → 還 3/3 12:00(皆機場);免費取消至 3/1 12:00;押金=租金+NOK 10,000;門市 <span class="phone">+47-90814000</span>;<b>⚠ 航班延誤不保留車輛 → 延誤即聯繫門市</b>;待辦:確認/預約<b>釘胎</b></td><td>已完成(釘胎待確認)</td></tr>
+          <tr><td>🚗 <b>租電動車</b>(✅ 已訂)</td><td><b>Alamo・VW ID.3 或同級(電動)・NT$5,863</b>(Trip.com 線上預付、含碰撞/盜搶/第三責任+租車保障)・2 天無限里程・<b>等電取還</b>;取 3/1 13:00 → 還 3/3 12:00(皆機場);免費取消至 3/1 12:00;押金=租金+NOK 10,000;門市 <a class="phone" href="tel:+4790814000">+47-90814000</a>;<b>⚠ 航班延誤不保留車輛 → 延誤即聯繫門市</b>;待辦:確認/預約<b>釘胎</b></td><td>已完成(釘胎待確認)</td></tr>
           <tr><td>🐕 <b>狗拉雪橇</b></td><td>Polar Adventures「<b>Self-Drive + incl. transport</b>」,指定 3/4 上午梯次</td><td><b>提前 1–2 個月</b></td></tr>
           <tr><td>🌌 <b>極光團</b></td><td><b>小巴追雲團 + 含接送 + 免費取消</b>(3/3 晚);先選好業者</td><td>提前 1–2 天訂</td></tr>
           <tr><td>🚡 <b>Fjellheisen</b></td><td>旺日先網購來回票(NOK 495);<b>行前確認整建/營運</b></td><td>行前一個月</td></tr>
@@ -735,7 +799,7 @@
     <div class="card" id="t-map">
       <h3>📍 Tromsø 在地地圖速查</h3>
       <div class="map" id="map-tromso"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
+      <p class="maphint"><span class="dot" style="background:#fff;box-shadow:0 0 0 2px #b23a5b"></span>住宿・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #a8813a"></span>採買/美食・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #2c6e9a"></span>交通・<span class="dot" style="background:#fff;border-radius:3px;box-shadow:0 0 0 2px #2c6e9a"></span>⚡充電站・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #3f9d82"></span>景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線、編號底色=左列類型色;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <h4>景點・活動・補給</h4>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Fjellheisen+Troms%C3%B8">Fjellheisen 纜車</a>
@@ -816,7 +880,7 @@
     <div class="card" id="b-map">
       <h3>📍 Bodø 在地地圖(標記=行程活動點)</h3>
       <div class="map" id="map-bodo"></div>
-      <p class="maphint">🔴 住宿・🔵 交通・🟢 景點;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用 📍。</p>
+      <p class="maphint"><span class="dot" style="background:#fff;box-shadow:0 0 0 2px #b23a5b"></span>住宿・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #2c6e9a"></span>交通・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #3f9d82"></span>景點;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線、編號底色=左列類型色;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用 📍。</p>
     </div>
 
     <div class="warn" id="b-warn"><span class="tag">⚠ 全段提醒</span>① 這一晚是<b>防火牆</b>:SK4561 若延誤仍有當日替代班次可補、不影響隔天 WF806 → 3/5 別排滿、Saltstraumen 對不上就放掉。② Saltstraumen 要同時對上「巴士 300 班次(每約 4 小時)+潮汐高峰」才壯觀。③ Bodø 無需採買:食材/酒的大採買在 3/6 飛抵 Leknes 後(週六 Vinmonopolet 提早關,行程已排「一落地先衝」)。④ 時刻/價格為查證值,行前再核對。</div>
@@ -836,7 +900,7 @@
       <figure><img src="images/west-nusfjord.jpg" alt="Nusfjord 古漁村" loading="lazy"><figcaption>Nusfjord 古漁村</figcaption></figure>
     </div>
     <div class="note"><span class="tag">🔒 硬限制(已訂)</span><b>進</b>:3/6(六)WF806 由 Bodø 10:55 → <b>11:20 抵 Leknes(LKN)</b>,機場取車(自駕)。<b>出</b>:3/12(五)<b>WF892 LKN 09:30 起飛</b>(行李直掛 OSL)→ 只排早上、LKN 還車。<b>住</b>:6 晚自炊,<b>Ramberg(3/6–7,已訂)</b>→ <b>Reine cabin(3/8–10,已訂)</b>→ <b>Ballstad(3/11,Hemmingodden Lodge・已訂)</b>。Hamnøy 紅屋、Sakrisøy 黃屋改拍照點。</div>
-    <div class="daybar"><a class="chip" href="#l-day6">3/6 抵達</a><a class="chip" href="#l-day7">3/7</a><a class="chip" href="#l-day8">3/8</a><a class="chip" href="#l-day9">3/9</a><a class="chip" href="#l-day10">3/10</a><a class="chip" href="#l-day11">3/11</a><a class="chip" href="#l-day12">3/12 ✈</a><a class="chip" href="#l-ev">🔋 電量</a><a class="chip" href="#l-hike">🥾 健行</a><a class="chip" href="#l-book">📋 該先訂</a><a class="chip" href="#l-map">📍 地圖</a><a class="chip" href="#l-warn">⚠ 提醒</a></div>
+    <div class="daybar"><a class="chip" href="#l-day6">3/6 抵達</a><a class="chip" href="#l-day7">3/7</a><a class="chip" href="#l-day8">3/8</a><a class="chip" href="#l-day9">3/9</a><a class="chip" href="#l-day10">3/10</a><a class="chip" href="#l-day11">3/11</a><a class="chip" href="#l-day12">3/12 ✈</a><a class="chip" href="#l-ev">🔋 電量</a><a class="chip" href="#l-hike">🥾 健行</a><a class="chip" href="#l-cook">🍳 自炊</a><a class="chip" href="#l-book">📋 該先訂</a><a class="chip" href="#l-map">📍 地圖</a><a class="chip" href="#l-warn">⚠ 提醒</a></div>
 
     <div class="card">
       <h3>🏡 住宿(含實際價格・2 人合計)</h3>
@@ -884,7 +948,7 @@
         </tbody>
       </table></div>
       <div class="dmeta">✈ <b>機場操作(Bodø → Leknes・Widerøe WF806)</b>:① 3/5 在 Bodø 已領行李過夜 → <b>3/6 早上於 Bodø 重新報到 / 掛行李</b>;② Widerøe 可 <b>App / 自助機線上報到</b>(起飛前 24h);③ Bodø 為小機場、<b>國內線安檢快、無護照查驗</b>;④ Widerøe 託運上限 <b>23kg・L+W+H ≤158cm</b>、手提約 8kg;⑤ 建議起飛前 ~1h 到 Bodø 機場;抵 LKN(11:20)後機場取車。 <a href="#b-0306">⏰ Bodø 早上鬧鐘表 →</a></div>
-      <div class="dmeta">🚗 <b>Hertz 取車注意(✅ 已訂・Trip.com 含租車保障・6 天無限里程)</b>:① 必備<b>四樣正本</b>:護照、<b>台灣駕照+國際駕照 IDP</b>(不收電子版/照片)、<b>主駕駛人名下實體晶片信用卡</b>(拼音須同護照;不收金融卡/虛擬卡/銀聯)、Trip.com 租車憑證(電子版可);<br>② <b>簽約前核對金額=憑證金額</b>(多出來的通常是櫃台加購保險,不要就請當場刪除);<br>③ <b>繞車拍照/錄影</b>:外觀+既有刮傷特寫+<b>儀表電量與里程</b>(開時間戳記);<br>④ <b>記下取車電量=還車基準(等電取還)</b>,順口問「少電怎麼計費」;<br>⑤ 兩人都要開 → <b>當場付費加登記第二駕駛</b>(證件要求同主駕;<b>未登記的人開車=保險失效</b>);<br>⑥ 押金預授權 USD 500–3,000(約 NT$1.6–9.6 萬)、還車後 30–60 天解圈且不另通知;<br>⑦ 憑證號 <b>L688E060075</b>、門市電話 <span class="phone">+47-76081844</span>(延誤/釘胎/還車地點都打這支)。</div>
+      <div class="dmeta">🚗 <b>Hertz 取車注意(✅ 已訂・Trip.com 含租車保障・6 天無限里程)</b>:① 必備<b>四樣正本</b>:護照、<b>台灣駕照+國際駕照 IDP</b>(不收電子版/照片)、<b>主駕駛人名下實體晶片信用卡</b>(拼音須同護照;不收金融卡/虛擬卡/銀聯)、Trip.com 租車憑證(電子版可);<br>② <b>簽約前核對金額=憑證金額</b>(多出來的通常是櫃台加購保險,不要就請當場刪除);<br>③ <b>繞車拍照/錄影</b>:外觀+既有刮傷特寫+<b>儀表電量與里程</b>(開時間戳記);<br>④ <b>記下取車電量=還車基準(等電取還)</b>,順口問「少電怎麼計費」;<br>⑤ 兩人都要開 → <b>當場付費加登記第二駕駛</b>(證件要求同主駕;<b>未登記的人開車=保險失效</b>);<br>⑥ 押金預授權 USD 500–3,000(約 NT$1.6–9.6 萬)、還車後 30–60 天解圈且不另通知;<br>⑦ 憑證號 <b>L688E060075</b>、門市電話 <a class="phone" href="tel:+4776081844">+47-76081844</a>(延誤/釘胎/還車地點都打這支)。</div>
       <div class="dmeta">🛒 <b>3/6 是週六</b>:超市仍開,但<b>隔天 3/7 週日全挪威大超市關門</b>(僅小店限時)→ 食材要多買一天份(含週日);<b>Vinmonopolet 週六提早關(約 15–16 時)、週日休,且西 Lofoten(Ramberg/Reine/Å)沒有分店 → 酒最優先、一抵 Leknes 先買</b>。</div>
       <div class="dmeta">📷 Skagsanden 腳架勿浸水(零下凍關節)、退浪線後站;這片沙灘是 Lofoten 最佳極光灘之一。</div>
     </div>
@@ -929,12 +993,12 @@
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>上午</td><td>漁村深度補拍(Hamnøy/Sakrisøy 細節、鱈魚架)+ <b>Anita's Sjømat(Sakrisøy)</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Anitas+Sj%C3%B8mat+Sakris%C3%B8y">📍</a>買在地小物/明信片(<b>冬季約 12:00 才開,別排純上午</b>)</td></tr>
-          <tr><td>13:30</td><td><b>Reine 碼頭搭 Reinefjorden 觀光船</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+havn+Lofoten">📍</a>看雪山峽灣瀑布(~1–1.5h,起價 NOK 298,24h 前免費取消;電話 <span class="phone">+47 994 91 805</span>,週六停)</td></tr>
+          <tr><td>13:30</td><td><b>Reine 碼頭搭 Reinefjorden 觀光船</b><a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Reine+havn+Lofoten">📍</a>看雪山峽灣瀑布(~1–1.5h,起價 NOK 298,24h 前免費取消;電話 <a class="phone" href="tel:+4799491805">+47 994 91 805</a>,週六停)</td></tr>
           <tr><td>16:50</td><td>Sakrisøy / Reine 藍調</td></tr>
           <tr><td>18:30</td><td>自炊;晴天守極光</td></tr>
         </tbody>
       </table></div>
-      <div class="dmeta">⛴ <b>Reinefjorden 觀光船(純搭船賞峽灣)</b>:航線 Reine ↔ Kjerkfjorden / Rostad / Vindstad,自 Reine Hurtigbåtkai(Ytre Havn 大停車場旁)出發,單程約 20–31 分;只買來回票、不下船登山,坐著穿雪峰夾峙峽灣即絕景。<b>3 月為冬季預訂制 ── 須前一天電話 <span class="phone">+47 994 91 805</span> 預訂、不接受現場上船、週六常停駛</b>,每日僅 2–3 班;Vindstad 來回成人約 94 NOK(約 310 TWD),發船前 20 分到候船;線上 reisnordland.no、時刻 reisnordland.com/ferry、客服 +47 910 09 600。<b>無船/天氣差備案</b>:改 Reine→Å 半日,或 Å 室內博物館 + 百年麵包房 Bakeriet i Å(<b>冬季麵包房多不營業,以參觀建築/石窯為主</b>)。</div>
+      <div class="dmeta">⛴ <b>Reinefjorden 觀光船(純搭船賞峽灣)</b>:航線 Reine ↔ Kjerkfjorden / Rostad / Vindstad,自 Reine Hurtigbåtkai(Ytre Havn 大停車場旁)出發,單程約 20–31 分;只買來回票、不下船登山,坐著穿雪峰夾峙峽灣即絕景。<b>3 月為冬季預訂制 ── 須前一天電話 <a class="phone" href="tel:+4799491805">+47 994 91 805</a> 預訂、不接受現場上船、週六常停駛</b>,每日僅 2–3 班;Vindstad 來回成人約 94 NOK(約 310 TWD),發船前 20 分到候船;線上 reisnordland.no、時刻 reisnordland.com/ferry、客服 <a class="phone" href="tel:+4791009600">+47 910 09 600</a>。<b>無船/天氣差備案</b>:改 Reine→Å 半日,或 Å 室內博物館 + 百年麵包房 Bakeriet i Å(<b>冬季麵包房多不營業,以參觀建築/石窯為主</b>)。</div>
       <div class="dmeta">🚢 <b>Værøy(偉略島)</b>:冬季渡輪當天來回不可靠(班表 2026 下半年才出、易停航)→ 看峽灣以 Reinefjorden 觀光船為主;Værøy 等 2027 班表出來、若有乾淨去回 + 天氣好再評估。</div>
     </div>
 
@@ -977,7 +1041,7 @@
         <thead><tr><th>時間</th><th>行程</th></tr></thead>
         <tbody>
           <tr><td>07:40</td><td>退房出發 Ballstad → LKN<a class="pin" aria-label="開啟 Google 地圖" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">📍</a>(僅約 15–20 分;前晚已把電補到<b>取車水位(等電取還)</b>,冬季黑冰慢行)</td></tr>
-          <tr><td>07:45</td><td><b>LKN 還車(✅ 憑證確認:3/12 門市 07:00–18:00・07:30 有人服務)</b>:交車前<b>內外觀+電量+里程整輪拍照存證</b>(時間戳記);憑證註明<b>行前聯絡門市確認還車地點</b>(電話 <span class="phone">+47-76081844</span>,可與預約釘胎同一通)</td></tr>
+          <tr><td>07:45</td><td><b>LKN 還車(✅ 憑證確認:3/12 門市 07:00–18:00・07:30 有人服務)</b>:交車前<b>內外觀+電量+里程整輪拍照存證</b>(時間戳記);憑證註明<b>行前聯絡門市確認還車地點</b>(電話 <a class="phone" href="tel:+4776081844">+47-76081844</a>,可與預約釘胎同一通)</td></tr>
           <tr><td>08:00–08:30</td><td>進航廈:<b>Widerøe 報到 / 自助掛行李</b>(<b>行李直掛 OSL</b>)→ 安檢(國內、無護照查驗)→ 候機</td></tr>
           <tr><td>09:30</td><td>WF892 起飛(經 BOO→OSL,<b>行李直掛 OSL</b>、聯程受保護)</td></tr>
         </tbody>
@@ -1041,7 +1105,7 @@
       <p><b>Lofotr 維京博物館</b>(Borg・維京長屋,1.5–2h,<b>下雨天最佳</b>)、<b>Å 室內博物館</b>;往東順遊(僅在加海鵰遊船時)可加 <b>Svolvær / Kabelvåg</b>(補給、老城木教堂)。Reinebringen / Kvalvika 冬季不上(見〈健行〉)、Vesterålen 這趟跳過(賞鯨 3 月過季、極光又與 Tromsø 重複)。</p>
     </div>
 
-    <div class="card">
+    <div class="card" id="l-cook">
       <h3>🍳 自炊菜單 &amp; 採買清單(Lofoten 6 晚・壓低餐費)</h3>
       <p>三間小屋都有廚房 + 自帶蜘蛛爐/鍋具 → <b>三餐盡量自理</b>。挪威外食一餐動輒 NOK 250–400,自炊兩人一天 ~NOK 250–400 就吃得好;全程 Lofoten 食材費抓 <b>~NOK 2,000–3,000(約 TWD 6,000–9,500)</b>。</p>
       <h4>🛒 採買節奏(關鍵:配合週日關門)</h4>
@@ -1089,9 +1153,9 @@
       <table class="wide">
         <thead><tr><th>項目</th><th>重點</th><th>時機</th></tr></thead>
         <tbody>
-          <tr><td>🚗 <b>租車(LKN 取還)</b>(✅ 已訂)</td><td><b>Hertz・VW ID.4 或同級(電動 4WD)・NT$29,413</b>(Trip.com 線上預付、含保險/租車保障)・6 天無限里程・<b>等電取還</b>;取 3/6 12:00(門市 10:00–14:00)/ 還 3/12 07:30(<b>當日門市 07:00–18:00・有人服務</b>);憑證號 L688E060075、門市 <span class="phone">+47-76081844</span>、免費取消至 3/6 12:00;<b>待辦:電話預約釘胎(免費、無法網路訂)+確認還車地點</b></td><td>已完成(釘胎待約)</td></tr>
+          <tr><td>🚗 <b>租車(LKN 取還)</b>(✅ 已訂)</td><td><b>Hertz・VW ID.4 或同級(電動 4WD)・NT$29,413</b>(Trip.com 線上預付、含保險/租車保障)・6 天無限里程・<b>等電取還</b>;取 3/6 12:00(門市 10:00–14:00)/ 還 3/12 07:30(<b>當日門市 07:00–18:00・有人服務</b>);憑證號 L688E060075、門市 <a class="phone" href="tel:+4776081844">+47-76081844</a>、免費取消至 3/6 12:00;<b>待辦:電話預約釘胎(免費、無法網路訂)+確認還車地點</b></td><td>已完成(釘胎待約)</td></tr>
           <tr><td>🛏 <b>Ballstad 末晚住宿</b>(✅ 已訂)</td><td><b>Hemmingodden Lodge</b>・NT$8,750(check-in 15:00–22:00)</td><td>已完成</td></tr>
-          <tr><td>⛴ <b>Reinefjorden 觀光船</b></td><td>冬季電話預訂制,抵 Lofoten 前一天打 <span class="phone">+47 994 91 805</span></td><td>前一天</td></tr>
+          <tr><td>⛴ <b>Reinefjorden 觀光船</b></td><td>冬季電話預訂制,抵 Lofoten 前一天打 <a class="phone" href="tel:+4799491805">+47 994 91 805</a></td><td>前一天</td></tr>
           <tr><td>🥾 <b>健行裝備</b></td><td>microspikes/冰爪 + 頭燈 + 登山杖(Ballstadheia/Haukland)</td><td>出發前備妥</td></tr>
         </tbody>
       </table>
@@ -1100,7 +1164,7 @@
     <div class="card" id="l-map">
       <h3>📍 Lofoten 在地地圖速查</h3>
       <div class="map" id="map-lofoten"></div>
-      <p class="maphint">🔴 住宿・🟡 採買/美食・🔵 交通/充電・🟢 景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
+      <p class="maphint"><span class="dot" style="background:#fff;box-shadow:0 0 0 2px #b23a5b"></span>住宿・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #a8813a"></span>採買/美食・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #2c6e9a"></span>交通・<span class="dot" style="background:#fff;border-radius:3px;box-shadow:0 0 0 2px #2c6e9a"></span>⚡充電站・<span class="dot" style="background:#fff;box-shadow:0 0 0 2px #3f9d82"></span>景點活動;點標記看名稱與「導航 →」。<b>點上方日期=只亮當天行程</b>(定案動線附 ①②③ 與虛線、編號底色=左列類型色;方案未定日只亮點)、點「全部」回全域。地圖需網路;離線用下方 chips(點即開 Google Maps)。</p>
       <div class="chips">
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Leknes">Leknes 採買</a>
         <a class="chip" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Hamn%C3%B8y+bridge">Hamnøy 橋</a>
@@ -1136,7 +1200,7 @@
     <div class="card">
       <h3>🛞 法規 &amp; 配備</h3>
       <ul class="clean">
-        <li><b>釘胎合法期 10/16–4/30(Nordland)</b>;兩段租車冬季設備費皆已含 ── <b>Hertz 釘胎須電話預約(<span class="phone">+47-76081844</span>,免費、無法網路訂)</b>;Alamo 於 3/1 取車時當場確認釘胎。</li>
+        <li><b>釘胎合法期 10/16–4/30(Nordland)</b>;兩段租車冬季設備費皆已含 ── <b>Hertz 釘胎須電話預約(<a class="phone" href="tel:+4776081844">+47-76081844</a>,免費、無法網路訂)</b>;Alamo 於 3/1 取車時當場確認釘胎。</li>
         <li>沿海融凍路滑建議用<b>釘胎</b>,<b>不需 4×4</b>(有更安心);ID.3 後驅,釘胎更重要。</li>
         <li>健行另備 <b>microspikes/冰爪 + 頭燈</b>,車上常備。</li>
       </ul>
@@ -1161,7 +1225,7 @@
       </ul>
     </div>
 
-    <div class="warn"><span class="tag">⚠ 路段封閉</span><b>Nappstraumen 隧道(Leknes 南)2026–2027 整修,每晚 23:00–06:00 封閉</b> → 半夜開車追極光要避開、改走他路或調整時段。<br>❄ 通用雪地駕駛要領與每日必查(yr.no / 175.no / varsom.no)→ <a href="#winter"><b>〈冬季雪地自駕〉</b></a></div>
+    <div class="warn"><span class="tag">⚠ 路段封閉</span><b>Nappstraumen 隧道(Leknes 南)2026–2027 整修,每晚 23:00–06:00 封閉</b> → 半夜開車追極光要避開、改走他路或調整時段。</div>
 
     <div class="note"><span class="tag">⚡ 電動車冬季(重點摘要)</span>低溫續航打 <b>7–8 折</b>、別低於 <b>20%</b>、插電時先<b>預熱車內</b>、住處盡量<b>插電過夜</b>;完整充電點與里程見各段〈🔋 電量與充電〉。</div>
   </section>
@@ -1215,7 +1279,7 @@
 
   <!-- 預算 -->
   <section id="budget">
-    <div class="sec-head"><div class="sec-ico">💰</div><div><h2>費用(2 人合計・機票已全訂)</h2><p style="color:var(--ink-soft);font-size:.9rem">已訂用實際金額、待訂用預估區間;完整帳見 <a href="費用紀錄.md" target="_blank" rel="noopener">費用紀錄.md</a></p></div></div>
+    <div class="sec-head"><div class="sec-ico">💰</div><div><h2>費用(2 人合計・機票已全訂)</h2><p style="color:var(--ink-soft);font-size:.9rem">已訂用實際金額、待訂用預估區間</p></div></div>
     <div class="card scroll-x">
       <div class="stats">
         <div class="stat"><span>✅ 已訂(實際)</span><b style="color:var(--aurora)">NT$217,844</b><span>機票+住宿 14 晚+租車 2 段</span></div>
@@ -1271,16 +1335,22 @@
   <section id="pack">
     <div class="sec-head"><div class="sec-ico">🎒</div><div><h2>北極圈 3 月打包(洋蔥式分層)</h2></div></div>
     <div class="card">
+      <p style="font-size:.8rem;color:var(--ink-soft)">各組下方附勾選 chips:<b>白底=未裝袋、點一下變 <span style="background:var(--aurora);color:#fff;padding:1px 8px;border-radius:10px">✓ 綠底</span>=已裝袋</b>(記錄存在這台裝置的瀏覽器)</p>
       <h4>🧥 保暖分層</h4>
       <p>美麗諾底層 ×2 → 刷毛/羽絨中層 → 防風防水外層 + 雪褲。<b>「沿海溫和」只是相對深冬,請當真冬天打包</b>(Tromsø 3 月均高約 −2°C、低約 −7°C,全年下雪最多;Lofoten 約 0°C 上下但風大路滑)。</p>
+      <div class="chips"><span class="chip">美麗諾底層×2/人</span><span class="chip">刷毛/羽絨中層</span><span class="chip">防風防水外層</span><span class="chip">雪褲</span></div>
       <h4>🧤 配件</h4>
       <p>厚帽、脖圍、面罩、防風手套+薄內手套、厚羊毛襪 ×2–3、<b>防滑雪靴+冰爪</b>、暖暖包、保溫瓶、護唇膏、<b>手電筒</b>。</p>
+      <div class="chips"><span class="chip">厚帽</span><span class="chip">脖圍</span><span class="chip">面罩</span><span class="chip">防風手套</span><span class="chip">薄內手套</span><span class="chip">厚羊毛襪×2–3</span><span class="chip">防滑雪靴</span><span class="chip">冰爪 microspikes</span><span class="chip">登山杖</span><span class="chip">暖暖包</span><span class="chip">保溫瓶</span><span class="chip">護唇膏</span><span class="chip">手電筒</span></div>
       <h4>📷 電器/攝影</h4>
       <p>相機+腳架+<b>備用電池(貼身保暖)</b>、<b>紅光頭燈</b>(看極光)、行動電源、<b>歐規 Type C/F 轉接頭</b>。</p>
+      <div class="chips"><span class="chip">相機</span><span class="chip">腳架</span><span class="chip">備用電池(貼身保暖)</span><span class="chip">紅光頭燈</span><span class="chip">行動電源</span><span class="chip">歐規 Type C/F 轉接頭</span></div>
       <h4>🍳 自炊 / 野炊裝備</h4>
       <p><b>蜘蛛爐</b>(<b>瓦斯罐不能上飛機 → 到 Tromsø 當地買</b>、剩罐也不能帶上機)、<b>小方鍋</b>、<b>雪拉碗</b>、<b>筷子</b>。小屋多附廚具,這些供野炊 / 守極光煮熱飲、或廚具不齊時備用。<br>☕ <b>手沖咖啡組</b>:<b>手沖濾杯、拉花杯、手磨豆器</b>(配當地咖啡豆,晨間泡咖啡 / 守極光手沖)。</p>
+      <div class="chips"><span class="chip">蜘蛛爐</span><span class="chip">瓦斯罐(到 Tromsø 當地買)</span><span class="chip">小方鍋</span><span class="chip">雪拉碗</span><span class="chip">筷子</span><span class="chip">手沖濾杯</span><span class="chip">拉花杯</span><span class="chip">手磨豆器</span></div>
       <h4>🛂 證件/行政</h4>
       <p><b>台胞證(5 年)</b>、護照(離開申根當日效期 ≥3 個月且 10 年內核發,現在就檢查兩本)、<b>ETIAS</b>(€20、線上、效期 3 年;2027/3 落在過渡期理論可免,仍<b>強烈建議照辦</b>)、國際駕照+台灣駕照、旅平險、住宿/租車/機票訂單。</p>
+      <div class="chips"><span class="chip">台胞證×2</span><span class="chip">護照×2(效期已查)</span><span class="chip">ETIAS×2</span><span class="chip">台灣駕照+IDP×2</span><span class="chip">旅平險保單</span><span class="chip">訂單文件包(紙本+雲端)</span><span class="chip">雙人床確認信</span><span class="chip">少量 NOK+兩張信用卡</span></div>
       <div class="note"><span class="tag">💳 貨幣/通訊</span>挪威幾乎全程刷卡(出國前開通海外刷卡)+ 少量 NOK;北歐 eSIM/漫遊。渡輪/活動團多可線上預訂付費。<b>不需要極地級裝備或 4×4。</b></div>
     </div>
   </section>
@@ -1293,16 +1363,18 @@
     <div class="card">
       <h4>🌌 極光 / 天氣(最常看)</h4>
       <div class="chips">
-        <span class="chip ok">yr.no(天氣/雲量・最重要)</span>
+        <a class="chip ok" target="_blank" rel="noopener" href="https://www.yr.no/en/search?q=Troms%C3%B8">yr.no(天氣/雲量・最重要)</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.yr.no/en/search?q=Leknes">yr.no・Leknes</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.yr.no/en/search?q=Oslo">yr.no・Oslo</a>
         <span class="chip">Hello Aurora</span>
         <span class="chip">My Aurora Forecast</span>
-        <span class="chip">KP 指數預報</span>
-        <span class="chip">timeanddate(日出日落・網站)</span>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.swpc.noaa.gov/products/planetary-k-index">KP 指數(NOAA)</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.timeanddate.com/sun/norway/tromso">timeanddate(日出日落)</a>
       </div>
       <h4>🚗 路況 / 雪崩(每天出發前必查)</h4>
       <div class="chips">
-        <span class="chip ok">175 / Vegvesen Trafikk(路況・攝影機)</span>
-        <span class="chip">Varsom Regobs(雪崩・每日 16:00 前)</span>
+        <a class="chip ok" target="_blank" rel="noopener" href="https://www.vegvesen.no/trafikk/">175 / Vegvesen Trafikk(路況・攝影機)</a>
+        <a class="chip" target="_blank" rel="noopener" href="https://www.varsom.no/en/">Varsom Regobs(雪崩・每日 16:00 前)</a>
       </div>
       <h4>⚡ 充電(電動車)</h4>
       <div class="chips">
@@ -1349,8 +1421,9 @@
           <tr><td><b>✅ 已完成(至 2026/8)</b></td><td>機票全訂:國際(海航)+ 國內 5 段(含 BOO↔LKN 小飛機、回程聯程直掛)・<b>住宿 14 晚全訂完封</b>(奧斯陸 2+1+Tromsø 4+Bodø 1+Lofoten 6;奧斯陸 2/27–28 經飯店 email 確認改雙人床、3/12 續住大床房)・兩段租車已訂(Tromsø Alamo ID.3 / LKN Hertz ID.4 4WD)・確認書+收據已收齊備份</td></tr>
           <tr><td><b>現在 2026/8–9</b></td><td>① <b>奧斯陸文件收尾</b>:3/12 已續訂 ✅ → 下載兩筆訂單的確認函/收據放文件包+<b>飯店雙人床確認信轉存 PDF 列印</b>② HR 書面確認婚假(<b>登記日已定 2/12 五</b>,在 2/26 出發前)③ <b>辦台胞證(5 年)</b> ④ 向海航確認北京<b>過夜轉機(去程約 10h)</b>是否需重新安檢、有無休息區/過夜旅館</td></tr>
           <tr><td>2026/12–2027/1</td><td>⑤ 訂 Tromsø 極光追雲團 + 狗拉雪橇(均含接送)</td></tr>
-          <tr><td>2027/1–2</td><td>⑥ 查 Fjellheisen 載客、辦 ETIAS、訂奧斯陸門票、<b>辦國際駕照 IDP ×2</b>(監理站當場核發、NT$250/人;帶身分證+駕照+護照+2 吋照 2 張;<b>效期僅 1 年、太早辦會過期</b>;租車須「台灣駕照+IDP」兩樣正本,第二駕駛也要)⑦ 再確認台胞證效期、護照、<b>電話向 Hertz 預約釘胎</b>(+確認還車地點,同一通 <span class="phone">+47-76081844</span>)</td></tr>
-          <tr><td>出發前 1–2 週</td><td>⑧ 抵 Lofoten 前一天打 <span class="phone">+47 994 91 805</span> 訂交通船<br>⑨ 旅遊險(機票已含 TripFlex 改/退彈性 → 重點買<b>海外醫療+行李+延誤</b>)、線上報到、yr.no<br>⑩ <b>訂好 2/26 約 07:00–07:30 北上的高鐵車票</b><br>⑪ <b>調高主駕信用卡臨時額度</b>(押金:Tromsø Alamo=<b>租金+NOK 10,000≈NT$3.4 萬</b>(憑證載明)、LKN Hertz 上限約 USD 3,000≈NT$9.6 萬;還車後 30–60 天才解圈,<b>兩筆會同時圈存(最壞合計約 13 萬)</b> → 額度抓寬,或兩段各由一人當主駕分散到兩張卡;另 <b>Reine cabin 入住刷 NOK 3,000 損壞押金</b>(≈NT$1 萬、退房後 7 天退還))+兩張卡都開通海外交易;<b>注意:Alamo 不收 JCB、卡號須凸字</b>(Hertz 收 JCB);<b>雙卡分工:押金卡與日常消費卡分開</b>(押金量級總覽 → <a href="#budget">💳 預算章</a>)</td></tr>
+          <tr><td>2027/1–2</td><td>⑥ 查 Fjellheisen 載客、辦 ETIAS、訂奧斯陸門票、<b>辦國際駕照 IDP ×2</b>(監理站當場核發、NT$250/人;帶身分證+駕照+護照+2 吋照 2 張;<b>效期僅 1 年、太早辦會過期</b>;租車須「台灣駕照+IDP」兩樣正本,第二駕駛也要)⑦ 再確認台胞證效期、護照、<b>電話向 Hertz 預約釘胎</b>(+確認還車地點,同一通 <a class="phone" href="tel:+4776081844">+47-76081844</a>)</td></tr>
+          <tr><td><b>2027/2 上旬(行前 1 個月總核對)</b></td><td>📋 <b>把全頁散落的「行前再核對」一次清完</b>:<a href="#flights">機票時刻(海航官網)</a>・<a href="#o-warn">奧斯陸營業時間/退稅</a>・<a href="#t-book">Fjellheisen 營運+雪橇/極光團確認信</a>・<a href="#t-warn">Tromsø 各價格時刻</a>・<a href="#l-day9">Reinefjorden 冬季班表</a>・<a href="#d0305">Saltstraumen 巴士 300+潮汐</a>・<a href="#l-warn">Nappstraumen 隧道夜封+渡輪</a>・<a href="#tromso">日出日落表對 2027(timeanddate)</a>・<a href="#apps">App 全裝好+綁卡+離線地圖</a></td></tr>
+          <tr><td>出發前 1–2 週</td><td>⑧ 抵 Lofoten 前一天打 <a class="phone" href="tel:+4799491805">+47 994 91 805</a> 訂交通船<br>⑨ 旅遊險(機票已含 TripFlex 改/退彈性 → 重點買<b>海外醫療+行李+延誤</b>)、線上報到、yr.no<br>⑩ <b>訂好 2/26 約 07:00–07:30 北上的高鐵車票</b><br>⑪ <b>調高主駕信用卡臨時額度</b>(押金:Tromsø Alamo=<b>租金+NOK 10,000≈NT$3.4 萬</b>(憑證載明)、LKN Hertz 上限約 USD 3,000≈NT$9.6 萬;還車後 30–60 天才解圈,<b>兩筆會同時圈存(最壞合計約 13 萬)</b> → 額度抓寬,或兩段各由一人當主駕分散到兩張卡;另 <b>Reine cabin 入住刷 NOK 3,000 損壞押金</b>(≈NT$1 萬、退房後 7 天退還))+兩張卡都開通海外交易;<b>注意:Alamo 不收 JCB、卡號須凸字</b>(Hertz 收 JCB);<b>雙卡分工:押金卡與日常消費卡分開</b>(押金量級總覽 → <a href="#budget">💳 預算章</a>)</td></tr>
         </tbody>
       </table>
     </div>
@@ -1359,8 +1432,18 @@
   <!-- 檢查 -->
   <section id="check">
     <div class="sec-head"><div class="sec-ico">✅</div><div><h2>行前最終檢查</h2></div></div>
+    <div class="card" id="emerg">
+      <h3>🚨 緊急資訊(出發前截圖/列印一份隨身)</h3>
+      <ul class="clean">
+        <li><b>挪威緊急電話</b>:<a class="phone" href="tel:112">112</a> 警察(歐洲通用緊急號、無訊號卡也能撥)・<a class="phone" href="tel:113">113</a> 救護・<a class="phone" href="tel:110">110</a> 消防;非緊急報案 <a class="phone" href="tel:02800">02800</a>。</li>
+        <li><b>車輛故障/事故先打租車公司</b>(勿自行維修):Tromsø Alamo <a class="phone" href="tel:+4790814000">+47-90814000</a>・Lofoten Hertz <a class="phone" href="tel:+4776081844">+47-76081844</a>。</li>
+        <li><b>台灣外交部旅外急難救助</b>:<a class="phone" href="tel:+88633982629">+886-3-398-2629</a>(24h);全球免付費 800-0885-0885(部分國家適用;行前上外交部領事事務局網站確認自挪威的撥打方式)。</li>
+        <li><b>出發前手填</b>:旅平險公司＿＿＿＿・保單號＿＿＿＿・24h 海外急難電話＿＿＿＿;信用卡掛失:主駕卡＿＿＿＿・另一張＿＿＿＿。</li>
+        <li>護照/台胞證影本+全部訂單:紙本一份放託運行李、雲端一份(兩人手機都能開)。</li>
+      </ul>
+    </div>
     <div class="card">
-      <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:4px">圖例:<span class="chip ok">✓ 已完成</span> <span class="chip pend">⏳ 進行中/時候未到</span> <span class="chip x">⭐ 高風險必辦</span> <span class="chip">行前待辦</span></p>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:4px">圖例:<span class="chip ok">✓ 已完成</span> <span class="chip pend">⏳ 進行中/時候未到</span> <span class="chip x">⭐ 高風險必辦</span> <span class="chip legend">行前待辦</span> ──<b>待辦 chip 點一下變 <span style="background:var(--aurora);color:#fff;padding:1px 8px;border-radius:10px">✓ 綠底</span>=已完成</b>(記錄存在這台裝置的瀏覽器)</p>
       <div class="chips">
         <span class="chip x">⭐台胞證 5 年(去回程都查)</span>
         <span class="chip">護照效期 ≥3 個月(離申根日)</span>
@@ -1381,9 +1464,7 @@
         <span class="chip">防滑雪靴+冰爪</span>
         <span class="chip">相機腳架+紅光頭燈</span>
       </div>
-      <div class="warn"><span class="tag">⚠ 誠實提醒</span>極光<b>不保證</b>(Tromsø 4 晚追雲保底、Lofoten 6 晚拍美照);賞鯨、海鸚(puffin)3 月都過季/未到(海鸚 4 月才回島),想看海鵰改搭 Svolvær 遊船;維京船博物館 2027 關閉;<b>台胞證沒辦會被拒登機</b>;Bodø 過夜+奧斯陸緩衝夜不可省;Reinebringen、Ryten 山頂等陡雪坡冬季排除(Kvalvika 只走海灘端、改自走 Ballstadheia/Offersøykammen/Haukland);Reinefjorden 純搭船賞景、週六停。</div>
-      <p style="font-size:.85rem;color:var(--ink-soft)">📚 原始細節檔(已整合進本頁,留作對照,移到「封存_舊版與細節」資料夾):<a href="封存_舊版與細節/西Lofoten深度行程.html" target="_blank" rel="noopener">西 Lofoten 深度</a>｜<a href="封存_舊版與細節/每晚住宿選擇.md" target="_blank" rel="noopener">每晚住宿選擇</a>｜<a href="封存_舊版與細節/挪威3月極光蜜月計劃.html" target="_blank" rel="noopener">挪威 3 月總覽</a>｜<a href="規劃總覽.md" target="_blank" rel="noopener">規劃總覽</a></p>
-    </div>
+      <div class="warn"><span class="tag">⚠ 誠實提醒</span>極光<b>不保證</b>(Tromsø 4 晚追雲保底、Lofoten 6 晚拍美照);賞鯨、海鸚(puffin)3 月都過季/未到(海鸚 4 月才回島),想看海鵰改搭 Svolvær 遊船;維京船博物館 2027 關閉;<b>台胞證沒辦會被拒登機</b>;Bodø 過夜+奧斯陸緩衝夜不可省;Reinebringen、Ryten 山頂等陡雪坡冬季排除(Kvalvika 只走海灘端、改自走 Ballstadheia/Offersøykammen/Haukland);Reinefjorden 純搭船賞景、週六停。</div>    </div>
   </section>
 
 </main>
@@ -1391,8 +1472,12 @@
 <footer>
   <span class="script">From Tainan to the Aurora</span>
   <p style="max-width:620px;margin:6px auto">一份就夠:從台南家門口,到挪威世界盡頭的極光下。機票已訂、行李直掛、日期已定;其餘的,我們一起慢慢選。記得先辦台胞證!祝雪白、極光爆棚、白頭偕老 🌌</p>
-  <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.30</p>
+  <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">整合自全程總計劃/西 Lofoten 深度/每晚住宿/3 月極光各檔。時刻、價格、營業狀態以官網最終確認;HU769 時刻來自航班資料庫,其餘航段請於海南航空官網核對。照片來源:Flickr(CC 授權)。更新於 2026.08.31</p>
 </footer>
+<!-- 🔧 維護備忘:改「訂房/訂團/待辦狀態」時,同一件事可能出現在以下位置,改完請 Ctrl+F 搜項目名稱逐一核對 ──
+  ① 頁首「進度一眼看」卡 ② #days「全程 14 晚住宿一覽」表 ③ 各段(oslo/tromso/bodo/lofoten)的住宿表+「🔒 硬限制」note
+  ④ #budget 已訂/待訂表 ⑤ #timeline 倒數待辦表 ⑥ #check 行前檢查 chips ⑦ 各地圖 MAPS 陣列的 popup 文字(2026/8/31 已修過一筆 3/12 stale)
+  另:勾選狀態存在瀏覽器 localStorage(鍵名 nor2027-todo),換裝置/換瀏覽器不會帶著走。 -->
 
 <button class="fab" id="tocfab" aria-label="開啟目錄" aria-expanded="false">📑</button>
 <div class="backdrop" id="backdrop"></div>
@@ -1406,6 +1491,7 @@
 </div>
 <button class="backtop" id="backtop" aria-label="回到頂端">↑</button>
 <script>
+  document.addEventListener('touchstart',function(){},{passive:true});
   const prog=document.getElementById('progress'),backtop=document.getElementById('backtop');
   backtop.onclick=()=>scrollTo({top:0,behavior:'smooth'});
   // 出發倒數(hero pill)
@@ -1443,20 +1529,125 @@
   updateActive();
   // 📑 目錄 bottom sheet
   const fab=document.getElementById('tocfab'),sheet=document.getElementById('tocsheet'),bdrop=document.getElementById('backdrop');
-  const toggleSheet=on=>{sheet.classList.toggle('show',on);bdrop.classList.toggle('show',on);fab.setAttribute('aria-expanded',on)};
+  const toggleSheet=on=>{sheet.classList.toggle('show',on);bdrop.classList.toggle('show',on);fab.setAttribute('aria-expanded',on);
+    if(on){const f=sheet.querySelector('a');if(f)f.focus({preventScroll:true})}else fab.focus({preventScroll:true})};
   fab.onclick=()=>toggleSheet(!sheet.classList.contains('show'));
   bdrop.onclick=()=>toggleSheet(false);
   sheetLinks.forEach(a=>a.addEventListener('click',()=>toggleSheet(false)));
+  // Esc 關閉 + 下滑手勢關閉(sheet 捲到頂時往下拖 >70px)
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&sheet.classList.contains('show'))toggleSheet(false)});
+  let sheetY=null;
+  sheet.addEventListener('touchstart',e=>{sheetY=sheet.scrollTop<=0?e.touches[0].clientY:null},{passive:true});
+  sheet.addEventListener('touchmove',e=>{if(sheetY!==null&&e.touches[0].clientY-sheetY>70){toggleSheet(false);sheetY=null}},{passive:true});
+  // 17 天日曆條:右緣「還有更多」漸層提示(與 nav 同款)
+  document.querySelectorAll('.hswrap').forEach(w=>{const s=w.firstElementChild;
+    const upd=()=>w.classList.toggle('at-end',s.scrollLeft+s.clientWidth>=s.scrollWidth-4);
+    s.addEventListener('scroll',upd,{passive:true});upd()});
+  // 可勾選待辦(行前檢查 chips + 倒數待辦表列;存 localStorage、只在本機)
+  (()=>{let st={};try{st=JSON.parse(localStorage.getItem('nor2027-todo')||'{}')}catch(e){}
+    const save=()=>{try{localStorage.setItem('nor2027-todo',JSON.stringify(st))}catch(e){}};
+    document.querySelectorAll('#check .chips .chip, #pack .chips .chip').forEach(ch=>{
+      if(ch.classList.contains('ok')||ch.tagName==='A')return;
+      const key='c:'+ch.textContent.trim();
+      const btn=document.createElement('button');btn.type='button';btn.className=ch.className+' todo';btn.innerHTML=ch.innerHTML;
+      const apply=()=>btn.classList.toggle('done',!!st[key]);
+      btn.onclick=()=>{st[key]=!st[key];save();apply()};apply();ch.replaceWith(btn);
+    });
+    document.querySelectorAll('#timeline tbody tr').forEach((tr,i)=>{
+      if(tr.cells[0].textContent.includes('已完成'))return;
+      const key='t:'+i,cb=document.createElement('input');cb.type='checkbox';cb.className='rowck';cb.setAttribute('aria-label','標記此列待辦完成');
+      cb.checked=!!st[key];tr.classList.toggle('rowdone',cb.checked);
+      cb.onchange=()=>{st[key]=cb.checked;save();tr.classList.toggle('rowdone',cb.checked)};
+      tr.cells[0].prepend(cb);
+    });
+  })();
+  // 航班 .ics 匯出(UTC 時刻換算自訂票紀錄:台北/北京 +8、挪威 +1,行程期間無夏令)
+  (()=>{const a=document.getElementById('icsdl');if(!a)return;
+    const EV=[
+      ['HU7988 台北TPE→北京PEK','20270226T050500Z','20270226T083000Z'],
+      ['HU769 北京PEK→奧斯陸OSL','20270226T185500Z','20270227T050000Z'],
+      ['SK4412 奧斯陸OSL→Tromsø TOS','20270301T090000Z','20270301T110000Z'],
+      ['SK4561 Tromsø TOS→Bodø BOO','20270305T104000Z','20270305T114000Z'],
+      ['WF806 Bodø BOO→Leknes LKN','20270306T095500Z','20270306T102000Z'],
+      ['WF892 Leknes LKN→Bodø BOO','20270312T083000Z','20270312T090000Z'],
+      ['SK4107 Bodø BOO→奧斯陸OSL','20270312T093500Z','20270312T111000Z'],
+      ['HU770 奧斯陸OSL→北京PEK','20270313T113000Z','20270313T203000Z'],
+      ['HU7987 北京PEK→台北TPE','20270314T000000Z','20270314T031000Z']
+    ];
+    // 全天事件:住宿(9 段)+關鍵提醒(5 筆);DTEND 為退房日(ICS 慣例:結束日不含)
+    const AD=[
+      ['🛏 Oslo・Scandic Vulkan(2晚)','20270227','20270301','入住16:00後・已確認1張雙人床(帶email)'],
+      ['🛏 Tromsø東北・Ullstindvegen 157','20270301','20270302','16:00起 房東Jessica迎接・碼HMW9W9BBCW'],
+      ['🛏 Sommarøy・Prestvikvegen','20270302','20270303','15:00起 聯絡房東Beate・碼HMAR9YTTQR'],
+      ['🛏 Tromsø市中心・Fiskergata 6(2晚)','20270303','20270305','15:00起 密碼鑰匙盒・碼HM9XPPC53T'],
+      ['🛏 Bodø・Home Hotel Grand(含三餐)','20270305','20270306','check-in 15:00・fika 15-17・晚餐 18-20'],
+      ['🛏 Ramberg・Mørkveden(2晚)','20270306','20270308','密碼鑰匙盒・碼HMMATQ2TYY・13:30早到先放行李'],
+      ['🛏 Reine cabin・46 Kirkeveien(3晚)','20270308','20270311','16:00-21:00 lockbox・押金NOK3000・碼5988.399.928'],
+      ['🛏 Ballstad・Hemmingodden Lodge','20270311','20270312','15:00-22:00・入住時先講好3/12提早自助退房'],
+      ['🛏 Oslo・Scandic Vulkan(緩衝夜)','20270312','20270313','大床房・含3/13早餐・不可改退'],
+      ['📋 訂極光追雲團+狗拉雪橇(含接送)','20261201','20261202','雪橇指定3/4上午梯次・極光團選免費取消'],
+      ['📋 辦ETIAS+IDP×2+查Fjellheisen+電話約Hertz釘胎','20270115','20270116','IDP效期1年別太早辦・釘胎專線+47-76081844'],
+      ['💍 結婚登記日','20270212','20270213','週五・記得HR書面核婚假'],
+      ['📋 行前總核對:旅平險/高鐵票/信用卡調額/文件包','20270219','20270220','見計劃書〈倒數待辦〉⑧-⑪'],
+      ['☎ 訂Reinefjorden觀光船(明日搭)','20270305','20270306','+47 994 91 805・週六停駛']
+    ];
+    a.addEventListener('click',e=>{e.preventDefault();
+      const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//nor-honeymoon-2027//zh-TW'];
+      EV.forEach((v,i)=>L.push('BEGIN:VEVENT','UID:norflight'+i+'@plan2027','DTSTAMP:20260831T000000Z','DTSTART:'+v[1],'DTEND:'+v[2],'SUMMARY:✈ '+v[0],'DESCRIPTION:時刻以航空公司最終確認為準(挪威極光蜜月計劃書)','END:VEVENT'));
+      AD.forEach((v,i)=>L.push('BEGIN:VEVENT','UID:noritem'+i+'@plan2027','DTSTAMP:20260831T000000Z','DTSTART;VALUE=DATE:'+v[1],'DTEND;VALUE=DATE:'+v[2],'SUMMARY:'+v[0],'DESCRIPTION:'+v[3],'END:VEVENT'));
+      L.push('END:VCALENDAR');
+      const url=URL.createObjectURL(new Blob([L.join('\r\n')],{type:'text/calendar'}));
+      const dl=document.createElement('a');dl.href=url;dl.download='挪威蜜月航班2027.ics';document.body.appendChild(dl);dl.click();dl.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),4000);
+    });
+  })();
+  // 逐日卡「當日光線」:三段決策膠囊(☀白天/🌆藍調/🌌守極光)+微型天空條(趨勢感、無精確資訊);日出日落取自各段光線表、概值
+  (()=>{
+    const SUN={d0227:[7.37,17.62],d0228:[7.32,17.67],d0301:[7.2,16.7],d0302:[7.12,16.77],d0303:[7.03,16.85],d0304:[6.97,16.92],d0305:[6.88,16.98],d0306:[7.1,17.5],d0307:[7.0,17.57],d0308:[6.9,17.63],d0309:[6.8,17.7],d0310:[6.7,17.77],d0311:[6.6,17.83],d0312:[6.5,18.17],d0313:[6.47,18.2]};
+    const AUR=['d0301','d0302','d0303','d0304','d0306','d0307','d0308','d0309','d0310','d0311'];
+    const fmt=h=>{const m=Math.round(h*60);return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+    const p=h=>(h/24*100).toFixed(1)+'%';
+    for(const id in SUN){
+      const card=document.getElementById(id);
+      if(!card||!card.classList.contains('day'))continue;
+      const sr=SUN[id][0],ss=SUN[id][1],aur=AUR.indexOf(id)>-1;
+      const stops=['var(--night) 0%','var(--night) '+p(sr-0.7),'var(--gold) '+p(sr),'#f3e6c8 '+p(sr+0.7),'#f3e6c8 '+p(ss-0.7),'var(--gold) '+p(ss),'var(--sky) '+p(ss+1),'var(--night) '+p(ss+1.8)];
+      if(aur)stops.push('var(--night) '+p(19.66),'#2a4a44 '+p(20.5),'#2a4a44 100%');else stops.push('var(--night) 100%');
+      const third=aur
+        ?'<span class="slot slot-aurora"><span class="slot-ic">🌌</span><span class="slot-label">守極光</span><b>19:40 起</b></span>'
+        :'<span class="slot slot-rest"><span class="slot-ic">🌙</span>今晚無追光行程</span>';
+      const note=id==='d0227'?'<span class="slot-note">(藍調=日落後天色深藍的黃金拍照時段)</span>':'';
+      const w=document.createElement('div');
+      w.className='day-light';
+      w.innerHTML='<div class="sky-strip" aria-hidden="true" style="background:linear-gradient(90deg,'+stops.join(',')+')"></div>'
+        +'<div class="day-slots">'
+        +'<span class="slot slot-day"><span class="slot-ic">☀</span><span class="slot-label">白天</span><b>'+fmt(sr)+'–'+fmt(ss)+'</b><span class="slot-dur">'+(ss-sr).toFixed(1)+' 小時</span></span>'
+        +'<span class="slot slot-blue"><span class="slot-ic">🌆</span><span class="slot-label">藍調</span><b>'+fmt(ss)+'–'+fmt(ss+1)+'</b></span>'
+        +third+note
+        +'</div>';
+      const dh=card.querySelector('.dhead');
+      if(dh)dh.after(w);
+    }
+  })();
+  // 旅程期間顯示「📍 今天」懸浮鈕(2027/2/26–3/14),點了跳到當天逐日卡
+  (()=>{const now=new Date(),d1=new Date(2027,1,26),d2=new Date(2027,2,14,23,59);
+    if(now<d1||now>d2)return;
+    const id='d'+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0');
+    const card=document.getElementById(id);if(!card)return;
+    const b=document.createElement('button');b.type='button';b.className='todaybtn';b.textContent='📍 今天';
+    b.onclick=()=>card.scrollIntoView({behavior:'smooth',block:'start'});
+    document.body.appendChild(b);
+  })();
   // 摺疊區:列印前展開、錨點命中自動展開
   addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
-  addEventListener('hashchange',()=>{try{const el=document.querySelector(location.hash);const d=el&&el.closest('details');if(d)d.open=true}catch(e){}});
+  addEventListener('hashchange',()=>{try{const el=document.querySelector(location.hash);const d=el&&el.closest('details');if(d&&!d.open){d.open=true;el.scrollIntoView()}}catch(e){}});
   // 在地地圖(Leaflet + OpenStreetMap;座標經 2026/8 逐點查證;點一下啟用操作,避免捲頁誤觸)
   document.addEventListener('DOMContentLoaded',()=>{
-    if(!window.L)return;
+    if(!window.L){document.querySelectorAll('.map').forEach(el=>{el.innerHTML='<div class="mapfail">🗺 互動地圖需要網路,目前無法載入。<br>離線請直接點各行程列的 📍 開啟 Google Maps。</div>'});return}
     const COLS={l:"#b23a5b",s:"#c9a24b",t:"#2c6e9a",a:"#3f9d82"};
     const MAPS={
       oslo:[
-        [59.9223,10.7509,"🛏 Scandic Vulkan(住宿)","2/27–28 已訂+3/12 待訂","l"],
+        [59.9223,10.7509,"🛏 Scandic Vulkan(住宿)","2/27–28+3/12 皆已訂 ✅","l"],
         [59.92401,10.75888,"🥐 Godt Brød Grünerløkka(麵包早餐)","2/27 早","s"],
         [59.92212,10.75203,"🍽 Mathallen 美食街(住宿樓下)","2/27・2/28 午・3/12 晚","s"],
         [59.90562,10.75516,"🎨 MUNCH 孟克博物館","2/27 下午或 2/28","a"],
@@ -1555,11 +1746,14 @@
     for(const key of Object.keys(MAPS)){
       const el=document.getElementById('map-'+key);if(!el)continue;
       const m=L.map(el,{scrollWheelZoom:false,dragging:false});
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'Tiles &copy; Esri &mdash; &copy; OpenStreetMap contributors'}).addTo(m);
       const b=[],mk=[];
       MAPS[key].forEach(p=>{
         b.push([p[0],p[1]]);
-        mk.push(L.circleMarker([p[0],p[1]],{radius:8,color:'#fff',weight:2,fillColor:COLS[p[4]],fillOpacity:.95}).addTo(m)
+        const marker=p[2].indexOf('⚡')>-1
+          ?L.marker([p[0],p[1]],{icon:L.divIcon({className:'evmark',iconSize:[26,26],html:'⚡'})})
+          :L.marker([p[0],p[1]],{icon:L.divIcon({className:'pmark pmark-'+p[4],iconSize:[28,28],html:p[2].split(' ')[0]})});
+        mk.push(marker.addTo(m)
           .bindPopup('<b>'+p[2]+'</b><br>'+p[3]+'<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+p[0]+','+p[1]+'">🧭 導航 →</a>'));
       });
       const bar=document.createElement('div');bar.className='mapdays';
@@ -1567,12 +1761,12 @@
       let curLine=null;
       const setDay=sel=>{
         if(curLine){m.removeLayer(curLine);curLine=null}
-        mk.forEach(x=>{x.setStyle({opacity:sel?0.25:1,fillOpacity:sel?0.15:.95});x.unbindTooltip()});
+        mk.forEach(x=>{if(x.setStyle)x.setStyle({opacity:sel?0.25:1,fillOpacity:sel?0.15:.95});else x.setOpacity(sel?0.25:1);x.unbindTooltip()});
         if(!sel){m.fitBounds(b,{padding:[26,26]})}
         else{
           sel.p.forEach((i,n)=>{
-            mk[i].setStyle({opacity:1,fillOpacity:.95});
-            if(sel.r)mk[i].bindTooltip(String(n+1),{permanent:true,direction:'center',className:'mnum'}).openTooltip();
+            if(mk[i].setStyle)mk[i].setStyle({opacity:1,fillOpacity:.95});else mk[i].setOpacity(1);
+            if(sel.r)mk[i].bindTooltip(String(n+1),{permanent:true,direction:'center',className:'mnum mnum-'+MAPS[key][i][4]}).openTooltip();
           });
           if(sel.r)curLine=L.polyline(sel.p.map(i=>[MAPS[key][i][0],MAPS[key][i][1]]),{color:'#2c6e9a',weight:2,dashArray:'6 6',opacity:.7}).addTo(m);
           m.fitBounds(sel.p.map(i=>[MAPS[key][i][0],MAPS[key][i][1]]),{padding:[34,34]});
@@ -1582,9 +1776,14 @@
       const mkBtn=(label,sel)=>{const btn=document.createElement('button');btn.className='chip';btn.textContent=label;btn._sel=sel;btn.onclick=()=>setDay(sel);bar.appendChild(btn)};
       mkBtn('全部',null);(DAYFILTER[key]||[]).forEach(d=>mkBtn(d.l,d));
       setDay(null);
-      const g=document.createElement('div');g.className='tapguard';g.textContent='👆 點一下啟用地圖操作';
-      el.appendChild(g);
-      g.addEventListener('click',()=>{g.remove();m.dragging.enable();m.scrollWheelZoom.enable();m.invalidateSize()});
+      const addGuard=()=>{const g=document.createElement('button');g.type='button';g.className='tapguard';g.textContent='👆 點一下啟用地圖操作';
+        g.addEventListener('click',()=>{g.remove();m.dragging.enable();m.scrollWheelZoom.enable();m.invalidateSize();addLock()});
+        el.appendChild(g)};
+      const addLock=()=>{const k=document.createElement('button');k.type='button';k.className='maplock';k.textContent='🔒 鎖定地圖';k.title='鎖定地圖、恢復頁面捲動';
+        k.addEventListener('click',()=>{k.remove();m.dragging.disable();m.scrollWheelZoom.disable();addGuard()});
+        el.appendChild(k)};
+      m.on('zoomend',()=>el.classList.toggle('zoom-sm',m.getZoom()<12));
+      addGuard();
     }
   });
 </script>
