@@ -190,6 +190,8 @@
   .hswrap::after{content:"";position:absolute;top:0;right:0;bottom:4px;width:30px;background:linear-gradient(90deg,rgba(255,255,255,0),#fff);pointer-events:none;transition:opacity .2s}
   .hswrap.at-end::after{opacity:0}
   /* ── 可點性系統(評選定案):沙色=靜態標籤、綠框+底邊=可點、✆=撥號、›=散落頁內錨點;深藍實心膠囊為電話專屬色 ── */
+  span.chip{display:inline-block;text-align:left;margin:2px 0}
+  button.chip{text-align:left}
   span.chip:not(.ok):not(.pend):not(.x):not(.legend){background:#f3ede5;border:1px solid transparent;color:var(--ink-soft);font-weight:400;box-shadow:none}
   a.chip,button.chip:not(.todo){display:inline-flex;align-items:center;border:1px solid rgba(63,157,130,.55);border-bottom-width:2px;box-shadow:0 1px 2px rgba(22,33,58,.06);min-height:34px;padding:4px 12px;cursor:pointer}
   a.chip:active,button.chip:not(.todo):active{transform:translateY(1px);border-bottom-width:1px;filter:brightness(.95)}
@@ -1443,7 +1445,7 @@
       </ul>
     </div>
     <div class="card">
-      <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:4px">圖例:<span class="chip ok">✓ 已完成</span> <span class="chip pend">⏳ 進行中/時候未到</span> <span class="chip x">⭐ 高風險必辦</span> <span class="chip legend">行前待辦</span> ──<b>待辦 chip 點一下變 <span style="background:var(--aurora);color:#fff;padding:1px 8px;border-radius:10px">✓ 綠底</span>=已完成</b>(記錄存在這台裝置的瀏覽器)</p>
+      <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:4px">圖例:<span class="chip ok">✓ 已完成</span> <span class="chip pend">⏳ 進行中/時候未到</span> <span class="chip x">⭐ 高風險必辦</span> <span class="chip todo legend">行前待辦</span> ──<b>待辦 chip 點一下變 <span style="background:var(--aurora);color:#fff;padding:1px 8px;border-radius:10px">✓ 綠底</span>=已完成</b>(記錄存在這台裝置的瀏覽器)</p>
       <div class="chips">
         <span class="chip x">⭐台胞證 5 年(去回程都查)</span>
         <span class="chip">護照效期 ≥3 個月(離申根日)</span>
